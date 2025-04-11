@@ -82,18 +82,6 @@ const Contact = () => {
       return;
     }
 
-    // Log the environment variables (remove in production)
-    console.log('EmailJS Config:', {
-      serviceId: serviceId ? (serviceId.substring(0, 4) + '...') : 'missing',
-      templateId: templateId ? (templateId.substring(0, 4) + '...') : 'missing',
-      formData: {
-        name: formData.name,
-        email: formData.email,
-        subject: formData.subject,
-        message: formData.message.substring(0, 10) + '...' // Only log part of the message for privacy
-      }
-    });
-
     // Prepare template parameters
     const templateParams = {
       name: formData.name,
