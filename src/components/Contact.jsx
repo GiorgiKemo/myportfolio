@@ -1,4 +1,4 @@
-import { useState, useRef } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { FaEnvelope, FaPhone, FaMapMarkerAlt } from 'react-icons/fa';
 import emailjs from '@emailjs/browser';
@@ -12,7 +12,33 @@ const Contact = () => {
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState(null);
+  const [emailjsReady, setEmailjsReady] = useState(false);
   const form = useRef();
+
+  // Initialize EmailJS when component mounts
+  useEffect(() => {
+    // Try to get from environment variables first
+    let publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
+
+    // If not available in environment, use hardcoded fallback for GitHub Pages
+    // Note: This is not ideal for security, but ensures functionality on GitHub Pages
+    if (!publicKey) {
+      console.warn('EmailJS public key not found in environment variables, using fallback');
+      publicKey = '02CPxeXz4EuwYVpqv'; // Your public key
+    }
+
+    if (publicKey) {
+      try {
+        emailjs.init(publicKey);
+        setEmailjsReady(true);
+        console.log('EmailJS initialized successfully with key:', publicKey.substring(0, 4) + '...');
+      } catch (error) {
+        console.error('Failed to initialize EmailJS:', error);
+      }
+    } else {
+      console.error('EmailJS public key is missing');
+    }
+  }, []);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -27,12 +53,57 @@ const Contact = () => {
     setIsSubmitting(true);
     setSubmitStatus(null);
 
-    // Using environment variables for EmailJS credentials
-    const serviceId = import.meta.env.VITE_EMAILJS_SERVICE_ID;
-    const templateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
-    const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
+    if (!emailjsReady) {
+      console.error('EmailJS is not initialized');
+      setSubmitStatus({ success: false, message: 'Email service is not available. Please try again later.' });
+      setIsSubmitting(false);
+      return;
+    }
 
-    emailjs.sendForm(serviceId, templateId, form.current, publicKey)
+    // Using environment variables for EmailJS credentials
+    let serviceId = import.meta.env.VITE_EMAILJS_SERVICE_ID;
+    let templateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
+
+    // If not available in environment, use hardcoded fallback for GitHub Pages
+    if (!serviceId) {
+      console.warn('EmailJS service ID not found in environment variables, using fallback');
+      serviceId = 'service_4nfbd67'; // Your service ID
+    }
+
+    if (!templateId) {
+      console.warn('EmailJS template ID not found in environment variables, using fallback');
+      templateId = 'template_p099j7y'; // Your template ID
+    }
+
+    if (!serviceId || !templateId) {
+      console.error('EmailJS service ID or template ID is missing');
+      setSubmitStatus({ success: false, message: 'Email service configuration error. Please try again later.' });
+      setIsSubmitting(false);
+      return;
+    }
+
+    // Log the environment variables (remove in production)
+    console.log('EmailJS Config:', {
+      serviceId: serviceId ? (serviceId.substring(0, 4) + '...') : 'missing',
+      templateId: templateId ? (templateId.substring(0, 4) + '...') : 'missing',
+      formData: {
+        name: formData.name,
+        email: formData.email,
+        subject: formData.subject,
+        message: formData.message.substring(0, 10) + '...' // Only log part of the message for privacy
+      }
+    });
+
+    // Prepare template parameters
+    const templateParams = {
+      from_name: formData.name,
+      from_email: formData.email,
+      subject: formData.subject,
+      message: formData.message
+    };
+
+    // Use send method instead of sendForm for more control
+    emailjs.send(serviceId, templateId, templateParams)
       .then((result) => {
         console.log('Email sent successfully:', result.text);
         setSubmitStatus({ success: true, message: 'Thank you for your message! I will get back to you soon.' });
@@ -44,7 +115,7 @@ const Contact = () => {
         });
       })
       .catch((error) => {
-        console.error('Failed to send email:', error.text);
+        console.error('Failed to send email:', error);
         setSubmitStatus({ success: false, message: 'Failed to send message. Please try again later.' });
       })
       .finally(() => {
@@ -109,10 +180,10 @@ const Contact = () => {
               <div className="form-group">
                 <input
                   type="text"
-                  name="name"
+                  name="from_name"
                   placeholder="Your Name"
                   value={formData.name}
-                  onChange={handleChange}
+                  onChange={(e) => setFormData({...formData, name: e.target.value})}
                   required
                 />
               </div>
@@ -120,10 +191,10 @@ const Contact = () => {
               <div className="form-group">
                 <input
                   type="email"
-                  name="email"
+                  name="from_email"
                   placeholder="Your Email"
                   value={formData.email}
-                  onChange={handleChange}
+                  onChange={(e) => setFormData({...formData, email: e.target.value})}
                   required
                 />
               </div>
@@ -134,7 +205,7 @@ const Contact = () => {
                   name="subject"
                   placeholder="Subject"
                   value={formData.subject}
-                  onChange={handleChange}
+                  onChange={(e) => setFormData({...formData, subject: e.target.value})}
                   required
                 />
               </div>
@@ -144,7 +215,7 @@ const Contact = () => {
                   name="message"
                   placeholder="Your Message"
                   value={formData.message}
-                  onChange={handleChange}
+                  onChange={(e) => setFormData({...formData, message: e.target.value})}
                   required
                 ></textarea>
               </div>
