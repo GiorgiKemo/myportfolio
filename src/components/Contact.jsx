@@ -180,10 +180,10 @@ const Contact = () => {
               <div className="form-group">
                 <input
                   type="text"
-                  name="from_name"
+                  name="name"
                   placeholder="Your Name"
                   value={formData.name}
-                  onChange={(e) => setFormData({...formData, name: e.target.value})}
+                  onChange={handleChange}
                   required
                 />
               </div>
@@ -191,10 +191,10 @@ const Contact = () => {
               <div className="form-group">
                 <input
                   type="email"
-                  name="from_email"
+                  name="email"
                   placeholder="Your Email"
                   value={formData.email}
-                  onChange={(e) => setFormData({...formData, email: e.target.value})}
+                  onChange={handleChange}
                   required
                 />
               </div>
@@ -205,7 +205,7 @@ const Contact = () => {
                   name="subject"
                   placeholder="Subject"
                   value={formData.subject}
-                  onChange={(e) => setFormData({...formData, subject: e.target.value})}
+                  onChange={handleChange}
                   required
                 />
               </div>
@@ -215,7 +215,7 @@ const Contact = () => {
                   name="message"
                   placeholder="Your Message"
                   value={formData.message}
-                  onChange={(e) => setFormData({...formData, message: e.target.value})}
+                  onChange={handleChange}
                   required
                 ></textarea>
               </div>
