@@ -1,6 +1,20 @@
 import { motion } from 'framer-motion';
-import { FaHtml5, FaCss3Alt, FaJs, FaReact, FaNodeJs, FaGitAlt, FaDatabase } from 'react-icons/fa';
-import { SiTypescript, SiNextdotjs, SiExpress, SiMongodb } from 'react-icons/si';
+import {
+  FaCss3Alt,
+  FaDatabase,
+  FaGitAlt,
+  FaHtml5,
+  FaJs,
+  FaNodeJs,
+  FaReact,
+} from 'react-icons/fa';
+import {
+  SiMongodb,
+  SiNextdotjs,
+  SiPostgresql,
+  SiSupabase,
+  SiTypescript,
+} from 'react-icons/si';
 
 const Skills = () => {
   const skills = [
@@ -10,17 +24,18 @@ const Skills = () => {
     { name: 'TypeScript', icon: <SiTypescript />, color: '#3178C6' },
     { name: 'React', icon: <FaReact />, color: '#61DAFB' },
     { name: 'Next.js', icon: <SiNextdotjs />, color: '#000000' },
+    { name: 'Supabase', icon: <SiSupabase />, color: '#3ECF8E' },
     { name: 'Node.js', icon: <FaNodeJs />, color: '#339933' },
-    { name: 'Express', icon: <SiExpress />, color: '#000000' },
     { name: 'MongoDB', icon: <SiMongodb />, color: '#47A248' },
     { name: 'SQL', icon: <FaDatabase />, color: '#4479A1' },
+    { name: 'PostgreSQL', icon: <SiPostgresql />, color: '#336791' },
     { name: 'Git', icon: <FaGitAlt />, color: '#F05032' },
   ];
 
   return (
     <section id="skills" className="skills">
       <div className="container">
-        <motion.h2 
+        <motion.h2
           className="section-title"
           initial={{ opacity: 0, y: -20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -29,8 +44,8 @@ const Skills = () => {
         >
           My Skills
         </motion.h2>
-        
-        <motion.div 
+
+        <motion.div
           className="skills-container"
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
@@ -38,7 +53,7 @@ const Skills = () => {
           transition={{ duration: 0.5, delay: 0.2 }}
         >
           {skills.map((skill, index) => (
-            <motion.div 
+            <motion.div
               key={skill.name}
               className="skill-item"
               initial={{ opacity: 0, y: 20 }}
