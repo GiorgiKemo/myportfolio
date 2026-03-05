@@ -1,6 +1,6 @@
 import { useState, useRef, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { FaEnvelope, FaPhone, FaMapMarkerAlt } from 'react-icons/fa';
+import { FaEnvelope, FaPhone, FaMapMarkerAlt, FaWhatsapp, FaTelegramPlane } from 'react-icons/fa';
 import emailjs from '@emailjs/browser';
 
 const Contact = () => {
@@ -136,7 +136,7 @@ const Contact = () => {
               <FaEnvelope className="contact-icon" />
               <div>
                 <h3>Email</h3>
-                <p>giorgikemoklidze1998@gmail.com</p>
+                <p>gegakemoklidze@gmail.com</p>
               </div>
             </div>
 
@@ -145,6 +145,22 @@ const Contact = () => {
               <div>
                 <h3>Phone</h3>
                 <p>+995 596 33 33 16</p>
+              </div>
+            </div>
+
+            <div className="contact-item">
+              <FaWhatsapp className="contact-icon" />
+              <div>
+                <h3>WhatsApp</h3>
+                <p><a href="https://wa.me/995596333316" target="_blank" rel="noopener noreferrer">+995 596 33 33 16</a></p>
+              </div>
+            </div>
+
+            <div className="contact-item">
+              <FaTelegramPlane className="contact-icon" />
+              <div>
+                <h3>Telegram</h3>
+                <p><a href="https://t.me/GiorgiKemo" target="_blank" rel="noopener noreferrer">@GiorgiKemo</a></p>
               </div>
             </div>
 

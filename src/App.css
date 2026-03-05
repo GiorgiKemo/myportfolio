@@ -177,7 +177,7 @@ main {
   padding: 20px;
   text-align: center;
   box-shadow: var(--box-shadow);
-  transition: var(--transition);
+  transition: box-shadow 0.2s ease;
 }
 
 .skill-icon {
@@ -207,7 +207,7 @@ main {
   border-radius: var(--border-radius);
   overflow: hidden;
   box-shadow: var(--box-shadow);
-  transition: var(--transition);
+  transition: box-shadow 0.2s ease;
   height: 100%;
 }
 
