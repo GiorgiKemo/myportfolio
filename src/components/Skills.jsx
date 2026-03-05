@@ -52,22 +52,31 @@ const Skills = () => {
           viewport={{ once: true }}
           transition={{ duration: 0.5, delay: 0.2 }}
         >
-          {skills.map((skill, index) => (
-            <motion.div
-              key={skill.name}
-              className="skill-item"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.3, delay: Math.min(0.1 * index, 0.3) }}
-              whileHover={{ scale: 1.05, transition: { duration: 0.15 } }}
-            >
-              <div className="skill-icon" style={{ color: skill.color }}>
-                {skill.icon}
-              </div>
-              <h3>{skill.name}</h3>
-            </motion.div>
-          ))}
+          {skills.map((skill, index) => {
+            const entryDelay = Math.min(0.1 * index, 0.3);
+
+            return (
+              <motion.div
+                key={skill.name}
+                className="skill-item"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{
+                  opacity: { duration: 0.3, delay: entryDelay },
+                  y: { duration: 0.3, delay: entryDelay },
+                  scale: { duration: 0.12, delay: 0, ease: 'easeOut' },
+                }}
+                whileHover={{ scale: 1.05 }}
+                style={{ willChange: 'transform' }}
+              >
+                <div className="skill-icon" style={{ color: skill.color }}>
+                  {skill.icon}
+                </div>
+                <h3>{skill.name}</h3>
+              </motion.div>
+            );
+          })}
         </motion.div>
       </div>
     </section>

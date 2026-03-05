@@ -100,49 +100,60 @@ const Projects = () => {
         </motion.h2>
 
         <div className="projects-grid">
-          {projects.map((project, index) => (
-            <motion.div
-              key={project.id}
-              className="project-card"
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.4, delay: Math.min(index * 0.1, 0.3) }}
-              whileHover={{ y: -10, transition: { duration: 0.15 } }}
-            >
-              <div className="project-content">
-                <h3 className="project-title">{project.title}</h3>
-                <p className="project-description">{project.description}</p>
+          {projects.map((project, index) => {
+            const entryDelay = Math.min(index * 0.1, 0.3);
 
-                <div className="project-tags">
-                  {project.tags.map((tag) => (
-                    <span key={tag} className="project-tag">
-                      {tag}
-                    </span>
-                  ))}
-                </div>
+            return (
+              <motion.div
+                key={project.id}
+                className="project-card"
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{
+                  opacity: { duration: 0.4, delay: entryDelay },
+                  y: { duration: 0.4, delay: entryDelay },
+                }}
+                whileHover={{
+                  y: -10,
+                  transition: { duration: 0.12, delay: 0, ease: 'easeOut' },
+                }}
+                style={{ willChange: 'transform' }}
+              >
+                <div className="project-content">
+                  <h3 className="project-title">{project.title}</h3>
+                  <p className="project-description">{project.description}</p>
 
-                <div className="project-links">
-                  <a
-                    href={project.githubLink}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="project-link"
-                  >
-                    <FaGithub /> GitHub
-                  </a>
-                  <a
-                    href={project.liveLink}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="project-link"
-                  >
-                    <FaExternalLinkAlt /> Live Demo
-                  </a>
+                  <div className="project-tags">
+                    {project.tags.map((tag) => (
+                      <span key={tag} className="project-tag">
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
+
+                  <div className="project-links">
+                    <a
+                      href={project.githubLink}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="project-link"
+                    >
+                      <FaGithub /> GitHub
+                    </a>
+                    <a
+                      href={project.liveLink}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="project-link"
+                    >
+                      <FaExternalLinkAlt /> Live Demo
+                    </a>
+                  </div>
                 </div>
-              </div>
-            </motion.div>
-          ))}
+              </motion.div>
+            );
+          })}
         </div>
       </div>
     </section>
