@@ -17,7 +17,7 @@ main {
   width: 100%;
   z-index: 1000;
   background-color: transparent;
-  transition: var(--transition);
+  transition: background-color 0.2s ease, padding 0.2s ease, box-shadow 0.2s ease;
   padding: 20px 0;
 }
 
@@ -292,7 +292,7 @@ input, textarea {
   border-radius: var(--border-radius);
   font-family: inherit;
   font-size: 1rem;
-  transition: var(--transition);
+  transition: border-color 0.2s ease;
 }
 
 input:focus, textarea:focus {
@@ -356,7 +356,7 @@ button:disabled {
 .footer-social a {
   color: var(--light-text);
   font-size: 1.5rem;
-  transition: var(--transition);
+  transition: var(--transition), transform 0.2s ease;
 }
 
 .footer-social a:hover {
@@ -386,7 +386,7 @@ button:disabled {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    transition: var(--transition);
+    transition: left 0.3s ease;
     box-shadow: var(--box-shadow);
   }
 
