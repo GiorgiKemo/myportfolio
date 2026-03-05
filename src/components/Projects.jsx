@@ -12,6 +12,15 @@ const Projects = () => {
       liveLink: 'https://ats-friendly-resume-builder-pi.vercel.app/',
     },
     {
+      id: 9,
+      title: 'CDL Jobs Center',
+      description:
+        'A full-featured job board platform connecting CDL truck drivers with top carriers. Includes job search with advanced filters, company profiles, driver applications, and an admin dashboard for managing listings.',
+      tags: ['React', 'Node.js', 'MongoDB', 'Express', 'Tailwind CSS'],
+      githubLink: 'https://github.com/GiorgiKemo/cdl-jobs-center',
+      liveLink: 'https://cdljobscenter.com',
+    },
+    {
       id: 2,
       title: 'Airdrops Georgia',
       description:
