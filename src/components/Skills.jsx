@@ -59,8 +59,8 @@ const Skills = () => {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.3, delay: 0.1 * index }}
-              whileHover={{ scale: 1.05 }}
+              transition={{ duration: 0.3, delay: Math.min(0.1 * index, 0.3) }}
+              whileHover={{ scale: 1.05, transition: { duration: 0.15 } }}
             >
               <div className="skill-icon" style={{ color: skill.color }}>
                 {skill.icon}
