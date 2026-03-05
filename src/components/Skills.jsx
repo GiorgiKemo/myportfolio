@@ -65,9 +65,16 @@ const Skills = () => {
                 transition={{
                   opacity: { duration: 0.3, delay: entryDelay },
                   y: { duration: 0.3, delay: entryDelay },
-                  scale: { duration: 0.12, delay: 0, ease: 'easeOut' },
                 }}
-                whileHover={{ scale: 1.05 }}
+                whileHover={{
+                  scale: 1.05,
+                  transition: {
+                    type: 'tween',
+                    duration: 0.12,
+                    delay: 0,
+                    ease: 'easeOut',
+                  },
+                }}
                 style={{ willChange: 'transform' }}
               >
                 <div className="skill-icon" style={{ color: skill.color }}>
