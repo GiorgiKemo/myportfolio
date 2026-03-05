@@ -1,5 +1,4 @@
-# Fresh workflow ID to bypass a stuck workflow queue state.
-name: Deploy React App to Pages (v2)
+name: Deploy React App to Pages
 
 on:
   push:
