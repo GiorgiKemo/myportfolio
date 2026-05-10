@@ -1,4 +1,4 @@
-import { motion } from 'framer-motion';
+import { motion as Motion } from 'framer-motion';
 import { Link } from 'react-scroll';
 import { FaArrowDown } from 'react-icons/fa';
 
@@ -7,25 +7,25 @@ const Hero = () => {
     <section id="home" className="hero">
       <div className="container">
         <div className="hero-content">
-          <motion.h1
+          <Motion.h1
             initial={{ opacity: 0, y: -50 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
             className="hero-title"
           >
-            Web Developer
-          </motion.h1>
+            Full-Stack Developer
+          </Motion.h1>
           
-          <motion.p
+          <Motion.p
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
             className="hero-subtitle"
           >
-            Building digital experiences that are both highly functional and visually engaging
-          </motion.p>
+            Building production websites, AI tools, business dashboards, and Supabase-backed apps from idea to launch
+          </Motion.p>
           
-          <motion.div
+          <Motion.div
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.5, delay: 0.4 }}
@@ -37,10 +37,10 @@ const Hero = () => {
             <Link to="contact" smooth={true} duration={800} offset={-70}>
               <button className="btn btn-outline">Contact Me</button>
             </Link>
-          </motion.div>
+          </Motion.div>
         </div>
         
-        <motion.div
+        <Motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.8 }}
@@ -49,7 +49,7 @@ const Hero = () => {
           <Link to="about" smooth={true} duration={800} offset={-70}>
             <FaArrowDown />
           </Link>
-        </motion.div>
+        </Motion.div>
       </div>
     </section>
   );

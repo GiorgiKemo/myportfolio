@@ -1,10 +1,10 @@
-import { motion } from 'framer-motion';
+import { motion as Motion } from 'framer-motion';
 
 const About = () => {
   return (
     <section id="about" className="about">
       <div className="container">
-        <motion.h2 
+        <Motion.h2 
           className="section-title"
           initial={{ opacity: 0, y: -20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -12,10 +12,10 @@ const About = () => {
           transition={{ duration: 0.5 }}
         >
           About Me
-        </motion.h2>
+        </Motion.h2>
         
         <div className="about-content">
-          <motion.div 
+          <Motion.div 
             className="about-text"
             initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -23,15 +23,15 @@ const About = () => {
             transition={{ duration: 0.5, delay: 0.2 }}
           >
             <p>
-              Hey there. I'm a web developer passionate about building digital experiences that are both highly functional and visually engaging. My core expertise lies in the JavaScript ecosystem, particularly using React for front-ends and Node.js for back-ends, alongside a strong command of HTML and CSS.
+              Hey there. I'm Giorgi, a full-stack developer focused on building complete web products that solve real business problems. My recent work includes CDL Jobs Center, an ATS-friendly resume builder, RoadReady driving-slot alerts, AIXCO websites, CRM dashboards, and local-business sites.
             </p>
             <p>
-              I'm also proficient with various other programming languages and web technologies relevant to modern development. I genuinely enjoy tackling complex technical challenges to deliver smooth, intuitive user experiences.
+              My main stack is React, Next.js, TypeScript, Supabase, PostgreSQL, Stripe, Vercel, Tailwind CSS, and modern API integrations. I also work with AI services, Telegram automation, SEO, analytics, testing, and deployment workflows.
             </p>
             <p>
-              I'm always exploring new tools and techniques in web development and have a knack for explaining technical concepts clearly. If you have a web project in mind, let's talk about how I can help bring your vision to life.
+              I care about clean interfaces, reliable back-end flows, fast shipping, and production details like authentication, billing, data models, responsive design, and search visibility.
             </p>
-          </motion.div>
+          </Motion.div>
         </div>
       </div>
     </section>

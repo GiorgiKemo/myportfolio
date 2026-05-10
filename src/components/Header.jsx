@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Link } from 'react-scroll';
 import { FaBars, FaTimes } from 'react-icons/fa';
-import { motion } from 'framer-motion';
+import { motion as Motion } from 'framer-motion';
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -38,27 +38,27 @@ const Header = () => {
     <header className={`header ${scrolled ? 'scrolled' : ''}`}>
       <div className="container">
         <nav className="navbar">
-          <motion.div 
+          <Motion.div 
             className="logo"
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
           >
             <Link to="home" smooth={true} duration={500}>Giorgi</Link>
-          </motion.div>
+          </Motion.div>
 
           <div className="menu-icon" onClick={toggleMenu}>
             {isOpen ? <FaTimes /> : <FaBars />}
           </div>
 
-          <motion.ul 
+          <Motion.ul 
             className={`nav-links ${isOpen ? 'active' : ''}`}
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.2 }}
           >
             {navLinks.map((link, index) => (
-              <motion.li 
+              <Motion.li 
                 key={link.id}
                 initial={{ opacity: 0, y: -20 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -73,9 +73,9 @@ const Header = () => {
                 >
                   {link.text}
                 </Link>
-              </motion.li>
+              </Motion.li>
             ))}
-          </motion.ul>
+          </Motion.ul>
         </nav>
       </div>
     </header>

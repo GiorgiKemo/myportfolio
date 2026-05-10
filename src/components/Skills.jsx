@@ -1,41 +1,12 @@
-import { motion } from 'framer-motion';
-import {
-  FaCss3Alt,
-  FaDatabase,
-  FaGitAlt,
-  FaHtml5,
-  FaJs,
-  FaNodeJs,
-  FaReact,
-} from 'react-icons/fa';
-import {
-  SiMongodb,
-  SiNextdotjs,
-  SiPostgresql,
-  SiSupabase,
-  SiTypescript,
-} from 'react-icons/si';
+import { motion as Motion } from 'framer-motion';
+import { skills } from '../data/portfolioData';
+import { techIcons } from '../data/techIcons';
 
 const Skills = () => {
-  const skills = [
-    { name: 'HTML5', icon: <FaHtml5 />, color: '#E34F26' },
-    { name: 'CSS3', icon: <FaCss3Alt />, color: '#1572B6' },
-    { name: 'JavaScript', icon: <FaJs />, color: '#F7DF1E' },
-    { name: 'TypeScript', icon: <SiTypescript />, color: '#3178C6' },
-    { name: 'React', icon: <FaReact />, color: '#61DAFB' },
-    { name: 'Next.js', icon: <SiNextdotjs />, color: '#000000' },
-    { name: 'Supabase', icon: <SiSupabase />, color: '#3ECF8E' },
-    { name: 'Node.js', icon: <FaNodeJs />, color: '#339933' },
-    { name: 'MongoDB', icon: <SiMongodb />, color: '#47A248' },
-    { name: 'SQL', icon: <FaDatabase />, color: '#4479A1' },
-    { name: 'PostgreSQL', icon: <SiPostgresql />, color: '#336791' },
-    { name: 'Git', icon: <FaGitAlt />, color: '#F05032' },
-  ];
-
   return (
     <section id="skills" className="skills">
       <div className="container">
-        <motion.h2
+        <Motion.h2
           className="section-title"
           initial={{ opacity: 0, y: -20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -43,9 +14,9 @@ const Skills = () => {
           transition={{ duration: 0.5 }}
         >
           My Skills
-        </motion.h2>
+        </Motion.h2>
 
-        <motion.div
+        <Motion.div
           className="skills-container"
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
@@ -54,9 +25,10 @@ const Skills = () => {
         >
           {skills.map((skill, index) => {
             const entryDelay = Math.min(0.1 * index, 0.3);
+            const SkillIcon = techIcons[skill.icon] ?? techIcons.plug;
 
             return (
-              <motion.div
+              <Motion.div
                 key={skill.name}
                 className="skill-item"
                 initial={{ opacity: 0, y: 20 }}
@@ -78,13 +50,13 @@ const Skills = () => {
                 style={{ willChange: 'transform' }}
               >
                 <div className="skill-icon" style={{ color: skill.color }}>
-                  {skill.icon}
+                  <SkillIcon />
                 </div>
                 <h3>{skill.name}</h3>
-              </motion.div>
+              </Motion.div>
             );
           })}
-        </motion.div>
+        </Motion.div>
       </div>
     </section>
   );

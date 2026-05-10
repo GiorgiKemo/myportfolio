@@ -1,5 +1,5 @@
 import { useState, useRef, useEffect } from 'react';
-import { motion } from 'framer-motion';
+import { motion as Motion } from 'framer-motion';
 import { FaEnvelope, FaPhone, FaMapMarkerAlt, FaWhatsapp, FaTelegramPlane } from 'react-icons/fa';
 import emailjs from '@emailjs/browser';
 
@@ -114,7 +114,7 @@ const Contact = () => {
   return (
     <section id="contact" className="contact">
       <div className="container">
-        <motion.h2
+        <Motion.h2
           className="section-title"
           initial={{ opacity: 0, y: -20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -122,10 +122,10 @@ const Contact = () => {
           transition={{ duration: 0.5 }}
         >
           Get In Touch
-        </motion.h2>
+        </Motion.h2>
 
         <div className="contact-container">
-          <motion.div
+          <Motion.div
             className="contact-info"
             initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -136,7 +136,7 @@ const Contact = () => {
               <FaEnvelope className="contact-icon" />
               <div>
                 <h3>Email</h3>
-                <p>gegakemoklidze@gmail.com</p>
+                <p><a href="mailto:contact@giorgi.codes">contact@giorgi.codes</a></p>
               </div>
             </div>
 
@@ -171,9 +171,9 @@ const Contact = () => {
                 <p>Tbilisi, Georgia</p>
               </div>
             </div>
-          </motion.div>
+          </Motion.div>
 
-          <motion.div
+          <Motion.div
             className="contact-form"
             initial={{ opacity: 0, x: 50 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -234,7 +234,7 @@ const Contact = () => {
                 {isSubmitting ? 'Sending...' : 'Send Message'}
               </button>
             </form>
-          </motion.div>
+          </Motion.div>
         </div>
       </div>
     </section>
