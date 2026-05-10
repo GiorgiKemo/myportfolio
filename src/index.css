@@ -1,15 +1,20 @@
 /* Base styles */
 :root {
-  --primary-color: #4a6cf7;
-  --secondary-color: #2c3e50;
-  --accent-color: #61dafb;
-  --text-color: #333;
-  --light-text: #f8f9fa;
-  --background-color: #ffffff;
-  --dark-background: #1a1a2e;
+  --primary-color: #176bc0;
+  --secondary-color: #104080;
+  --accent-color: #2080d0;
+  --text-color: #1d3555;
+  --muted-text: #4f6685;
+  --light-text: #edf4ff;
+  --background-color: #f7fbff;
+  --surface-color: #ffffff;
+  --surface-alt: #eaf3ff;
+  --border-color: #c8dbf3;
+  --chip-bg: #f3f8ff;
+  --dark-background: #0f3a74;
   --section-padding: 80px 0;
   --transition: color 0.2s ease, background-color 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
-  --box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  --box-shadow: 0 8px 24px rgba(16, 64, 128, 0.12);
   --border-radius: 8px;
 }
 

@@ -44,7 +44,20 @@ const Header = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
           >
-            <Link to="home" smooth={true} duration={500}>Giorgi</Link>
+            <Link
+              to="home"
+              smooth={true}
+              duration={500}
+              className="logo-link"
+              aria-label="Go to home"
+            >
+              <img
+                src="/logo-gk.png"
+                alt="Giorgi logo"
+                className="logo-image"
+                draggable="false"
+              />
+            </Link>
           </Motion.div>
 
           <div className="menu-icon" onClick={toggleMenu}>
