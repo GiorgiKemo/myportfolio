@@ -15,12 +15,12 @@ export const projects = [
   {
     id: 2,
     slug: 'ats-friendly-resume-builder',
-    title: 'ATS Friendly Resume Builder',
+    title: 'ResumeATS.cv',
     description:
       'AI-powered resume builder with ATS-safe templates, secure authentication, premium billing, PDF and DOCX export, and automation for job-search workflows.',
     tags: ['React', 'Vite', 'Supabase', 'Stripe', 'Python', 'PDF Export', 'AI'],
     githubLink: 'https://github.com/GiorgiKemo/ats-friendly-resume-builder',
-    liveLink: 'https://ats-friendly-resume-builder-pi.vercel.app',
+    liveLink: 'https://www.resumeats.cv',
     previewImage: '/project-previews/ats-friendly-resume-builder.png',
     complexityScore: 94,
     visibility: 'public',
@@ -110,7 +110,7 @@ export const projects = [
       'Crypto airdrop discovery platform for Georgian users with account-aware flows, data-backed listings, and a full-stack JavaScript application structure.',
     tags: ['JavaScript', 'React', 'Supabase', 'PostgreSQL', 'Web3'],
     githubLink: 'https://github.com/GiorgiKemo/airdrops-geo',
-    liveLink: 'https://airdrops-geo.onrender.com/airdrops/67f3ff7c7af3b5e4c76b9354',
+    liveLink: 'https://airdrops-geo.onrender.com',
     previewImage: '/project-previews/airdrops-geo.png',
     complexityScore: 56,
     visibility: 'public',
