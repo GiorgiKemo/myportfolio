@@ -287,15 +287,23 @@ main {
 .project-links {
   display: flex;
   flex-wrap: wrap;
+  align-items: center;
   gap: 15px;
-  margin-top: auto;
+  margin-top: 2px;
+  padding-left: 10px;
 }
 
 .project-link {
-  display: flex;
+  display: inline-flex;
   align-items: center;
-  gap: 5px;
+  gap: 7px;
   font-size: 0.9rem;
+  line-height: 1;
+}
+
+.project-link svg {
+  display: block;
+  flex-shrink: 0;
 }
 
 .project-link-muted {
