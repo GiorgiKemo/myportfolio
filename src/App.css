@@ -443,6 +443,31 @@ button:disabled {
 }
 
 /* Responsive styles */
+@media (max-width: 1024px) {
+  .hero {
+    min-height: 100svh;
+    height: auto;
+    padding-top: 120px;
+    padding-bottom: calc(56px + env(safe-area-inset-bottom, 0px));
+  }
+
+  .hero .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .scroll-down {
+    position: static;
+    left: auto;
+    bottom: auto;
+    transform: none;
+    margin-top: 12px;
+    padding-bottom: env(safe-area-inset-bottom, 0px);
+    animation: none;
+  }
+}
+
 @media (max-width: 768px) {
   .menu-icon {
     display: block;
