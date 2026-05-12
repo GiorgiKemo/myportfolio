@@ -483,6 +483,28 @@ button:disabled {
     align-items: center;
   }
 
+  .hero {
+    min-height: 100svh;
+    height: auto;
+    padding-top: 120px;
+    padding-bottom: 48px;
+  }
+
+  .hero .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .scroll-down {
+    position: static;
+    left: auto;
+    bottom: auto;
+    transform: none;
+    margin-top: 18px;
+    font-size: 2rem;
+  }
+
   .about-content {
     flex-direction: column;
   }
