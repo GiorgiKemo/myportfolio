@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Link } from 'react-scroll';
+import { Link, animateScroll as scroll } from 'react-scroll';
 import { FaBars, FaTimes } from 'react-icons/fa';
 import { motion as Motion } from 'framer-motion';
 
@@ -9,6 +9,14 @@ const Header = () => {
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
+  };
+
+  const scrollToTop = () => {
+    setIsOpen(false);
+    scroll.scrollToTop({
+      duration: 500,
+      smooth: true,
+    });
   };
 
   useEffect(() => {
@@ -44,12 +52,11 @@ const Header = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
           >
-            <Link
-              to="home"
-              smooth={true}
-              duration={500}
+            <button
+              type="button"
               className="logo-link"
               aria-label="Go to home"
+              onClick={scrollToTop}
             >
               <img
                 src="/logo-gk.png"
@@ -57,7 +64,7 @@ const Header = () => {
                 className="logo-image"
                 draggable="false"
               />
-            </Link>
+            </button>
           </Motion.div>
 
           <div className="menu-icon" onClick={toggleMenu}>
@@ -77,15 +84,21 @@ const Header = () => {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.3, delay: 0.1 * (index + 1) }}
               >
-                <Link
-                  to={link.id}
-                  smooth={true}
-                  duration={500}
-                  offset={-70}
-                  onClick={() => setIsOpen(false)}
-                >
-                  {link.text}
-                </Link>
+                {link.id === 'home' ? (
+                  <button type="button" className="nav-link-button" onClick={scrollToTop}>
+                    {link.text}
+                  </button>
+                ) : (
+                  <Link
+                    to={link.id}
+                    smooth={true}
+                    duration={500}
+                    offset={-70}
+                    onClick={() => setIsOpen(false)}
+                  >
+                    {link.text}
+                  </Link>
+                )}
               </Motion.li>
             ))}
           </Motion.ul>
