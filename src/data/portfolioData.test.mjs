@@ -11,6 +11,10 @@ const projectRoot = join(dirname(fileURLToPath(import.meta.url)), '..', '..');
 describe('portfolio project hierarchy', () => {
   it('orders projects from highest to lowest complexity', () => {
     assert.equal(projects[0].slug, 'cdl-jobs-center');
+    assert.deepEqual(
+      projects.slice(0, 4).map((project) => project.slug),
+      ['cdl-jobs-center', 'aixco-global-website', 'ats-friendly-resume-builder', 'solence-energy'],
+    );
 
     for (let index = 1; index < projects.length; index += 1) {
       assert.ok(
@@ -26,6 +30,7 @@ describe('portfolio project hierarchy', () => {
     [
       'cdl-jobs-center',
       'ats-friendly-resume-builder',
+      'solence-energy',
       'georgia-driver-alert',
       'aixco-global-website',
       'aixco-energy',

@@ -13,6 +13,19 @@ export const projects = [
     visibility: 'public',
   },
   {
+    id: 4,
+    slug: 'aixco-global-website',
+    title: 'AIXCO Global Website',
+    description:
+      'AIXCO Global company website built as a polished Next.js experience with Supabase-backed data, modern component systems, analytics-ready pages, and deployment on Vercel.',
+    tags: ['Next.js', 'TypeScript', 'Supabase', 'PostgreSQL', 'Tailwind CSS', 'Vercel'],
+    githubLink: 'https://github.com/GiorgiKemo/aixco-global-website',
+    liveLink: 'https://aixco-global-website.vercel.app',
+    previewImage: '/project-previews/aixco-global-website.png',
+    complexityScore: 96,
+    visibility: 'public',
+  },
+  {
     id: 2,
     slug: 'ats-friendly-resume-builder',
     title: 'ResumeATS.cv',
@@ -26,6 +39,18 @@ export const projects = [
     visibility: 'public',
   },
   {
+    id: 12,
+    slug: 'solence-energy',
+    title: 'Solence Energy',
+    description:
+      'Renewable energy website for Solence Energy with project storytelling, service pages, global operations content, lead generation, and a responsive solar-focused visual system.',
+    tags: ['Next.js', 'TypeScript', 'Tailwind CSS', 'Responsive Design', 'SEO & Analytics'],
+    liveLink: 'https://solence-energy.com',
+    previewImage: '/project-previews/solence-energy.png',
+    complexityScore: 91,
+    visibility: 'private',
+  },
+  {
     id: 3,
     slug: 'georgia-driver-alert',
     title: 'RoadReady / Georgia Driver Alert',
@@ -36,19 +61,6 @@ export const projects = [
     previewImage: '/project-previews/georgia-driver-alert.png',
     complexityScore: 89,
     visibility: 'private',
-  },
-  {
-    id: 4,
-    slug: 'aixco-global-website',
-    title: 'AIXCO Global Website',
-    description:
-      'AIXCO Global company website built as a polished Next.js experience with Supabase-backed data, modern component systems, analytics-ready pages, and deployment on Vercel.',
-    tags: ['Next.js', 'TypeScript', 'Supabase', 'PostgreSQL', 'Tailwind CSS', 'Vercel'],
-    githubLink: 'https://github.com/GiorgiKemo/aixco-global-website',
-    liveLink: 'https://aixco-global-website.vercel.app',
-    previewImage: '/project-previews/aixco-global-website.png',
-    complexityScore: 84,
-    visibility: 'public',
   },
   {
     id: 5,
