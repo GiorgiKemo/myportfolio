@@ -28,6 +28,7 @@ const Footer = () => {
 
         <div className="footer-bottom">
           <p>&copy; {currentYear} Giorgi. All Rights Reserved.</p>
+          <p><a href="/affiliate/">Learning resource guides</a></p>
         </div>
       </div>
     </footer>
