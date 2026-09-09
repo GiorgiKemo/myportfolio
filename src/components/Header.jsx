@@ -39,6 +39,7 @@ const Header = () => {
     { id: 'about', text: 'About' },
     { id: 'skills', text: 'Skills' },
     { id: 'projects', text: 'Projects' },
+    { href: '/affiliate/', text: 'Resources', className: 'nav-resource' },
     { id: 'contact', text: 'Contact' },
   ];
 
@@ -79,12 +80,16 @@ const Header = () => {
           >
             {navLinks.map((link, index) => (
               <Motion.li 
-                key={link.id}
+                key={link.id ?? link.href}
                 initial={{ opacity: 0, y: -20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.3, delay: 0.1 * (index + 1) }}
               >
-                {link.id === 'home' ? (
+                {link.href ? (
+                  <a className={link.className} href={link.href} aria-label="Open practical resource guides">
+                    {link.text}
+                  </a>
+                ) : link.id === 'home' ? (
                   <button type="button" className="nav-link-button" onClick={scrollToTop}>
                     {link.text}
                   </button>

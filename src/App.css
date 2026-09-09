@@ -98,6 +98,22 @@ main {
   width: 100%;
 }
 
+.nav-links li a.nav-resource {
+  background-color: var(--primary-color);
+  border-radius: 999px;
+  color: #fff;
+  padding: 8px 14px;
+}
+
+.nav-links li a.nav-resource::after {
+  display: none;
+}
+
+.nav-links li a.nav-resource:hover {
+  background-color: var(--accent-color);
+  color: #fff;
+}
+
 .menu-icon {
   display: none;
   font-size: 1.5rem;
