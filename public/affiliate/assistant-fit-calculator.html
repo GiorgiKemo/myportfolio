@@ -12,7 +12,7 @@
     <meta property="og:type" content="website" />
     <title>AI website assistant fit calculator | Giorgi Codes</title>
     <link rel="icon" type="image/png" href="/logo-gk.png" />
-    <script src="/affiliate/affiliate-tracking.js?v=b9" defer></script>
+    <script src="/affiliate/affiliate-tracking.js?v=b10" defer></script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet" />
@@ -43,23 +43,28 @@
         const questions = Number(document.querySelector('#questions').value) || 0;
         const domains = Number(document.querySelector('#domains').value) || 1;
         const capabilities = document.querySelector('#capabilities').value === 'yes';
+        const resultParams = { questions_per_month: questions, domains, needs_actions: capabilities };
         if (questions > 20000 || domains > 10) {
           title.textContent = 'Custom or enterprise boundary';
           copy.textContent = 'Your inputs are above the published Pro boundary. Compare enterprise options or ask the provider to confirm a custom capacity and workflow.';
+          window.trackAffiliateEvent?.('affiliate_fit_calculator_complete', { ...resultParams, fit_boundary: 'custom_or_enterprise' });
           return;
         }
         if (questions > 5000 || domains > 5 || capabilities) {
           title.textContent = 'Growth or Pro boundary';
           copy.textContent = 'The published Growth boundary is a better starting point when you need multiple domains, operational actions, analytics, or more than 5,000 monthly credits. Move to Pro if your volume or domain count is higher.';
+          window.trackAffiliateEvent?.('affiliate_fit_calculator_complete', { ...resultParams, fit_boundary: 'growth_or_pro' });
           return;
         }
         if (questions > 1000 || domains > 1) {
           title.textContent = 'Growth boundary';
           copy.textContent = 'The published Growth boundary is the closer fit for more than one domain or more than 1,000 monthly credits. Use the trial to test your real questions before paying.';
+          window.trackAffiliateEvent?.('affiliate_fit_calculator_complete', { ...resultParams, fit_boundary: 'growth' });
           return;
         }
         title.textContent = 'Starter boundary';
         copy.textContent = 'The published Starter boundary is the closest fit for one domain and up to 1,000 monthly credits. Treat it as a pilot and test known and unknown questions before committing.';
+        window.trackAffiliateEvent?.('affiliate_fit_calculator_complete', { ...resultParams, fit_boundary: 'starter' });
       });
     })();
   </script></body>

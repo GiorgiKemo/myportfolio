@@ -16,6 +16,15 @@
     document.head.appendChild(script);
   }
 
+  const trackEvent = (eventName, params = {}) => {
+    const detail = { event: eventName, ...params };
+    window.dataLayer.push(detail);
+    window.gtag('event', eventName, params);
+    window.dispatchEvent(new CustomEvent(eventName, { detail }));
+  };
+
+  window.trackAffiliateEvent = trackEvent;
+
   const trackAffiliateClick = (event) => {
     const link = event.target.closest('a[data-affiliate-program]');
     if (!link) return;
@@ -28,14 +37,12 @@
       link_text: link.textContent.trim(),
     };
 
-    window.dataLayer.push(detail);
-    window.gtag('event', 'affiliate_outbound_click', {
+    trackEvent('affiliate_outbound_click', {
       affiliate_program: detail.affiliate_program,
       affiliate_page: detail.affiliate_page,
       destination: detail.destination,
       link_text: detail.link_text,
     });
-    window.dispatchEvent(new CustomEvent('affiliate_outbound_click', { detail }));
   };
 
   document.addEventListener('click', trackAffiliateClick, { capture: true });
