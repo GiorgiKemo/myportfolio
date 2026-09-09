@@ -39,6 +39,9 @@ const Hero = () => {
               <Link to="contact" smooth={true} duration={800} offset={-70}>
                 <button className="btn btn-outline">Contact Me</button>
               </Link>
+              <a className="btn btn-outline" href="/affiliate/">
+                Explore Practical Guides
+              </a>
             </Motion.div>
 
             <Motion.div
