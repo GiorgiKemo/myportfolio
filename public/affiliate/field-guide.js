@@ -9,7 +9,12 @@
   };
   const rows = [...document.querySelectorAll('.guide-list li')];
   const buttons = [...bar.querySelectorAll('button[data-filter]')];
+  const countLabel = bar.querySelector('.guide-count');
+  const setCount = (count) => {
+    countLabel.textContent = count + (count === 1 ? ' guide' : ' guides');
+  };
   bar.hidden = false;
+  setCount(rows.length);
   buttons.forEach((button) => button.addEventListener('click', () => {
     const selected = button.dataset.filter;
     buttons.forEach((item) => item.setAttribute('aria-pressed', String(item === button)));
@@ -19,6 +24,6 @@
       row.hidden = selected !== 'all' && !groups[selected].includes(topic);
       if (!row.hidden) count += 1;
     });
-    bar.querySelector('.guide-count').textContent = count + (count === 1 ? ' guide' : ' guides');
+    setCount(count);
   }));
 })();

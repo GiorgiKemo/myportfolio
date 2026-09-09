@@ -25,6 +25,37 @@
 
   window.trackAffiliateEvent = trackEvent;
 
+  const getPageSlug = () => {
+    const path = window.location.pathname.replace(/\/$/, '');
+    if (!path || path === '/affiliate') return 'affiliate-hub';
+    return path.split('/').pop().replace(/\.html$/, '') || 'affiliate-page';
+  };
+
+  const initializeAffiliateMeasurement = () => {
+    const pageSlug = getPageSlug();
+    const links = [...document.querySelectorAll('a[data-affiliate-program]')];
+
+    links.forEach((link, index) => {
+      link.dataset.affiliatePlacement ||= `cta_${index + 1}`;
+      trackEvent('affiliate_cta_impression', {
+        affiliate_program: link.dataset.affiliateProgram,
+        affiliate_page: window.location.pathname,
+        affiliate_placement: link.dataset.affiliatePlacement,
+      });
+    });
+
+    trackEvent('guide_view', {
+      guide_slug: pageSlug,
+      page_type: pageSlug === 'affiliate-hub' ? 'hub' : 'guide',
+    });
+  };
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initializeAffiliateMeasurement, { once: true });
+  } else {
+    initializeAffiliateMeasurement();
+  }
+
   const trackAffiliateClick = (event) => {
     const link = event.target.closest('a[data-affiliate-program]');
     if (!link) return;
@@ -35,6 +66,7 @@
       affiliate_page: window.location.pathname,
       destination: link.href,
       link_text: link.textContent.trim(),
+      affiliate_placement: link.dataset.affiliatePlacement || 'cta_unknown',
     };
 
     trackEvent('affiliate_outbound_click', {
@@ -42,6 +74,7 @@
       affiliate_page: detail.affiliate_page,
       destination: detail.destination,
       link_text: detail.link_text,
+      affiliate_placement: detail.affiliate_placement,
     });
   };
 
