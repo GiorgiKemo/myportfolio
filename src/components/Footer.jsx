@@ -28,7 +28,7 @@ const Footer = () => {
 
         <div className="footer-bottom">
           <p>&copy; {currentYear} Giorgi. All Rights Reserved.</p>
-          <p><a href="/affiliate/">Learning resource guides</a></p>
+          <p><a href="/affiliate/?utm_source=portfolio&utm_medium=owned&utm_campaign=affiliate_hub" onClick={() => window.gtag?.('event', 'affiliate_hub_click', { placement: 'footer', destination: '/affiliate/' })}>Learning resource guides</a></p>
         </div>
       </div>
     </footer>

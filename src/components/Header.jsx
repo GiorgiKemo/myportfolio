@@ -39,7 +39,7 @@ const Header = () => {
     { id: 'about', text: 'About' },
     { id: 'skills', text: 'Skills' },
     { id: 'projects', text: 'Projects' },
-    { href: '/affiliate/', text: 'Resources', className: 'nav-resource' },
+    { href: '/affiliate/?utm_source=portfolio&utm_medium=owned&utm_campaign=affiliate_hub', text: 'Resources', className: 'nav-resource', placement: 'header' },
     { id: 'contact', text: 'Contact' },
   ];
 
@@ -94,7 +94,12 @@ const Header = () => {
                 transition={{ duration: 0.3, delay: 0.1 * (index + 1) }}
               >
                 {link.href ? (
-                  <a className={link.className} href={link.href} aria-label="Open practical resource guides">
+                  <a
+                    className={link.className}
+                    href={link.href}
+                    aria-label="Open practical resource guides"
+                    onClick={() => window.gtag?.('event', 'affiliate_hub_click', { placement: link.placement, destination: '/affiliate/' })}
+                  >
                     {link.text}
                   </a>
                 ) : link.id === 'home' ? (

@@ -39,7 +39,11 @@ const Hero = () => {
               <Link to="contact" smooth={true} duration={800} offset={-70}>
                 <button className="btn btn-outline">Contact Me</button>
               </Link>
-              <a className="btn btn-outline" href="/affiliate/">
+              <a
+                className="btn btn-outline"
+                href="/affiliate/?utm_source=portfolio&utm_medium=owned&utm_campaign=affiliate_hub"
+                onClick={() => window.gtag?.('event', 'affiliate_hub_click', { placement: 'hero', destination: '/affiliate/' })}
+              >
                 Explore Practical Guides
               </a>
             </Motion.div>
