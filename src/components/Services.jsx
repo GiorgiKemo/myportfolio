@@ -80,7 +80,12 @@ const Services = () => {
                 duration={600}
                 offset={-70}
                 className="service-cta"
-                onClick={() => trackOfferClick(offer.name)}
+                onClick={() => {
+                  trackOfferClick(offer.name);
+                  window.dispatchEvent(new CustomEvent('portfolio:select-service', {
+                    detail: { offer: offer.name },
+                  }));
+                }}
               >
                 Discuss this offer <FaArrowRight aria-hidden="true" />
               </Link>

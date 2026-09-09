@@ -40,6 +40,22 @@ const Contact = () => {
     }
   }, []);
 
+  useEffect(() => {
+    const handleServiceSelection = (event) => {
+      const offer = event.detail?.offer;
+      if (!offer) return;
+
+      setFormData((previous) => ({
+        ...previous,
+        subject: `Inquiry: ${offer}`,
+        message: `I'm interested in the ${offer}. Please let me know the next steps.`,
+      }));
+    };
+
+    window.addEventListener('portfolio:select-service', handleServiceSelection);
+    return () => window.removeEventListener('portfolio:select-service', handleServiceSelection);
+  }, []);
+
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData(prevState => ({
