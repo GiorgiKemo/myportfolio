@@ -115,9 +115,21 @@ main {
 }
 
 .menu-icon {
+  align-items: center;
+  background: transparent;
+  border: 0;
+  color: inherit;
   display: none;
   font-size: 1.5rem;
   cursor: pointer;
+  justify-content: center;
+  padding: 8px;
+}
+
+.menu-icon:focus-visible {
+  border-radius: 8px;
+  outline: 3px solid var(--primary-color);
+  outline-offset: 3px;
 }
 
 /* Hero section */

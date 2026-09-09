@@ -68,11 +68,19 @@ const Header = () => {
             </button>
           </Motion.div>
 
-          <div className="menu-icon" onClick={toggleMenu}>
+          <button
+            type="button"
+            className="menu-icon"
+            aria-label={isOpen ? 'Close navigation menu' : 'Open navigation menu'}
+            aria-controls="primary-navigation"
+            aria-expanded={isOpen}
+            onClick={toggleMenu}
+          >
             {isOpen ? <FaTimes /> : <FaBars />}
-          </div>
+          </button>
 
           <Motion.ul 
+            id="primary-navigation"
             className={`nav-links ${isOpen ? 'active' : ''}`}
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
