@@ -564,6 +564,127 @@ main {
   color: var(--muted-text);
 }
 
+/* Productized service offers */
+.services {
+  background: linear-gradient(135deg, var(--surface-alt) 0%, var(--background-color) 100%);
+}
+
+.services-heading {
+  align-items: end;
+  display: flex;
+  gap: 48px;
+  justify-content: space-between;
+  margin-bottom: 50px;
+}
+
+.services-kicker {
+  color: var(--primary-color);
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.15em;
+  margin-bottom: 12px;
+  text-transform: uppercase;
+}
+
+.services-title {
+  margin-bottom: 0;
+  text-align: left;
+}
+
+.services-intro {
+  color: var(--muted-text);
+  max-width: 360px;
+}
+
+.services-grid {
+  display: grid;
+  gap: 24px;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.service-card {
+  background: var(--surface-color);
+  border: 1px solid var(--border-color);
+  border-top: 5px solid var(--service-accent);
+  border-radius: 16px;
+  box-shadow: var(--box-shadow);
+  display: flex;
+  flex-direction: column;
+  min-height: 390px;
+  padding: 28px;
+}
+
+.service-card-teal { --service-accent: #159a8c; }
+.service-card-blue { --service-accent: var(--primary-color); }
+.service-card-purple { --service-accent: #6e40c9; }
+
+.service-card-top {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 24px;
+}
+
+.service-index {
+  color: var(--service-accent);
+  font-size: 0.76rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+}
+
+.service-price {
+  color: var(--secondary-color);
+  font-size: 1.1rem;
+  font-weight: 800;
+}
+
+.service-card h3 {
+  color: var(--secondary-color);
+  font-size: 1.45rem;
+  margin-bottom: 14px;
+}
+
+.service-card > p {
+  color: var(--muted-text);
+  line-height: 1.65;
+  margin-bottom: 22px;
+}
+
+.service-card ul {
+  display: grid;
+  gap: 11px;
+  list-style: none;
+  margin: 0 0 26px;
+  padding: 0;
+}
+
+.service-card li {
+  align-items: center;
+  color: var(--text-color);
+  display: flex;
+  font-size: 0.9rem;
+  gap: 9px;
+}
+
+.service-card li svg {
+  color: var(--service-accent);
+  flex-shrink: 0;
+  font-size: 0.72rem;
+}
+
+.service-cta {
+  align-items: center;
+  color: var(--service-accent);
+  display: inline-flex;
+  font-weight: 800;
+  gap: 9px;
+  margin-top: auto;
+}
+
+.service-cta:hover {
+  color: var(--secondary-color);
+}
+
 /* Contact section */
 .contact-container {
   display: grid;
@@ -858,6 +979,16 @@ button:disabled {
   }
 
   .contact-container {
+    grid-template-columns: 1fr;
+  }
+
+  .services-heading {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 18px;
+  }
+
+  .services-grid {
     grid-template-columns: 1fr;
   }
 
