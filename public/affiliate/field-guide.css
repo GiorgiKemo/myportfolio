@@ -43,6 +43,11 @@ h1 em{color:#e77b5e;font-style:italic}
 .quiet-link{font-size:12px;font-weight:700;color:var(--ink-soft)}
 .quiet-link span{display:inline-block;margin-left:10px;transition:transform .18s}
 .quiet-link:hover span{transform:translateX(4px)}
+.hero-partner-link{color:var(--paper-bright);font-size:12px;font-weight:700;text-decoration:underline;text-underline-offset:5px}
+.hero-partner-link:hover{color:var(--sand)}
+.hero-partner-link span{display:inline-block;margin-left:9px;transition:transform .18s}
+.hero-partner-link:hover span{transform:translate(3px,-3px)}
+.hero-disclosure{color:#a8c0b7;font-size:9px;letter-spacing:.2px}
 .hero-proof{display:flex;gap:28px;margin-top:52px;padding-top:20px;border-top:1px solid #3d5a5d;max-width:560px}
 .hero-proof div{display:flex;flex-direction:column;gap:3px;min-width:95px}
 .hero-proof strong{font:27px/1 var(--serif);color:var(--paper-bright)}
