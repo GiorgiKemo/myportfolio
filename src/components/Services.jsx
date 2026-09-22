@@ -9,6 +9,7 @@ const serviceOffers = [
     description: 'A focused review of one public page or funnel so the highest-friction fixes are easy to act on.',
     deliverables: ['Annotated findings', 'Prioritized fix list', 'Clear next-step recommendation'],
     accent: 'teal',
+    scopeHref: '/offers/conversion-snapshot.html',
   },
   {
     name: 'Conversion Page Sprint',
@@ -89,6 +90,11 @@ const Services = () => {
               >
                 Discuss this offer <FaArrowRight aria-hidden="true" />
               </Link>
+              {offer.scopeHref && (
+                <a className="service-scope-link" href={offer.scopeHref}>
+                  View the scope before you enquire
+                </a>
+              )}
             </Motion.article>
           ))}
         </div>
