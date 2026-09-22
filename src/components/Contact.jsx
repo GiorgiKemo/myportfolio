@@ -249,6 +249,9 @@ const Contact = () => {
               <button type="submit" className="btn" disabled={isSubmitting}>
                 {isSubmitting ? 'Sending...' : 'Send Message'}
               </button>
+              <p className="contact-direct-link">
+                Prefer email? <a href="mailto:contact@giorgi.codes?subject=Project%20inquiry">Write to contact@giorgi.codes</a>
+              </p>
             </form>
           </Motion.div>
         </div>

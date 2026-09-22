@@ -757,6 +757,17 @@ textarea {
   border: 1px solid #e74c3c;
 }
 
+.contact-direct-link {
+  margin: 16px 0 0;
+  color: var(--muted-text);
+  font-size: 0.95rem;
+}
+
+.contact-direct-link a {
+  color: var(--secondary-color);
+  font-weight: 600;
+}
+
 button:disabled {
   opacity: 0.7;
   cursor: not-allowed;
