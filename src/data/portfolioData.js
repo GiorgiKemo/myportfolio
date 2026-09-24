@@ -207,6 +207,19 @@ export const projects = [
     visibility: 'public',
   },
   {
+    id: 23,
+    slug: 'life-idea',
+    title: 'Life Idea',
+    description:
+      'Scroll-driven illustrated story tracing one life through its final chapter, then revealing a funeral and memorial-accessories storefront concept. The clearly labeled contact form is a demo and does not send messages.',
+    tags: ['React', 'JavaScript', 'Vite', 'CSS'],
+    githubLink: 'https://github.com/GiorgiKemo/life-idea',
+    liveLink: 'https://life-idea.vercel.app',
+    previewImage: '/project-previews/life-idea.png',
+    complexityScore: 62,
+    visibility: 'public',
+  },
+  {
     id: 20,
     slug: 'finance-flow',
     title: 'FinanceFlow Dashboard',

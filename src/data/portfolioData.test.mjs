@@ -47,6 +47,7 @@ describe('portfolio project hierarchy', () => {
       'finance-flow',
       'mcp-seo-audit',
       'calmfuel-funnel-prototype',
+      'life-idea',
     ].forEach((slug) => assert.ok(slugs.has(slug), `${slug} is missing`));
   });
 
