@@ -37,6 +37,16 @@ describe('portfolio project hierarchy', () => {
       'mlc-crm',
       'avital-chicago',
       'cornerstone-roofing-co',
+      'aixess-broker-mvp',
+      'ai-agent-arena',
+      'loop-meeting-room-booking',
+      'georgian-painters',
+      'maiseli-winery',
+      'soft-spot-studio',
+      'ilgcs-astro-rebuild',
+      'finance-flow',
+      'mcp-seo-audit',
+      'calmfuel-funnel-prototype',
     ].forEach((slug) => assert.ok(slugs.has(slug), `${slug} is missing`));
   });
 
@@ -52,7 +62,8 @@ describe('portfolio project hierarchy', () => {
 
     assert.equal(projects.some((project) => project.slug === 'aixco-gateway'), false);
     assert.equal(projects.some((project) => project.slug === 'load-hawk-dev'), false);
-    assert.equal(projects.some((project) => project.slug === 'ilgcs-astro-rebuild'), false);
+    assert.equal(projects.some((project) => project.slug === 'monad-leaderboard'), false);
+    assert.equal(projects.some((project) => project.slug === 'chatbot-demo'), false);
   });
 
   it('keeps private GitHub repos off public portfolio links', () => {

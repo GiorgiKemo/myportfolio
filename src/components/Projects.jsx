@@ -20,6 +20,7 @@ const Projects = () => {
         <div className="projects-grid">
           {projects.map((project, index) => {
             const entryDelay = Math.min(index * 0.1, 0.3);
+            const liveLinkLabel = project.liveLinkLabel ?? 'Live Site';
 
             return (
               <Motion.div
@@ -43,7 +44,7 @@ const Projects = () => {
                   target="_blank"
                   rel="noopener noreferrer"
                   className="project-preview"
-                  aria-label={`Open ${project.title} live site`}
+                  aria-label={`Open ${project.title} project link`}
                 >
                   <img
                     src={project.previewImage}
@@ -98,7 +99,7 @@ const Projects = () => {
                         rel="noopener noreferrer"
                         className="project-link"
                       >
-                        <FaExternalLinkAlt /> Live Site
+                        <FaExternalLinkAlt /> {liveLinkLabel}
                       </a>
                     )}
                   </div>
