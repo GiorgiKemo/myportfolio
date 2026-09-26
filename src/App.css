@@ -450,11 +450,111 @@ main {
   background-color: var(--surface-alt);
 }
 
+.agency-feature {
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+  align-items: center;
+  gap: clamp(30px, 4vw, 60px);
+  margin-top: 54px;
+  padding: clamp(30px, 4vw, 54px);
+  background: #111d32;
+  color: #f6f5f1;
+  border-radius: 20px;
+  box-shadow: 0 20px 48px rgba(17, 29, 50, 0.2);
+  overflow: hidden;
+}
+
+.agency-feature-kicker {
+  color: #b9c8ff;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.agency-feature-copy h3 {
+  margin: 20px 0;
+  font-size: clamp(2.7rem, 4.4vw, 4.4rem);
+  letter-spacing: -0.065em;
+  line-height: 1.02;
+}
+
+.agency-feature-copy h3 span {
+  color: #7fa0ff;
+}
+
+.agency-feature-copy > p:not(.agency-feature-kicker) {
+  max-width: 460px;
+  color: #d8dfed;
+  line-height: 1.65;
+}
+
+.agency-feature-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 22px;
+  margin-top: 30px;
+  padding: 13px 19px;
+  background: #2456f5;
+  border-radius: 9999px;
+  color: #fff;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.agency-feature-link:hover,
+.agency-feature-link:focus-visible {
+  background: #426fff;
+  color: #fff;
+}
+
+.agency-feature-preview {
+  display: block;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 12px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25);
+  transition: transform 0.2s ease;
+}
+
+.agency-feature-preview:hover,
+.agency-feature-preview:focus-visible {
+  transform: translateY(-4px);
+}
+
+.agency-feature-preview img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
 .projects-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   gap: 30px;
   margin-top: 50px;
+}
+
+@media (max-width: 768px) {
+  .agency-feature {
+    grid-template-columns: 1fr;
+    gap: 30px;
+    padding: 30px 24px;
+  }
+
+  .agency-feature-copy h3 {
+    font-size: clamp(2.7rem, 10vw, 3.8rem);
+  }
+
+  .projects-grid {
+    margin-top: 34px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .agency-feature-preview {
+    transition: none;
+  }
 }
 
 .project-card {
