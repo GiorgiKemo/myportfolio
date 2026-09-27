@@ -56,6 +56,10 @@ describe('portfolio project hierarchy', () => {
       assert.ok(project.liveLink, `${project.slug} is missing a live link`);
       assert.ok(project.previewImage, `${project.slug} is missing a preview image`);
       assert.ok(
+        project.previewImageDimensions?.width > 0 && project.previewImageDimensions?.height > 0,
+        `${project.slug} is missing preview image dimensions`,
+      );
+      assert.ok(
         existsSync(join(projectRoot, 'public', project.previewImage)),
         `${project.slug} preview image does not exist`,
       );

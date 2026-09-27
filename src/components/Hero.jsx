@@ -1,5 +1,4 @@
-import { motion as Motion } from 'framer-motion';
-import { Link } from 'react-scroll';
+import { m as Motion } from 'framer-motion';
 import { FaArrowDown, FaDatabase, FaRobot, FaRocket } from 'react-icons/fa';
 import { FiCode, FiCpu, FiLayers } from 'react-icons/fi';
 
@@ -10,8 +9,8 @@ const Hero = () => {
         <div className="hero-layout">
           <div className="hero-content">
             <Motion.h1
-              initial={{ opacity: 0, y: -50 }}
-              animate={{ opacity: 1, y: 0 }}
+              initial={{ y: -50 }}
+              animate={{ y: 0 }}
               transition={{ duration: 0.8 }}
               className="hero-title"
             >
@@ -33,12 +32,8 @@ const Hero = () => {
               transition={{ duration: 0.5, delay: 0.4 }}
               className="hero-buttons"
             >
-              <Link to="projects" smooth={true} duration={800} offset={-70}>
-                <button className="btn">View My Work</button>
-              </Link>
-              <Link to="contact" smooth={true} duration={800} offset={-70}>
-                <button className="btn btn-outline">Contact Me</button>
-              </Link>
+              <a href="#projects" className="btn">View My Work</a>
+              <a href="#contact" className="btn btn-outline">Contact Me</a>
               <a
                 className="btn btn-outline"
                 href="/affiliate/?utm_source=portfolio&utm_medium=owned&utm_campaign=affiliate_hub"
@@ -53,11 +48,12 @@ const Hero = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.55 }}
               className="hero-highlights"
+              role="group"
               aria-label="Specialties"
             >
-              <span><FiCode /> Web Apps</span>
-              <span><FaRobot /> AI Tools</span>
-              <span><FaDatabase /> Supabase</span>
+              <span><FiCode aria-hidden="true" /> Web Apps</span>
+              <span><FaRobot aria-hidden="true" /> AI Tools</span>
+              <span><FaDatabase aria-hidden="true" /> Supabase</span>
             </Motion.div>
           </div>
 
@@ -102,9 +98,9 @@ const Hero = () => {
           transition={{ duration: 0.5, delay: 0.8 }}
           className="scroll-down"
         >
-          <Link to="about" smooth={true} duration={800} offset={-70}>
-            <FaArrowDown />
-          </Link>
+          <a href="#about" aria-label="Scroll to About section">
+            <FaArrowDown aria-hidden="true" />
+          </a>
         </Motion.div>
       </div>
     </section>

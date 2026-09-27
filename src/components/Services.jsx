@@ -1,5 +1,4 @@
-import { motion as Motion } from 'framer-motion';
-import { Link } from 'react-scroll';
+import { m as Motion } from 'framer-motion';
 import { FaArrowRight, FaCheck } from 'react-icons/fa';
 
 const serviceOffers = [
@@ -75,11 +74,8 @@ const Services = () => {
                   <li key={item}><FaCheck aria-hidden="true" />{item}</li>
                 ))}
               </ul>
-              <Link
-                to="contact"
-                smooth={true}
-                duration={600}
-                offset={-70}
+              <a
+                href="#contact"
                 className="service-cta"
                 onClick={() => {
                   trackOfferClick(offer.name);
@@ -89,7 +85,7 @@ const Services = () => {
                 }}
               >
                 Discuss this offer <FaArrowRight aria-hidden="true" />
-              </Link>
+              </a>
               {offer.scopeHref && (
                 <a className="service-scope-link" href={offer.scopeHref}>
                   View the scope before you enquire

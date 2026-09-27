@@ -1,7 +1,6 @@
 import { useState, useRef, useEffect } from 'react';
-import { motion as Motion } from 'framer-motion';
+import { m as Motion } from 'framer-motion';
 import { FaEnvelope, FaPhone, FaMapMarkerAlt, FaWhatsapp, FaTelegramPlane } from 'react-icons/fa';
-import emailjs from '@emailjs/browser';
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -12,33 +11,7 @@ const Contact = () => {
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState(null);
-  const [emailjsReady, setEmailjsReady] = useState(false);
   const form = useRef();
-
-  // Initialize EmailJS when component mounts
-  useEffect(() => {
-    // Try to get from environment variables first
-    let publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
-
-    // If not available in environment, use hardcoded fallback for GitHub Pages
-    // Note: This is not ideal for security, but ensures functionality on GitHub Pages
-    if (!publicKey) {
-      console.warn('EmailJS public key not found in environment variables, using fallback');
-      publicKey = '02CPxeXz4EuwYVpqv'; // Your public key
-    }
-
-    if (publicKey) {
-      try {
-        emailjs.init(publicKey);
-        setEmailjsReady(true);
-        console.log('EmailJS initialized successfully with key:', publicKey.substring(0, 4) + '...');
-      } catch (error) {
-        console.error('Failed to initialize EmailJS:', error);
-      }
-    } else {
-      console.error('EmailJS public key is missing');
-    }
-  }, []);
 
   useEffect(() => {
     const handleServiceSelection = (event) => {
@@ -64,67 +37,53 @@ const Contact = () => {
     }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     setIsSubmitting(true);
     setSubmitStatus(null);
 
-    if (!emailjsReady) {
-      console.error('EmailJS is not initialized');
-      setSubmitStatus({ success: false, message: 'Email service is not available. Please try again later.' });
-      setIsSubmitting(false);
-      return;
-    }
+    try {
+      let publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
+      let serviceId = import.meta.env.VITE_EMAILJS_SERVICE_ID;
+      let templateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
 
-    // Using environment variables for EmailJS credentials
-    let serviceId = import.meta.env.VITE_EMAILJS_SERVICE_ID;
-    let templateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
+      if (!publicKey) {
+        console.warn('EmailJS public key not found in environment variables, using fallback');
+        publicKey = '02CPxeXz4EuwYVpqv'; // Your public key
+      }
 
-    // If not available in environment, use hardcoded fallback for GitHub Pages
-    if (!serviceId) {
-      console.warn('EmailJS service ID not found in environment variables, using fallback');
-      serviceId = 'service_4nfbd67'; // Your service ID
-    }
+      if (!serviceId) {
+        console.warn('EmailJS service ID not found in environment variables, using fallback');
+        serviceId = 'service_4nfbd67'; // Your service ID
+      }
 
-    if (!templateId) {
-      console.warn('EmailJS template ID not found in environment variables, using fallback');
-      templateId = 'template_p099j7y'; // Your template ID
-    }
+      if (!templateId) {
+        console.warn('EmailJS template ID not found in environment variables, using fallback');
+        templateId = 'template_p099j7y'; // Your template ID
+      }
 
-    if (!serviceId || !templateId) {
-      console.error('EmailJS service ID or template ID is missing');
-      setSubmitStatus({ success: false, message: 'Email service configuration error. Please try again later.' });
-      setIsSubmitting(false);
-      return;
-    }
+      if (!publicKey || !serviceId || !templateId) {
+        setSubmitStatus({ success: false, message: 'Email service configuration error. Please try again later.' });
+        return;
+      }
 
-    // Prepare template parameters
-    const templateParams = {
-      name: formData.name,
-      email: formData.email,
-      subject: formData.subject,
-      message: formData.message
-    };
-
-    // Use send method instead of sendForm for more control
-    emailjs.send(serviceId, templateId, templateParams)
-      .then((result) => {
-        console.log('Email sent successfully:', result.text);
-        setSubmitStatus({ success: true, message: 'Thank you for your message! I will get back to you soon.' });
-        setFormData({
-          name: '',
-          email: '',
-          subject: '',
-          message: ''
-        });
-      })
-      .catch((error) => {
-        console.error('Failed to send email:', error);
-        setSubmitStatus({ success: false, message: 'Failed to send message. Please try again later.' });
-      })
-      .finally(() => {
-        setIsSubmitting(false);
+      const { default: emailjs } = await import('@emailjs/browser');
+      emailjs.init(publicKey);
+      await emailjs.send(serviceId, templateId, {
+        name: formData.name,
+        email: formData.email,
+        subject: formData.subject,
+        message: formData.message,
       });
+
+      setSubmitStatus({ success: true, message: 'Thank you for your message! I will get back to you soon.' });
+      setFormData({ name: '', email: '', subject: '', message: '' });
+    } catch (error) {
+      console.error('Failed to send email:', error);
+      setSubmitStatus({ success: false, message: 'Failed to send message. Please try again later.' });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -149,7 +108,7 @@ const Contact = () => {
             transition={{ duration: 0.5, delay: 0.2 }}
           >
             <div className="contact-item">
-              <FaEnvelope className="contact-icon" />
+              <FaEnvelope className="contact-icon" aria-hidden="true" />
               <div>
                 <h3>Email</h3>
                 <p><a href="mailto:contact@giorgi.codes">contact@giorgi.codes</a></p>
@@ -157,7 +116,7 @@ const Contact = () => {
             </div>
 
             <div className="contact-item">
-              <FaPhone className="contact-icon" />
+              <FaPhone className="contact-icon" aria-hidden="true" />
               <div>
                 <h3>Phone</h3>
                 <p>+995 596 33 33 16</p>
@@ -165,7 +124,7 @@ const Contact = () => {
             </div>
 
             <div className="contact-item">
-              <FaWhatsapp className="contact-icon" />
+              <FaWhatsapp className="contact-icon" aria-hidden="true" />
               <div>
                 <h3>WhatsApp</h3>
                 <p><a href="https://wa.me/995596333316" target="_blank" rel="noopener noreferrer">+995 596 33 33 16</a></p>
@@ -173,7 +132,7 @@ const Contact = () => {
             </div>
 
             <div className="contact-item">
-              <FaTelegramPlane className="contact-icon" />
+              <FaTelegramPlane className="contact-icon" aria-hidden="true" />
               <div>
                 <h3>Telegram</h3>
                 <p><a href="https://t.me/GiorgiKemo" target="_blank" rel="noopener noreferrer">@GiorgiKemo</a></p>
@@ -181,7 +140,7 @@ const Contact = () => {
             </div>
 
             <div className="contact-item">
-              <FaMapMarkerAlt className="contact-icon" />
+              <FaMapMarkerAlt className="contact-icon" aria-hidden="true" />
               <div>
                 <h3>Location</h3>
                 <p>Tbilisi, Georgia</p>

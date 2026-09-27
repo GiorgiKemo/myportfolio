@@ -1,4 +1,4 @@
-import { motion as Motion } from 'framer-motion';
+import { m as Motion } from 'framer-motion';
 import { FaExternalLinkAlt, FaGithub, FaLock } from 'react-icons/fa';
 import { projects } from '../data/portfolioData';
 import { resolveProjectTagColor, resolveProjectTagIcon } from '../data/techIcons';
@@ -69,6 +69,8 @@ const Projects = () => {
                   <img
                     src={project.previewImage}
                     alt={`${project.title} landing page preview`}
+                    width={project.previewImageDimensions.width}
+                    height={project.previewImageDimensions.height}
                     loading="lazy"
                   />
                 </a>
@@ -87,6 +89,7 @@ const Projects = () => {
                           key={tag}
                           className="project-tag"
                           title={tag}
+                          role="img"
                           aria-label={tag}
                           style={{ color: tagColor }}
                         >
@@ -104,11 +107,11 @@ const Projects = () => {
                         rel="noopener noreferrer"
                         className="project-link"
                       >
-                        <FaGithub /> GitHub
+                        <FaGithub aria-hidden="true" /> GitHub
                       </a>
                     ) : (
                       <span className="project-link project-link-muted">
-                        <FaLock /> Private code
+                        <FaLock aria-hidden="true" /> Private code
                       </span>
                     )}
 
@@ -119,7 +122,7 @@ const Projects = () => {
                         rel="noopener noreferrer"
                         className="project-link"
                       >
-                        <FaExternalLinkAlt /> {liveLinkLabel}
+                        <FaExternalLinkAlt aria-hidden="true" /> {liveLinkLabel}
                       </a>
                     )}
                   </div>

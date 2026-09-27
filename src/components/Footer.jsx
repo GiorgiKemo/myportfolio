@@ -14,14 +14,14 @@ const Footer = () => {
           </div>
 
           <div className="footer-social">
-            <a href="https://github.com/GiorgiKemo" target="_blank" rel="noopener noreferrer">
-              <FaGithub />
+            <a href="https://github.com/GiorgiKemo" target="_blank" rel="noopener noreferrer" aria-label="GitHub profile">
+              <FaGithub aria-hidden="true" />
             </a>
-            <a href="https://www.linkedin.com/in/giorgi-kemoklidze-53383b263/" target="_blank" rel="noopener noreferrer">
-              <FaLinkedin />
+            <a href="https://www.linkedin.com/in/giorgi-kemoklidze-53383b263/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn profile">
+              <FaLinkedin aria-hidden="true" />
             </a>
-            <a href="https://x.com/GiorgiKem" target="_blank" rel="noopener noreferrer">
-              <FaXTwitter />
+            <a href="https://x.com/GiorgiKem" target="_blank" rel="noopener noreferrer" aria-label="X profile">
+              <FaXTwitter aria-hidden="true" />
             </a>
           </div>
         </div>

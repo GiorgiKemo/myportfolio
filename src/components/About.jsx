@@ -1,10 +1,10 @@
-import { motion as Motion } from 'framer-motion';
+import { m as Motion } from 'framer-motion';
 
 const About = () => {
   return (
     <section id="about" className="about">
       <div className="container">
-        <Motion.h2 
+        <Motion.h2
           className="section-title"
           initial={{ opacity: 0, y: -20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -15,7 +15,7 @@ const About = () => {
         </Motion.h2>
         
         <div className="about-content">
-          <Motion.div 
+          <Motion.div
             className="about-text"
             initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}

@@ -715,7 +715,7 @@ main {
   padding: 28px;
 }
 
-.service-card-teal { --service-accent: #159a8c; }
+.service-card-teal { --service-accent: #0f766e; }
 .service-card-blue { --service-accent: var(--primary-color); }
 .service-card-purple { --service-accent: #6e40c9; }
 
@@ -848,13 +848,13 @@ textarea {
 
 .submit-message.success {
   background-color: rgba(46, 204, 113, 0.2);
-  color: #27ae60;
+  color: #166534;
   border: 1px solid #27ae60;
 }
 
 .submit-message.error {
   background-color: rgba(231, 76, 60, 0.2);
-  color: #e74c3c;
+  color: #b91c1c;
   border: 1px solid #e74c3c;
 }
 
@@ -914,7 +914,7 @@ button:disabled {
 }
 
 .footer-social a:hover {
-  color: var(--accent-color);
+  color: #9dccff;
   transform: translateY(-3px);
 }
 

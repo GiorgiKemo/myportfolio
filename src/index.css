@@ -2,7 +2,7 @@
 :root {
   --primary-color: #176bc0;
   --secondary-color: #104080;
-  --accent-color: #2080d0;
+  --accent-color: #155ea8;
   --text-color: #1d3555;
   --muted-text: #4f6685;
   --light-text: #edf4ff;
@@ -60,6 +60,10 @@ img {
 
 section {
   padding: var(--section-padding);
+}
+
+section[id] {
+  scroll-margin-top: 70px;
 }
 
 .section-title {

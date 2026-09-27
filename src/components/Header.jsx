@@ -1,7 +1,6 @@
 import { useState, useEffect } from 'react';
-import { Link, animateScroll as scroll } from 'react-scroll';
 import { FaBars, FaTimes } from 'react-icons/fa';
-import { motion as Motion } from 'framer-motion';
+import { m as Motion } from 'framer-motion';
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -13,10 +12,7 @@ const Header = () => {
 
   const scrollToTop = () => {
     setIsOpen(false);
-    scroll.scrollToTop({
-      duration: 500,
-      smooth: true,
-    });
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
   useEffect(() => {
@@ -47,7 +43,7 @@ const Header = () => {
     <header className={`header ${scrolled ? 'scrolled' : ''}`}>
       <div className="container">
         <nav className="navbar">
-          <Motion.div 
+          <Motion.div
             className="logo"
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -62,6 +58,8 @@ const Header = () => {
               <img
                 src="/logo-gk.png"
                 alt="Giorgi logo"
+                width="128"
+                height="128"
                 className="logo-image"
                 draggable="false"
               />
@@ -76,10 +74,10 @@ const Header = () => {
             aria-expanded={isOpen}
             onClick={toggleMenu}
           >
-            {isOpen ? <FaTimes /> : <FaBars />}
+            {isOpen ? <FaTimes aria-hidden="true" /> : <FaBars aria-hidden="true" />}
           </button>
 
-          <Motion.ul 
+          <Motion.ul
             id="primary-navigation"
             className={`nav-links ${isOpen ? 'active' : ''}`}
             initial={{ opacity: 0, y: -20 }}
@@ -87,7 +85,7 @@ const Header = () => {
             transition={{ duration: 0.5, delay: 0.2 }}
           >
             {navLinks.map((link, index) => (
-              <Motion.li 
+              <Motion.li
                 key={link.id ?? link.href}
                 initial={{ opacity: 0, y: -20 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -107,15 +105,9 @@ const Header = () => {
                     {link.text}
                   </button>
                 ) : (
-                  <Link
-                    to={link.id}
-                    smooth={true}
-                    duration={500}
-                    offset={-70}
-                    onClick={() => setIsOpen(false)}
-                  >
+                  <a href={`#${link.id}`} onClick={() => setIsOpen(false)}>
                     {link.text}
-                  </Link>
+                  </a>
                 )}
               </Motion.li>
             ))}

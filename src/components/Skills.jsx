@@ -1,4 +1,4 @@
-import { motion as Motion } from 'framer-motion';
+import { m as Motion } from 'framer-motion';
 import { skills } from '../data/portfolioData';
 import { techIcons } from '../data/techIcons';
 
@@ -50,7 +50,7 @@ const Skills = () => {
                 style={{ willChange: 'transform' }}
               >
                 <div className="skill-icon" style={{ color: skill.color }}>
-                  <SkillIcon />
+                  <SkillIcon aria-hidden="true" />
                 </div>
                 <h3>{skill.name}</h3>
               </Motion.div>
