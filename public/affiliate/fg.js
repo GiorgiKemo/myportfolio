@@ -98,7 +98,7 @@
       back.hidden = true;
       restart.hidden = false;
       window.trackAffiliateEvent?.('tool_finder_result', { result: hit.dataset.result });
-      hit.querySelector('h4')?.focus();
+      hit.querySelector('h4')?.focus({ preventScroll: true });
     };
     quiz.addEventListener('click', (e) => {
       const opt = e.target.closest('.opt');
@@ -135,9 +135,89 @@
 
   // Mobile sticky CTA appears after the hero
   const sticky = document.querySelector('.sticky-cta');
-  const hero = document.querySelector('.g-hero');
+  const hero = document.querySelector('.ghero, .hero');
   if (sticky && hero && 'IntersectionObserver' in window) {
     new IntersectionObserver(([e]) => sticky.classList.toggle('show', !e.isIntersecting)).observe(hero);
+  }
+
+
+  // Header: transparent over the hero, solid once scrolled
+  const top = document.querySelector('.top');
+  const bar = document.querySelector('.progress span');
+  const onScroll = () => {
+    top?.classList.toggle('solid', window.scrollY > 40);
+    if (bar) {
+      const h = document.documentElement.scrollHeight - innerHeight;
+      bar.style.width = `${h > 0 ? Math.min(100, (scrollY / h) * 100) : 0}%`;
+    }
+  };
+  addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
+
+  // Table of contents from the article's section headings
+  const sheet = document.querySelector('.sheet');
+  const toc = document.querySelector('.toc ol');
+  const strip = document.querySelector('.m-strip');
+  if (sheet && (toc || strip)) {
+    let heads = [...sheet.querySelectorAll('h2')].filter((h) => !h.closest('.check, .item, .step, .verdict, .form-card, .result-card, .details, .cta, .more'));
+    // Pure checklists have no section headings: list the checklist items instead
+    if (heads.length < 2) {
+      heads = [...heads, ...sheet.querySelectorAll('.check > h2, .check > h3, .item > h2, .item > h3, .step > h2, .step > h3')]
+        .sort((x, y) => (x.compareDocumentPosition(y) & Node.DOCUMENT_POSITION_FOLLOWING ? -1 : 1));
+    }
+    const slug = (t) => t.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '').slice(0, 60);
+    heads.forEach((h, i) => { if (!h.id) h.id = slug(h.textContent) || `section-${i + 1}`; });
+    heads.forEach((h) => {
+      const label = h.textContent.replace(/\s+/g, ' ').trim();
+      if (toc) { const li = document.createElement('li'); const a = document.createElement('a'); a.href = `#${h.id}`; a.textContent = label; li.append(a); toc.append(li); }
+      if (strip) { const a = document.createElement('a'); a.href = `#${h.id}`; a.textContent = label; strip.append(a); }
+    });
+    if (!heads.length) { toc?.closest('.side-card')?.remove(); strip?.remove(); }
+    if (toc && heads.length && 'IntersectionObserver' in window) {
+      const links = [...toc.querySelectorAll('a')];
+      const spy = new IntersectionObserver((entries) => entries.forEach((e) => {
+        if (!e.isIntersecting) return;
+        links.forEach((l) => l.classList.toggle('on', l.getAttribute('href') === `#${e.target.id}`));
+      }), { rootMargin: '-20% 0px -70% 0px' });
+      heads.forEach((h) => spy.observe(h));
+    }
+  }
+
+  // Checklist items can be ticked off; progress stays in this browser only
+  const items = sheet ? [...sheet.querySelectorAll('.check, .item, .step')].filter((el) => !el.closest('ol.steps')) : [];
+  const ring = document.querySelector('.ring');
+  const meterText = document.querySelector('.meter-text');
+  if (items.length) {
+    const key = `fg-done:${location.pathname}`;
+    let done = [];
+    try { done = JSON.parse(localStorage.getItem(key) || '[]'); } catch { done = []; }
+    const paint = () => {
+      const n = items.filter((el) => el.classList.contains('is-done')).length;
+      const pct = Math.round((n / items.length) * 100);
+      if (ring) { ring.style.setProperty('--p', pct); ring.querySelector('b').textContent = `${pct}%`; }
+      if (meterText) meterText.textContent = `${n} of ${items.length} checked`;
+    };
+    items.forEach((el, i) => {
+      const b = document.createElement('button');
+      b.type = 'button';
+      b.className = 'tick';
+      b.textContent = '✓';
+      const label = (el.querySelector('h2, h3')?.textContent || `item ${i + 1}`).trim();
+      b.setAttribute('aria-label', `Mark "${label}" as done`);
+      if (done.includes(i)) el.classList.add('is-done');
+      b.setAttribute('aria-pressed', String(el.classList.contains('is-done')));
+      b.addEventListener('click', () => {
+        el.classList.toggle('is-done');
+        b.setAttribute('aria-pressed', String(el.classList.contains('is-done')));
+        const now = items.map((x, k) => (x.classList.contains('is-done') ? k : -1)).filter((k) => k >= 0);
+        try { localStorage.setItem(key, JSON.stringify(now)); } catch { /* storage unavailable */ }
+        paint();
+      });
+      el.append(b);
+    });
+    paint();
+  } else {
+    document.querySelector('.meter')?.closest('.side-card')?.remove();
   }
 
   // Small helper for calculators

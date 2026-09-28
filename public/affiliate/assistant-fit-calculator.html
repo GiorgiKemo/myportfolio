@@ -1,43 +1,115 @@
 <!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="robots" content="index, follow" />
-    <meta name="description" content="Estimate which AI website assistant plan boundary might fit your website question volume and number of domains." />
-    <link rel="canonical" href="https://giorgi.codes/affiliate/assistant-fit-calculator.html" />
-    <meta property="og:title" content="AI website assistant fit calculator | Giorgi Codes" />
-    <meta property="og:description" content="A quick, transparent fit check for website question volume, domains, and assistant capabilities." />
-    <meta property="og:url" content="https://giorgi.codes/affiliate/assistant-fit-calculator.html" />
-    <meta property="og:type" content="website" />
-    <meta property="og:image" content="https://giorgi.codes/affiliate/assets/field-guide-still-life-cover.png" />
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:image" content="https://giorgi.codes/affiliate/assets/field-guide-still-life-cover.png" />
-    <title>AI website assistant fit calculator | Giorgi Codes</title>
-    <link rel="icon" type="image/png" href="/logo-gk.png" />
-    <script src="/affiliate/affiliate-tracking.js?v=b12" defer></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet" />
-    <style>
-      :root{--paper:#f5f1e9;--paper-bright:#fffdf8;--ink:#142d34;--muted:#697873;--line:#d8d8cf;--coral:#df6f52;--sage:#d7e3d0;--serif:"DM Serif Display",Georgia,serif}*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--paper);color:var(--ink);font:16px/1.65 "DM Sans",system-ui,sans-serif}a{color:inherit;text-decoration:none}a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible{outline:3px solid var(--coral);outline-offset:4px}main{width:min(940px,calc(100% - 38px));margin:0 auto;padding:30px 0 75px}.topbar{display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid var(--line);padding-bottom:20px}.brand{font:24px/1 var(--serif)}.brand-dot{color:var(--coral)}.back{font-size:11px;font-weight:700}.kicker{color:var(--coral);font-size:10px;font-weight:700;letter-spacing:1.7px;margin:74px 0 18px;text-transform:uppercase}.hero h1{font:400 clamp(47px,8vw,82px)/.98 var(--serif);letter-spacing:-3.6px;margin:0;max-width:800px}.hero h1 em{color:var(--coral);font-style:italic}.lede{color:var(--muted);font-size:18px;line-height:1.75;max-width:680px;margin:24px 0 12px}.note{color:var(--muted);font-size:12px;font-style:italic;margin:0 0 42px}.calculator{display:grid;grid-template-columns:.83fr 1.17fr;gap:20px;align-items:start}.form-card,.result-card{background:var(--paper-bright);border:1px solid var(--line);border-radius:5px;padding:28px}.form-card h2,.result-card h2{font:400 29px/1.1 var(--serif);letter-spacing:-1px;margin:0 0 22px}.field{margin:0 0 22px}.field label{display:block;font-size:12px;font-weight:700;margin:0 0 7px}.field small{display:block;color:var(--muted);font-size:11px;line-height:1.5;margin-top:6px}.field input,.field select{width:100%;min-height:47px;border:1px solid var(--line);border-radius:3px;background:#fff;padding:11px 12px;color:var(--ink);font:inherit}.field input:focus,.field select:focus{border-color:var(--ink)}.button{display:inline-flex;align-items:center;justify-content:space-between;gap:30px;min-height:50px;padding:13px 17px;border:0;border-radius:4px;background:var(--coral);color:#fffaf4;cursor:pointer;font-size:12px;font-weight:700}.button:hover{background:#c85d45}.result-card{background:var(--ink);color:var(--paper-bright);min-height:100%}.result-card .eyebrow{color:var(--sage);font-size:10px;font-weight:700;letter-spacing:1.5px}.result-card h2{font-size:39px;margin-top:12px}.result-card p{color:#d4dfda;font-size:14px;line-height:1.75}.result-card .result-badge{display:inline-block;border:1px solid #9eb8ac;border-radius:999px;color:var(--sage);font-size:10px;font-weight:700;letter-spacing:1px;padding:7px 11px;text-transform:uppercase}.result-card .button{background:var(--paper-bright);color:var(--ink);margin-top:12px}.result-card .button:hover{background:#fff}.result-card .disclosure{color:#aebfba;font-size:10px;line-height:1.6;margin:18px 0 0}.result-card .disclosure a{color:var(--paper-bright);text-decoration:underline;text-underline-offset:3px}.details{border-top:1px solid var(--line);display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:42px;padding-top:28px}.details h2{font-size:27px;margin:0 0 12px}.details p{color:var(--muted);font-size:13px;line-height:1.7;margin:0}.sources{border-top:1px solid var(--line);color:var(--muted);font-size:11px;margin-top:45px;padding-top:21px}.sources a{font-weight:700;text-decoration:underline;text-underline-offset:3px}footer{border-top:1px solid var(--line);color:var(--muted);font-size:10px;margin-top:42px;padding-top:20px}@media(max-width:720px){main{width:calc(100% - 30px)}.topbar{padding-bottom:17px}.brand{font-size:21px}.back{font-size:10px}.kicker{margin-top:52px}.hero h1{font-size:clamp(44px,14vw,70px);letter-spacing:-2.5px}.lede{font-size:16px}.calculator{grid-template-columns:1fr}.form-card,.result-card{padding:23px}.result-card h2{font-size:35px}.details{grid-template-columns:1fr;gap:24px}}
-    </style>
-    <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"AI website assistant fit calculator","url":"https://giorgi.codes/affiliate/assistant-fit-calculator.html","applicationCategory":"BusinessApplication","operatingSystem":"Any","description":"A rough fit check based on published website domain and monthly credit boundaries."}</script>
-  </head>
-  <body><main>
-    <div class="topbar"><a class="brand" href="/affiliate/">The Field Guide<span class="brand-dot">.</span></a><a class="back" href="/affiliate/">← All guides</a></div>
-    <p class="kicker">Free tool / website operations</p>
-    <header class="hero"><h1>What kind of AI assistant fit does your site need?</h1><p class="lede">Use your approximate monthly question volume and number of domains to get a starting point before you compare plans.</p></header>
-    <p class="note">This is a directional calculator, not a quote or a recommendation. It uses published SiteMind plan boundaries; a real conversation can consume several answered questions.</p>
+<html lang="en" class="no-js">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>AI website assistant fit calculator | Giorgi Codes</title>
+  <meta name="description" content="Estimate which AI website assistant plan boundary might fit your website question volume and number of domains." />
+  <meta name="robots" content="index, follow, max-image-preview:large" />
+  <meta name="author" content="Giorgi Kemoklidze" />
+  <meta name="theme-color" content="#0c9f92" />
+  <link rel="canonical" href="https://giorgi.codes/affiliate/assistant-fit-calculator.html" />
+  <meta property="og:title" content="AI website assistant fit calculator | Giorgi Codes" />
+  <meta property="og:description" content="A quick, transparent fit check for website question volume, domains, and assistant capabilities." />
+  <meta property="og:url" content="https://giorgi.codes/affiliate/assistant-fit-calculator.html" />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://giorgi.codes/affiliate/assets/chapter-ai.png" />
+  <meta property="og:site_name" content="Giorgi Codes" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <link rel="icon" type="image/png" href="/logo-gk.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/affiliate/fg.css?v=4" />
+  <script src="/affiliate/affiliate-tracking.js?v=b12" defer></script>
+  <script src="/affiliate/fg.js?v=4" defer></script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"AI website assistant fit calculator","url":"https://giorgi.codes/affiliate/assistant-fit-calculator.html","applicationCategory":"BusinessApplication","operatingSystem":"Any","description":"A rough fit check based on published website domain and monthly credit boundaries."}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Giorgi Codes","item":"https://giorgi.codes/"},{"@type":"ListItem","position":2,"name":"The Field Guide","item":"https://giorgi.codes/affiliate/"},{"@type":"ListItem","position":3,"name":"AI assistant fit calculator","item":"https://giorgi.codes/affiliate/assistant-fit-calculator.html"}]}</script>
+</head>
+<body class="t-ai">
+  <div class="progress" aria-hidden="true"><span></span></div>
+  <a class="skip" href="#content">Skip to content</a>
+  <header class="top">
+    <div class="wrap">
+      <a class="logo" href="/affiliate/"><span class="logo-mark" aria-hidden="true">GK</span><span class="logo-text">The Field Guide</span></a>
+      <nav class="nav" aria-label="Main">
+        <a class="nav-link" href="/affiliate/#library">All guides</a>
+        <a class="nav-link" href="/affiliate/#finder">Tool finder</a>
+        <a class="nav-link" href="/">Portfolio</a>
+        <button class="theme-btn" type="button" data-theme-toggle aria-label="Toggle theme">🌙</button>
+        <a class="nav-cta" href="https://sitemind.tech/r/GM3DEKT6?src=side_assistant-fit-calculator" target="_blank" rel="sponsored noopener" data-affiliate-program="sitemind" data-affiliate-placement="nav">Try SiteMind</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="ghero">
+      <div class="rings" aria-hidden="true"></div><span class="spark s1" aria-hidden="true"></span><span class="spark s2" aria-hidden="true"></span><span class="spark s3" aria-hidden="true"></span>
+      <div class="wrap ghero-grid">
+        <div>
+          <nav class="crumbs" aria-label="Breadcrumb"><a href="/">Giorgi Codes</a><span aria-hidden="true">/</span><a href="/affiliate/">Field Guide</a><span aria-hidden="true">/</span><span>AI assistants</span></nav>
+          <span class="chip">📐 Free tool / website operations</span>
+          <h1>What kind of AI assistant fit does your site need?</h1>
+          <p class="lede">Use your approximate monthly question volume and number of domains to get a starting point before you compare plans.</p>
+          <div class="byline"><span class="who"><span class="dot" aria-hidden="true">GK</span>By Giorgi Kemoklidze</span><span class="sep" aria-hidden="true"></span><span>Updated September 2026</span><span class="sep" aria-hidden="true"></span><span>3 min read</span></div>
+        </div>
+        <aside class="hero-card" aria-label="Guide summary">
+          <div class="hc-icon" aria-hidden="true">📐</div>
+          <div class="hc-title">AI assistant fit calculator</div>
+          <div class="hc-row"><span>Format</span><b>Interactive calculator</b></div>
+          <div class="hc-row"><span>Best for</span><b>AI assistants</b></div>
+          <div class="hc-row"><span>Reading time</span><b>3 minutes</b></div>
+          <a class="btn btn-white" href="#content">Start reading ↓</a>
+        </aside>
+      </div>
+    </section>
+
+    <div class="wrap layout">
+      <article class="sheet" id="content">
+        <nav class="m-strip" aria-label="Sections"></nav>
+        <p class="note">This is a directional calculator, not a quote or a recommendation. It uses published SiteMind plan boundaries; a real conversation can consume several answered questions.</p>
     <section class="calculator" aria-labelledby="calculator-title">
       <form class="form-card" id="fit-form"><h2 id="calculator-title">Your starting point</h2><div class="field"><label for="questions">Answered questions per month</label><input id="questions" name="questions" type="number" min="0" max="100000" step="50" value="500" required /><small>Count answers, not visitors. Use support history if you have it.</small></div><div class="field"><label for="domains">Websites or domains</label><input id="domains" name="domains" type="number" min="1" max="100" step="1" value="1" required /><small>Include separate sites or subdomains you want one workspace to cover.</small></div><div class="field"><label for="capabilities">Do you need analytics, webhooks, or AI actions?</label><select id="capabilities" name="capabilities"><option value="no">No — answers and source citations are the priority</option><option value="yes">Yes — I need operational actions or reporting</option></select></div><button class="button" type="submit">Calculate my fit <span aria-hidden="true">↗</span></button></form>
       <div class="result-card" id="result" aria-live="polite"><span class="result-badge">Your rough fit</span><h2 id="result-title">Starter boundary</h2><p id="result-copy">Enter your details to see the closest published capacity boundary.</p><a class="button" id="result-cta" href="https://sitemind.tech/r/GM3DEKT6?src=fit_calculator" target="_blank" rel="sponsored noopener noreferrer" data-affiliate-program="sitemind">Test SiteMind free <span aria-hidden="true">↗</span></a><p class="disclosure">This referral link may earn me a commission if you subscribe, at no extra cost to you. Verify current pricing and fit on the <a href="https://sitemind.tech/pricing" target="_blank" rel="noopener noreferrer">official pricing page</a>.</p></div>
     </section>
     <section class="details" aria-label="How to interpret the result"><article><h2>Starter</h2><p>One domain and up to 1,000 published monthly credits. A sensible pilot when your question volume is modest.</p></article><article><h2>Growth</h2><p>Up to five domains and 5,000 published monthly credits, plus analytics, webhooks, and actions.</p></article><article><h2>Pro</h2><p>Up to ten domains and 20,000 published monthly credits for higher-volume support.</p></article></section>
     <p class="sources">Boundaries checked against <a href="https://sitemind.tech/pricing" target="_blank" rel="noopener noreferrer">SiteMind pricing</a> and <a href="https://sitemind.tech/features" target="_blank" rel="noopener noreferrer">SiteMind features</a>. Provider terms can change.</p>
-    <footer>Independent tool by Giorgi Kemoklidze · Affiliate disclosure applies</footer>
-    <p class="related"><strong>New:</strong> <a href="/affiliate/sitemind-cost-calculator.html">SiteMind cost &amp; break-even calculator</a></p>
-  </main><script>
+        <section class="more" aria-labelledby="more-title">
+          <h2 id="more-title">Keep reading</h2>
+          <ul class="related-grid">
+        <li><a class="related-card" href="sitemind-cost-calculator.html"><span class="ico" aria-hidden="true">🧮</span>SiteMind cost calculator<small>AI assistants</small></a></li>
+        <li><a class="related-card" href="sitemind-review.html"><span class="ico" aria-hidden="true">⭐</span>An honest SiteMind review<small>AI assistants</small></a></li>
+        <li><a class="related-card" href="sitemind-pricing-plans-checklist.html"><span class="ico" aria-hidden="true">💳</span>Compare SiteMind plans<small>AI assistants</small></a></li>
+          </ul>
+        </section>
+      </article>
+      <aside class="side" aria-label="Guide tools">
+        <div class="side-card"><h2>Your progress</h2><div class="meter"><div class="ring"><b>0%</b></div><p><strong class="meter-text">0 checked</strong>Tick items as you go. Saved in this browser.</p></div></div>
+        <nav class="side-card toc" aria-label="On this page"><h2>On this page</h2><ol></ol></nav>
+        <div class="offer">
+          <span class="tag">Partner pick</span>
+          <h3>SiteMind</h3>
+          <p>An AI assistant that answers visitors from your own pages, with citations and lead capture.</p>
+          <a class="btn btn-white" href="https://sitemind.tech/r/GM3DEKT6?src=side_assistant-fit-calculator" target="_blank" rel="sponsored noopener" data-affiliate-program="sitemind" data-affiliate-placement="sidebar">Try free for 3 days ↗</a>
+          <small>Affiliate link · from $25/mo</small>
+        </div>
+      </aside>
+    </div>
+  </main>
+
+  <div class="sticky-cta" role="complementary" aria-label="Quick link"><span>SiteMind · 3-day free trial</span><a class="btn btn-primary" href="https://sitemind.tech/r/GM3DEKT6?src=side_assistant-fit-calculator" target="_blank" rel="sponsored noopener" data-affiliate-program="sitemind" data-affiliate-placement="sticky">Try free for 3 days ↗</a></div>
+
+  <footer class="foot">
+    <div class="wrap">
+      <div class="foot-grid">
+        <div><h2>The Field Guide.</h2><p>Independent guides and calculators by Giorgi Kemoklidze, a full-stack developer who builds websites, AI tools and business dashboards.</p><a class="btn btn-white" href="mailto:contact@giorgi.codes">Work with me →</a></div>
+        <div><h3>Top guides</h3><ul><li><a href="verpex-hosting-review.html">Verpex hosting review</a></li><li><a href="onehomeschool-review.html">OneHomeschool guide</a></li><li><a href="sitemind-cost-calculator.html">SiteMind cost calculator</a></li><li><a href="hosting-checklist.html">Hosting checklist</a></li></ul></div>
+        <div><h3>Explore</h3><ul><li><a href="/affiliate/#library">All guides</a></li><li><a href="/affiliate/#finder">Tool finder</a></li><li><a href="/">Portfolio</a></li><li><a href="mailto:contact@giorgi.codes">Contact</a></li></ul></div>
+      </div>
+      <div class="foot-bottom"><span>© 2026 Giorgi Kemoklidze</span><span>Affiliate links are labelled. Buying through them costs you nothing extra.</span></div>
+    </div>
+  </footer>
+  <script>
     (() => {
       const form = document.querySelector('#fit-form');
       const title = document.querySelector('#result-title');
@@ -71,5 +143,6 @@
         window.trackAffiliateEvent?.('affiliate_fit_calculator_complete', { ...resultParams, fit_boundary: 'starter' });
       });
     })();
-  </script></body>
+  </script>
+</body>
 </html>

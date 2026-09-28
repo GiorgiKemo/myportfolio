@@ -1,41 +1,119 @@
 <!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="robots" content="index, follow" />
-    <meta name="description" content="A practical Webflow vs custom React checklist covering ownership, editing, hosting, SEO, accessibility, integrations, and client boundaries." />
-    <link rel="canonical" href="https://giorgi.codes/affiliate/webflow-vs-custom-react-checklist.html" />
-    <meta property="og:title" content="Webflow vs custom React checklist | Giorgi Codes" />
-    <meta property="og:description" content="Compare the real operating trade-offs before choosing Webflow or a custom React website." />
-    <meta property="og:url" content="https://giorgi.codes/affiliate/webflow-vs-custom-react-checklist.html" />
-    <meta property="og:type" content="article" />
-    <title>Webflow vs custom React checklist | Giorgi Codes</title>
-    <link rel="icon" type="image/png" href="/logo-gk.png" />
-    <script src="/affiliate/affiliate-tracking.js?v=b12" defer></script>
-    <style>
-      :root{color-scheme:light;--ink:#18283f;--muted:#61718a;--line:#dfe7f0;--paper:#fff;--canvas:#f5f8fc;--blue:#3678b5;--green:#438f78;--orange:#d9824b}*{box-sizing:border-box}body{margin:0;background:linear-gradient(180deg,var(--canvas),#fff 70%);color:var(--ink);font:16px/1.7 Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif}main{width:min(780px,calc(100% - 36px));margin:0 auto;padding:42px 0 80px}.brand{color:var(--ink);font-weight:850;text-decoration:none}.kicker{color:var(--blue);font-size:.72rem;font-weight:850;letter-spacing:.16em;text-transform:uppercase;margin-top:76px}.hero h1{font-size:clamp(2.5rem,7vw,4.8rem);line-height:1;letter-spacing:-.07em;margin:14px 0 20px}.lede,.muted{color:var(--muted)}.note{border-left:4px solid var(--green);background:var(--paper);border-radius:0 12px 12px 0;color:var(--muted);font-size:.92rem;margin:32px 0;padding:16px 18px}.checks{display:grid;gap:14px;margin:28px 0}.check{background:var(--paper);border:1px solid var(--line);border-radius:16px;padding:20px}.check h2{font-size:1.15rem;margin:0 0 6px}.check p{color:var(--muted);margin:0}.cta{background:#eef6ff;border-radius:16px;margin:32px 0;padding:20px}.cta a,.related a,.back{color:var(--ink);font-weight:800}.related{color:var(--muted)}.back{display:inline-block;margin-top:28px;text-decoration:none}footer{border-top:1px solid var(--line);color:#8190a2;font-size:.78rem;margin-top:56px;padding-top:20px}
-    </style>
-    <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Webflow vs custom React checklist","url":"https://giorgi.codes/affiliate/webflow-vs-custom-react-checklist.html","author":{"@type":"Person","name":"Giorgi Kemoklidze"},"description":"A practical checklist for comparing Webflow with a custom React website."}</script>
-  </head>
-  <body><main>
-    <a class="brand" href="/affiliate/">Giorgi Codes / Resources</a>
-    <p class="kicker">Website stack decision</p>
-    <header class="hero"><h1>Webflow or custom React? Check the exit path first.</h1><p class="lede">The fastest first draft is not always the easiest system to own. Use these questions to compare a visual site platform with a custom React build before the domain, content, forms, and handoff become expensive to move.</p></header>
-    <p class="note"><strong>Disclosure:</strong> this page contains no paid Webflow links. I build custom React sites for clients, so weigh my perspective accordingly.</p>
+<html lang="en" class="no-js">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Webflow vs custom React checklist | Giorgi Codes</title>
+  <meta name="description" content="A practical Webflow vs custom React checklist covering ownership, editing, hosting, SEO, accessibility, integrations, and client boundaries." />
+  <meta name="robots" content="index, follow, max-image-preview:large" />
+  <meta name="author" content="Giorgi Kemoklidze" />
+  <meta name="theme-color" content="#6d4aff" />
+  <link rel="canonical" href="https://giorgi.codes/affiliate/webflow-vs-custom-react-checklist.html" />
+  <meta property="og:title" content="Webflow vs custom React checklist | Giorgi Codes" />
+  <meta property="og:description" content="Compare the real operating trade-offs before choosing Webflow or a custom React website." />
+  <meta property="og:url" content="https://giorgi.codes/affiliate/webflow-vs-custom-react-checklist.html" />
+  <meta property="og:type" content="article" />
+  <meta property="og:image" content="https://giorgi.codes/affiliate/assets/chapter-hosting.png" />
+  <meta property="og:site_name" content="Giorgi Codes" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <link rel="icon" type="image/png" href="/logo-gk.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/affiliate/fg.css?v=4" />
+  <script src="/affiliate/affiliate-tracking.js?v=b12" defer></script>
+  <script src="/affiliate/fg.js?v=4" defer></script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Webflow vs custom React checklist","url":"https://giorgi.codes/affiliate/webflow-vs-custom-react-checklist.html","author":{"@type":"Person","name":"Giorgi Kemoklidze"},"description":"A practical checklist for comparing Webflow with a custom React website."}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Giorgi Codes","item":"https://giorgi.codes/"},{"@type":"ListItem","position":2,"name":"The Field Guide","item":"https://giorgi.codes/affiliate/"},{"@type":"ListItem","position":3,"name":"Webflow vs custom React","item":"https://giorgi.codes/affiliate/webflow-vs-custom-react-checklist.html"}]}</script>
+</head>
+<body class="t-web">
+  <div class="progress" aria-hidden="true"><span></span></div>
+  <a class="skip" href="#content">Skip to content</a>
+  <header class="top">
+    <div class="wrap">
+      <a class="logo" href="/affiliate/"><span class="logo-mark" aria-hidden="true">GK</span><span class="logo-text">The Field Guide</span></a>
+      <nav class="nav" aria-label="Main">
+        <a class="nav-link" href="/affiliate/#library">All guides</a>
+        <a class="nav-link" href="/affiliate/#finder">Tool finder</a>
+        <a class="nav-link" href="/">Portfolio</a>
+        <button class="theme-btn" type="button" data-theme-toggle aria-label="Toggle theme">🌙</button>
+        <a class="nav-cta" href="mailto:contact@giorgi.codes" data-affiliate-placement="nav">Hire Giorgi</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="ghero">
+      <div class="rings" aria-hidden="true"></div><span class="spark s1" aria-hidden="true"></span><span class="spark s2" aria-hidden="true"></span><span class="spark s3" aria-hidden="true"></span>
+      <div class="wrap ghero-grid">
+        <div>
+          <nav class="crumbs" aria-label="Breadcrumb"><a href="/">Giorgi Codes</a><span aria-hidden="true">/</span><a href="/affiliate/">Field Guide</a><span aria-hidden="true">/</span><span>Websites &amp; hosting</span></nav>
+          <span class="chip">⚖️ Website stack decision</span>
+          <h1>Webflow or custom React? Check the exit path first.</h1>
+          <p class="lede">The fastest first draft is not always the easiest system to own. Use these questions to compare a visual site platform with a custom React build before the domain, content, forms, and handoff become expensive to move.</p>
+          <div class="byline"><span class="who"><span class="dot" aria-hidden="true">GK</span>By Giorgi Kemoklidze</span><span class="sep" aria-hidden="true"></span><span>Updated September 2026</span><span class="sep" aria-hidden="true"></span><span>3 min read</span></div>
+        </div>
+        <aside class="hero-card" aria-label="Guide summary">
+          <div class="hc-icon" aria-hidden="true">⚖️</div>
+          <div class="hc-title">Webflow vs custom React</div>
+          <div class="hc-row"><span>Format</span><b>Checklist · 8 steps</b></div>
+          <div class="hc-row"><span>Best for</span><b>Websites &amp; hosting</b></div>
+          <div class="hc-row"><span>Reading time</span><b>3 minutes</b></div>
+          <a class="btn btn-white" href="#content">Start reading ↓</a>
+        </aside>
+      </div>
+    </section>
+
+    <div class="wrap layout">
+      <article class="sheet" id="content">
+        <nav class="m-strip" aria-label="Sections"></nav>
+        <p class="note"><strong>Disclosure:</strong> this page contains no paid Webflow links. I build custom React sites for clients, so weigh my perspective accordingly.</p>
     <section class="checks" aria-label="Webflow versus custom React checklist">
-      <article class="check"><h2>1. Name the actual job</h2><p>Choose between a marketing site, portfolio, documentation hub, store, or application shell. Webflow can shorten visual publishing; custom React can justify itself when product behavior is the main problem.</p></article>
-      <article class="check"><h2>2. Write down what you must own</h2><p>Confirm control of the domain, content, analytics, forms, images, redirects, user accounts, and billing. Make the owner of every account explicit before launch.</p></article>
-      <article class="check"><h2>3. Test the exit path</h2><p>Ask what can be exported, what must be rebuilt, what happens to CMS content, and whether a cancellation leaves you with a usable site or only a design reference.</p></article>
-      <article class="check"><h2>4. Compare the editing workflow</h2><p>Who will change headlines, collections, navigation, and SEO fields after launch? Test the real editor with the person who will maintain the site, not only the person who built it.</p></article>
-      <article class="check"><h2>5. Price the full year</h2><p>Include the required site or workspace plan, domain, seats, forms, bandwidth, localization, analytics, add-ons, renewals, and the cost of developer time when the visual tool reaches its boundary.</p></article>
-      <article class="check"><h2>6. Prove the conversion path</h2><p>Submit forms from a phone, check notifications and spam handling, verify redirects and analytics, and test the thank-you state before calling the site ready.</p></article>
-      <article class="check"><h2>7. Check quality beyond the canvas</h2><p>Review keyboard navigation, labels, contrast, headings, canonical URLs, structured data, performance, image behavior, and third-party scripts. A polished canvas is not the same as a finished website.</p></article>
-      <article class="check"><h2>8. Separate public referrals from client work</h2><p>Webflow says its affiliate program is for promoting to a digital audience and does not pay one-to-one client referrals. Freelancers and agencies should review the separate Partner Program instead, and never use a referral link for your own purchase.</p></article>
+      <article class="check"><h2>Name the actual job</h2><p>Choose between a marketing site, portfolio, documentation hub, store, or application shell. Webflow can shorten visual publishing; custom React can justify itself when product behavior is the main problem.</p></article>
+      <article class="check"><h2>Write down what you must own</h2><p>Confirm control of the domain, content, analytics, forms, images, redirects, user accounts, and billing. Make the owner of every account explicit before launch.</p></article>
+      <article class="check"><h2>Test the exit path</h2><p>Ask what can be exported, what must be rebuilt, what happens to CMS content, and whether a cancellation leaves you with a usable site or only a design reference.</p></article>
+      <article class="check"><h2>Compare the editing workflow</h2><p>Who will change headlines, collections, navigation, and SEO fields after launch? Test the real editor with the person who will maintain the site, not only the person who built it.</p></article>
+      <article class="check"><h2>Price the full year</h2><p>Include the required site or workspace plan, domain, seats, forms, bandwidth, localization, analytics, add-ons, renewals, and the cost of developer time when the visual tool reaches its boundary.</p></article>
+      <article class="check"><h2>Prove the conversion path</h2><p>Submit forms from a phone, check notifications and spam handling, verify redirects and analytics, and test the thank-you state before calling the site ready.</p></article>
+      <article class="check"><h2>Check quality beyond the canvas</h2><p>Review keyboard navigation, labels, contrast, headings, canonical URLs, structured data, performance, image behavior, and third-party scripts. A polished canvas is not the same as a finished website.</p></article>
+      <article class="check"><h2>Separate public referrals from client work</h2><p>Webflow says its affiliate program is for promoting to a digital audience and does not pay one-to-one client referrals. Freelancers and agencies should review the separate Partner Program instead, and never use a referral link for your own purchase.</p></article>
     </section>
     <aside class="cta"><strong>Next step:</strong> list the three pages you will edit most often and who edits them. If non-developers publish weekly, try <a href="https://webflow.com/" target="_blank" rel="noopener noreferrer">Webflow</a> first; if you need custom logic or integrations, <a href="mailto:contact@giorgi.codes">talk to me about a React build</a>.</aside>
-    <p class="related"><strong>Continue:</strong> <a href="/affiliate/ai-website-builder-checklist.html">AI website-builder checks</a> · <a href="/affiliate/no-code-landing-page-checklist.html">no-code landing-page checks</a> · <a href="/affiliate/website-maintenance-support-small-business.html">maintenance and support checks</a> · <a href="/affiliate/">all resource guides</a></p>
-    <a class="back" href="/affiliate/">← Back to all guides</a>
-    <footer>Independent resource · No active paid Webflow link on this page</footer>
-  </main></body>
+        <section class="more" aria-labelledby="more-title">
+          <h2 id="more-title">Keep reading</h2>
+          <ul class="related-grid">
+        <li><a class="related-card" href="verpex-hosting-review.html"><span class="ico" aria-hidden="true">🖥️</span>Verpex hosting review<small>Websites &amp; hosting</small></a></li>
+        <li><a class="related-card" href="hosting-checklist.html"><span class="ico" aria-hidden="true">🧾</span>Compare hosting without missing renewal costs<small>Websites &amp; hosting</small></a></li>
+        <li><a class="related-card" href="ai-website-builder-checklist.html"><span class="ico" aria-hidden="true">🪄</span>Compare AI website builders<small>Websites &amp; hosting</small></a></li>
+          </ul>
+        </section>
+      </article>
+      <aside class="side" aria-label="Guide tools">
+        <div class="side-card"><h2>Your progress</h2><div class="meter"><div class="ring"><b>0%</b></div><p><strong class="meter-text">0 checked</strong>Tick items as you go. Saved in this browser.</p></div></div>
+        <nav class="side-card toc" aria-label="On this page"><h2>On this page</h2><ol></ol></nav>
+        <div class="offer">
+          <span class="tag">Work with me</span>
+          <h3>Need a hand with your site?</h3>
+          <p>I'm a full-stack developer: builds, fixes, migrations, AI assistants and SEO.</p>
+          <a class="btn btn-white" href="mailto:contact@giorgi.codes" data-affiliate-placement="sidebar">Email Giorgi ↗</a>
+          <small>contact@giorgi.codes</small>
+        </div>
+      </aside>
+    </div>
+  </main>
+
+  
+
+  <footer class="foot">
+    <div class="wrap">
+      <div class="foot-grid">
+        <div><h2>The Field Guide.</h2><p>Independent guides and calculators by Giorgi Kemoklidze, a full-stack developer who builds websites, AI tools and business dashboards.</p><a class="btn btn-white" href="mailto:contact@giorgi.codes">Work with me →</a></div>
+        <div><h3>Top guides</h3><ul><li><a href="verpex-hosting-review.html">Verpex hosting review</a></li><li><a href="onehomeschool-review.html">OneHomeschool guide</a></li><li><a href="sitemind-cost-calculator.html">SiteMind cost calculator</a></li><li><a href="hosting-checklist.html">Hosting checklist</a></li></ul></div>
+        <div><h3>Explore</h3><ul><li><a href="/affiliate/#library">All guides</a></li><li><a href="/affiliate/#finder">Tool finder</a></li><li><a href="/">Portfolio</a></li><li><a href="mailto:contact@giorgi.codes">Contact</a></li></ul></div>
+      </div>
+      <div class="foot-bottom"><span>© 2026 Giorgi Kemoklidze</span><span>Affiliate links are labelled. Buying through them costs you nothing extra.</span></div>
+    </div>
+  </footer>
+  
+</body>
 </html>

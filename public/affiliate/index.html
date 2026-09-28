@@ -20,9 +20,9 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="/affiliate/fg.css?v=3" />
+  <link rel="stylesheet" href="/affiliate/fg.css?v=4" />
   <script src="/affiliate/affiliate-tracking.js?v=b12" defer></script>
-  <script src="/affiliate/fg.js?v=2" defer></script>
+  <script src="/affiliate/fg.js?v=4" defer></script>
   <script type="application/ld+json">
   {"@context":"https://schema.org","@graph":[
     {"@type":"CollectionPage","@id":"https://giorgi.codes/affiliate/#page","name":"The Field Guide by Giorgi Codes","url":"https://giorgi.codes/affiliate/","description":"Independent guides and interactive calculators for web hosting, AI website assistants, homeschool planning and creator tools.","inLanguage":"en","isPartOf":{"@type":"WebSite","name":"Giorgi Codes","url":"https://giorgi.codes/"},"author":{"@id":"https://giorgi.codes/#person"},"breadcrumb":{"@id":"https://giorgi.codes/affiliate/#crumbs"}},
@@ -39,17 +39,18 @@
   ]}
   </script>
 </head>
-<body>
+<body class="t-web">
+  <div class="progress" aria-hidden="true"><span></span></div>
   <a class="skip" href="#main">Skip to content</a>
 
   <header class="top">
     <div class="wrap">
-      <a class="logo" href="/affiliate/"><span class="logo-mark" aria-hidden="true">GK</span>The Field Guide</a>
+      <a class="logo" href="/affiliate/"><span class="logo-mark" aria-hidden="true">GK</span><span class="logo-text">The Field Guide</span></a>
       <nav class="nav" aria-label="Main">
-        <a href="#picks">Top picks</a>
-        <a href="#finder">Tool finder</a>
-        <a href="#library">All guides</a>
-        <a href="/">Portfolio</a>
+        <a class="nav-link" href="#picks">Top picks</a>
+        <a class="nav-link" href="#finder">Tool finder</a>
+        <a class="nav-link" href="#library">All guides</a>
+        <a class="nav-link" href="/">Portfolio</a>
         <button class="theme-btn" type="button" data-theme-toggle aria-label="Toggle theme">🌙</button>
         <a class="nav-cta" href="mailto:contact@giorgi.codes">Hire Giorgi</a>
       </nav>
@@ -58,15 +59,15 @@
 
   <main id="main">
     <section class="hero">
-      <div class="blobs" aria-hidden="true"><span class="blob b1"></span><span class="blob b2"></span><span class="blob b3"></span><span class="blob b4"></span></div>
+      <div class="rings" aria-hidden="true"></div><span class="spark s1" aria-hidden="true"></span><span class="spark s2" aria-hidden="true"></span><span class="spark s3" aria-hidden="true"></span>
       <div class="wrap hero-grid">
         <div>
           <span class="chip">✦ Edition 02 · Updated September 2026</span>
-          <h1 style="margin-top:18px">Pick the right tools. <span class="grad-text">Skip the regret.</span></h1>
+          <h1>Pick the right tools. <em>Skip the regret.</em></h1>
           <p class="lede">Independent guides and interactive calculators from a working full-stack developer. Hosting, AI assistants, homeschool planning and creator tools, with real prices and honest "who it's <em>not</em> for" notes.</p>
           <div class="hero-actions">
-            <a class="btn btn-primary" href="#finder">Find my tool in 30 seconds <span class="arr" aria-hidden="true">↗</span></a>
-            <a class="btn btn-ghost" href="#library">Browse 27 guides</a>
+            <a class="btn btn-white" href="#finder">Find my tool in 30 seconds <span class="arr" aria-hidden="true">↗</span></a>
+            <a class="btn btn-glass" href="#library">Browse 27 guides</a>
           </div>
           <div class="stats" aria-label="Collection at a glance">
             <div class="stat"><b>27</b><span>practical guides</span></div>
@@ -85,9 +86,9 @@
       </div>
     </section>
 
-    <section id="picks" class="section" aria-labelledby="picks-title">
+    <section id="picks" class="section lift" aria-labelledby="picks-title">
       <div class="wrap">
-        <div class="section-head reveal">
+        <div class="sr-only">
           <div><span class="eyebrow">Partner picks</span><h2 id="picks-title">Three tools I'd actually recommend.</h2></div>
           <p>Each one has a full guide with an interactive calculator. Links marked "affiliate" may earn me a commission at no cost to you.</p>
         </div>
@@ -161,31 +162,31 @@
           </div>
 
           <div class="quiz-result" data-result="host" hidden>
-            <div class="result-card theme-verpex"><h4 tabindex="-1">Start with the hosting review 🖥️</h4><p>Compare plans by how many sites you run and what renewal really costs over three years.</p>
+            <div class="result-box t-web"><h4 tabindex="-1">Start with the hosting review 🖥️</h4><p>Compare plans by how many sites you run and what renewal really costs over three years.</p>
               <div class="result-links"><a class="link-pill" href="verpex-hosting-review.html">Verpex plan picker →</a><a class="link-pill" href="hosting-checklist.html">Hosting checklist</a><a class="link-pill" href="wordpress-woocommerce-checklist.html">WordPress launch</a></div></div>
           </div>
           <div class="quiz-result" data-result="chat" hidden>
-            <div class="result-card theme-sitemind"><h4 tabindex="-1">An AI website assistant could help 🤖</h4><p>Estimate conversations from your traffic, then see which plan fits and how many leads would cover the cost.</p>
+            <div class="result-box t-ai"><h4 tabindex="-1">An AI website assistant could help 🤖</h4><p>Estimate conversations from your traffic, then see which plan fits and how many leads would cover the cost.</p>
               <div class="result-links"><a class="link-pill" href="sitemind-cost-calculator.html">SiteMind cost calculator →</a><a class="link-pill" href="sitemind-review.html">Honest review</a><a class="link-pill" href="ai-website-assistant-vs-live-chat-checklist.html">AI vs live chat</a></div></div>
           </div>
           <div class="quiz-result" data-result="build" hidden>
-            <div class="result-card"><h4 tabindex="-1">Decide how to build first 🧱</h4><p>Who edits the site and how often matters more than the tool.</p>
+            <div class="result-box"><h4 tabindex="-1">Decide how to build first 🧱</h4><p>Who edits the site and how often matters more than the tool.</p>
               <div class="result-links"><a class="link-pill" href="webflow-vs-custom-react-checklist.html">Webflow vs custom React →</a><a class="link-pill" href="ai-website-builder-for-small-business.html">AI website builders</a><a class="link-pill" href="no-code-landing-page-checklist.html">No-code landing page</a></div></div>
           </div>
           <div class="quiz-result" data-result="care" hidden>
-            <div class="result-card"><h4 tabindex="-1">Keep the site healthy after launch 🛠️</h4><p>A simple routine for fixes, speed, SEO and ownership.</p>
+            <div class="result-box"><h4 tabindex="-1">Keep the site healthy after launch 🛠️</h4><p>A simple routine for fixes, speed, SEO and ownership.</p>
               <div class="result-links"><a class="link-pill" href="website-maintenance-support-small-business.html">Maintenance guide →</a><a class="link-pill" href="hosting-checklist.html">Hosting checklist</a><a class="link-pill" href="mailto:contact@giorgi.codes">Ask me directly</a></div></div>
           </div>
           <div class="quiz-result" data-result="home" hidden>
-            <div class="result-card theme-home"><h4 tabindex="-1">Try the homeschool plan picker 📚</h4><p>See which plan fits your number of kids, and check whether your curriculum is supported.</p>
+            <div class="result-box t-family"><h4 tabindex="-1">Try the homeschool plan picker 📚</h4><p>See which plan fits your number of kids, and check whether your curriculum is supported.</p>
               <div class="result-links"><a class="link-pill" href="onehomeschool-review.html">OneHomeschool guide →</a><a class="link-pill" href="family-reading-resource-checklist.html">Family reading resources</a></div></div>
           </div>
           <div class="quiz-result" data-result="creator" hidden>
-            <div class="result-card"><h4 tabindex="-1">Build a repeatable workflow 🎬</h4><p>From recording to captions to publishing, and the music-rights check most creators skip.</p>
+            <div class="result-box"><h4 tabindex="-1">Build a repeatable workflow 🎬</h4><p>From recording to captions to publishing, and the music-rights check most creators skip.</p>
               <div class="result-links"><a class="link-pill" href="creator-video-workflow.html">Video workflow →</a><a class="link-pill" href="mubert-music-licensing-checklist.html">Music rights</a><a class="link-pill" href="envato-elements-affiliate-guide.html">Creative assets</a></div></div>
           </div>
           <div class="quiz-result" data-result="career" hidden>
-            <div class="result-card"><h4 tabindex="-1">Get your resume read 💼</h4><p>Choose between doing it yourself and getting targeted help.</p>
+            <div class="result-box"><h4 tabindex="-1">Get your resume read 💼</h4><p>Choose between doing it yourself and getting targeted help.</p>
               <div class="result-links"><a class="link-pill" href="resumeats-concierge-checklist.html">Resume help levels →</a><a class="link-pill" href="resumeble-vs-resumeats-checklist.html">Focused vs broad help</a></div></div>
           </div>
 
@@ -220,34 +221,34 @@
           </div>
           <span class="count" role="status" aria-live="polite">27 guides</span>
         </div>
-        <ul class="grid">
-          <li class="gcard c-web" data-cat="web"><a href="verpex-hosting-review.html"><span class="ico">🖥️</span><h3>Verpex hosting review: plans, renewals &amp; who it fits</h3><p>Plan picker and a three-year cost calculator that uses renewal prices, not intro deals.</p><span class="meta">Hosting <span class="new">New</span></span></a></li>
-          <li class="gcard c-family" data-cat="family"><a href="onehomeschool-review.html"><span class="ico">📚</span><h3>OneHomeschool: a homeschool planner that works with your curriculum</h3><p>What it does, plan prices by number of kids, and how to check your curriculum is supported.</p><span class="meta">Homeschool <span class="new">New</span></span></a></li>
-          <li class="gcard c-ai" data-cat="ai biz"><a href="sitemind-cost-calculator.html"><span class="ico">🧮</span><h3>SiteMind cost calculator: which plan fits your traffic?</h3><p>Turn monthly visitors into expected conversations, plan fit, and the leads needed to break even.</p><span class="meta">AI · Calculator <span class="new">New</span></span></a></li>
-          <li class="gcard c-web" data-cat="web"><a href="hosting-checklist.html"><span class="ico">🧾</span><h3>Compare hosting without missing renewal costs</h3><p>Deployment, backups, support, export and the second-year price.</p><span class="meta">Hosting</span></a></li>
-          <li class="gcard c-ai" data-cat="ai"><a href="sitemind-review.html"><span class="ico">⭐</span><h3>An honest SiteMind review before you subscribe</h3><p>What it does, current pricing, who it fits and what to check before the trial.</p><span class="meta">AI</span></a></li>
-          <li class="gcard c-ai" data-cat="ai"><a href="sitemind-pricing-plans-checklist.html"><span class="ico">💳</span><h3>Compare SiteMind plans before you subscribe</h3><p>Plans, trial terms and usage limits side by side.</p><span class="meta">AI</span></a></li>
-          <li class="gcard c-ai" data-cat="ai"><a href="assistant-fit-calculator.html"><span class="ico">📐</span><h3>Estimate your AI website assistant fit</h3><p>Match your question volume and domains to a plan boundary.</p><span class="meta">AI · Calculator</span></a></li>
-          <li class="gcard c-ai" data-cat="ai"><a href="ai-website-assistant-checklist.html"><span class="ico">✅</span><h3>Choose an AI website assistant responsibly</h3><p>Scope, data boundaries, review, pricing and ownership.</p><span class="meta">AI</span></a></li>
-          <li class="gcard c-ai" data-cat="ai"><a href="ai-website-assistant-vs-live-chat-checklist.html"><span class="ico">💬</span><h3>AI assistant vs live chat</h3><p>Source boundaries, human handoff, privacy and cost compared.</p><span class="meta">AI</span></a></li>
-          <li class="gcard c-ai" data-cat="ai biz"><a href="ai-receptionist-vs-website-assistant.html"><span class="ico">📞</span><h3>Phone receptionist or website assistant?</h3><p>Which kind of AI help fits where your customers actually ask.</p><span class="meta">AI</span></a></li>
-          <li class="gcard c-ai" data-cat="ai"><a href="sitemind-website-ai-audit.html"><span class="ico">🔍</span><h3>Run a 10-point AI website assistant audit</h3><p>Source quality, privacy, handoff and plan fit before a trial.</p><span class="meta">AI</span></a></li>
-          <li class="gcard c-biz" data-cat="ai biz"><a href="ai-website-assistant-for-small-business.html"><span class="ico">🏪</span><h3>Choose an AI assistant for a small business</h3><p>A practical checklist for owners with no tech team.</p><span class="meta">Small business</span></a></li>
-          <li class="gcard c-biz" data-cat="ai biz"><a href="sitemind-for-web-agencies.html"><span class="ico">🏢</span><h3>Add a grounded AI assistant to client sites</h3><p>For web designers and agencies deciding whether to deploy or refer.</p><span class="meta">Agency</span></a></li>
-          <li class="gcard c-biz" data-cat="ai biz"><a href="sitemind-agency-reseller-pilot.html"><span class="ico">🧪</span><h3>Plan a one-site AI reseller pilot</h3><p>Package an assistant into maintenance and marketing retainers.</p><span class="meta">Agency</span></a></li>
-          <li class="gcard c-web" data-cat="web ai"><a href="ai-website-builder-checklist.html"><span class="ico">🪄</span><h3>Compare AI website builders by ownership</h3><p>Forms, SEO, export, accessibility and real operating cost.</p><span class="meta">Websites</span></a></li>
-          <li class="gcard c-biz" data-cat="web biz"><a href="ai-website-builder-for-small-business.html"><span class="ico">🧱</span><h3>Choose an AI website builder for a small business</h3><p>Ownership, support, integrations and total cost.</p><span class="meta">Small business</span></a></li>
-          <li class="gcard c-web" data-cat="web"><a href="webflow-vs-custom-react-checklist.html"><span class="ico">⚖️</span><h3>Webflow vs a custom React site</h3><p>Editing, hosting, SEO and who owns what.</p><span class="meta">Websites</span></a></li>
-          <li class="gcard c-web" data-cat="web"><a href="no-code-landing-page-checklist.html"><span class="ico">🚀</span><h3>Plan a no-code landing page before you build</h3><p>Offer, proof, forms, analytics and ownership.</p><span class="meta">Websites</span></a></li>
-          <li class="gcard c-web" data-cat="web biz"><a href="wordpress-woocommerce-checklist.html"><span class="ico">🛒</span><h3>Plan a WordPress or WooCommerce launch</h3><p>Pre-launch checks for choosing and running your store.</p><span class="meta">Commerce</span></a></li>
-          <li class="gcard c-biz" data-cat="web biz"><a href="website-maintenance-support-small-business.html"><span class="ico">🛠️</span><h3>Keep a small-business site healthy after launch</h3><p>Fixes, migrations, speed, SEO and content updates.</p><span class="meta">Services</span></a></li>
-          <li class="gcard c-biz" data-cat="biz"><a href="hubspot-free-vs-starter-small-business.html"><span class="ico">📇</span><h3>HubSpot free vs paid plans</h3><p>Seats, limits and the moment an upgrade is actually worth it.</p><span class="meta">Small business</span></a></li>
-          <li class="gcard c-creative" data-cat="creative"><a href="creator-video-workflow.html"><span class="ico">🎬</span><h3>Build a repeatable short-form video workflow</h3><p>Record, caption, review, export and publish.</p><span class="meta">Creator</span></a></li>
-          <li class="gcard c-creative" data-cat="creative"><a href="mubert-music-licensing-checklist.html"><span class="ico">🎵</span><h3>Check music rights before monetized video</h3><p>A rights-first checklist for videos, podcasts and client work.</p><span class="meta">Rights</span></a></li>
-          <li class="gcard c-creative" data-cat="creative"><a href="envato-elements-affiliate-guide.html"><span class="ico">🎨</span><h3>Evaluate a creative asset subscription</h3><p>When an Envato Elements subscription pays off.</p><span class="meta">Creative</span></a></li>
-          <li class="gcard c-family" data-cat="family creative"><a href="family-reading-resource-checklist.html"><span class="ico">📖</span><h3>Choose family reading resources thoughtfully</h3><p>Personalized and early-learning books for families and teachers.</p><span class="meta">Reading</span></a></li>
-          <li class="gcard c-career" data-cat="career"><a href="resumeats-concierge-checklist.html"><span class="ico">📄</span><h3>Choose the right level of resume help</h3><p>Self-service ATS builder, targeted concierge or full rewrite.</p><span class="meta">Career</span></a></li>
-          <li class="gcard c-career" data-cat="career"><a href="resumeble-vs-resumeats-checklist.html"><span class="ico">🎯</span><h3>Focused resume help vs broader support</h3><p>One-job concierge compared with full professional writing.</p><span class="meta">Career</span></a></li>
+        <ul class="grid-list">
+          <li class="gcard c-web" data-cat="web"><a href="verpex-hosting-review.html"><span class="ico">🖥️</span><h3>Verpex hosting review: plans, renewals &amp; who it fits</h3><p>Plan picker and a three-year cost calculator that uses renewal prices, not intro deals.</p><span class="meta-row">Hosting <span class="new">New</span></span></a></li>
+          <li class="gcard c-family" data-cat="family"><a href="onehomeschool-review.html"><span class="ico">📚</span><h3>OneHomeschool: a homeschool planner that works with your curriculum</h3><p>What it does, plan prices by number of kids, and how to check your curriculum is supported.</p><span class="meta-row">Homeschool <span class="new">New</span></span></a></li>
+          <li class="gcard c-ai" data-cat="ai biz"><a href="sitemind-cost-calculator.html"><span class="ico">🧮</span><h3>SiteMind cost calculator: which plan fits your traffic?</h3><p>Turn monthly visitors into expected conversations, plan fit, and the leads needed to break even.</p><span class="meta-row">AI · Calculator <span class="new">New</span></span></a></li>
+          <li class="gcard c-web" data-cat="web"><a href="hosting-checklist.html"><span class="ico">🧾</span><h3>Compare hosting without missing renewal costs</h3><p>Deployment, backups, support, export and the second-year price.</p><span class="meta-row">Hosting</span></a></li>
+          <li class="gcard c-ai" data-cat="ai"><a href="sitemind-review.html"><span class="ico">⭐</span><h3>An honest SiteMind review before you subscribe</h3><p>What it does, current pricing, who it fits and what to check before the trial.</p><span class="meta-row">AI</span></a></li>
+          <li class="gcard c-ai" data-cat="ai"><a href="sitemind-pricing-plans-checklist.html"><span class="ico">💳</span><h3>Compare SiteMind plans before you subscribe</h3><p>Plans, trial terms and usage limits side by side.</p><span class="meta-row">AI</span></a></li>
+          <li class="gcard c-ai" data-cat="ai"><a href="assistant-fit-calculator.html"><span class="ico">📐</span><h3>Estimate your AI website assistant fit</h3><p>Match your question volume and domains to a plan boundary.</p><span class="meta-row">AI · Calculator</span></a></li>
+          <li class="gcard c-ai" data-cat="ai"><a href="ai-website-assistant-checklist.html"><span class="ico">✅</span><h3>Choose an AI website assistant responsibly</h3><p>Scope, data boundaries, review, pricing and ownership.</p><span class="meta-row">AI</span></a></li>
+          <li class="gcard c-ai" data-cat="ai"><a href="ai-website-assistant-vs-live-chat-checklist.html"><span class="ico">💬</span><h3>AI assistant vs live chat</h3><p>Source boundaries, human handoff, privacy and cost compared.</p><span class="meta-row">AI</span></a></li>
+          <li class="gcard c-ai" data-cat="ai biz"><a href="ai-receptionist-vs-website-assistant.html"><span class="ico">📞</span><h3>Phone receptionist or website assistant?</h3><p>Which kind of AI help fits where your customers actually ask.</p><span class="meta-row">AI</span></a></li>
+          <li class="gcard c-ai" data-cat="ai"><a href="sitemind-website-ai-audit.html"><span class="ico">🔍</span><h3>Run a 10-point AI website assistant audit</h3><p>Source quality, privacy, handoff and plan fit before a trial.</p><span class="meta-row">AI</span></a></li>
+          <li class="gcard c-biz" data-cat="ai biz"><a href="ai-website-assistant-for-small-business.html"><span class="ico">🏪</span><h3>Choose an AI assistant for a small business</h3><p>A practical checklist for owners with no tech team.</p><span class="meta-row">Small business</span></a></li>
+          <li class="gcard c-biz" data-cat="ai biz"><a href="sitemind-for-web-agencies.html"><span class="ico">🏢</span><h3>Add a grounded AI assistant to client sites</h3><p>For web designers and agencies deciding whether to deploy or refer.</p><span class="meta-row">Agency</span></a></li>
+          <li class="gcard c-biz" data-cat="ai biz"><a href="sitemind-agency-reseller-pilot.html"><span class="ico">🧪</span><h3>Plan a one-site AI reseller pilot</h3><p>Package an assistant into maintenance and marketing retainers.</p><span class="meta-row">Agency</span></a></li>
+          <li class="gcard c-web" data-cat="web ai"><a href="ai-website-builder-checklist.html"><span class="ico">🪄</span><h3>Compare AI website builders by ownership</h3><p>Forms, SEO, export, accessibility and real operating cost.</p><span class="meta-row">Websites</span></a></li>
+          <li class="gcard c-biz" data-cat="web biz"><a href="ai-website-builder-for-small-business.html"><span class="ico">🧱</span><h3>Choose an AI website builder for a small business</h3><p>Ownership, support, integrations and total cost.</p><span class="meta-row">Small business</span></a></li>
+          <li class="gcard c-web" data-cat="web"><a href="webflow-vs-custom-react-checklist.html"><span class="ico">⚖️</span><h3>Webflow vs a custom React site</h3><p>Editing, hosting, SEO and who owns what.</p><span class="meta-row">Websites</span></a></li>
+          <li class="gcard c-web" data-cat="web"><a href="no-code-landing-page-checklist.html"><span class="ico">🚀</span><h3>Plan a no-code landing page before you build</h3><p>Offer, proof, forms, analytics and ownership.</p><span class="meta-row">Websites</span></a></li>
+          <li class="gcard c-web" data-cat="web biz"><a href="wordpress-woocommerce-checklist.html"><span class="ico">🛒</span><h3>Plan a WordPress or WooCommerce launch</h3><p>Pre-launch checks for choosing and running your store.</p><span class="meta-row">Commerce</span></a></li>
+          <li class="gcard c-biz" data-cat="web biz"><a href="website-maintenance-support-small-business.html"><span class="ico">🛠️</span><h3>Keep a small-business site healthy after launch</h3><p>Fixes, migrations, speed, SEO and content updates.</p><span class="meta-row">Services</span></a></li>
+          <li class="gcard c-biz" data-cat="biz"><a href="hubspot-free-vs-starter-small-business.html"><span class="ico">📇</span><h3>HubSpot free vs paid plans</h3><p>Seats, limits and the moment an upgrade is actually worth it.</p><span class="meta-row">Small business</span></a></li>
+          <li class="gcard c-creative" data-cat="creative"><a href="creator-video-workflow.html"><span class="ico">🎬</span><h3>Build a repeatable short-form video workflow</h3><p>Record, caption, review, export and publish.</p><span class="meta-row">Creator</span></a></li>
+          <li class="gcard c-creative" data-cat="creative"><a href="mubert-music-licensing-checklist.html"><span class="ico">🎵</span><h3>Check music rights before monetized video</h3><p>A rights-first checklist for videos, podcasts and client work.</p><span class="meta-row">Rights</span></a></li>
+          <li class="gcard c-creative" data-cat="creative"><a href="envato-elements-affiliate-guide.html"><span class="ico">🎨</span><h3>Evaluate a creative asset subscription</h3><p>When an Envato Elements subscription pays off.</p><span class="meta-row">Creative</span></a></li>
+          <li class="gcard c-family" data-cat="family creative"><a href="family-reading-resource-checklist.html"><span class="ico">📖</span><h3>Choose family reading resources thoughtfully</h3><p>Personalized and early-learning books for families and teachers.</p><span class="meta-row">Reading</span></a></li>
+          <li class="gcard c-career" data-cat="career"><a href="resumeats-concierge-checklist.html"><span class="ico">📄</span><h3>Choose the right level of resume help</h3><p>Self-service ATS builder, targeted concierge or full rewrite.</p><span class="meta-row">Career</span></a></li>
+          <li class="gcard c-career" data-cat="career"><a href="resumeble-vs-resumeats-checklist.html"><span class="ico">🎯</span><h3>Focused resume help vs broader support</h3><p>One-job concierge compared with full professional writing.</p><span class="meta-row">Career</span></a></li>
         </ul>
         <p class="empty" hidden>No guides match that search. Try "hosting", "AI" or "resume".</p>
       </div>
@@ -281,8 +282,12 @@
 
   <footer class="foot">
     <div class="wrap">
-      <span>© 2026 Giorgi Kemoklidze · Independent guides. Affiliate links are labelled.</span>
-      <nav aria-label="Footer"><a href="/">Portfolio</a><a href="#library">All guides</a><a href="mailto:contact@giorgi.codes">Contact</a></nav>
+      <div class="foot-grid">
+        <div><h2>The Field Guide.</h2><p>Independent guides and calculators by Giorgi Kemoklidze, a full-stack developer who builds websites, AI tools and business dashboards.</p><a class="btn btn-white" href="mailto:contact@giorgi.codes">Work with me →</a></div>
+        <div><h3>Top guides</h3><ul><li><a href="verpex-hosting-review.html">Verpex hosting review</a></li><li><a href="onehomeschool-review.html">OneHomeschool guide</a></li><li><a href="sitemind-cost-calculator.html">SiteMind cost calculator</a></li><li><a href="hosting-checklist.html">Hosting checklist</a></li></ul></div>
+        <div><h3>Explore</h3><ul><li><a href="#library">All guides</a></li><li><a href="#finder">Tool finder</a></li><li><a href="/">Portfolio</a></li><li><a href="mailto:contact@giorgi.codes">Contact</a></li></ul></div>
+      </div>
+      <div class="foot-bottom"><span>© 2026 Giorgi Kemoklidze</span><span>Affiliate links are labelled. Buying through them costs you nothing extra.</span></div>
     </div>
   </footer>
 </body>
