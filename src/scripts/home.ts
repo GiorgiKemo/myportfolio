@@ -17,24 +17,36 @@ window.__lenis?.on('scroll', ScrollTrigger.update);
 root.classList.add('is-loaded');
 
 // ---------- WebGL: hero orb after first paint, lab when it comes near ----------
-const idle = (cb: () => void) =>
-  'requestIdleCallback' in window ? requestIdleCallback(cb, { timeout: 1200 }) : setTimeout(cb, 300);
+const idle = (cb: () => void) => {
+  const run = () => {
+    if (window.__lenis?.isScrolling) { setTimeout(() => idle(cb), 150); return; }
+    cb();
+  };
+  if ('requestIdleCallback' in window) requestIdleCallback(run, { timeout: 1200 });
+  else setTimeout(run, 300);
+};
 
 const heroCanvas = document.querySelector<HTMLCanvasElement>('[data-hero-canvas]');
-const gpu = hardwareWebGL();
-if (heroCanvas && gpu) {
-  const load = () => idle(() => import('./hero-gl').then((m) => m.mountHero(heroCanvas)));
+const lab = document.querySelector<HTMLElement>('[data-lab]');
+let gpu: boolean | undefined;
+const canRender = () => gpu ??= hardwareWebGL();
+if (heroCanvas) {
+  const load = () => idle(() => {
+    if (!canRender()) { lab?.classList.add('no-webgl'); return; }
+    import('./hero-gl').then((m) => idle(() => { m.mountHero(heroCanvas); }));
+  });
   if (document.readyState === 'complete') load();
   else addEventListener('load', load, { once: true });
 }
 
-const lab = document.querySelector<HTMLElement>('[data-lab]');
-if (lab && !gpu) lab.classList.add('no-webgl');
-if (lab && gpu) {
+if (lab) {
   const io = new IntersectionObserver(([e]) => {
     if (!e.isIntersecting) return;
     io.disconnect();
-    import('./lab-gl').then((m) => m.mountLab(lab));
+    idle(() => {
+      if (!canRender()) { lab.classList.add('no-webgl'); return; }
+      import('./lab-gl').then((m) => idle(() => m.mountLab(lab)));
+    });
   }, { rootMargin: '600px 0px' });
   io.observe(lab);
 }
@@ -47,11 +59,12 @@ document.querySelectorAll<HTMLElement>('[data-marquee]').forEach((mq) => {
   let x = 0;
   let boost = 0;
   let visible = false;
+  let half = 0;
+  new ResizeObserver(([entry]) => { half = entry.contentRect.width / 2; }).observe(track);
   new IntersectionObserver(([e]) => { visible = e.isIntersecting; }).observe(mq);
   ScrollTrigger.create({ onUpdate: (self) => { boost = Math.min(12, Math.abs(self.getVelocity()) / 220); } });
   gsap.ticker.add((_t, dtMs) => {
-    if (!visible) return;
-    const half = track.scrollWidth / 2;
+    if (!visible || !half) return;
     boost *= 0.94;
     x += dir * (0.6 + boost) * (dtMs / 16.7);
     if (x <= -half) x += half;

@@ -108,7 +108,7 @@ void main(){
   gl_FragColor = vec4(uColor, a * .7);
 }`;
 
-export function mountHero(canvas: HTMLCanvasElement) {
+export async function mountHero(canvas: HTMLCanvasElement) {
   const reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
   const small = matchMedia('(max-width: 760px)').matches;
 
@@ -137,7 +137,7 @@ export function mountHero(canvas: HTMLCanvasElement) {
       uLight: { value: isLight() ? 1 : 0 },
     },
   });
-  const orb = new Mesh(new IcosahedronGeometry(1.3, small ? 48 : 96), orbMat);
+  const orb = new Mesh(new IcosahedronGeometry(1.3, small ? 16 : 24), orbMat);
   scene.add(orb);
 
   // Particle field
@@ -251,6 +251,8 @@ export function mountHero(canvas: HTMLCanvasElement) {
   };
   const start = () => { if (!running) { running = true; lastT = performance.now(); raf = requestAnimationFrame(frame); } };
   const stop = () => { running = false; cancelAnimationFrame(raf); };
+
+  await renderer.compileAsync(scene, camera);
 
   if (reduced) {
     renderer.render(scene, camera);
