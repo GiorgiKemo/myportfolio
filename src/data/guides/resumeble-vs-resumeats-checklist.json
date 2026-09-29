@@ -1,0 +1,127 @@
+{
+  "slug": "resumeble-vs-resumeats-checklist",
+  "title": "Focused resume help vs broader resume writing | Giorgi Codes",
+  "description": "A practical comparison of a focused one-job resume concierge and broader professional resume-writing support.",
+  "robots": "index, follow, max-image-preview:large",
+  "canonical": "https://giorgi.codes/affiliate/resumeble-vs-resumeats-checklist.html",
+  "path": "/affiliate/resumeble-vs-resumeats-checklist.html",
+  "ogType": "article",
+  "ogTitle": "Focused resume help vs broader resume writing | Giorgi Codes",
+  "ogDescription": "Compare scope, deliverables, privacy questions, and cost before choosing resume help.",
+  "ogImage": "https://giorgi.codes/affiliate/assets/field-guide-still-life-cover.png",
+  "jsonLd": [
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": "Focused resume help vs broader resume writing",
+      "url": "https://giorgi.codes/affiliate/resumeble-vs-resumeats-checklist.html",
+      "author": {
+        "@type": "Person",
+        "name": "Giorgi Kemoklidze"
+      },
+      "description": "A practical comparison of a focused one-job resume concierge and broader professional resume-writing support."
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Giorgi Codes",
+          "item": "https://giorgi.codes/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "The Field Guide",
+          "item": "https://giorgi.codes/affiliate/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Focused vs broad resume help",
+          "item": "https://giorgi.codes/affiliate/resumeble-vs-resumeats-checklist.html"
+        }
+      ]
+    }
+  ],
+  "topic": "t-career",
+  "category": "Job seekers",
+  "chip": "🎯 Career services buying guide",
+  "h1": "Choose the scope before you choose the resume service.",
+  "lede": "A single target application and a full career repositioning are different jobs. Compare the scope, handoff, privacy, and revision process before paying for either.",
+  "updated": "September 2026",
+  "readTime": "3 min read",
+  "heroIcon": "🎯",
+  "heroTitle": "Focused vs broad resume help",
+  "heroRows": [
+    {
+      "label": "Format",
+      "value": "Checklist · 6 steps"
+    },
+    {
+      "label": "Best for",
+      "value": "Job seekers"
+    },
+    {
+      "label": "Reading time",
+      "value": "3 minutes"
+    }
+  ],
+  "body": "<p class=\"note\"><strong>Disclosure:</strong> this comparison includes a direct ResumeATS service link. A potential partner relationship with Resumeble is being evaluated, but no paid affiliate link is active on this page. Service terms, prices, guarantees, turnaround, and availability can change; confirm the provider's current terms before purchasing.</p>\n    <section class=\"grid\" aria-label=\"Resume service paths\">\n      <article class=\"card\"><h2>Focused one-job concierge</h2><p>Useful when you already know the target role and need a bounded review, tailoring pass, and practical ATS-readable files for one application.</p></article>\n      <article class=\"card\"><h2>Broader professional support</h2><p>Useful when you need a new career narrative, a full resume, cover letter, LinkedIn profile, coaching, or support across several job-search materials.</p></article>\n    </section>\n    <section class=\"checks\" aria-label=\"Comparison checklist\">\n      <article class=\"check\"><h2>Start with the deliverable</h2><p>Confirm whether the package includes an editable document, PDF, target-job tailoring, cover letter, LinkedIn work, interview support, or only feedback. A polished preview is not the same as a reusable application file.</p></article>\n      <article class=\"check\"><h2>Match the price to the job</h2><p>Do not buy a broad package when one application needs a focused cleanup. Conversely, do not expect a one-off edit to solve a career transition, weak evidence, or an unclear role direction.</p></article>\n      <article class=\"check\"><h2>Ask how facts are verified</h2><p>Dates, titles, metrics, tools, and responsibilities should come from you. Strong positioning improves emphasis and clarity; it does not invent achievements, credentials, or employment history.</p></article>\n      <article class=\"check\"><h2>Check revisions and handoff</h2><p>Before paying, ask how many revisions are included, who owns the files, whether the source stays editable, how feedback is exchanged, and what happens if the first draft misses the target.</p></article>\n      <article class=\"check\"><h2>Protect sensitive career data</h2><p>Review upload, retention, deletion, payment, refund, and third-party access terms. Share only what the service needs and keep a private copy of every final document.</p></article>\n      <article class=\"check\"><h2>Treat outcome claims carefully</h2><p>Interview or salary statistics may be based on a provider's own sample and method. They are not a promise about your application, employer, market, or timeline.</p></article>\n    </section>\n    <aside class=\"cta\"><strong>Need one focused application?</strong> <a href=\"https://www.resumeats.cv/contact?offer=concierge\" target=\"_blank\" rel=\"noopener noreferrer\">Request the ResumeATS $99 concierge slot</a> for a bounded review, or read the <a href=\"https://www.resumeble.com/\" target=\"_blank\" rel=\"noopener noreferrer\">official Resumeble service overview</a> if you need broader professional support. Confirm scope and current terms before paying.</aside>",
+  "related": [
+    {
+      "href": "resumeats-concierge-checklist.html",
+      "icon": "📄",
+      "title": "Choose the right resume help",
+      "category": "Job seekers"
+    },
+    {
+      "href": "verpex-hosting-review.html",
+      "icon": "🖥️",
+      "title": "Verpex hosting review",
+      "category": "Websites & hosting"
+    },
+    {
+      "href": "onehomeschool-review.html",
+      "icon": "📚",
+      "title": "OneHomeschool guide",
+      "category": "Families"
+    }
+  ],
+  "offer": {
+    "tag": "Work with me",
+    "name": "Need a hand with your site?",
+    "text": "I'm a full-stack developer: builds, fixes, migrations, AI assistants and SEO.",
+    "link": {
+      "href": "mailto:contact@giorgi.codes",
+      "label": "Email Giorgi ↗",
+      "attrs": {
+        "data-affiliate-placement": "sidebar"
+      }
+    },
+    "small": "contact@giorgi.codes"
+  },
+  "sticky": null,
+  "navCta": {
+    "href": "mailto:contact@giorgi.codes",
+    "label": "Hire Giorgi",
+    "attrs": {
+      "data-affiliate-placement": "nav"
+    }
+  },
+  "scripts": [],
+  "hub": {
+    "order": 26,
+    "cats": [
+      "career"
+    ],
+    "color": "career",
+    "icon": "🎯",
+    "cardTitle": "Focused resume help vs broader support",
+    "cardText": "One-job concierge compared with full professional writing.",
+    "label": "Career",
+    "isNew": false
+  }
+}

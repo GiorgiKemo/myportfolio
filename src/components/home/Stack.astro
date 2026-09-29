@@ -1,0 +1,48 @@
+---
+import { skills } from '../../data/portfolioData.js';
+
+const symbols: Record<string, string> = {
+  TypeScript: 'Ts', JavaScript: 'Js', React: 'Re', 'Next.js': 'Nx', Supabase: 'Sb', PostgreSQL: 'Pg', 'PL/pgSQL': 'Pl',
+  'Node.js': 'No', 'Tailwind CSS': 'Tw', Astro: 'As', Stripe: 'St', Vercel: 'Ve', 'AI Integrations': 'Ai', 'Google AI': 'Ga',
+  'Hugging Face': 'Hf', Python: 'Py', Docker: 'Dk', 'Telegram Bots': 'Tg', 'SEO & Analytics': 'Se', 'Web3 / Blockchain': 'W3',
+  'Git & GitHub': 'Gt', Figma: 'Fg',
+};
+---
+
+<section id="stack" class="stack" aria-labelledby="stack-title">
+  <div class="wrap">
+    <div class="stack-head">
+      <p class="kicker">Toolkit</p>
+      <h2 id="stack-title">The periodic table<br /><span class="serif">of my stack.</span></h2>
+    </div>
+    <ul class="table">
+      {skills.map((s, i) => (
+        <li class="el reveal" style={`--c:${s.color};transition-delay:${(i % 8) * 0.04}s`}>
+          <span class="el-n mono">{String(i + 1).padStart(2, '0')}</span>
+          <span class="el-sym">{symbols[s.name] ?? s.name.slice(0, 2)}</span>
+          <span class="el-name">{s.name}</span>
+        </li>
+      ))}
+    </ul>
+  </div>
+</section>
+
+<style>
+  .stack { padding: clamp(80px, 10vw, 140px) 0; }
+  .stack-head { display: grid; gap: 22px; margin-bottom: 48px; }
+  .stack-head h2 { font-size: clamp(38px, 5.4vw, 88px); letter-spacing: -0.06em; line-height: 0.94; }
+  .stack-head .serif { color: var(--muted); }
+  .table { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(128px, 1fr)); gap: 10px; }
+  .el {
+    position: relative; aspect-ratio: 1; padding: 14px; border-radius: 14px;
+    border: 1px solid var(--line); background: var(--surface);
+    display: flex; flex-direction: column; justify-content: space-between;
+    transition: transform 0.5s var(--ease), border-color 0.4s, background-color 0.4s, opacity 0.9s var(--ease);
+  }
+  .el::after { content: ''; position: absolute; top: 14px; right: 14px; width: 8px; height: 8px; border-radius: 50%; background: var(--c); box-shadow: 0 0 12px var(--c); }
+  .el:hover { transform: translateY(-6px) rotate(-1.5deg); border-color: color-mix(in oklab, var(--c) 70%, transparent); background: color-mix(in oklab, var(--c) 10%, var(--bg)); }
+  .el-n { font-size: 10px; color: var(--muted); }
+  .el-sym { font-size: clamp(34px, 3.4vw, 48px); font-weight: 600; letter-spacing: -0.05em; line-height: 1; }
+  .el-name { font-size: 12.5px; color: var(--text-2); line-height: 1.25; }
+  @media (max-width: 520px) { .table { grid-template-columns: repeat(3, 1fr); gap: 8px; } .el { padding: 10px; } .el-name { font-size: 11px; } }
+</style>

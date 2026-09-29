@@ -1,0 +1,68 @@
+---
+import Base from '../layouts/Base.astro';
+import Hero from '../components/home/Hero.astro';
+import Marquee from '../components/home/Marquee.astro';
+import About from '../components/home/About.astro';
+import Work from '../components/home/Work.astro';
+import Capabilities from '../components/home/Capabilities.astro';
+import Lab from '../components/home/Lab.astro';
+import Stack from '../components/home/Stack.astro';
+import Services from '../components/home/Services.astro';
+import Resources from '../components/home/Resources.astro';
+import Contact from '../components/home/Contact.astro';
+import { site } from '../data/site';
+import { projects } from '../data/projects';
+import { skills } from '../data/portfolioData.js';
+
+const description =
+  "Giorgi Kemoklidze is an independent full-stack developer in Tbilisi building production websites, AI tools, 3D web experiences and Supabase-backed apps with React, Next.js, Astro and TypeScript.";
+
+const jsonLd = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'WebSite',
+    name: 'Giorgi Codes',
+    url: `${site.url}/`,
+    inLanguage: 'en',
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'Person',
+    '@id': `${site.url}/#person`,
+    name: site.name,
+    url: `${site.url}/`,
+    image: `${site.url}/logo-gk.png`,
+    jobTitle: site.role,
+    email: `mailto:${site.email}`,
+    address: { '@type': 'PostalAddress', addressLocality: 'Tbilisi', addressCountry: 'GE' },
+    sameAs: [site.links.github, site.links.linkedin, site.links.x],
+    knowsAbout: skills.map((s) => s.name),
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'ItemList',
+    name: 'Selected projects',
+    itemListElement: projects.map((p, i) => ({ '@type': 'ListItem', position: i + 1, url: `${site.url}/work/${p.slug}/`, name: p.title })),
+  },
+];
+---
+
+<Base title="Giorgi Kemoklidze · Full-Stack Developer & Designer" description={description} path="/" ogType="profile" jsonLd={jsonLd} footerCta={false}>
+  <main id="main">
+    <Hero />
+    <Marquee items={['React', 'Next.js', 'Three.js', 'TypeScript', 'Supabase', 'Astro', 'UX design', 'Stripe', 'WebGL', 'SEO', 'AI tools', 'PostgreSQL']} />
+    <About />
+    <Work />
+    <Capabilities />
+    <Lab />
+    <Stack />
+    <Marquee reverse items={['Websites', 'Dashboards', 'AI assistants', '3D explorers', 'Marketplaces', 'Automation', 'Landing pages', 'MCP servers']} />
+    <Services />
+    <Resources />
+    <Contact />
+  </main>
+</Base>
+
+<script>
+  import '../scripts/home';
+</script>

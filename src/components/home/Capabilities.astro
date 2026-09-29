@@ -1,0 +1,179 @@
+---
+const caps = [
+  {
+    key: 'eng',
+    title: 'Full-stack engineering',
+    body: 'React, Next.js and Astro front-ends on Supabase and PostgreSQL, with auth, billing, edge functions and data models built to last.',
+    tags: ['TypeScript', 'Supabase', 'Stripe'],
+  },
+  {
+    key: 'three',
+    title: '3D & real-time graphics',
+    body: 'WebGL scenes, custom GLSL shaders and interactive product explorers that run smoothly in the browser, including on phones.',
+    tags: ['three.js', 'GLSL', 'WebGL'],
+  },
+  {
+    key: 'design',
+    title: 'Interface design',
+    body: 'Type-led layouts, considered colour systems and motion that explains. Designed in Figma, finished in code.',
+    tags: ['Figma', 'Design systems', 'Motion'],
+  },
+  {
+    key: 'ux',
+    title: 'UX & conversion',
+    body: 'Journeys mapped around the one action that matters, with clear states, forms that forgive and funnels that measure.',
+    tags: ['Research', 'Funnels', 'A11y'],
+  },
+  {
+    key: 'seo',
+    title: 'SEO & performance',
+    body: 'Static-first rendering, structured data, Core Web Vitals and analytics set up from day one, so the site gets found and stays fast.',
+    tags: ['Core Web Vitals', 'Schema', 'GA4'],
+  },
+  {
+    key: 'ai',
+    title: 'AI & automation',
+    body: 'LLM features, matching and scoring, Telegram bots and MCP servers that take repetitive work off real teams.',
+    tags: ['LLMs', 'MCP', 'Bots'],
+  },
+];
+---
+
+<section id="capabilities" class="caps" aria-labelledby="caps-title">
+  <div class="wrap">
+    <div class="caps-head">
+      <p class="kicker">Capabilities</p>
+      <h2 id="caps-title">One developer.<br /><span class="serif">Every layer</span> of the product.</h2>
+    </div>
+
+    <ul class="caps-grid">
+      {caps.map((c, i) => (
+        <li class={`cap cap-${c.key}`} data-spotlight>
+          <div class="cap-in reveal" style={`transition-delay:${(i % 3) * 0.08}s`}>
+          <div class="cap-vis" aria-hidden="true">
+            {c.key === 'eng' && (
+              <pre class="code mono"><span class="k">const</span> {'{ data }'} = <span class="k">await</span> supabase{'\n'}  .from(<span class="s">'jobs'</span>){'\n'}  .select(<span class="s">'*, carrier(*)'</span>){'\n'}  .eq(<span class="s">'status'</span>, <span class="s">'open'</span>)<span class="caret"></span></pre>
+            )}
+            {c.key === 'three' && (
+              <div class="cube-scene"><div class="cube">{[1, 2, 3, 4, 5, 6].map(() => <i />)}</div></div>
+            )}
+            {c.key === 'design' && (
+              <div class="swatches">
+                <span style="--c:var(--signal)">Aa</span><span style="--c:var(--violet)"></span><span style="--c:var(--cyan)"></span><span style="--c:var(--text)"></span>
+              </div>
+            )}
+            {c.key === 'ux' && (
+              <svg class="flow" viewBox="0 0 240 90">
+                <path d="M20 45 H90 M130 45 C150 45 150 20 170 20 H200 M130 45 C150 45 150 70 170 70 H200" />
+                <circle cx="20" cy="45" r="7" /><rect x="90" y="33" width="40" height="24" rx="7" /><circle cx="210" cy="20" r="7" /><circle class="goal" cx="210" cy="70" r="9" />
+                <circle class="pulse" r="4"><animateMotion dur="3.2s" repeatCount="indefinite" path="M20 45 H90 H130 C150 45 150 70 170 70 H210" /></circle>
+              </svg>
+            )}
+            {c.key === 'seo' && (
+              <div class="gauges">
+                {['Perf', 'A11y', 'Best', 'SEO'].map((g) => (
+                  <div class="gauge"><svg viewBox="0 0 40 40"><circle cx="20" cy="20" r="16" /><circle class="g-fill" cx="20" cy="20" r="16" /></svg><small class="mono">{g}</small></div>
+                ))}
+              </div>
+            )}
+            {c.key === 'ai' && (
+              <div class="chat">
+                <p class="q">Which plan fits 5k visitors?</p>
+                <p class="a"><span>Growth covers it with room to spare. Here is why</span><i class="blink">▍</i></p>
+              </div>
+            )}
+          </div>
+          <span class="cap-n mono">0{i + 1}</span>
+          <h3>{c.title}</h3>
+          <p>{c.body}</p>
+          <ul class="cap-tags mono">{c.tags.map((t) => <li>{t}</li>)}</ul>
+          </div>
+        </li>
+      ))}
+    </ul>
+  </div>
+</section>
+
+<style>
+  .caps { padding: clamp(110px, 14vw, 200px) 0 clamp(60px, 8vw, 110px); }
+  .caps-head { display: grid; gap: 22px; margin-bottom: clamp(48px, 6vw, 80px); }
+  .caps-head h2 { font-size: clamp(40px, 6.4vw, 104px); letter-spacing: -0.06em; line-height: 0.92; }
+  .caps-head .serif { color: var(--muted); }
+
+  .caps-grid { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--line); border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden; }
+  .cap {
+    --mx: 50%; --my: 50%;
+    position: relative;
+    padding: 28px 28px 30px; background: var(--bg);
+    min-height: 420px;
+  }
+  .cap::before {
+    content: ''; position: absolute; inset: 0; pointer-events: none; opacity: 0; transition: opacity 0.4s;
+    background: radial-gradient(420px circle at var(--mx) var(--my), color-mix(in oklab, var(--signal) 10%, transparent), transparent 60%);
+  }
+  .cap:hover::before { opacity: 1; }
+  .cap-in { position: relative; display: flex; flex-direction: column; gap: 12px; height: 100%; }
+  .cap-vis { height: 150px; margin-bottom: 18px; display: grid; place-items: center; border-radius: 14px; background: var(--surface); border: 1px solid var(--line); overflow: hidden; position: relative; }
+  .cap-n { font-size: 11px; color: var(--signal-ink); }
+  .cap h3 { font-size: 26px; letter-spacing: -0.04em; }
+  .cap p { color: var(--muted); font-size: 15px; }
+  .cap-tags { list-style: none; margin: auto 0 0; padding: 12px 0 0; display: flex; gap: 12px; font-size: 11px; color: var(--text-2); text-transform: uppercase; letter-spacing: 0.08em; }
+
+  /* engineering: typing code */
+  .code { margin: 0; font-size: 12px; line-height: 1.7; color: var(--text-2); padding: 0 18px; width: 100%; white-space: pre; }
+  .code .k { color: var(--violet); }
+  .code .s { color: var(--signal-ink); }
+  .caret { display: inline-block; width: 7px; height: 14px; background: var(--signal); vertical-align: -2px; margin-left: 2px; animation: blink 1s steps(1) infinite; }
+  @keyframes blink { 50% { opacity: 0; } }
+
+  /* 3d: css cube */
+  .cube-scene { perspective: 500px; }
+  .cube { position: relative; width: 64px; height: 64px; transform-style: preserve-3d; animation: spin 9s linear infinite; }
+  .cube i { position: absolute; inset: 0; border: 1px solid var(--signal); background: color-mix(in oklab, var(--signal) 8%, transparent); }
+  .cube i:nth-child(1) { transform: translateZ(32px); }
+  .cube i:nth-child(2) { transform: rotateY(180deg) translateZ(32px); }
+  .cube i:nth-child(3) { transform: rotateY(90deg) translateZ(32px); }
+  .cube i:nth-child(4) { transform: rotateY(-90deg) translateZ(32px); }
+  .cube i:nth-child(5) { transform: rotateX(90deg) translateZ(32px); }
+  .cube i:nth-child(6) { transform: rotateX(-90deg) translateZ(32px); }
+  @keyframes spin { from { transform: rotateX(-24deg) rotateY(0); } to { transform: rotateX(-24deg) rotateY(360deg); } }
+
+  /* design: swatches */
+  .swatches { display: flex; }
+  .swatches span {
+    width: 64px; height: 64px; border-radius: 50%; background: var(--c); margin-left: -14px;
+    display: grid; place-items: center; font-family: var(--font-serif); font-style: italic; font-size: 28px; color: var(--on-signal);
+    border: 2px solid var(--bg); transition: transform 0.6s var(--ease);
+  }
+  .swatches span:first-child { margin-left: 0; }
+  .cap:hover .swatches span { transform: translateY(-8px); }
+  .cap:hover .swatches span:nth-child(2) { transition-delay: 0.05s; }
+  .cap:hover .swatches span:nth-child(3) { transition-delay: 0.1s; }
+  .cap:hover .swatches span:nth-child(4) { transition-delay: 0.15s; }
+
+  /* ux: flow */
+  .flow { width: 82%; fill: none; stroke: var(--line-2); stroke-width: 1.5; }
+  .flow circle, .flow rect { fill: var(--bg-3); }
+  .flow .goal { stroke: var(--signal); fill: color-mix(in oklab, var(--signal) 20%, transparent); }
+  .flow .pulse { fill: var(--signal); stroke: none; }
+
+  /* seo: gauges */
+  .gauges { display: flex; gap: 14px; }
+  .gauge { display: grid; justify-items: center; gap: 6px; }
+  .gauge svg { width: 46px; transform: rotate(-90deg); }
+  .gauge circle { fill: none; stroke: var(--line-2); stroke-width: 3; }
+  .gauge .g-fill { stroke: #3dff8a; stroke-dasharray: 100.5; stroke-dashoffset: 100.5; stroke-linecap: round; transition: stroke-dashoffset 1.6s var(--ease) 0.2s; }
+  .cap-in.is-in .g-fill { stroke-dashoffset: 0; }
+  .gauge small { font-size: 10px; color: var(--muted); }
+
+  /* ai: chat */
+  .chat { width: 86%; display: grid; gap: 8px; font-size: 13px; }
+  .chat p { padding: 8px 12px; border-radius: 12px; max-width: 90%; }
+  .chat .q { justify-self: end; background: var(--surface-2); color: var(--text-2); }
+  .chat .a { background: color-mix(in oklab, var(--signal) 14%, transparent); color: var(--text); }
+  .chat .a span { display: inline; }
+  .blink { font-style: normal; color: var(--signal-ink); animation: blink 1s steps(1) infinite; }
+
+  @media (max-width: 1000px) { .caps-grid { grid-template-columns: 1fr 1fr; } }
+  @media (max-width: 640px) { .caps-grid { grid-template-columns: 1fr; } .cap { min-height: 0; } }
+</style>

@@ -1,0 +1,127 @@
+{
+  "slug": "hubspot-free-vs-starter-small-business",
+  "title": "HubSpot free vs paid plans for small business | Giorgi Codes",
+  "description": "A practical checklist for comparing HubSpot's free tools and paid plans for a small business, including seats, limits, ownership, and upgrade triggers.",
+  "robots": "index, follow, max-image-preview:large",
+  "canonical": "https://giorgi.codes/affiliate/hubspot-free-vs-starter-small-business.html",
+  "path": "/affiliate/hubspot-free-vs-starter-small-business.html",
+  "ogType": "article",
+  "ogTitle": "HubSpot free vs paid plans for small business | Giorgi Codes",
+  "ogDescription": "Compare HubSpot plans by customer jobs, seats, limits, ownership, and the moment a paid upgrade is justified.",
+  "ogImage": "https://giorgi.codes/affiliate/assets/chapter-ai.png",
+  "jsonLd": [
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": "HubSpot free vs paid plans for small business",
+      "url": "https://giorgi.codes/affiliate/hubspot-free-vs-starter-small-business.html",
+      "author": {
+        "@type": "Person",
+        "name": "Giorgi Kemoklidze"
+      },
+      "description": "A practical checklist for comparing HubSpot's free tools and paid plans for a small business."
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Giorgi Codes",
+          "item": "https://giorgi.codes/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "The Field Guide",
+          "item": "https://giorgi.codes/affiliate/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "HubSpot free vs paid plans",
+          "item": "https://giorgi.codes/affiliate/hubspot-free-vs-starter-small-business.html"
+        }
+      ]
+    }
+  ],
+  "topic": "t-biz",
+  "category": "Small business",
+  "chip": "📇 Small-business buying guide",
+  "h1": "Choose the HubSpot plan your business can actually use.",
+  "lede": "A free CRM can be a sensible starting point. A paid plan can be useful when a real limit, permission need, or workflow gap costs more than the upgrade. Use this checklist before buying on a feature list alone.",
+  "updated": "September 2026",
+  "readTime": "3 min read",
+  "heroIcon": "📇",
+  "heroTitle": "HubSpot free vs paid plans",
+  "heroRows": [
+    {
+      "label": "Format",
+      "value": "Checklist · 7 steps"
+    },
+    {
+      "label": "Best for",
+      "value": "Small business"
+    },
+    {
+      "label": "Reading time",
+      "value": "3 minutes"
+    }
+  ],
+  "body": "<p class=\"note\"><strong>Disclosure:</strong> no paid affiliate link is active on this page. I am evaluating HubSpot's affiliate program separately. Product packaging, prices, limits, and program terms can change; confirm the current official details before subscribing.</p>\n    <aside class=\"cta\"><strong>Start with primary sources.</strong> Read <a href=\"https://www.hubspot.com/products/crm?software=crm\" target=\"_blank\" rel=\"noopener noreferrer\">HubSpot's current CRM overview</a>, then compare the <a href=\"https://www.hubspot.com/pricing/crm?tier=enterprise\" target=\"_blank\" rel=\"noopener noreferrer\">official pricing page</a> for the exact hub, seats, billing period, and limits you need.</aside>\n    <section class=\"checks\" aria-label=\"HubSpot plan comparison checklist\">\n      <article class=\"check\"><h2>Name the customer job</h2><p>Write down the first job the system must handle: contact records, a simple deal pipeline, lead capture, follow-up, support, or reporting. If the job is vague, a bigger plan will not fix the buying decision.</p></article>\n      <article class=\"check\"><h2>Separate free access from free capacity</h2><p>Check the exact number of users, contacts, emails, forms, automations, reports, and credits included. “Free tools” describes an entry point; it does not mean every product feature or usage limit is free.</p></article>\n      <article class=\"check\"><h2>Count the people who need access</h2><p>List the owner, sales users, support users, marketing users, and anyone who only needs reporting. Seat pricing and permission needs can change the real monthly cost quickly.</p></article>\n      <article class=\"check\"><h2>Test the handoff</h2><p>Put one real inquiry through the workflow. Confirm who receives it, where it is stored, what reminders exist, and how a person can correct an inaccurate record.</p></article>\n      <article class=\"check\"><h2>Check migration and ownership</h2><p>Before importing contacts, identify export options, field mapping, duplicate handling, account ownership, and the process for removing a user without losing business history.</p></article>\n      <article class=\"check\"><h2>Price the next twelve months</h2><p>Include seats, contacts, credits, add-ons, onboarding, migration, implementation time, renewal terms, taxes, and the cost of changing plans later. Compare the total with the value of the job it replaces.</p></article>\n      <article class=\"check\"><h2>Define the upgrade trigger</h2><p>Upgrade when a measured limit blocks a valuable workflow or the saved time and recovered opportunities justify the cost. Do not upgrade because a feature page makes the larger plan feel safer.</p></article>\n    </section>\n    <aside class=\"cta\"><strong>Decision rule:</strong> start with the smallest plan that handles one important customer job, document the first constraint you hit, and verify the paid plan removes that constraint before subscribing. Compare current tiers on <a href=\"https://www.hubspot.com/pricing/crm\" target=\"_blank\" rel=\"noopener noreferrer\">HubSpot's official pricing page</a>.</aside>",
+  "related": [
+    {
+      "href": "ai-website-assistant-for-small-business.html",
+      "icon": "🏪",
+      "title": "AI assistant for a small business",
+      "category": "Small business"
+    },
+    {
+      "href": "sitemind-for-web-agencies.html",
+      "icon": "🏢",
+      "title": "AI assistants for web agencies",
+      "category": "Small business"
+    },
+    {
+      "href": "sitemind-agency-reseller-pilot.html",
+      "icon": "🧪",
+      "title": "One-site AI reseller pilot",
+      "category": "Small business"
+    }
+  ],
+  "offer": {
+    "tag": "Work with me",
+    "name": "Need a hand with your site?",
+    "text": "I'm a full-stack developer: builds, fixes, migrations, AI assistants and SEO.",
+    "link": {
+      "href": "mailto:contact@giorgi.codes",
+      "label": "Email Giorgi ↗",
+      "attrs": {
+        "data-affiliate-placement": "sidebar"
+      }
+    },
+    "small": "contact@giorgi.codes"
+  },
+  "sticky": null,
+  "navCta": {
+    "href": "mailto:contact@giorgi.codes",
+    "label": "Hire Giorgi",
+    "attrs": {
+      "data-affiliate-placement": "nav"
+    }
+  },
+  "scripts": [],
+  "hub": {
+    "order": 20,
+    "cats": [
+      "biz"
+    ],
+    "color": "biz",
+    "icon": "📇",
+    "cardTitle": "HubSpot free vs paid plans",
+    "cardText": "Seats, limits and the moment an upgrade is actually worth it.",
+    "label": "Small business",
+    "isNew": false
+  }
+}

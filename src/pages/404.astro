@@ -1,0 +1,60 @@
+---
+import Base from '../layouts/Base.astro';
+import { site } from '../data/site';
+---
+
+<Base title="Page not found | Giorgi Codes" description="This page wandered off. Head back home, see the work, or browse the Field Guide." path="/404.html" noindex>
+  <main id="main" class="nf">
+    <div class="wrap nf-inner">
+      <p class="kicker">Error 404 · route not found</p>
+      <h1 class="nf-big" aria-label="404">
+        <span data-nf>4</span><span class="nf-zero serif" data-nf>0</span><span data-nf>4</span>
+      </h1>
+      <p class="nf-title">This page shipped <span class="serif">without a deploy.</span></p>
+      <p class="nf-copy">The link may be old, mistyped, or from a version of this site that no longer exists. Here are three places that definitely do.</p>
+
+      <pre class="nf-term mono" aria-hidden="true"><span>$</span> curl -I giorgi.codes<span data-path></span>
+HTTP/2 <b>404</b>
+<span>→</span> suggestion: try one of the routes below</pre>
+
+      <nav class="nf-links" aria-label="Helpful links">
+        <a href="/"><span class="mono">01</span>Home<i aria-hidden="true">↗</i></a>
+        <a href="/#work"><span class="mono">02</span>Selected work<i aria-hidden="true">↗</i></a>
+        <a href={site.resourcesHref} data-hub-placement="404"><span class="mono">03</span>The Field Guide<i aria-hidden="true">↗</i></a>
+      </nav>
+    </div>
+  </main>
+  <script is:inline>
+    (() => {
+      const p = document.querySelector('[data-path]');
+      if (p) p.textContent = location.pathname === '/404.html' ? '/lost' : location.pathname.slice(0, 48);
+      const digits = document.querySelectorAll('[data-nf]');
+      if (matchMedia('(prefers-reduced-motion: reduce)').matches || !matchMedia('(pointer: fine)').matches) return;
+      addEventListener('pointermove', (e) => {
+        const x = e.clientX / innerWidth - 0.5, y = e.clientY / innerHeight - 0.5;
+        digits.forEach((d, i) => { const k = (i - 1) * 18 + 10; d.style.transform = `translate(${x * k}px, ${y * k}px)`; });
+      }, { passive: true });
+    })();
+  </script>
+</Base>
+
+<style>
+  .nf { min-height: 100svh; display: grid; align-items: center; padding: 130px 0 90px; overflow: hidden; }
+  .nf-big { display: flex; align-items: center; margin: 24px 0 0 -0.04em; font-size: clamp(140px, 30vw, 440px); font-weight: 700; letter-spacing: -0.08em; line-height: 0.8; }
+  .nf-big span { display: inline-block; transition: transform 0.8s var(--ease); }
+  .nf-zero { color: transparent; -webkit-text-stroke: 2px var(--signal-ink); font-weight: 400; margin: 0 0.02em; animation: nf-spin 9s var(--ease-in-out) infinite; }
+  @keyframes nf-spin { 0%, 70% { rotate: 0deg; } 85%, 100% { rotate: 360deg; } }
+  .nf-title { margin-top: 28px; font-size: clamp(28px, 4vw, 56px); font-weight: 600; letter-spacing: -0.045em; line-height: 1.02; }
+  .nf-title .serif { color: var(--muted); }
+  .nf-copy { margin-top: 16px; max-width: 52ch; color: var(--text-2); }
+  .nf-term { margin: 32px 0 0; padding: 18px 20px; max-width: 560px; overflow-x: auto; border: 1px solid var(--line); border-radius: 16px; background: var(--bg-2); font-size: 13px; line-height: 1.8; color: var(--text-2); white-space: pre-wrap; }
+  .nf-term span { color: var(--muted); }
+  .nf-term b { color: var(--rose); font-weight: 500; }
+  .nf-links { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); margin-top: 48px; border-top: 1px solid var(--line); }
+  .nf-links a { position: relative; display: flex; align-items: baseline; gap: 14px; padding: 22px 36px 22px 0; border-bottom: 1px solid var(--line); font-size: clamp(20px, 2.2vw, 28px); font-weight: 560; letter-spacing: -0.03em; transition: color 0.3s, padding 0.5s var(--ease); }
+  .nf-links a .mono { font-size: 11px; color: var(--muted); letter-spacing: 0.08em; }
+  .nf-links a i { position: absolute; right: 16px; font-style: normal; transition: transform 0.5s var(--ease); }
+  .nf-links a:hover { color: var(--signal-ink); padding-left: 10px; }
+  .nf-links a:hover i { transform: translate(3px, -3px); }
+  @media (max-width: 720px) { .nf-links { grid-template-columns: 1fr; } }
+</style>

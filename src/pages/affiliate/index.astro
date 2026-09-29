@@ -1,0 +1,337 @@
+---
+import Base from '../../layouts/Base.astro';
+import '../../styles/hub.css';
+import hubMeta from '../../data/hub.json';
+import { guides, topics } from '../../data/guides';
+
+const total = guides.length;
+const interactiveCount = 5; // as published on the previous hub
+const counts = Object.fromEntries(topics.map((t) => [t.id, guides.filter((g) => g.cats.includes(t.id)).length]));
+const nodes = guides.map((g) => ({ t: g.title, h: g.href, c: g.topic, p: g.priority }));
+
+const partners = [
+  {
+    id: 'verpex', tone: 'web', no: '01', tag: 'Web hosting', icon: '🖥️', name: 'Verpex',
+    text: 'cPanel hosting with NVMe storage, daily backups, free SSL and free migrations. Good for WordPress and small-business sites.',
+    points: ['Daily off-site backups', '24/7 support, 30-day money-back', 'Free domain on yearly plans'],
+    price: 'Renews from $6/mo · check the intro price',
+    guide: { href: 'verpex-hosting-review.html', label: 'Read the review' },
+    aff: { href: 'https://clients.verpex.com/aff/?a_aid=refid&a_aid=sqvj76rcsgbbg', label: 'Visit Verpex ↗', program: 'verpex' },
+  },
+  {
+    id: 'onehomeschool', tone: 'family', no: '02', tag: 'Homeschool', icon: '📚', name: 'OneHomeschool',
+    text: "Daily lesson guides for the curriculum you already own, with every child's day on one screen.",
+    points: ['Progress, attendance & transcripts', 'Kids check off their own work', '14-day free trial, no card'],
+    price: 'From $99/year · code GIORGI2608 = 5% off',
+    code: 'GIORGI2608',
+    guide: { href: 'onehomeschool-review.html', label: 'Read the guide' },
+    aff: { href: 'https://onehomeschool.com/?ref=GIORGI2608', label: 'Start free ↗', program: 'onehomeschool' },
+  },
+  {
+    id: 'sitemind', tone: 'ai', no: '03', tag: 'AI website assistant', icon: '🤖', name: 'SiteMind',
+    text: 'An AI chat assistant trained on your own pages that answers visitors with citations and captures leads.',
+    points: ['Cited answers from your content', 'Lead capture in the chat', 'WordPress plugin or one line of code'],
+    price: 'From $25/mo · 3-day free trial',
+    guide: { href: 'sitemind-cost-calculator.html', label: 'Calculate cost' },
+    aff: { href: 'https://sitemind.tech/r/GM3DEKT6?src=hub_card', label: 'Try free ↗', program: 'sitemind' },
+  },
+];
+
+const goals = [
+  { value: 'site', next: 'need', emo: '🌐', label: 'My website', sub: 'launch, host or improve it' },
+  { value: 'home', emo: '📚', label: 'Homeschool days', sub: 'planning for my kids' },
+  { value: 'creator', emo: '🎬', label: 'Content & video', sub: 'make and publish faster' },
+  { value: 'career', emo: '💼', label: 'My job search', sub: 'resume that gets read' },
+];
+const needs = [
+  { value: 'host', emo: '🖥️', label: 'Hosting', sub: 'where it lives & what it costs' },
+  { value: 'chat', emo: '💬', label: 'Visitor questions', sub: 'too many repeat emails' },
+  { value: 'build', emo: '🧱', label: 'Building it', sub: 'builder vs custom code' },
+  { value: 'care', emo: '🛠️', label: 'Keeping it healthy', sub: 'fixes, speed, SEO' },
+];
+const results = [
+  { key: 'host', tone: 'web', title: 'Start with the hosting review 🖥️', text: 'Compare plans by how many sites you run and what renewal really costs over three years.',
+    links: [['verpex-hosting-review.html', 'Verpex plan picker →'], ['hosting-checklist.html', 'Hosting checklist'], ['wordpress-woocommerce-checklist.html', 'WordPress launch']] },
+  { key: 'chat', tone: 'ai', title: 'An AI website assistant could help 🤖', text: 'Estimate conversations from your traffic, then see which plan fits and how many leads would cover the cost.',
+    links: [['sitemind-cost-calculator.html', 'SiteMind cost calculator →'], ['sitemind-review.html', 'Honest review'], ['ai-website-assistant-vs-live-chat-checklist.html', 'AI vs live chat']] },
+  { key: 'build', tone: 'web', title: 'Decide how to build first 🧱', text: 'Who edits the site and how often matters more than the tool.',
+    links: [['webflow-vs-custom-react-checklist.html', 'Webflow vs custom React →'], ['ai-website-builder-for-small-business.html', 'AI website builders'], ['no-code-landing-page-checklist.html', 'No-code landing page']] },
+  { key: 'care', tone: 'biz', title: 'Keep the site healthy after launch 🛠️', text: 'A simple routine for fixes, speed, SEO and ownership.',
+    links: [['website-maintenance-support-small-business.html', 'Maintenance guide →'], ['hosting-checklist.html', 'Hosting checklist'], ['mailto:contact@giorgi.codes', 'Ask me directly']] },
+  { key: 'home', tone: 'family', title: 'Try the homeschool plan picker 📚', text: 'See which plan fits your number of kids, and check whether your curriculum is supported.',
+    links: [['onehomeschool-review.html', 'OneHomeschool guide →'], ['family-reading-resource-checklist.html', 'Family reading resources']] },
+  { key: 'creator', tone: 'creative', title: 'Build a repeatable workflow 🎬', text: 'From recording to captions to publishing, and the music-rights check most creators skip.',
+    links: [['creator-video-workflow.html', 'Video workflow →'], ['mubert-music-licensing-checklist.html', 'Music rights'], ['envato-elements-affiliate-guide.html', 'Creative assets']] },
+  { key: 'career', tone: 'career', title: 'Get your resume read 💼', text: 'Choose between doing it yourself and getting targeted help.',
+    links: [['resumeats-concierge-checklist.html', 'Resume help levels →'], ['resumeble-vs-resumeats-checklist.html', 'Focused vs broad help']] },
+];
+
+const faqs = [
+  { q: 'How does The Field Guide make money?', a: 'Some links are affiliate links. If you buy through one, I may earn a commission at no extra cost to you. Every affiliate link is labelled next to where it appears.' },
+  { q: 'Do affiliate links change the price I pay?', a: "No. You pay the provider's normal price. Some partners, such as OneHomeschool, give a small discount when you use my code." },
+  { q: 'How do you choose which tools to cover?', a: 'I cover tools that matter to the websites and businesses I build for. Each guide lists who a tool fits, who it does not fit, and what to check on the official site before paying.' },
+  { q: 'Can you set one of these tools up for me?', a: "Yes. I'm a full-stack developer. Hosting migrations, AI assistant setup and website fixes are regular work for me. <a href=\"mailto:contact@giorgi.codes\">Email me</a> with what you need." },
+];
+
+const marquee = ['Web hosting', 'AI website assistants', 'Homeschool planning', 'Creator workflows', 'Small business', 'Career', 'Renewal-aware pricing', 'Honest trade-offs'];
+---
+
+<Base
+  title={hubMeta.title}
+  description={hubMeta.description}
+  path="/affiliate/"
+  ogType="website"
+  ogTitle={hubMeta.ogTitle}
+  ogDescription={hubMeta.ogDescription}
+  ogImage={hubMeta.ogImage}
+  ogImageAlt="The Field Guide by Giorgi Codes"
+  jsonLd={hubMeta.jsonLd}
+  bodyClass="fg-hub"
+>
+  <script is:inline slot="head" src="/affiliate/affiliate-tracking.js?v=c1" defer></script>
+
+  <main id="main">
+    <!-- ============ HERO ============ -->
+    <section class="fg-hero" aria-labelledby="fg-title">
+      <div class="fg-hero-glow" aria-hidden="true"></div>
+      <div class="wrap">
+        <div class="fg-hero-top mono">
+          <span class="kicker">The Field Guide</span>
+          <span>Edition 02 · Updated September 2026</span>
+        </div>
+
+        <h1 id="fg-title" class="fg-h1">
+          <span class="fg-line"><span class="fg-w" style="--i:0">Pick</span> <span class="fg-w" style="--i:1">the</span> <span class="fg-w" style="--i:2">right</span> <span class="fg-w" style="--i:3">tools.</span></span>
+          <em class="fg-line fg-line-2"><span class="fg-w" style="--i:4">Skip</span> <span class="fg-w" style="--i:5">the</span> <span class="fg-w fg-strike" style="--i:6">regret.</span></em>
+        </h1>
+
+        <div class="fg-hero-grid">
+          <div class="fg-hero-copy">
+            <p class="fg-lede">Independent guides and interactive calculators from a working full-stack developer. Hosting, AI assistants, homeschool planning and creator tools, with real prices and honest "who it's <em>not</em> for" notes.</p>
+            <div class="fg-actions">
+              <a class="btn btn-signal" href="#finder" data-magnetic>Find my tool in 30 seconds <span class="arrow" aria-hidden="true">↗</span></a>
+              <a class="btn btn-ghost" href="#library">Browse {total} guides</a>
+            </div>
+            <dl class="fg-stats" aria-label="Collection at a glance">
+              <div><dt>practical guides</dt><dd data-count={total}>{total}</dd></div>
+              <div><dt>interactive tools</dt><dd data-count={interactiveCount}>{interactiveCount}</dd></div>
+              <div><dt>paid placements</dt><dd data-count="0">0</dd></div>
+            </dl>
+          </div>
+
+          <div class="fg-orb" data-constellation aria-hidden="true">
+            <canvas></canvas>
+            <div class="fg-orb-ring"></div>
+            <div class="fg-orb-core mono"><b>{total}</b><span>guides, one<br />clear head</span></div>
+            <div class="fg-orb-tip mono" data-tip hidden></div>
+            <script type="application/json" data-nodes set:html={JSON.stringify(nodes)} />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="fg-marquee" aria-hidden="true">
+      <div class="fg-marquee-track">
+        {[0, 1].map(() => (
+          <div class="fg-marquee-set">
+            {marquee.map((m) => <span>{m}<i>✦</i></span>)}
+          </div>
+        ))}
+      </div>
+    </div>
+
+    <!-- ============ PARTNER PICKS ============ -->
+    <section id="picks" class="fg-section" aria-labelledby="picks-title">
+      <div class="wrap">
+        <header class="fg-head reveal">
+          <div>
+            <span class="kicker">Partner picks</span>
+            <h2 id="picks-title">Three tools I'd <span class="serif">actually</span> recommend.</h2>
+          </div>
+          <p>Each one has a full guide with an interactive calculator. Links marked "affiliate" may earn me a commission at no cost to you.</p>
+        </header>
+
+        <div class="fg-picks">
+          {partners.map((p) => (
+            <article class={`fg-pick reveal tone-${p.tone}`} data-spot>
+              <div class="fg-pick-top">
+                <span class="fg-pick-no mono">{p.no}</span>
+                <span class="fg-pick-tag mono"><span aria-hidden="true">{p.icon}</span> {p.tag}</span>
+              </div>
+              <h3>{p.name}</h3>
+              <p>{p.text}</p>
+              <ul>{p.points.map((pt) => <li>{pt}</li>)}</ul>
+              <div class="fg-pick-price">
+                {p.code ? (
+                  <>From $99/year · code <button type="button" class="fg-code mono" data-copy={p.code} aria-label={`Copy discount code ${p.code}`}><b>{p.code}</b><span data-copy-state>Copy</span></button> = 5% off</>
+                ) : p.price}
+              </div>
+              <div class="fg-pick-actions">
+                <a class="btn btn-sm fg-pick-read" href={`/affiliate/${p.guide.href}`}>{p.guide.label} <span class="arrow" aria-hidden="true">→</span></a>
+                <a class="btn btn-ghost btn-sm" href={p.aff.href} target="_blank" rel="sponsored noopener" data-affiliate-program={p.aff.program} data-affiliate-placement="hub_card">{p.aff.label}</a>
+              </div>
+              <span class="fg-fine mono">Affiliate link</span>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ TOOL FINDER ============ -->
+    <section id="finder" class="fg-section fg-finder" aria-labelledby="finder-title">
+      <div class="wrap">
+        <div class="fg-quiz reveal" data-quiz>
+          <div class="fg-quiz-side">
+            <span class="kicker">Tool finder</span>
+            <h2 id="finder-title">What are you trying to make <span class="serif">easier?</span></h2>
+            <div class="fg-quiz-meter" aria-hidden="true">
+              <span class="fg-quiz-step mono" data-step-label>01 / 02</span>
+              <div class="quiz-progress"><span></span></div>
+            </div>
+            <p class="fg-quiz-note mono">No email needed</p>
+          </div>
+
+          <div class="fg-quiz-main">
+            <div data-step="goal">
+              <h3>Pick the closest match.</h3>
+              <div class="options">
+                {goals.map((o, i) => (
+                  <button class="opt" type="button" data-value={o.value} data-next={o.next} aria-pressed="false">
+                    <span class="opt-k mono" aria-hidden="true">{String.fromCharCode(65 + i)}</span>
+                    <span class="emo" aria-hidden="true">{o.emo}</span>
+                    <span class="opt-t">{o.label}<small>{o.sub}</small></span>
+                  </button>
+                ))}
+              </div>
+            </div>
+
+            <div data-step="need" hidden>
+              <h3>What's the website problem?</h3>
+              <div class="options">
+                {needs.map((o, i) => (
+                  <button class="opt" type="button" data-value={o.value} aria-pressed="false">
+                    <span class="opt-k mono" aria-hidden="true">{String.fromCharCode(65 + i)}</span>
+                    <span class="emo" aria-hidden="true">{o.emo}</span>
+                    <span class="opt-t">{o.label}<small>{o.sub}</small></span>
+                  </button>
+                ))}
+              </div>
+            </div>
+
+            {results.map((r) => (
+              <div class="quiz-result" data-result={r.key} hidden>
+                <div class={`result-box tone-${r.tone}`}>
+                  <span class="mono fg-result-k">Your starting point</span>
+                  <h4 tabindex="-1">{r.title}</h4>
+                  <p>{r.text}</p>
+                  <div class="result-links">
+                    {r.links.map(([href, label], i) => <a class={`link-pill${i === 0 ? ' is-main' : ''}`} href={href.startsWith('mailto:') ? href : `/affiliate/${href}`}>{label}</a>)}
+                  </div>
+                </div>
+              </div>
+            ))}
+
+            <div class="quiz-foot">
+              <button class="text-btn" type="button" data-back hidden>← Back</button>
+              <button class="text-btn" type="button" data-restart hidden>↺ Start over</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ LIBRARY ============ -->
+    <section id="library" class="fg-section" aria-labelledby="library-title">
+      <div class="wrap" data-library>
+        <header class="fg-head reveal">
+          <div>
+            <span class="kicker">The library</span>
+            <h2 id="library-title">One useful decision <span class="serif">at a time.</span></h2>
+          </div>
+          <p>Short checklists and deep reviews. Search or filter by topic.</p>
+        </header>
+
+        <div class="toolbar">
+          <label class="search">
+            <span class="sr-only">Search guides</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="7" /><path d="m20 20-3.5-3.5" /></svg>
+            <input type="search" placeholder="Search: hosting, chatbot, resume…" autocomplete="off" />
+            <kbd class="mono" aria-hidden="true">/</kbd>
+          </label>
+          <div class="filters" role="group" aria-label="Filter by topic">
+            <button class="filter" type="button" data-filter="all" aria-pressed="true">All <sup class="mono">{total}</sup></button>
+            {topics.map((t) => (
+              <button class={`filter tone-${t.id}`} type="button" data-filter={t.id} aria-pressed="false"><span aria-hidden="true">{t.icon}</span> {t.label} <sup class="mono">{counts[t.id]}</sup></button>
+            ))}
+          </div>
+          <span class="count mono" role="status" aria-live="polite">{total} guides</span>
+        </div>
+
+        <ul class="grid-list">
+          {guides.map((g, i) => (
+            <li class={`gcard tone-${g.topic}`} data-cat={g.cats.join(' ')}>
+              <a href={g.href}>
+                <span class="gcard-top">
+                  <span class="ico" aria-hidden="true">{g.icon}</span>
+                  <span class="gcard-no mono">{String(i + 1).padStart(2, '0')}</span>
+                </span>
+                <h3>{g.title}</h3>
+                <p>{g.blurb}</p>
+                <span class="meta-row mono">
+                  <span>{g.label}</span>
+                  {g.interactive && !/calculator/i.test(g.label) && <span class="tag-tool">Calculator</span>}
+                  {g.isNew && <span class="new">New</span>}
+                  <span class="gcard-arrow" aria-hidden="true">↗</span>
+                </span>
+              </a>
+            </li>
+          ))}
+          <li class="gcard-ask">
+            <a href="mailto:contact@giorgi.codes?subject=Field%20Guide%20question">
+              <span class="mono">Not here yet?</span>
+              <b>Ask me about <span class="serif">your</span> tool.</b>
+              <i>contact@giorgi.codes ↗</i>
+            </a>
+          </li>
+        </ul>
+        <p class="empty" hidden>No guides match that search. Try "hosting", "AI" or "resume".</p>
+      </div>
+    </section>
+
+    <!-- ============ FAQ + NOTE ============ -->
+    <section class="fg-section fg-faq-wrap" aria-labelledby="faq-title">
+      <div class="wrap fg-faq-grid">
+        <header class="reveal">
+          <span class="kicker">Straight answers</span>
+          <h2 id="faq-title">How this guide <span class="serif">works</span></h2>
+        </header>
+        <div class="faq reveal">
+          {faqs.map((f) => (
+            <details><summary>{f.q}</summary><div set:html={f.a} /></details>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <section class="fg-section fg-note-wrap" aria-label="A note from Giorgi">
+      <div class="wrap">
+        <figure class="fg-note reveal">
+          <span class="kicker">A note from Giorgi</span>
+          <blockquote>
+            <p>I build websites, AI tools and business dashboards for a living. These guides are the questions I ask before picking the tools behind them: <span class="serif">what does it do well, what will it cost over time, and how easy is it to leave?</span></p>
+          </blockquote>
+          <figcaption>
+            <span class="fg-avatar mono" aria-hidden="true">GK</span>
+            <span><b>Giorgi Kemoklidze</b><small>Full-stack developer · Tbilisi</small></span>
+            <a class="btn btn-ghost btn-sm" href="/">See my work <span class="arrow" aria-hidden="true">→</span></a>
+          </figcaption>
+        </figure>
+        <p class="fg-disclose mono">Affiliate links are labelled. Buying through them costs you nothing extra.</p>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    import '../../scripts/hub';
+  </script>
+</Base>

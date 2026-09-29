@@ -1,0 +1,145 @@
+{
+  "slug": "hosting-checklist",
+  "title": "Hosting comparison checklist | Giorgi Codes",
+  "description": "A practical hosting comparison checklist covering deployment, backups, support, export, and renewal cost.",
+  "robots": "index, follow, max-image-preview:large",
+  "canonical": "https://giorgi.codes/affiliate/hosting-checklist.html",
+  "path": "/affiliate/hosting-checklist.html",
+  "ogType": "article",
+  "ogTitle": "Hosting comparison checklist | Giorgi Codes",
+  "ogDescription": "Compare the operating cost and exit path of a hosting plan before you move a site.",
+  "ogImage": "https://giorgi.codes/affiliate/assets/chapter-hosting.png",
+  "jsonLd": [
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": "Hosting comparison checklist",
+      "url": "https://giorgi.codes/affiliate/hosting-checklist.html",
+      "author": {
+        "@type": "Person",
+        "name": "Giorgi Kemoklidze"
+      },
+      "description": "A practical checklist for comparing hosting operations and exit costs."
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Giorgi Codes",
+          "item": "https://giorgi.codes/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "The Field Guide",
+          "item": "https://giorgi.codes/affiliate/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Compare hosting without missing renewal costs",
+          "item": "https://giorgi.codes/affiliate/hosting-checklist.html"
+        }
+      ]
+    }
+  ],
+  "topic": "t-web",
+  "category": "Websites & hosting",
+  "chip": "🧾 Hosting decision guide",
+  "h1": "Compare hosting by the work you will actually operate.",
+  "lede": "The cheapest first-year price can hide the decisions that matter later: recovery, support, renewal, and how easily you can leave. Use this checklist before moving a personal site or small business project.",
+  "updated": "September 2026",
+  "readTime": "3 min read",
+  "heroIcon": "🧾",
+  "heroTitle": "Compare hosting without missing renewal costs",
+  "heroRows": [
+    {
+      "label": "Format",
+      "value": "Checklist · 5 steps"
+    },
+    {
+      "label": "Best for",
+      "value": "Websites & hosting"
+    },
+    {
+      "label": "Reading time",
+      "value": "3 minutes"
+    }
+  ],
+  "body": "<p class=\"note\"><strong>Disclosure:</strong> this is an independent checklist. This page includes a Verpex referral link. I may earn a commission if you subscribe through it, at no extra cost. Confirm current pricing, renewal terms, limits, and cancellation rules on the provider’s official site.</p>\n    <section class=\"checklist\" aria-label=\"Hosting comparison checklist\">\n      <article class=\"item\"><h2>Map the deployment path</h2><p>Write down how code, database changes, environment variables, domains, and rollback are handled. A plan that is easy to deploy but hard to recover can be expensive.</p></article>\n      <article class=\"item\"><h2>Price the second year</h2><p>Record introductory pricing, renewal pricing, add-ons, domain fees, backups, email, and support. Compare the total for the exact stack you will run.</p></article>\n      <article class=\"item\"><h2>Test the exit path</h2><p>Check whether you can export files and data in a usable format, change DNS without a support ticket, and keep your domain independent of the host.</p></article>\n      <article class=\"item\"><h2>Verify recovery and support</h2><p>Look for backup frequency, restore scope, support hours, escalation, and a documented incident path. Treat “backup” and “tested restore” as different claims.</p></article>\n      <article class=\"item\"><h2>Match the plan to real demand</h2><p>Estimate traffic, storage, background jobs, team access, and compliance needs. Avoid paying for scale you cannot yet measure, but leave room for a safe upgrade.</p></article>\n    </section>\n    <aside class=\"cta\"><strong>Want to compare a live hosting option?</strong> Verpex is one provider to investigate when deployment, support, renewal cost, and exit planning fit your project. <a href=\"https://clients.verpex.com/aff/?a_aid=refid&a_aid=sqvj76rcsgbbg\" target=\"_blank\" rel=\"sponsored noopener noreferrer\" data-affiliate-program=\"verpex\" data-affiliate-placement=\"hosting_verpex_cta\">Review Verpex through my referral link</a> at no extra cost. <span class=\"disclosure\">Disclosure: I may earn a commission if you subscribe through this link. Verify current pricing, renewal terms, limits, and cancellation rules on Verpex's official site before subscribing.</span></aside>",
+  "related": [
+    {
+      "href": "verpex-hosting-review.html",
+      "icon": "🖥️",
+      "title": "Verpex hosting review",
+      "category": "Websites & hosting"
+    },
+    {
+      "href": "ai-website-builder-checklist.html",
+      "icon": "🪄",
+      "title": "Compare AI website builders",
+      "category": "Websites & hosting"
+    },
+    {
+      "href": "webflow-vs-custom-react-checklist.html",
+      "icon": "⚖️",
+      "title": "Webflow vs custom React",
+      "category": "Websites & hosting"
+    }
+  ],
+  "offer": {
+    "tag": "Partner pick",
+    "name": "Verpex hosting",
+    "text": "cPanel hosting with daily backups, free SSL and free site migrations.",
+    "link": {
+      "href": "https://clients.verpex.com/aff/?a_aid=refid&a_aid=sqvj76rcsgbbg",
+      "label": "See Verpex plans ↗",
+      "attrs": {
+        "target": "_blank",
+        "rel": "sponsored noopener",
+        "data-affiliate-program": "verpex",
+        "data-affiliate-placement": "sidebar"
+      }
+    },
+    "small": "Affiliate link · renews from $6/mo"
+  },
+  "sticky": {
+    "text": "Verpex · from $6/mo renewal",
+    "link": {
+      "href": "https://clients.verpex.com/aff/?a_aid=refid&a_aid=sqvj76rcsgbbg",
+      "label": "See Verpex plans ↗",
+      "attrs": {
+        "target": "_blank",
+        "rel": "sponsored noopener",
+        "data-affiliate-program": "verpex",
+        "data-affiliate-placement": "sticky"
+      }
+    }
+  },
+  "navCta": {
+    "href": "https://clients.verpex.com/aff/?a_aid=refid&a_aid=sqvj76rcsgbbg",
+    "label": "Visit Verpex",
+    "attrs": {
+      "target": "_blank",
+      "rel": "sponsored noopener",
+      "data-affiliate-program": "verpex",
+      "data-affiliate-placement": "nav"
+    }
+  },
+  "scripts": [],
+  "hub": {
+    "order": 3,
+    "cats": [
+      "web"
+    ],
+    "color": "web",
+    "icon": "🧾",
+    "cardTitle": "Compare hosting without missing renewal costs",
+    "cardText": "Deployment, backups, support, export and the second-year price.",
+    "label": "Hosting",
+    "isNew": false
+  }
+}

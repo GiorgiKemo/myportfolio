@@ -1,0 +1,128 @@
+{
+  "slug": "wordpress-woocommerce-checklist",
+  "title": "WordPress and WooCommerce launch checklist | Giorgi Codes",
+  "description": "A practical pre-launch checklist for choosing and operating WordPress or WooCommerce tools.",
+  "robots": "index, follow, max-image-preview:large",
+  "canonical": "https://giorgi.codes/affiliate/wordpress-woocommerce-checklist.html",
+  "path": "/affiliate/wordpress-woocommerce-checklist.html",
+  "ogType": "article",
+  "ogTitle": "WordPress and WooCommerce launch checklist | Giorgi Codes",
+  "ogDescription": "Separate product fit, operations, checkout, and maintenance before launching a WordPress or WooCommerce project.",
+  "ogImage": "https://giorgi.codes/affiliate/assets/chapter-hosting.png",
+  "jsonLd": [
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": "WordPress and WooCommerce launch checklist",
+      "url": "https://giorgi.codes/affiliate/wordpress-woocommerce-checklist.html",
+      "author": {
+        "@type": "Person",
+        "name": "Giorgi Kemoklidze"
+      },
+      "description": "A practical checklist for choosing and operating WordPress and WooCommerce tools."
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Giorgi Codes",
+          "item": "https://giorgi.codes/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "The Field Guide",
+          "item": "https://giorgi.codes/affiliate/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "WordPress or WooCommerce launch",
+          "item": "https://giorgi.codes/affiliate/wordpress-woocommerce-checklist.html"
+        }
+      ]
+    }
+  ],
+  "topic": "t-web",
+  "category": "Websites & hosting",
+  "chip": "🛒 WordPress launch guide",
+  "h1": "Separate the store launch from the tool shopping.",
+  "lede": "A WordPress or WooCommerce project is a living system: content, hosting, checkout, updates, customer support, and recovery all matter. Use this checklist before committing to a stack.",
+  "updated": "September 2026",
+  "readTime": "3 min read",
+  "heroIcon": "🛒",
+  "heroTitle": "WordPress or WooCommerce launch",
+  "heroRows": [
+    {
+      "label": "Format",
+      "value": "Checklist · 5 steps"
+    },
+    {
+      "label": "Best for",
+      "value": "Websites & hosting"
+    },
+    {
+      "label": "Reading time",
+      "value": "3 minutes"
+    }
+  ],
+  "body": "<p class=\"note\"><strong>Disclosure:</strong> this is an independent checklist. No paid affiliate link is active on this page. Product commissions and terms can change; confirm them on the official provider pages.</p>\n    <section class=\"checks\" aria-label=\"WordPress and WooCommerce launch checklist\">\n      <article class=\"check\"><h2>Define the job before choosing a product</h2><p>Clarify whether the project is a publication, service site, membership, catalog, or store. The right stack follows the operating model.</p></article>\n      <article class=\"check\"><h2>Separate content from commerce</h2><p>List pages, products, payments, taxes, shipping, email, analytics, and support. Do not call a visual prototype a ready-to-sell store.</p></article>\n      <article class=\"check\"><h2>Plan the maintenance budget</h2><p>Include hosting, domains, paid extensions, backups, security, transaction fees, support time, and the cost of testing updates.</p></article>\n      <article class=\"check\"><h2>Prove the checkout path</h2><p>Run a test order in the real environment, verify confirmation emails and fulfillment, and document what happens when payment fails or an order is refunded.</p></article>\n      <article class=\"check\"><h2>Keep ownership portable</h2><p>Use an account and domain you control, export customer and content data where permitted, and document admin access before launch.</p></article>\n    </section>",
+  "related": [
+    {
+      "href": "verpex-hosting-review.html",
+      "icon": "🖥️",
+      "title": "Verpex hosting review",
+      "category": "Websites & hosting"
+    },
+    {
+      "href": "hosting-checklist.html",
+      "icon": "🧾",
+      "title": "Compare hosting without missing renewal costs",
+      "category": "Websites & hosting"
+    },
+    {
+      "href": "ai-website-builder-checklist.html",
+      "icon": "🪄",
+      "title": "Compare AI website builders",
+      "category": "Websites & hosting"
+    }
+  ],
+  "offer": {
+    "tag": "Work with me",
+    "name": "Need a hand with your site?",
+    "text": "I'm a full-stack developer: builds, fixes, migrations, AI assistants and SEO.",
+    "link": {
+      "href": "mailto:contact@giorgi.codes",
+      "label": "Email Giorgi ↗",
+      "attrs": {
+        "data-affiliate-placement": "sidebar"
+      }
+    },
+    "small": "contact@giorgi.codes"
+  },
+  "sticky": null,
+  "navCta": {
+    "href": "mailto:contact@giorgi.codes",
+    "label": "Hire Giorgi",
+    "attrs": {
+      "data-affiliate-placement": "nav"
+    }
+  },
+  "scripts": [],
+  "hub": {
+    "order": 18,
+    "cats": [
+      "web",
+      "biz"
+    ],
+    "color": "web",
+    "icon": "🛒",
+    "cardTitle": "Plan a WordPress or WooCommerce launch",
+    "cardText": "Pre-launch checks for choosing and running your store.",
+    "label": "Commerce",
+    "isNew": false
+  }
+}

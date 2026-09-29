@@ -1,0 +1,71 @@
+---
+import { projects, skills } from '../../data/portfolioData.js';
+
+const statement =
+  "I'm Giorgi, a full-stack developer who builds complete web products that solve real business problems. I obsess over the details people feel but rarely notice: motion that guides, interfaces that stay out of the way, pages that load before you blink, and back-ends that simply keep working.";
+
+const livePublic = projects.length;
+---
+
+<section id="about" class="about" aria-labelledby="about-title">
+  <div class="wrap">
+    <div class="about-head">
+      <p class="kicker">About</p>
+      <h2 id="about-title" class="sr-only">About Giorgi</h2>
+    </div>
+
+    <p class="statement" data-scrub-text>{statement}</p>
+
+    <div class="about-grid">
+      <div class="about-copy reveal">
+        <p>
+          Recent work includes <strong>CDL Jobs Center</strong>, a production hiring marketplace; <strong>ResumeATS.cv</strong>, an AI resume builder;{' '}
+          <strong>RoadReady</strong> driving-slot alerts; AIXCO company sites; CRM dashboards and a string of local-business websites.
+        </p>
+        <p>
+          My main stack is React, Next.js, Astro, TypeScript, Supabase, PostgreSQL, Stripe, Vercel and Tailwind CSS, plus AI services, Telegram automation, SEO,
+          analytics, testing and deployment workflows.
+        </p>
+        <p>
+          I care about clean interfaces, reliable back-end flows, fast shipping and the production details: authentication, billing, data models, responsive design and
+          search visibility.
+        </p>
+      </div>
+
+      <dl class="stats">
+        <div class="stat reveal">
+          <dt class="mono">Live projects</dt>
+          <dd><span data-count={livePublic}>{livePublic}</span></dd>
+        </div>
+        <div class="stat reveal">
+          <dt class="mono">Technologies in daily use</dt>
+          <dd><span data-count={skills.length}>{skills.length}</span></dd>
+        </div>
+        <div class="stat reveal">
+          <dt class="mono">From idea to launch</dt>
+          <dd>1<span class="serif">person</span></dd>
+        </div>
+      </dl>
+    </div>
+  </div>
+</section>
+
+<style>
+  .about { padding: clamp(96px, 14vw, 200px) 0 clamp(80px, 10vw, 140px); }
+  .about-head { margin-bottom: 40px; }
+  .statement {
+    font-size: clamp(28px, 4.2vw, 64px); font-weight: 540; letter-spacing: -0.045em; line-height: 1.08;
+    max-width: 22ch; max-width: 1180px;
+  }
+  .statement :global(.w) { opacity: 0.4; transition: opacity 0.2s linear; }
+  :global(.no-js) .statement :global(.w) { opacity: 1; }
+  .about-grid { display: grid; grid-template-columns: 1.15fr 1fr; gap: clamp(40px, 8vw, 120px); margin-top: clamp(72px, 10vw, 140px); }
+  .about-copy { display: grid; gap: 20px; color: var(--text-2); font-size: 18px; max-width: 600px; }
+  .about-copy strong { color: var(--text); font-weight: 560; }
+  .stats { margin: 0; display: grid; gap: 0; border-top: 1px solid var(--line); }
+  .stat { display: flex; justify-content: space-between; align-items: baseline; gap: 20px; padding: 22px 0; border-bottom: 1px solid var(--line); }
+  .stat dt { font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); }
+  .stat dd { margin: 0; font-size: clamp(48px, 6vw, 88px); font-weight: 600; letter-spacing: -0.06em; line-height: 0.9; }
+  .stat dd .serif { font-size: 0.45em; color: var(--muted); margin-left: 8px; letter-spacing: -0.02em; }
+  @media (max-width: 860px) { .about-grid { grid-template-columns: 1fr; } }
+</style>

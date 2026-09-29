@@ -2,18 +2,24 @@
   const measurementId = 'G-5EEHYS9R9T';
 
   window.dataLayer = window.dataLayer || [];
-  window.gtag = window.gtag || function gtag() {
-    window.dataLayer.push(arguments);
-  };
 
-  window.gtag('js', new Date());
-  window.gtag('config', measurementId);
+  // The site layout already loads and configures GA (gtag.js + config). Only
+  // bootstrap it here when this script runs on a page without it, so the
+  // page_view is never sent twice.
+  if (typeof window.gtag !== 'function') {
+    window.gtag = function gtag() {
+      window.dataLayer.push(arguments);
+    };
 
-  if (!document.querySelector(`script[src*="gtag/js?id=${measurementId}"]`)) {
-    const script = document.createElement('script');
-    script.async = true;
-    script.src = `https://www.googletagmanager.com/gtag/js?id=${measurementId}`;
-    document.head.appendChild(script);
+    window.gtag('js', new Date());
+    window.gtag('config', measurementId);
+
+    if (!document.querySelector(`script[src*="gtag/js?id=${measurementId}"]`)) {
+      const script = document.createElement('script');
+      script.async = true;
+      script.src = `https://www.googletagmanager.com/gtag/js?id=${measurementId}`;
+      document.head.appendChild(script);
+    }
   }
 
   const trackEvent = (eventName, params = {}) => {

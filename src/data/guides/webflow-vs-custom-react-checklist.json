@@ -1,0 +1,127 @@
+{
+  "slug": "webflow-vs-custom-react-checklist",
+  "title": "Webflow vs custom React checklist | Giorgi Codes",
+  "description": "A practical Webflow vs custom React checklist covering ownership, editing, hosting, SEO, accessibility, integrations, and client boundaries.",
+  "robots": "index, follow, max-image-preview:large",
+  "canonical": "https://giorgi.codes/affiliate/webflow-vs-custom-react-checklist.html",
+  "path": "/affiliate/webflow-vs-custom-react-checklist.html",
+  "ogType": "article",
+  "ogTitle": "Webflow vs custom React checklist | Giorgi Codes",
+  "ogDescription": "Compare the real operating trade-offs before choosing Webflow or a custom React website.",
+  "ogImage": "https://giorgi.codes/affiliate/assets/chapter-hosting.png",
+  "jsonLd": [
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": "Webflow vs custom React checklist",
+      "url": "https://giorgi.codes/affiliate/webflow-vs-custom-react-checklist.html",
+      "author": {
+        "@type": "Person",
+        "name": "Giorgi Kemoklidze"
+      },
+      "description": "A practical checklist for comparing Webflow with a custom React website."
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Giorgi Codes",
+          "item": "https://giorgi.codes/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "The Field Guide",
+          "item": "https://giorgi.codes/affiliate/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Webflow vs custom React",
+          "item": "https://giorgi.codes/affiliate/webflow-vs-custom-react-checklist.html"
+        }
+      ]
+    }
+  ],
+  "topic": "t-web",
+  "category": "Websites & hosting",
+  "chip": "⚖️ Website stack decision",
+  "h1": "Webflow or custom React? Check the exit path first.",
+  "lede": "The fastest first draft is not always the easiest system to own. Use these questions to compare a visual site platform with a custom React build before the domain, content, forms, and handoff become expensive to move.",
+  "updated": "September 2026",
+  "readTime": "3 min read",
+  "heroIcon": "⚖️",
+  "heroTitle": "Webflow vs custom React",
+  "heroRows": [
+    {
+      "label": "Format",
+      "value": "Checklist · 8 steps"
+    },
+    {
+      "label": "Best for",
+      "value": "Websites & hosting"
+    },
+    {
+      "label": "Reading time",
+      "value": "3 minutes"
+    }
+  ],
+  "body": "<p class=\"note\"><strong>Disclosure:</strong> this page contains no paid Webflow links. I build custom React sites for clients, so weigh my perspective accordingly.</p>\n    <section class=\"checks\" aria-label=\"Webflow versus custom React checklist\">\n      <article class=\"check\"><h2>Name the actual job</h2><p>Choose between a marketing site, portfolio, documentation hub, store, or application shell. Webflow can shorten visual publishing; custom React can justify itself when product behavior is the main problem.</p></article>\n      <article class=\"check\"><h2>Write down what you must own</h2><p>Confirm control of the domain, content, analytics, forms, images, redirects, user accounts, and billing. Make the owner of every account explicit before launch.</p></article>\n      <article class=\"check\"><h2>Test the exit path</h2><p>Ask what can be exported, what must be rebuilt, what happens to CMS content, and whether a cancellation leaves you with a usable site or only a design reference.</p></article>\n      <article class=\"check\"><h2>Compare the editing workflow</h2><p>Who will change headlines, collections, navigation, and SEO fields after launch? Test the real editor with the person who will maintain the site, not only the person who built it.</p></article>\n      <article class=\"check\"><h2>Price the full year</h2><p>Include the required site or workspace plan, domain, seats, forms, bandwidth, localization, analytics, add-ons, renewals, and the cost of developer time when the visual tool reaches its boundary.</p></article>\n      <article class=\"check\"><h2>Prove the conversion path</h2><p>Submit forms from a phone, check notifications and spam handling, verify redirects and analytics, and test the thank-you state before calling the site ready.</p></article>\n      <article class=\"check\"><h2>Check quality beyond the canvas</h2><p>Review keyboard navigation, labels, contrast, headings, canonical URLs, structured data, performance, image behavior, and third-party scripts. A polished canvas is not the same as a finished website.</p></article>\n      <article class=\"check\"><h2>Separate public referrals from client work</h2><p>Webflow says its affiliate program is for promoting to a digital audience and does not pay one-to-one client referrals. Freelancers and agencies should review the separate Partner Program instead, and never use a referral link for your own purchase.</p></article>\n    </section>\n    <aside class=\"cta\"><strong>Next step:</strong> list the three pages you will edit most often and who edits them. If non-developers publish weekly, try <a href=\"https://webflow.com/\" target=\"_blank\" rel=\"noopener noreferrer\">Webflow</a> first; if you need custom logic or integrations, <a href=\"mailto:contact@giorgi.codes\">talk to me about a React build</a>.</aside>",
+  "related": [
+    {
+      "href": "verpex-hosting-review.html",
+      "icon": "🖥️",
+      "title": "Verpex hosting review",
+      "category": "Websites & hosting"
+    },
+    {
+      "href": "hosting-checklist.html",
+      "icon": "🧾",
+      "title": "Compare hosting without missing renewal costs",
+      "category": "Websites & hosting"
+    },
+    {
+      "href": "ai-website-builder-checklist.html",
+      "icon": "🪄",
+      "title": "Compare AI website builders",
+      "category": "Websites & hosting"
+    }
+  ],
+  "offer": {
+    "tag": "Work with me",
+    "name": "Need a hand with your site?",
+    "text": "I'm a full-stack developer: builds, fixes, migrations, AI assistants and SEO.",
+    "link": {
+      "href": "mailto:contact@giorgi.codes",
+      "label": "Email Giorgi ↗",
+      "attrs": {
+        "data-affiliate-placement": "sidebar"
+      }
+    },
+    "small": "contact@giorgi.codes"
+  },
+  "sticky": null,
+  "navCta": {
+    "href": "mailto:contact@giorgi.codes",
+    "label": "Hire Giorgi",
+    "attrs": {
+      "data-affiliate-placement": "nav"
+    }
+  },
+  "scripts": [],
+  "hub": {
+    "order": 16,
+    "cats": [
+      "web"
+    ],
+    "color": "web",
+    "icon": "⚖️",
+    "cardTitle": "Webflow vs a custom React site",
+    "cardText": "Editing, hosting, SEO and who owns what.",
+    "label": "Websites",
+    "isNew": false
+  }
+}

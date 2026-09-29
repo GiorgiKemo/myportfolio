@@ -1,0 +1,127 @@
+{
+  "slug": "mubert-music-licensing-checklist",
+  "title": "Music licensing checklist for monetized video | Giorgi Codes",
+  "description": "A rights-first checklist for choosing background music for monetized videos, podcasts, ads, and client work.",
+  "robots": "index, follow, max-image-preview:large",
+  "canonical": "https://giorgi.codes/affiliate/mubert-music-licensing-checklist.html",
+  "path": "/affiliate/mubert-music-licensing-checklist.html",
+  "ogType": "article",
+  "ogTitle": "Music licensing checklist for monetized video | Giorgi Codes",
+  "ogDescription": "Check audience, commercial rights, claims, exports, records, and disclosure before adding background music to a monetized workflow.",
+  "ogImage": "https://giorgi.codes/affiliate/assets/chapter-creator.png",
+  "jsonLd": [
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": "Music licensing checklist for monetized video",
+      "url": "https://giorgi.codes/affiliate/mubert-music-licensing-checklist.html",
+      "author": {
+        "@type": "Person",
+        "name": "Giorgi Kemoklidze"
+      },
+      "description": "A rights-first checklist for choosing music for monetized workflows."
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Giorgi Codes",
+          "item": "https://giorgi.codes/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "The Field Guide",
+          "item": "https://giorgi.codes/affiliate/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Music rights for monetized video",
+          "item": "https://giorgi.codes/affiliate/mubert-music-licensing-checklist.html"
+        }
+      ]
+    }
+  ],
+  "topic": "t-creative",
+  "category": "Creators",
+  "chip": "🎵 Creator workflow guide",
+  "h1": "Check the license before you choose the soundtrack.",
+  "lede": "Background music can improve a video, podcast, ad, or product demo—but only when the plan actually covers the way you will publish and monetize it.",
+  "updated": "September 2026",
+  "readTime": "3 min read",
+  "heroIcon": "🎵",
+  "heroTitle": "Music rights for monetized video",
+  "heroRows": [
+    {
+      "label": "Format",
+      "value": "Checklist · 6 steps"
+    },
+    {
+      "label": "Best for",
+      "value": "Creators"
+    },
+    {
+      "label": "Reading time",
+      "value": "3 minutes"
+    }
+  ],
+  "body": "<p class=\"note\"><strong>Disclosure:</strong> this is an independent rights-first checklist. No paid affiliate link is active on this page. Music plans, licenses, claim processes, and affiliate terms can change; read the provider's current documents before using a track in public or client work.</p>\n    <section class=\"checks\" aria-label=\"Music licensing checklist\">\n      <article class=\"check\"><h2>Name the exact use</h2><p>Write down whether the track will sit under a monetized YouTube video, podcast, paid ad, client deliverable, livestream, game, or social clip. “Personal use” and “commercial use” are not interchangeable.</p></article>\n      <article class=\"check\"><h2>Read the current plan license</h2><p>Check commercial rights, platform coverage, distribution limits, territory, term, attribution, sublicensing, and whether the license stays valid after cancellation. Save the version you relied on.</p></article>\n      <article class=\"check\"><h2>Test the claim path</h2><p>Before publishing, learn how the provider handles automated claims, whitelisting, disputes, and support. A “royalty-free” description does not prove that every platform will recognize your use automatically.</p></article>\n      <article class=\"check\"><h2>Keep a rights record</h2><p>Store the track ID, plan, purchase or download date, invoice, license URL, project name, and any claim resolution. Make the record reusable if a client asks why the track is cleared.</p></article>\n      <article class=\"check\"><h2>Compare the real workflow</h2><p>Test one quiet version and one music version of an owned clip. Measure whether the soundtrack improves completion, clarity, or mood without masking speech or creating extra edit time.</p></article>\n      <article class=\"check\"><h2>Disclose recommendations</h2><p>If a tool link may earn a commission, say so before the link. Never buy through your own referral, promise income, or imply that an affiliate relationship grants a music license.</p></article>\n    </section>\n    <aside class=\"cta\"><strong>Program status check:</strong> Mubert's public affiliate page still describes a 30% recurring program, but the linked Rewardful signup currently reports that the campaign is deactivated. There is no paid Mubert link on this page. Review <a href=\"https://mubert.com/affiliate-program\" target=\"_blank\" rel=\"noopener noreferrer\">Mubert's public program page</a> and confirm that enrollment has reopened before relying on any commission or payout claim.</aside>",
+  "related": [
+    {
+      "href": "creator-video-workflow.html",
+      "icon": "🎬",
+      "title": "Short-form video workflow",
+      "category": "Creators"
+    },
+    {
+      "href": "envato-elements-affiliate-guide.html",
+      "icon": "🎨",
+      "title": "Creative asset subscriptions",
+      "category": "Creators"
+    },
+    {
+      "href": "verpex-hosting-review.html",
+      "icon": "🖥️",
+      "title": "Verpex hosting review",
+      "category": "Websites & hosting"
+    }
+  ],
+  "offer": {
+    "tag": "Work with me",
+    "name": "Need a hand with your site?",
+    "text": "I'm a full-stack developer: builds, fixes, migrations, AI assistants and SEO.",
+    "link": {
+      "href": "mailto:contact@giorgi.codes",
+      "label": "Email Giorgi ↗",
+      "attrs": {
+        "data-affiliate-placement": "sidebar"
+      }
+    },
+    "small": "contact@giorgi.codes"
+  },
+  "sticky": null,
+  "navCta": {
+    "href": "mailto:contact@giorgi.codes",
+    "label": "Hire Giorgi",
+    "attrs": {
+      "data-affiliate-placement": "nav"
+    }
+  },
+  "scripts": [],
+  "hub": {
+    "order": 22,
+    "cats": [
+      "creative"
+    ],
+    "color": "creative",
+    "icon": "🎵",
+    "cardTitle": "Check music rights before monetized video",
+    "cardText": "A rights-first checklist for videos, podcasts and client work.",
+    "label": "Rights",
+    "isNew": false
+  }
+}
