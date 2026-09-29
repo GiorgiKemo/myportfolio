@@ -93,27 +93,39 @@ document.querySelectorAll<HTMLElement>('[data-count]').forEach((el) => {
   });
 });
 
-// ---------- selected work: pinned horizontal rail on wide screens ----------
+// ---------- selected work: sticky horizontal rail on wide screens ----------
 const mm = gsap.matchMedia();
 mm.add('(min-width: 901px) and (prefers-reduced-motion: no-preference)', () => {
   const rail = document.querySelector<HTMLElement>('[data-rail]');
   const track = document.querySelector<HTMLElement>('[data-rail-track]');
   if (!rail || !track) return;
-  const distance = () => track.scrollWidth - innerWidth;
+  const distance = () => Math.max(0, track.scrollWidth - rail.clientWidth);
+  const measure = () => {
+    const height = track.offsetHeight;
+    rail.style.setProperty('--rail-height', `${height + distance()}px`);
+    rail.style.setProperty('--rail-top', `${Math.max(0, (innerHeight - height) / 2)}px`);
+  };
+  rail.classList.add('is-horizontal');
+  measure();
+  ScrollTrigger.addEventListener('refreshInit', measure);
   const tween = gsap.to(track, {
     x: () => -distance(),
     ease: 'none',
     scrollTrigger: {
       trigger: rail,
-      start: 'center center',
+      start: () => `top ${rail.style.getPropertyValue('--rail-top')}`,
       end: () => `+=${distance()}`,
-      pin: true,
-      scrub: 0.8,
+      scrub: true,
       invalidateOnRefresh: true,
-      anticipatePin: 1,
     },
   });
-  return () => tween.scrollTrigger?.kill();
+  return () => {
+    tween.scrollTrigger?.kill();
+    ScrollTrigger.removeEventListener('refreshInit', measure);
+    rail.classList.remove('is-horizontal');
+    rail.style.removeProperty('--rail-height');
+    rail.style.removeProperty('--rail-top');
+  };
 });
 
 // ---------- big headings drift slightly for depth ----------

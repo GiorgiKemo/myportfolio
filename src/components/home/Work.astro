@@ -91,8 +91,10 @@ const pad = (n: number) => String(n).padStart(2, '0');
   .work-title .serif { color: var(--muted); letter-spacing: -0.04em; }
   .work-intro { max-width: 300px; color: var(--muted); font-size: 15px; padding-bottom: 12px; }
 
-  /* horizontal rail (pinned + scrubbed on wide screens by JS) */
-  .rail { overflow: hidden; }
+  /* Native sticky positioning keeps the horizontal rail continuous at both ends. */
+  .rail { overflow: clip; }
+  .rail.is-horizontal { height: var(--rail-height); }
+  .rail.is-horizontal .rail-track { position: sticky; top: var(--rail-top); }
   .rail-track {
     list-style: none; margin: 0; padding: 0 var(--gutter);
     display: flex; gap: clamp(16px, 2vw, 28px); width: max-content;
