@@ -39,7 +39,7 @@ const jsonLd = [
           <li class="wk-item reveal" data-kind={kindOf(p)} style={`transition-delay:${(i % 2) * 0.08}s`}>
             <a href={`/work/${p.slug}/`} data-cursor="View">
               <div class="wk-media">
-                <img src={img.src} srcset={img.srcset} sizes="(max-width: 760px) 94vw, 46vw" width={img.width} height={img.height} alt={`${p.title} preview`} loading={i < 4 ? 'eager' : 'lazy'} decoding="async" />
+                <img src={img.src} srcset={img.srcset} sizes="(max-width: 760px) 94vw, 46vw" width={img.width} height={img.height} style={img.style} alt={`${p.title} preview`} loading={i < 4 ? 'eager' : 'lazy'} decoding="async" />
               </div>
               <div class="wk-info">
                 <span class="mono">{pad(i + 1)}</span>
@@ -82,9 +82,8 @@ const jsonLd = [
   .wk-grid { list-style: none; padding: 0; display: grid; grid-template-columns: 1fr 1fr; gap: clamp(40px, 5vw, 72px) clamp(20px, 3vw, 40px); }
   .wk-item:nth-child(even) { margin-top: clamp(0px, 8vw, 120px); }
   .wk-item[hidden] { display: none; }
-  .wk-media { aspect-ratio: 16 / 10; overflow: hidden; border-radius: var(--radius); background: var(--bg-3); box-shadow: var(--glow); }
-  .wk-media img { width: 100%; height: 100%; object-fit: cover; object-position: top; transition: transform 1.2s var(--ease); }
-  .wk-item a:hover .wk-media img { transform: scale(1.06); }
+  .wk-media { overflow: hidden; border-radius: var(--radius); }
+  .wk-media img { width: 100%; height: auto; }
   .wk-info { display: grid; grid-template-columns: auto 1fr auto; align-items: baseline; gap: 14px; margin-top: 20px; }
   .wk-info .mono { font-size: 12px; color: var(--signal-ink); }
   .wk-info h2 { font-size: clamp(24px, 2.4vw, 34px); letter-spacing: -0.045em; }

@@ -113,13 +113,6 @@ mm.add('(min-width: 901px) and (prefers-reduced-motion: no-preference)', () => {
       anticipatePin: 1,
     },
   });
-  // Parallax the screenshots inside each card for depth
-  track.querySelectorAll<HTMLElement>('.card-media img').forEach((img) => {
-    gsap.fromTo(img, { xPercent: 4 }, {
-      xPercent: -4, ease: 'none',
-      scrollTrigger: { trigger: img.closest('.card'), containerAnimation: tween, start: 'left right', end: 'right left', scrub: true },
-    });
-  });
   return () => tween.scrollTrigger?.kill();
 });
 
@@ -138,6 +131,7 @@ if (float && floatImg && finePointer && !reduced) {
   document.querySelectorAll<HTMLAnchorElement>('[data-index] .row').forEach((row) => {
     row.addEventListener('pointerenter', () => {
       floatImg.src = row.dataset.preview ?? '';
+      floatImg.style.cssText = row.dataset.previewStyle ?? '';
       float.classList.add('is-on');
       on = true;
     });
