@@ -1,0 +1,151 @@
+---
+import { site } from '../data/site';
+
+interface Props {
+  cta?: { href: string; label: string; attrs?: Record<string, string> };
+}
+const { cta } = Astro.props;
+
+const nav = [
+  { href: '/#work', label: 'Work', n: '01' },
+  { href: '/#about', label: 'About', n: '02' },
+  { href: '/#services', label: 'Services', n: '03' },
+  { href: site.resourcesHref, label: 'Resources', n: '04', placement: 'header' },
+  { href: '/#contact', label: 'Contact', n: '05' },
+];
+---
+
+<header class="sh" data-header>
+  <div class="sh-inner">
+    <a class="sh-brand" href="/" aria-label="Giorgi Kemoklidze, home">
+      <span class="sh-mark" aria-hidden="true"><i></i></span>
+      <span class="sh-name">Giorgi<span class="serif">.codes</span></span>
+    </a>
+
+    <nav class="sh-nav" aria-label="Primary">
+      {nav.map((l) => (
+        <a href={l.href} data-hub-placement={l.placement}>
+          <span class="sh-n mono">{l.n}</span>{l.label}
+        </a>
+      ))}
+    </nav>
+
+    <div class="sh-actions">
+      <span class="sh-clock mono" aria-label="Local time in Tbilisi"><i aria-hidden="true"></i><span data-clock>--:--</span> TBS</span>
+      <button class="sh-theme" type="button" data-theme-toggle aria-label="Switch colour theme">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="5.2" /><path d="M12 1.8v2.4M12 19.8v2.4M4.2 4.2l1.7 1.7M18.1 18.1l1.7 1.7M1.8 12h2.4M19.8 12h2.4M4.2 19.8l1.7-1.7M18.1 5.9l1.7-1.7" /></svg>
+      </button>
+      {cta ? (
+        <a class="btn btn-signal btn-sm sh-cta" href={cta.href} {...cta.attrs}>{cta.label}</a>
+      ) : (
+        <a class="btn btn-signal btn-sm sh-cta" href="/#contact" data-magnetic>Let's talk <span class="arrow" aria-hidden="true">↗</span></a>
+      )}
+      <button class="sh-burger" type="button" aria-expanded="false" aria-controls="sh-menu" data-menu-toggle>
+        <span class="sr-only">Menu</span><i></i><i></i>
+      </button>
+    </div>
+  </div>
+
+  <div class="sh-menu" id="sh-menu" data-menu hidden>
+    <nav aria-label="Mobile">
+      {nav.map((l) => (
+        <a href={l.href} data-hub-placement={l.placement}><span class="mono">{l.n}</span>{l.label}</a>
+      ))}
+    </nav>
+    <div class="sh-menu-foot mono">
+      <a href={`mailto:${site.email}`}>{site.email}</a>
+      <span>{site.location}</span>
+    </div>
+  </div>
+</header>
+
+<style>
+  .sh {
+    position: fixed; inset: 0 0 auto; z-index: 80;
+    padding: 14px var(--gutter);
+    transition: transform 0.6s var(--ease);
+  }
+  .sh.is-hidden { transform: translateY(-110%); }
+  .sh-inner {
+    position: relative;
+    max-width: var(--max); margin-inline: auto;
+    display: flex; align-items: center; gap: 24px;
+    padding: 8px 8px 8px 18px; border-radius: 999px;
+    border: 1px solid transparent;
+    transition: background-color 0.4s, border-color 0.4s, backdrop-filter 0.4s;
+  }
+  .sh.is-solid .sh-inner {
+    background: color-mix(in oklab, var(--bg) 72%, transparent);
+    border-color: var(--line);
+    backdrop-filter: blur(18px) saturate(1.4);
+    -webkit-backdrop-filter: blur(18px) saturate(1.4);
+  }
+  .sh-brand { display: inline-flex; align-items: center; gap: 10px; font-weight: 600; letter-spacing: -0.02em; font-size: 17px; }
+  .sh-mark { position: relative; width: 26px; height: 26px; border-radius: 8px; background: var(--text); display: grid; place-items: center; }
+  .sh-mark i { width: 8px; height: 8px; border-radius: 50%; background: var(--signal); box-shadow: 0 0 10px var(--signal); animation: pulse 2.4s var(--ease-in-out) infinite; }
+  .sh-name .serif { font-size: 1.12em; color: var(--muted); margin-left: 1px; }
+  @keyframes pulse { 50% { transform: scale(0.6); opacity: 0.6; } }
+
+  .sh-nav { display: flex; gap: 4px; margin-inline: auto; }
+  .sh-nav a {
+    position: relative; display: inline-flex; align-items: baseline; gap: 6px;
+    padding: 8px 14px; border-radius: 999px; font-size: 14.5px; color: var(--text-2);
+    transition: color 0.3s, background-color 0.3s;
+  }
+  .sh-nav a:hover { color: var(--text); background: var(--surface-2); }
+  .sh-n { font-size: 10px; color: var(--muted); }
+
+  .sh-actions { display: flex; align-items: center; gap: 10px; margin-left: auto; }
+  .sh-nav + .sh-actions { margin-left: 0; }
+  .sh-clock { display: inline-flex; align-items: center; gap: 8px; font-size: 12px; color: var(--muted); padding-right: 6px; }
+  .sh-clock i { width: 6px; height: 6px; border-radius: 50%; background: #3dff8a; box-shadow: 0 0 8px #3dff8a; }
+  .sh-theme {
+    width: 38px; height: 38px; border-radius: 50%; border: 1px solid var(--line-2); background: transparent;
+    display: grid; place-items: center; transition: transform 0.6s var(--ease), border-color 0.3s;
+  }
+  .sh-theme:hover { transform: rotate(90deg); border-color: var(--text); }
+  .sh-theme svg { width: 17px; fill: none; stroke: currentColor; stroke-width: 1.6; stroke-linecap: round; }
+  .sh-theme circle { fill: currentColor; fill-opacity: 0; transition: fill-opacity 0.3s; }
+  :global([data-theme='light']) .sh-theme circle { fill-opacity: 1; }
+
+  .sh-burger { display: none; width: 42px; height: 42px; border-radius: 50%; border: 1px solid var(--line-2); background: transparent; position: relative; }
+  .sh-burger i { position: absolute; left: 12px; right: 12px; height: 1.5px; background: currentColor; transition: transform 0.5s var(--ease), top 0.5s var(--ease); }
+  .sh-burger i:first-of-type { top: 16px; }
+  .sh-burger i:last-of-type { top: 24px; }
+  .sh-burger[aria-expanded='true'] i:first-of-type { top: 20px; transform: rotate(45deg); }
+  .sh-burger[aria-expanded='true'] i:last-of-type { top: 20px; transform: rotate(-45deg); }
+
+  .sh-menu {
+    position: fixed; inset: 0; z-index: -1;
+    background: var(--bg);
+    padding: 110px var(--gutter) 32px;
+    display: flex; flex-direction: column; justify-content: space-between;
+    clip-path: circle(0% at calc(100% - 44px) 44px);
+    transition: clip-path 0.8s var(--ease);
+  }
+  .sh-menu.is-open { clip-path: circle(150% at calc(100% - 44px) 44px); }
+  .sh-menu nav { display: flex; flex-direction: column; }
+  .sh-menu nav a {
+    display: flex; align-items: baseline; gap: 14px;
+    font-size: clamp(40px, 12vw, 72px); font-weight: 600; letter-spacing: -0.05em; line-height: 1.08;
+    border-bottom: 1px solid var(--line); padding: 8px 0;
+    opacity: 0; transform: translateY(30px); transition: opacity 0.6s var(--ease), transform 0.6s var(--ease);
+  }
+  .sh-menu nav a span { font-size: 12px; color: var(--muted); letter-spacing: 0; }
+  .sh-menu.is-open nav a { opacity: 1; transform: none; }
+  .sh-menu.is-open nav a:nth-child(2) { transition-delay: 0.05s; }
+  .sh-menu.is-open nav a:nth-child(3) { transition-delay: 0.1s; }
+  .sh-menu.is-open nav a:nth-child(4) { transition-delay: 0.15s; }
+  .sh-menu.is-open nav a:nth-child(5) { transition-delay: 0.2s; }
+  .sh-menu-foot { display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; font-size: 13px; color: var(--muted); }
+
+  @media (max-width: 1080px) { .sh-clock { display: none; } }
+  @media (max-width: 900px) {
+    .sh-nav { display: none; }
+    .sh-burger { display: block; }
+    .sh-inner { padding-left: 14px; }
+  }
+  @media (max-width: 480px) {
+    .sh-cta { display: none; }
+  }
+</style>

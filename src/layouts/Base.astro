@@ -1,0 +1,114 @@
+---
+import '../styles/global.css';
+import SiteHeader from '../components/SiteHeader.astro';
+import SiteFooter from '../components/SiteFooter.astro';
+import { site } from '../data/site';
+import geistFont from '@fontsource-variable/geist/files/geist-latin-wght-normal.woff2?url';
+
+interface Props {
+  title: string;
+  description: string;
+  /** Path of the canonical URL, e.g. "/affiliate/hosting-checklist.html". Defaults to the current path. */
+  path?: string;
+  ogImage?: string;
+  ogImageAlt?: string;
+  ogType?: 'website' | 'article' | 'profile';
+  ogTitle?: string;
+  ogDescription?: string;
+  jsonLd?: unknown[];
+  noindex?: boolean;
+  bodyClass?: string;
+  /** Extra header call-to-action (used by guides for the partner link). */
+  headerCta?: { href: string; label: string; attrs?: Record<string, string> };
+  /** Hide the global site chrome (e.g. for minimal pages). */
+  bare?: boolean;
+  /** Show the big "worth building?" call-to-action at the top of the footer. */
+  footerCta?: boolean;
+}
+
+const {
+  title,
+  description,
+  path = Astro.url.pathname,
+  ogImage = '/og/giorgi-codes.png',
+  ogImageAlt = 'Giorgi Kemoklidze — independent full-stack developer',
+  ogType = 'website',
+  ogTitle = title,
+  ogDescription = description,
+  jsonLd = [],
+  noindex = false,
+  bodyClass = '',
+  headerCta,
+  bare = false,
+  footerCta = true,
+} = Astro.props;
+
+const canonical = new URL(path, site.url).href;
+const ogImageUrl = new URL(ogImage, site.url).href;
+---
+
+<!doctype html>
+<html lang="en" class="no-js" data-theme="dark">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <meta name="robots" content={noindex ? 'noindex, follow' : 'index, follow, max-image-preview:large'} />
+    <meta name="author" content={site.name} />
+    <link rel="canonical" href={canonical} />
+    <meta name="theme-color" content="#07070a" />
+    <meta name="color-scheme" content="dark light" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/png" href="/logo-gk.png" />
+    <link rel="apple-touch-icon" href="/logo-gk.png" />
+    <link rel="sitemap" href="/sitemap.xml" />
+    <link rel="preload" href={geistFont} as="font" type="font/woff2" crossorigin />
+
+    <meta property="og:type" content={ogType} />
+    <meta property="og:site_name" content="Giorgi Codes" />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:title" content={ogTitle} />
+    <meta property="og:description" content={ogDescription} />
+    <meta property="og:image" content={ogImageUrl} />
+    <meta property="og:image:alt" content={ogImageAlt} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@GiorgiKem" />
+    <meta name="twitter:title" content={ogTitle} />
+    <meta name="twitter:description" content={ogDescription} />
+    <meta name="twitter:image" content={ogImageUrl} />
+    <meta name="impact-site-verification" content="ec2b3fee-b850-4627-8605-68ad1f6846be" />
+
+    <!-- Theme before paint: saved choice wins, otherwise dark. -->
+    <script is:inline>
+      (() => {
+        const d = document.documentElement;
+        d.classList.remove('no-js');
+        try { const t = localStorage.getItem('gk-theme'); if (t === 'light' || t === 'dark') d.dataset.theme = t; } catch {}
+      })();
+    </script>
+
+    <!-- Google Analytics (same property as the previous site) -->
+    <script is:inline async src={`https://www.googletagmanager.com/gtag/js?id=${site.gaId}`}></script>
+    <script is:inline define:vars={{ gaId: site.gaId }}>
+      window.dataLayer = window.dataLayer || [];
+      window.gtag = function gtag() { dataLayer.push(arguments); };
+      gtag('js', new Date());
+      gtag('config', gaId);
+    </script>
+
+    {jsonLd.map((data) => <script type="application/ld+json" set:html={JSON.stringify(data)} />)}
+    <slot name="head" />
+  </head>
+  <body class={bodyClass}>
+    <a class="skip-link" href="#main">Skip to content</a>
+    {!bare && <SiteHeader cta={headerCta} />}
+    <slot />
+    {!bare && <SiteFooter cta={footerCta} />}
+    <div class="grain" aria-hidden="true"></div>
+    <div class="cursor" aria-hidden="true"><div class="cursor-ring"><span></span></div><div class="cursor-dot"></div></div>
+    <script>
+      import '../scripts/chrome';
+    </script>
+  </body>
+</html>

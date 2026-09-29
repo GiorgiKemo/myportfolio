@@ -1,0 +1,228 @@
+{
+  "slug": "onehomeschool-review",
+  "title": "OneHomeschool Review: Homeschool Planner for Your Own Curriculum (Plans & Prices) | Giorgi Codes",
+  "description": "What OneHomeschool does, what each plan costs by number of children, and how to check your curriculum is supported. A homeschool planner with daily lesson guides, attendance and transcripts. Includes a plan picker.",
+  "robots": "index, follow, max-image-preview:large",
+  "canonical": "https://giorgi.codes/affiliate/onehomeschool-review.html",
+  "path": "/affiliate/onehomeschool-review.html",
+  "ogType": "article",
+  "ogTitle": "OneHomeschool: a homeschool planner that works with the curriculum you already own",
+  "ogDescription": "Daily lesson guides, every child's day on one screen, attendance and transcripts. See which plan fits your family.",
+  "ogImage": "https://giorgi.codes/affiliate/assets/field-guide-still-life-cover.png",
+  "jsonLd": [
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Article",
+          "headline": "OneHomeschool review: a homeschool planner that works with your curriculum",
+          "url": "https://giorgi.codes/affiliate/onehomeschool-review.html",
+          "datePublished": "2026-09-29",
+          "dateModified": "2026-09-29",
+          "author": {
+            "@type": "Person",
+            "name": "Giorgi Kemoklidze",
+            "url": "https://giorgi.codes/"
+          },
+          "publisher": {
+            "@type": "Person",
+            "name": "Giorgi Kemoklidze"
+          },
+          "about": {
+            "@type": "SoftwareApplication",
+            "name": "OneHomeschool",
+            "applicationCategory": "EducationalApplication",
+            "operatingSystem": "Web, iOS, Android",
+            "offers": [
+              {
+                "@type": "Offer",
+                "name": "Starter",
+                "price": "99",
+                "priceCurrency": "USD"
+              },
+              {
+                "@type": "Offer",
+                "name": "Family",
+                "price": "149",
+                "priceCurrency": "USD"
+              },
+              {
+                "@type": "Offer",
+                "name": "Complete",
+                "price": "199",
+                "priceCurrency": "USD"
+              }
+            ]
+          },
+          "description": "What OneHomeschool does, plan prices by number of children, and how to check curriculum support."
+        },
+        {
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "Giorgi Codes",
+              "item": "https://giorgi.codes/"
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "name": "The Field Guide",
+              "item": "https://giorgi.codes/affiliate/"
+            },
+            {
+              "@type": "ListItem",
+              "position": 3,
+              "name": "OneHomeschool review",
+              "item": "https://giorgi.codes/affiliate/onehomeschool-review.html"
+            }
+          ]
+        },
+        {
+          "@type": "FAQPage",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "How much does OneHomeschool cost?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Starter is $99 per year or $12.99 per month for up to 2 students. Family is $149 per year or $19.99 per month for up to 4 students. Complete is $199 per year or $24.99 per month for up to 8 students."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Is there a free trial?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Every plan starts with a 14-day free trial of the full platform with no credit card, and every plan has a 14-day money-back guarantee."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Does OneHomeschool sell curriculum?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "No. It works alongside the curriculum you already own and does not push a teaching method. Families buy their own books."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Does OneHomeschool support my curriculum?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "The supported list grows regularly, so check the official curriculum page for the current list rather than relying on any article."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Can I use an ESA or scholarship to pay for it?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Over 20 US states have ESA, tax-credit or scholarship programs that can cover educational software, and OneHomeschool provides itemised per-student invoices. Check your state's program for eligibility."
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "topic": "t-family",
+  "category": "Families",
+  "chip": "📚 Homeschool planner · 2026",
+  "h1": "OneHomeschool: <em>plan less, teach more</em>",
+  "lede": "A typical planner tells you <em>when</em>: \"Math, Lesson 45, Tuesday\". OneHomeschool also tells you <em>what</em>: the lesson, what's review and what's new, every assignment and the pages to open, for every child on one screen. Here's what it does, what it costs for your family, and how to check it works with your books.",
+  "updated": "September 2026",
+  "readTime": "4 min read",
+  "heroIcon": "📚",
+  "heroTitle": "OneHomeschool guide",
+  "heroRows": [
+    {
+      "label": "Format",
+      "value": "Guide + plan picker"
+    },
+    {
+      "label": "Best for",
+      "value": "Families"
+    },
+    {
+      "label": "Reading time",
+      "value": "4 minutes"
+    }
+  ],
+  "body": "<p class=\"disclosure\"><strong>Disclosure:</strong> I'm a OneHomeschool affiliate, so I earn a commission if you sign up through my link. It doesn't change what you pay, and my code <strong>GIORGI2608</strong> gives you 5% off your first payment. I'm a developer, not a homeschooling parent, so this guide describes the product and its published details rather than a family routine I've lived.</p>\n<div class=\"glance reveal\" aria-label=\"At a glance\">\n      <div><b>14 days</b><span>free trial, no card</span></div>\n      <div><b>From $99</b><span>per year (Starter)</span></div>\n      <div><b>Up to 8</b><span>students per family</span></div>\n      <div><b>5% off</b><span>first payment with GIORGI2608</span></div>\n    </div>\n\n    <div class=\"verdict reveal\">\n      <h2>Who it's for</h2>\n      <p>Families who already own their curriculum and are tired of turning teacher manuals into a daily plan, especially with more than one child on different programs. It doesn't sell curriculum or push a method; it organises the one you chose.</p>\n      <a class=\"btn\" href=\"https://onehomeschool.com/?ref=GIORGI2608\" target=\"_blank\" rel=\"sponsored noopener\" data-affiliate-program=\"onehomeschool\" data-affiliate-placement=\"ohs_verdict\">Start the 14-day free trial ↗</a>\n    </div>\n\n    <section id=\"picker\" class=\"tool reveal\" aria-labelledby=\"picker-title\">\n      <h2 id=\"picker-title\">Which plan fits your family?</h2>\n      <p>Pick how many children you're teaching and how you'd like to pay.</p>\n      <div class=\"tool-grid\">\n        <div>\n          <div class=\"field\"><label for=\"kids\">Children you homeschool <output id=\"kids-out\">2</output></label><input id=\"kids\" type=\"range\" min=\"1\" max=\"9\" value=\"2\"></div>\n          <div class=\"field\"><span class=\"lbl\" id=\"bill-lbl\">Billing</span>\n            <div class=\"seg\" role=\"group\" aria-labelledby=\"bill-lbl\" data-value=\"year\" id=\"billing\"><button type=\"button\" data-value=\"year\" aria-pressed=\"true\">Yearly</button><button type=\"button\" data-value=\"month\" aria-pressed=\"false\">Monthly</button></div></div>\n          <div class=\"field\"><span class=\"lbl\">Your discount code</span>\n            <button class=\"btn btn-ghost\" type=\"button\" id=\"copy-code\" style=\"width:100%;justify-content:space-between\">GIORGI2608 <span id=\"copy-state\">Copy</span></button>\n            <small style=\"color:var(--muted)\">Enter it at checkout for 5% off your first payment.</small></div>\n        </div>\n        <div class=\"readout\" aria-live=\"polite\">\n          <small>Best-fit plan</small>\n          <div class=\"plan\" id=\"plan-name\">Starter</div>\n          <small id=\"plan-why\">Up to 2 students</small>\n          <table><tbody>\n            <tr><td>Price</td><td id=\"r-price\">$99/year</td></tr>\n            <tr><td>Per child</td><td id=\"r-child\">$49.50/year</td></tr>\n            <tr><td>Trial</td><td>14 days, no card</td></tr>\n          </tbody></table>\n          <small id=\"plan-note\">You can switch plans later if your family grows.</small>\n          <a class=\"btn\" href=\"https://onehomeschool.com/pricing?ref=GIORGI2608\" target=\"_blank\" rel=\"sponsored noopener\" data-affiliate-program=\"onehomeschool\" data-affiliate-placement=\"ohs_calculator\" id=\"plan-cta\">See Starter on OneHomeschool ↗</a>\n        </div>\n      </div>\n    </section>\n\n    \n      <h2>OneHomeschool plans and prices</h2>\n      <div class=\"plans\" id=\"plan-cards\">\n        <div class=\"plan-card\" data-plan=\"Starter\"><h3>Starter</h3><div class=\"p\">$99<small>/year</small></div><small>or $12.99/month</small><ul><li>Up to 2 students</li><li>Full platform</li></ul></div>\n        <div class=\"plan-card\" data-plan=\"Family\"><span class=\"badge\">Most popular</span><h3>Family</h3><div class=\"p\">$149<small>/year</small></div><small>or $19.99/month</small><ul><li>Up to 4 students</li><li>Full platform</li></ul></div>\n        <div class=\"plan-card\" data-plan=\"Complete\"><h3>Complete</h3><div class=\"p\">$199<small>/year</small></div><small>or $24.99/month</small><ul><li>Up to 8 students</li><li>Full platform</li></ul></div>\n      </div>\n      <p>Every plan starts with a 14-day free trial of the full platform with no credit card, and comes with a 14-day money-back guarantee. Over 20 US states have ESA, tax-credit or scholarship programs that can cover educational software, and OneHomeschool provides itemised per-student invoices for them. Check your state's program for eligibility.</p>\n\n      <h2 id=\"features\">What OneHomeschool does</h2>\n      <div class=\"features\">\n        <div class=\"feature\"><span class=\"emo\">🗓️</span><h3>Daily lesson guides</h3><p>Which lessons are review and which introduce new concepts, every assignment and test, and the pages to open.</p></div>\n        <div class=\"feature\"><span class=\"emo\">👨‍👩‍👧‍👦</span><h3>Every child on one screen</h3><p>What's done, what's left and how the week is pacing, for each child. Jump to any date.</p></div>\n        <div class=\"feature\"><span class=\"emo\">📈</span><h3>Progress with finish dates</h3><p>Each subject shows when the book was meant to finish and when it actually will at the current pace.</p></div>\n        <div class=\"feature\"><span class=\"emo\">🎓</span><h3>Attendance &amp; transcripts</h3><p>Attendance counts as lessons are checked off; grades become transcripts with GPA and credits, as PDF or CSV.</p></div>\n        <div class=\"feature\"><span class=\"emo\">✍️</span><h3>On-screen assessments</h3><p>Generated from the lessons and graded instantly on screen, saved to the progress history.</p></div>\n        <div class=\"feature\"><span class=\"emo\">🧒</span><h3>A kids' view</h3><p>Touchscreen-friendly; students check off their own work. Chores can sit alongside schoolwork.</p></div>\n        <div class=\"feature\"><span class=\"emo\">📱</span><h3>Apps &amp; calendar sync</h3><p>iOS and Android apps, and sync with Google Calendar, Apple Calendar, Skylight and DAKboard.</p></div>\n        <div class=\"feature\"><span class=\"emo\">🖨️</span><h3>Paper when you want it</h3><p>The day prints on one sheet per child. The school calendar imports US holidays in one click.</p></div>\n      </div>\n\n      <h2>Does it work with my curriculum?</h2>\n      <p>OneHomeschool works alongside the books you already own. The supported list grows every week, so the official curriculum page is the only reliable answer; any list in an article (including this one) goes out of date. \"One curriculum\" there means a complete program across every grade it covers.</p>\n      <p><a class=\"btn btn-primary\" href=\"https://onehomeschool.com/curriculum?ref=GIORGI2608\" target=\"_blank\" rel=\"sponsored noopener\" data-affiliate-program=\"onehomeschool\" data-affiliate-placement=\"ohs_curriculum\">Check the supported curriculum list ↗</a></p>\n\n      <h2>Good fit, or not quite?</h2>\n      <div class=\"fit\">\n        <div class=\"yes\"><h3>Likely a good fit</h3><ul><li>You already own your curriculum and want the daily plan done for you</li><li>You teach two or more children on different programs or paces</li><li>You want attendance and transcripts kept as you go</li><li>Your kids are ready to check off their own work</li></ul></div>\n        <div class=\"no\"><h3>Maybe not</h3><ul><li>You want a tool that sells or chooses a curriculum for you</li><li>Your main programs aren't on the supported list yet</li><li>You need it to decide whether you meet your state's rules; that's between you and your state</li></ul></div>\n      </div>\n\n      <h2>How to try it</h2>\n      <ol class=\"steps\">\n        <li><strong>Check your curriculum</strong> on the <a href=\"https://onehomeschool.com/curriculum?ref=GIORGI2608\" target=\"_blank\" rel=\"sponsored noopener\" data-affiliate-program=\"onehomeschool\" data-affiliate-placement=\"ohs_steps_curriculum\">official list</a>.</li>\n        <li><strong>Start the 14-day trial</strong>, with no card needed, and add each child.</li>\n        <li><strong>Run a real week</strong>: open the daily guide each morning and let the kids use their view.</li>\n        <li><strong>If it fits, pick a plan</strong> and use code <strong>GIORGI2608</strong> for 5% off your first payment.</li>\n      </ol>\n\n      <h2 id=\"faq\">OneHomeschool FAQ</h2>\n      <div class=\"faq\">\n        <details><summary>How much does OneHomeschool cost?</summary><div>Starter is $99/year or $12.99/month for up to 2 students. Family is $149/year or $19.99/month for up to 4. Complete is $199/year or $24.99/month for up to 8.</div></details>\n        <details><summary>Is there a free trial?</summary><div>Yes. Every plan starts with a 14-day free trial of the full platform, no credit card, plus a 14-day money-back guarantee.</div></details>\n        <details><summary>Does it sell curriculum?</summary><div>No. It works alongside the curriculum you already own and doesn't push a teaching method.</div></details>\n        <details><summary>Does it support my curriculum?</summary><div>Check the <a href=\"https://onehomeschool.com/curriculum?ref=GIORGI2608\" target=\"_blank\" rel=\"sponsored noopener\" data-affiliate-program=\"onehomeschool\" data-affiliate-placement=\"ohs_faq\">official curriculum page</a>. The list changes every week.</div></details>\n        <details><summary>Can an ESA or scholarship pay for it?</summary><div>Many states have programs that can cover educational software, and OneHomeschool provides itemised per-student invoices. Check your state's program for eligibility.</div></details>\n        <details><summary>Who built it?</summary><div>A homeschooling family of five with three kids on three different curricula. They built it for their own mornings.</div></details>\n      </div>",
+  "related": [
+    {
+      "href": "family-reading-resource-checklist.html",
+      "icon": "📖",
+      "title": "Family reading resources",
+      "category": "Families"
+    },
+    {
+      "href": "verpex-hosting-review.html",
+      "icon": "🖥️",
+      "title": "Verpex hosting review",
+      "category": "Websites & hosting"
+    },
+    {
+      "href": "sitemind-cost-calculator.html",
+      "icon": "🧮",
+      "title": "SiteMind cost calculator",
+      "category": "AI assistants"
+    }
+  ],
+  "offer": {
+    "tag": "Partner pick",
+    "name": "OneHomeschool",
+    "text": "Daily lesson guides for the curriculum you already own, every child on one screen.",
+    "link": {
+      "href": "https://onehomeschool.com/?ref=GIORGI2608",
+      "label": "Start the free trial ↗",
+      "attrs": {
+        "target": "_blank",
+        "rel": "sponsored noopener",
+        "data-affiliate-program": "onehomeschool",
+        "data-affiliate-placement": "sidebar"
+      }
+    },
+    "small": "Affiliate link · code GIORGI2608 = 5% off"
+  },
+  "sticky": {
+    "text": "14-day free trial · no card",
+    "link": {
+      "href": "https://onehomeschool.com/?ref=GIORGI2608",
+      "label": "Try free ↗",
+      "attrs": {
+        "target": "_blank",
+        "rel": "sponsored noopener",
+        "data-affiliate-program": "onehomeschool",
+        "data-affiliate-placement": "ohs_sticky"
+      }
+    }
+  },
+  "navCta": {
+    "href": "https://onehomeschool.com/?ref=GIORGI2608",
+    "label": "Try OneHomeschool",
+    "attrs": {
+      "target": "_blank",
+      "rel": "sponsored noopener",
+      "data-affiliate-program": "onehomeschool",
+      "data-affiliate-placement": "nav"
+    }
+  },
+  "scripts": [
+    "\n  (() => {\n    const plans = [\n      { name: 'Starter', max: 2, year: 99, month: 12.99 },\n      { name: 'Family', max: 4, year: 149, month: 19.99 },\n      { name: 'Complete', max: 8, year: 199, month: 24.99 },\n    ];\n    const $ = (id) => document.getElementById(id);\n    const money = (n) => '$' + n.toFixed(2).replace(/\\.00$/, '');\n    const billing = $('billing');\n    let last = '';\n    const calc = () => {\n      const kids = +$('kids').value;\n      const per = billing.dataset.value || 'year';\n      $('kids-out').textContent = kids >= 9 ? '9+' : kids;\n      const plan = plans.find((p) => kids <= p.max) || plans[2];\n      const price = plan[per];\n      const unit = per === 'year' ? '/year' : '/month';\n      $('plan-name').textContent = plan.name;\n      $('plan-why').textContent = `Up to ${plan.max} students`;\n      $('r-price').textContent = money(price) + unit;\n      $('r-child').textContent = money(price / Math.min(kids, plan.max)) + unit;\n      $('plan-note').textContent = kids > 8\n        ? 'More than 8 students: email OneHomeschool to ask about options.'\n        : 'You can switch plans later if your family grows.';\n      $('plan-cta').textContent = `See ${plan.name} on OneHomeschool ↗`;\n      document.querySelectorAll('#plan-cards .plan-card').forEach((c) => c.classList.toggle('is-pick', c.dataset.plan === plan.name));\n      if (plan.name !== last) { window.fgBump?.($('plan-name')); last = plan.name; }\n    };\n    $('kids').addEventListener('input', calc);\n    billing.addEventListener('change', calc);\n    $('copy-code').addEventListener('click', async () => {\n      try { await navigator.clipboard.writeText('GIORGI2608'); $('copy-state').textContent = 'Copied ✓'; }\n      catch { $('copy-state').textContent = 'Select & copy'; }\n      window.trackAffiliateEvent?.('affiliate_code_copy', { affiliate_program: 'onehomeschool' });\n      setTimeout(() => { $('copy-state').textContent = 'Copy'; }, 2200);\n    });\n    calc();\n  })();\n  "
+  ],
+  "hub": {
+    "order": 1,
+    "cats": [
+      "family"
+    ],
+    "color": "family",
+    "icon": "📚",
+    "cardTitle": "OneHomeschool: a homeschool planner that works with your curriculum",
+    "cardText": "What it does, plan prices by number of kids, and how to check your curriculum is supported.",
+    "label": "Homeschool",
+    "isNew": true
+  }
+}

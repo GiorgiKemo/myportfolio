@@ -1,0 +1,145 @@
+{
+  "slug": "sitemind-website-ai-audit",
+  "title": "10-point AI website assistant audit | Giorgi Codes",
+  "description": "A 10-point AI website assistant audit checklist for checking source quality, privacy boundaries, handoff, plan fit, and ownership before a trial.",
+  "robots": "index, follow, max-image-preview:large",
+  "canonical": "https://giorgi.codes/affiliate/sitemind-website-ai-audit.html",
+  "path": "/affiliate/sitemind-website-ai-audit.html",
+  "ogType": "article",
+  "ogTitle": "10-point AI website assistant audit | Giorgi Codes",
+  "ogDescription": "Check the website, content, handoff, privacy, plan limits, and exit path before adding an AI assistant.",
+  "ogImage": "https://giorgi.codes/affiliate/assets/chapter-ai.png",
+  "jsonLd": [
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": "10-point AI website assistant audit",
+      "url": "https://giorgi.codes/affiliate/sitemind-website-ai-audit.html",
+      "author": {
+        "@type": "Person",
+        "name": "Giorgi Kemoklidze"
+      },
+      "description": "A practical audit checklist for evaluating an AI website assistant before a trial."
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Giorgi Codes",
+          "item": "https://giorgi.codes/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "The Field Guide",
+          "item": "https://giorgi.codes/affiliate/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "10-point AI assistant audit",
+          "item": "https://giorgi.codes/affiliate/sitemind-website-ai-audit.html"
+        }
+      ]
+    }
+  ],
+  "topic": "t-ai",
+  "category": "AI assistants",
+  "chip": "🔍 Website owner audit",
+  "h1": "Audit the website before you add an AI assistant.",
+  "lede": "A chat widget cannot repair missing, stale, or ownerless information. Use these ten checks to decide whether an assistant can help your visitors and where a human still needs to take over.",
+  "updated": "September 2026",
+  "readTime": "3 min read",
+  "heroIcon": "🔍",
+  "heroTitle": "10-point AI assistant audit",
+  "heroRows": [
+    {
+      "label": "Format",
+      "value": "Checklist · 10 steps"
+    },
+    {
+      "label": "Best for",
+      "value": "AI assistants"
+    },
+    {
+      "label": "Reading time",
+      "value": "3 minutes"
+    }
+  ],
+  "body": "<p class=\"note\"><strong>Disclosure:</strong> this independent checklist includes a SiteMind referral link. If you start a paid subscription through it, I may earn a recurring commission at no extra cost to you. Verify current pricing, limits, privacy terms, and ownership rules on the provider’s official pages before subscribing.</p>\n    <aside class=\"cta cta-top\"><div><strong>See the checklist in practice</strong><p>Once the source and handoff checks look sound, test a grounded assistant on a real site.</p></div><a href=\"https://sitemind.tech/r/GM3DEKT6?src=ai_audit_top\" target=\"_blank\" rel=\"sponsored noopener noreferrer\" data-affiliate-program=\"sitemind\">Try SiteMind ↗</a></aside>\n    <section class=\"checks\" aria-label=\"AI website assistant audit checklist\">\n      <article class=\"check\"><h2>Collect real visitor questions</h2><p>Write down the questions people already ask by email, phone, chat, or search. Start with repeatable facts instead of broad claims about what the assistant should do.</p></article>\n      <article class=\"check\"><h2>Check whether the answers exist</h2><p>For each question, identify the exact page, policy, or document that supports the answer. If the source is missing, fix the site before blaming the assistant.</p></article>\n      <article class=\"check\"><h2>Assign a content owner</h2><p>Name the person responsible for prices, availability, hours, services, policies, and other facts that can change after launch.</p></article>\n      <article class=\"check\"><h2>Test stale information</h2><p>Review an old offer, changed opening hour, discontinued service, or outdated policy. Confirm how quickly a correction reaches the assistant’s answers.</p></article>\n      <article class=\"check\"><h2>Test an unknown question</h2><p>Ask something the source does not cover. A useful system should make uncertainty visible instead of inventing a confident answer.</p></article>\n      <article class=\"check\"><h2>Keep human handoff obvious</h2><p>Give visitors a working contact path for sensitive, urgent, unusual, or high-value questions. Test the handoff on both desktop and mobile.</p></article>\n      <article class=\"check\"><h2>Define the privacy boundary</h2><p>Decide what visitors should never submit and where personal, payment, health, legal, or account information must be handled instead.</p></article>\n      <article class=\"check\"><h2>Check the surrounding site flow</h2><p>Make sure forms, booking links, analytics, consent notices, accessibility, and page performance still work after the assistant is added.</p></article>\n      <article class=\"check\"><h2>Match usage to the plan</h2><p>Compare domains, source capacity, question volume, seats, support, renewal pricing, and likely seasonal spikes against the plan you are considering.</p></article>\n      <article class=\"check\"><h2>Document ownership and exit</h2><p>Record who owns the account, billing, source content, domain, data, and removal process. A trial should not create a new lock-in problem.</p></article>\n    </section>\n    <aside class=\"cta\"><strong>Ready to test the checklist?</strong> If the source, privacy, handoff, and ownership checks fit your site, <a href=\"https://sitemind.tech/r/GM3DEKT6?src=ai_audit_checklist\" target=\"_blank\" rel=\"sponsored noopener noreferrer\" data-affiliate-program=\"sitemind\">try SiteMind with my referral link</a> at no extra cost. Review <a href=\"https://sitemind.tech/pricing\" target=\"_blank\" rel=\"noopener noreferrer\">current pricing</a> and <a href=\"https://sitemind.tech/features\" target=\"_blank\" rel=\"noopener noreferrer\">features</a> separately from the buying decision.</aside>",
+  "related": [
+    {
+      "href": "sitemind-cost-calculator.html",
+      "icon": "🧮",
+      "title": "SiteMind cost calculator",
+      "category": "AI assistants"
+    },
+    {
+      "href": "sitemind-review.html",
+      "icon": "⭐",
+      "title": "An honest SiteMind review",
+      "category": "AI assistants"
+    },
+    {
+      "href": "sitemind-pricing-plans-checklist.html",
+      "icon": "💳",
+      "title": "Compare SiteMind plans",
+      "category": "AI assistants"
+    }
+  ],
+  "offer": {
+    "tag": "Partner pick",
+    "name": "SiteMind",
+    "text": "An AI assistant that answers visitors from your own pages, with citations and lead capture.",
+    "link": {
+      "href": "https://sitemind.tech/r/GM3DEKT6?src=side_sitemind-website-ai-audit",
+      "label": "Try free for 3 days ↗",
+      "attrs": {
+        "target": "_blank",
+        "rel": "sponsored noopener",
+        "data-affiliate-program": "sitemind",
+        "data-affiliate-placement": "sidebar"
+      }
+    },
+    "small": "Affiliate link · from $25/mo"
+  },
+  "sticky": {
+    "text": "SiteMind · 3-day free trial",
+    "link": {
+      "href": "https://sitemind.tech/r/GM3DEKT6?src=side_sitemind-website-ai-audit",
+      "label": "Try free for 3 days ↗",
+      "attrs": {
+        "target": "_blank",
+        "rel": "sponsored noopener",
+        "data-affiliate-program": "sitemind",
+        "data-affiliate-placement": "sticky"
+      }
+    }
+  },
+  "navCta": {
+    "href": "https://sitemind.tech/r/GM3DEKT6?src=side_sitemind-website-ai-audit",
+    "label": "Try SiteMind",
+    "attrs": {
+      "target": "_blank",
+      "rel": "sponsored noopener",
+      "data-affiliate-program": "sitemind",
+      "data-affiliate-placement": "nav"
+    }
+  },
+  "scripts": [],
+  "hub": {
+    "order": 10,
+    "cats": [
+      "ai"
+    ],
+    "color": "ai",
+    "icon": "🔍",
+    "cardTitle": "Run a 10-point AI website assistant audit",
+    "cardText": "Source quality, privacy, handoff and plan fit before a trial.",
+    "label": "AI",
+    "isNew": false
+  }
+}

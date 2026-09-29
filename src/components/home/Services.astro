@@ -1,0 +1,93 @@
+---
+import { services } from '../../data/site';
+
+const steps = [
+  { t: 'Discover', d: 'We pin down the one outcome that matters, the audience and the constraints.' },
+  { t: 'Design', d: 'Flows, layout and motion prototyped early, so decisions are made on something real.' },
+  { t: 'Build', d: 'Typed, tested and deployed continuously. You see progress on a live preview.' },
+  { t: 'Launch & grow', d: 'Analytics, SEO and a clean handoff, then iteration based on real data.' },
+];
+---
+
+<section id="services" class="svc" aria-labelledby="svc-title">
+  <div class="wrap">
+    <div class="svc-head">
+      <p class="kicker">Work together</p>
+      <h2 id="svc-title">A clear starting point for<br /><span class="serif">the next improvement.</span></h2>
+      <p class="svc-intro">Choose a defined scope first. Every offer is confirmed against the actual problem before work begins.</p>
+    </div>
+
+    <ol class="process">
+      {steps.map((s, i) => (
+        <li class="reveal" style={`transition-delay:${i * 0.08}s`}>
+          <span class="mono">Step {i + 1}</span>
+          <h3>{s.t}</h3>
+          <p>{s.d}</p>
+        </li>
+      ))}
+    </ol>
+
+    <div class="offers">
+      {services.map((o, i) => (
+        <article class="offer reveal" data-spotlight style={`transition-delay:${i * 0.08}s`}>
+          <div class="offer-top">
+            <span class="mono offer-n">0{i + 1}</span>
+            <span class="offer-price">{o.price}</span>
+          </div>
+          <h3>{o.name}</h3>
+          <p>{o.description}</p>
+          <ul>
+            {o.deliverables.map((d) => <li>{d}</li>)}
+          </ul>
+          <div class="offer-actions">
+            <a href="#contact" class="btn btn-sm" data-offer={o.name}>Discuss this <span class="arrow" aria-hidden="true">↗</span></a>
+            {'scopeHref' in o && o.scopeHref && <a class="offer-scope link-underline" href={o.scopeHref}>View the scope</a>}
+          </div>
+        </article>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .svc { padding: clamp(100px, 12vw, 180px) 0 clamp(80px, 10vw, 140px); }
+  .svc-head { display: grid; grid-template-columns: 1fr auto; gap: 22px 40px; align-items: end; margin-bottom: clamp(48px, 6vw, 80px); }
+  .svc-head .kicker { grid-column: 1 / -1; }
+  .svc-head h2 { font-size: clamp(38px, 5.4vw, 88px); letter-spacing: -0.06em; line-height: 0.94; }
+  .svc-head .serif { color: var(--muted); }
+  .svc-intro { max-width: 320px; color: var(--muted); font-size: 15px; }
+
+  .process { list-style: none; margin: 0 0 56px; padding: 0; display: grid; grid-template-columns: repeat(4, 1fr); border-top: 1px solid var(--line-2); }
+  .process li { padding: 22px 22px 8px 0; position: relative; }
+  .process li::before { content: ''; position: absolute; top: -4px; left: 0; width: 7px; height: 7px; border-radius: 50%; background: var(--signal); }
+  .process .mono { font-size: 11px; color: var(--muted); letter-spacing: 0.12em; text-transform: uppercase; }
+  .process h3 { font-size: 24px; letter-spacing: -0.04em; margin: 10px 0 8px; }
+  .process p { color: var(--muted); font-size: 14.5px; }
+
+  .offers { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+  .offer {
+    --mx: 50%; --my: 50%;
+    position: relative; display: flex; flex-direction: column; gap: 14px;
+    padding: 28px; border-radius: var(--radius); border: 1px solid var(--line); background: var(--surface);
+    overflow: hidden; transition: border-color 0.4s, transform 0.6s var(--ease), opacity 0.9s var(--ease);
+  }
+  .offer::before {
+    content: ''; position: absolute; inset: 0; pointer-events: none; opacity: 0; transition: opacity 0.4s;
+    background: radial-gradient(360px circle at var(--mx) var(--my), color-mix(in oklab, var(--signal) 13%, transparent), transparent 65%);
+  }
+  .offer:hover { border-color: var(--line-2); }
+  .offer:hover::before { opacity: 1; }
+  .offer-top { display: flex; justify-content: space-between; align-items: baseline; }
+  .offer-n { font-size: 12px; color: var(--signal-ink); }
+  .offer-price { font-size: clamp(30px, 3vw, 44px); font-weight: 600; letter-spacing: -0.05em; }
+  .offer h3 { font-size: 26px; letter-spacing: -0.04em; margin-top: 18px; }
+  .offer p { color: var(--muted); font-size: 15px; }
+  .offer ul { list-style: none; margin: 4px 0 0; padding: 0; display: grid; gap: 8px; }
+  .offer li { display: flex; gap: 10px; font-size: 15px; color: var(--text-2); }
+  .offer li::before { content: '✓'; color: var(--signal-ink); font-weight: 600; }
+  .offer-actions { margin-top: auto; padding-top: 18px; display: flex; align-items: center; gap: 16px; flex-wrap: wrap; }
+  .offer-scope { font-size: 14px; color: var(--text-2); }
+
+  @media (max-width: 980px) { .offers { grid-template-columns: 1fr; } .process { grid-template-columns: 1fr 1fr; row-gap: 24px; } .svc-head { grid-template-columns: 1fr; } }
+  @media (max-width: 520px) { .process { grid-template-columns: 1fr; } }
+</style>

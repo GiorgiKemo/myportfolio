@@ -1,0 +1,116 @@
+{
+  "title": "The Field Guide: Honest Tool Reviews for Websites, AI & Homeschool | Giorgi Codes",
+  "description": "Independent guides and interactive calculators from a full-stack developer: web hosting, AI website assistants, homeschool planning and creator tools. Clear pricing, real trade-offs, disclosed links.",
+  "canonical": "https://giorgi.codes/affiliate/",
+  "ogType": "website",
+  "ogTitle": "The Field Guide by Giorgi Codes",
+  "ogDescription": "Honest, interactive guides to the tools behind your website, business and homeschool.",
+  "ogImage": "https://giorgi.codes/affiliate/assets/field-guide-still-life-cover.png",
+  "jsonLd": [
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "CollectionPage",
+          "@id": "https://giorgi.codes/affiliate/#page",
+          "name": "The Field Guide by Giorgi Codes",
+          "url": "https://giorgi.codes/affiliate/",
+          "description": "Independent guides and interactive calculators for web hosting, AI website assistants, homeschool planning and creator tools.",
+          "inLanguage": "en",
+          "isPartOf": {
+            "@type": "WebSite",
+            "name": "Giorgi Codes",
+            "url": "https://giorgi.codes/"
+          },
+          "author": {
+            "@id": "https://giorgi.codes/#person"
+          },
+          "breadcrumb": {
+            "@id": "https://giorgi.codes/affiliate/#crumbs"
+          }
+        },
+        {
+          "@type": "Person",
+          "@id": "https://giorgi.codes/#person",
+          "name": "Giorgi Kemoklidze",
+          "url": "https://giorgi.codes/",
+          "jobTitle": "Full-Stack Developer",
+          "sameAs": [
+            "https://github.com/GiorgiKemo"
+          ]
+        },
+        {
+          "@type": "BreadcrumbList",
+          "@id": "https://giorgi.codes/affiliate/#crumbs",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "Giorgi Codes",
+              "item": "https://giorgi.codes/"
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "name": "The Field Guide",
+              "item": "https://giorgi.codes/affiliate/"
+            }
+          ]
+        },
+        {
+          "@type": "ItemList",
+          "name": "Featured guides",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "url": "https://giorgi.codes/affiliate/verpex-hosting-review.html",
+              "name": "Verpex hosting review"
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "url": "https://giorgi.codes/affiliate/onehomeschool-review.html",
+              "name": "OneHomeschool review"
+            },
+            {
+              "@type": "ListItem",
+              "position": 3,
+              "url": "https://giorgi.codes/affiliate/sitemind-cost-calculator.html",
+              "name": "SiteMind cost calculator"
+            }
+          ]
+        },
+        {
+          "@type": "FAQPage",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "How does The Field Guide make money?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Some links are affiliate links. If you buy through one, I may earn a commission at no extra cost to you. Every affiliate link is labelled next to where it appears."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Do affiliate links change the price I pay?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "No. You pay the provider's normal price. Some partners, such as OneHomeschool, give a small discount when you use my code."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "How do you choose which tools to cover?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "I cover tools that matter to the websites and businesses I build for. Each guide lists who a tool fits, who it does not fit, and what to check on the official site before paying."
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

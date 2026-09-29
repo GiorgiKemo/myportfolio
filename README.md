@@ -1,24 +1,30 @@
-# My Portfolio Website
+# giorgi.codes
 
-This is my professional portfolio website built with React and Vite. It showcases my skills, projects, and contact information.
+Portfolio and resource guides of Giorgi Kemoklidze, full-stack developer.
 
-## Features
+## Stack
 
-- Modern, responsive design
-- Interactive UI with animations using Framer Motion
-- Project showcase with links to GitHub and live demos
-- Contact form using EmailJS
-- Smooth scrolling navigation
+- [Astro](https://astro.build) static site generation: every page ships as pre-rendered HTML for speed and SEO
+- [three.js](https://threejs.org) with custom GLSL shaders for the hero orb and the interactive 3D lab
+- [GSAP](https://gsap.com) ScrollTrigger and [Lenis](https://lenis.darkroom.engineering) for scroll-driven motion
+- Native cross-document View Transitions between pages
+- Self-hosted Geist, Geist Mono and Instrument Serif fonts
 
-## Technologies Used
+## Structure
 
-- React
-- Vite
-- CSS
-- Framer Motion
-- React Icons
-- EmailJS
+- `src/pages/index.astro` home page, sections in `src/components/home/`
+- `src/pages/work/` project index and one case-study page per project
+- `src/pages/affiliate/` The Field Guide hub and guides (URLs unchanged from the previous site)
+- `src/data/portfolioData.js` projects and skills (tested by `npm test`)
+- `scripts/optimize-previews.mjs` generates the WebP project screenshots
 
-## Visit the Website
+## Develop
 
-You can visit the live website at: [https://giorgikemo.github.io/myportfolio/](https://giorgikemo.github.io/myportfolio/)
+```bash
+npm install
+npm run dev      # http://localhost:4321
+npm test         # data checks
+npm run build    # static output in dist/
+```
+
+Pushing to `main` deploys `dist/` to GitHub Pages (giorgi.codes).

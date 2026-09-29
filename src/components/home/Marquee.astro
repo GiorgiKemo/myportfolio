@@ -1,0 +1,28 @@
+---
+interface Props { items: string[]; reverse?: boolean; }
+const { items, reverse = false } = Astro.props;
+---
+
+<div class:list={['mq', { 'mq-rev': reverse }]} data-marquee aria-hidden="true">
+  <div class="mq-track">
+    {[0, 1].map(() => (
+      <div class="mq-group">
+        {items.map((item, i) => (
+          <span class="mq-item">{i % 3 === 1 ? <span class="serif">{item}</span> : item}<i>✦</i></span>
+        ))}
+      </div>
+    ))}
+  </div>
+</div>
+
+<style>
+  .mq { overflow: hidden; border-block: 1px solid var(--line); padding: 22px 0; user-select: none; }
+  .mq-track { display: flex; width: max-content; will-change: transform; }
+  .mq-group { display: flex; flex-shrink: 0; }
+  .mq-item {
+    display: inline-flex; align-items: center; gap: 36px; padding-right: 36px;
+    font-size: clamp(28px, 4vw, 56px); font-weight: 560; letter-spacing: -0.045em; white-space: nowrap;
+  }
+  .mq-item .serif { color: var(--muted); }
+  .mq-item i { font-style: normal; font-size: 0.45em; color: var(--signal-ink); }
+</style>

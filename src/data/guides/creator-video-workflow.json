@@ -1,0 +1,127 @@
+{
+  "slug": "creator-video-workflow",
+  "title": "Creator video workflow checklist | Giorgi Codes",
+  "description": "A repeatable short-form video workflow for recording, captioning, reviewing, exporting, and publishing useful content.",
+  "robots": "index, follow, max-image-preview:large",
+  "canonical": "https://giorgi.codes/affiliate/creator-video-workflow.html",
+  "path": "/affiliate/creator-video-workflow.html",
+  "ogType": "article",
+  "ogTitle": "Creator video workflow checklist | Giorgi Codes",
+  "ogDescription": "Turn one useful idea into a repeatable, accessible short-form video workflow.",
+  "ogImage": "https://giorgi.codes/affiliate/assets/chapter-creator.png",
+  "jsonLd": [
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": "Creator video workflow checklist",
+      "url": "https://giorgi.codes/affiliate/creator-video-workflow.html",
+      "author": {
+        "@type": "Person",
+        "name": "Giorgi Kemoklidze"
+      },
+      "description": "A repeatable workflow for producing accessible short-form videos."
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Giorgi Codes",
+          "item": "https://giorgi.codes/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "The Field Guide",
+          "item": "https://giorgi.codes/affiliate/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Short-form video workflow",
+          "item": "https://giorgi.codes/affiliate/creator-video-workflow.html"
+        }
+      ]
+    }
+  ],
+  "topic": "t-creative",
+  "category": "Creators",
+  "chip": "🎬 Creator workflow guide",
+  "h1": "Make the publishing loop repeatable before you add more tools.",
+  "lede": "A reliable video workflow is less about a flashy editor and more about reducing the small delays between an idea, an accessible export, and a useful post.",
+  "updated": "September 2026",
+  "readTime": "3 min read",
+  "heroIcon": "🎬",
+  "heroTitle": "Short-form video workflow",
+  "heroRows": [
+    {
+      "label": "Format",
+      "value": "Checklist · 5 steps"
+    },
+    {
+      "label": "Best for",
+      "value": "Creators"
+    },
+    {
+      "label": "Reading time",
+      "value": "3 minutes"
+    }
+  ],
+  "body": "<p class=\"note\"><strong>Disclosure:</strong> this is an independent workflow guide. No paid affiliate link is active on this page. Confirm current product features, limits, export rules, and commercial-use terms before subscribing.</p>\n    <section class=\"steps\" aria-label=\"Creator video workflow\">\n      <article class=\"step\"><h2>Start with one audience problem</h2><p>Write one sentence describing who needs the video and what they should be able to do afterward. This keeps the edit focused.</p></article>\n      <article class=\"step\"><h2>Capture for the final format</h2><p>Choose a vertical, square, or horizontal frame before recording. Leave safe space for captions and platform UI instead of cropping important details later.</p></article>\n      <article class=\"step\"><h2>Edit for comprehension</h2><p>Remove dead air, add readable captions, keep on-screen text brief, and use clear section changes. Accessibility is part of the deliverable, not a final decoration.</p></article>\n      <article class=\"step\"><h2>Review rights and claims</h2><p>Confirm that music, footage, fonts, logos, and screenshots can be used commercially. Check every product claim against its current official documentation.</p></article>\n      <article class=\"step\"><h2>Export once, reuse deliberately</h2><p>Keep a clean master, export the platform version, and record the title, description, disclosure, and destination link in a small content log.</p></article>\n    </section>",
+  "related": [
+    {
+      "href": "mubert-music-licensing-checklist.html",
+      "icon": "🎵",
+      "title": "Music rights for monetized video",
+      "category": "Creators"
+    },
+    {
+      "href": "envato-elements-affiliate-guide.html",
+      "icon": "🎨",
+      "title": "Creative asset subscriptions",
+      "category": "Creators"
+    },
+    {
+      "href": "verpex-hosting-review.html",
+      "icon": "🖥️",
+      "title": "Verpex hosting review",
+      "category": "Websites & hosting"
+    }
+  ],
+  "offer": {
+    "tag": "Work with me",
+    "name": "Need a hand with your site?",
+    "text": "I'm a full-stack developer: builds, fixes, migrations, AI assistants and SEO.",
+    "link": {
+      "href": "mailto:contact@giorgi.codes",
+      "label": "Email Giorgi ↗",
+      "attrs": {
+        "data-affiliate-placement": "sidebar"
+      }
+    },
+    "small": "contact@giorgi.codes"
+  },
+  "sticky": null,
+  "navCta": {
+    "href": "mailto:contact@giorgi.codes",
+    "label": "Hire Giorgi",
+    "attrs": {
+      "data-affiliate-placement": "nav"
+    }
+  },
+  "scripts": [],
+  "hub": {
+    "order": 21,
+    "cats": [
+      "creative"
+    ],
+    "color": "creative",
+    "icon": "🎬",
+    "cardTitle": "Build a repeatable short-form video workflow",
+    "cardText": "Record, caption, review, export and publish.",
+    "label": "Creator",
+    "isNew": false
+  }
+}

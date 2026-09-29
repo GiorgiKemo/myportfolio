@@ -1,0 +1,127 @@
+{
+  "slug": "envato-elements-affiliate-guide",
+  "title": "Envato Elements affiliate guide | Giorgi Codes",
+  "description": "A practical guide to evaluating Envato Elements for creative workflows and understanding the published affiliate economics before applying.",
+  "robots": "index, follow, max-image-preview:large",
+  "canonical": "https://giorgi.codes/affiliate/envato-elements-affiliate-guide.html",
+  "path": "/affiliate/envato-elements-affiliate-guide.html",
+  "ogType": "article",
+  "ogTitle": "Envato Elements affiliate guide | Giorgi Codes",
+  "ogDescription": "Compare creative asset workflows and review Envato's published affiliate terms before you apply.",
+  "ogImage": "https://giorgi.codes/affiliate/assets/chapter-creator.png",
+  "jsonLd": [
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": "Envato Elements affiliate guide",
+      "url": "https://giorgi.codes/affiliate/envato-elements-affiliate-guide.html",
+      "author": {
+        "@type": "Person",
+        "name": "Giorgi Kemoklidze"
+      },
+      "description": "A practical guide to evaluating Envato Elements for creative workflows and reviewing affiliate economics before applying."
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Giorgi Codes",
+          "item": "https://giorgi.codes/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "The Field Guide",
+          "item": "https://giorgi.codes/affiliate/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Creative asset subscriptions",
+          "item": "https://giorgi.codes/affiliate/envato-elements-affiliate-guide.html"
+        }
+      ]
+    }
+  ],
+  "topic": "t-creative",
+  "category": "Creators",
+  "chip": "🎨 Creative asset guide",
+  "h1": "Buy back the hours between the idea and the finished piece.",
+  "lede": "Templates, footage, music, graphics, and AI tools can speed up a creative workflow—but a large library only helps when the license, search time, and actual deliverable all line up.",
+  "updated": "September 2026",
+  "readTime": "3 min read",
+  "heroIcon": "🎨",
+  "heroTitle": "Creative asset subscriptions",
+  "heroRows": [
+    {
+      "label": "Format",
+      "value": "Checklist · 5 steps"
+    },
+    {
+      "label": "Best for",
+      "value": "Creators"
+    },
+    {
+      "label": "Reading time",
+      "value": "3 minutes"
+    }
+  ],
+  "body": "<p class=\"note\"><strong>Disclosure:</strong> no paid Envato affiliate link is active on this page. I am evaluating the program and its current Impact offer; approval is required before any referral link or commission claim can be used.</p>\n    <section class=\"facts\" aria-label=\"Provider-published affiliate economics\"><h2>What Envato publishes</h2><ul><li>Envato describes its audience as creators, influencers, publishers, educators, and marketers.</li><li>Its public affiliate page lists maximum payouts for eligible subscribers of up to <strong>$20, $40, or $80 per month for the first three months</strong>, or <strong>$120, $250, or $500 for a qualifying annual purchase</strong>, depending on plan.</li><li>The logged-in Impact offer uses action-specific rules, attribution windows, approval, locking, and reversal terms. Treat the Impact offer—not a marketing headline—as the source of truth before publishing a paid link.</li></ul><p>These are provider-published examples, not guaranteed earnings. Payout eligibility depends on qualified activity, approval, refunds, attribution, and the offer terms in force when the conversion is recorded.</p></section>\n    <section class=\"checks\" aria-label=\"Envato evaluation checklist\">\n      <article class=\"check\"><h2>Start with the deliverable</h2><p>Name the thing you need to ship: a landing page, social cut, product demo, presentation, podcast, or client campaign. Search for that outcome instead of browsing an entire catalog.</p></article>\n      <article class=\"check\"><h2>Separate reusable from one-off value</h2><p>Estimate how often you will use assets over the next quarter. A subscription makes more sense when it shortens several real workflows, not one speculative project.</p></article>\n      <article class=\"check\"><h2>Read the license for the channel</h2><p>Check client work, paid ads, monetized video, distribution, end products, and cancellation rules. Save the license record and item details with the project.</p></article>\n      <article class=\"check\"><h2>Measure search time</h2><p>Run a small test: choose a brief, record how long it takes to find an acceptable asset, and compare that with your current workflow. The library should reduce work, not add another queue.</p></article>\n      <article class=\"check\"><h2>Keep affiliate claims conditional</h2><p>Approval, tracking windows, payout tiers, refunds, and reversals can change. Link to the official terms and disclose any paid relationship next to the recommendation.</p></article>\n    </section>\n    <aside class=\"cta\"><strong>Review the source:</strong> <a href=\"https://elements.envato.com/\" target=\"_blank\" rel=\"noopener noreferrer\">browse Envato Elements</a> and check the current licence terms and pricing on the official site before subscribing.</aside>",
+  "related": [
+    {
+      "href": "creator-video-workflow.html",
+      "icon": "🎬",
+      "title": "Short-form video workflow",
+      "category": "Creators"
+    },
+    {
+      "href": "mubert-music-licensing-checklist.html",
+      "icon": "🎵",
+      "title": "Music rights for monetized video",
+      "category": "Creators"
+    },
+    {
+      "href": "verpex-hosting-review.html",
+      "icon": "🖥️",
+      "title": "Verpex hosting review",
+      "category": "Websites & hosting"
+    }
+  ],
+  "offer": {
+    "tag": "Work with me",
+    "name": "Need a hand with your site?",
+    "text": "I'm a full-stack developer: builds, fixes, migrations, AI assistants and SEO.",
+    "link": {
+      "href": "mailto:contact@giorgi.codes",
+      "label": "Email Giorgi ↗",
+      "attrs": {
+        "data-affiliate-placement": "sidebar"
+      }
+    },
+    "small": "contact@giorgi.codes"
+  },
+  "sticky": null,
+  "navCta": {
+    "href": "mailto:contact@giorgi.codes",
+    "label": "Hire Giorgi",
+    "attrs": {
+      "data-affiliate-placement": "nav"
+    }
+  },
+  "scripts": [],
+  "hub": {
+    "order": 23,
+    "cats": [
+      "creative"
+    ],
+    "color": "creative",
+    "icon": "🎨",
+    "cardTitle": "Evaluate a creative asset subscription",
+    "cardText": "When an Envato Elements subscription pays off.",
+    "label": "Creative",
+    "isNew": false
+  }
+}

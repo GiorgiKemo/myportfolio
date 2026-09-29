@@ -1,0 +1,145 @@
+{
+  "slug": "assistant-fit-calculator",
+  "title": "AI website assistant fit calculator | Giorgi Codes",
+  "description": "Estimate which AI website assistant plan boundary might fit your website question volume and number of domains.",
+  "robots": "index, follow, max-image-preview:large",
+  "canonical": "https://giorgi.codes/affiliate/assistant-fit-calculator.html",
+  "path": "/affiliate/assistant-fit-calculator.html",
+  "ogType": "website",
+  "ogTitle": "AI website assistant fit calculator | Giorgi Codes",
+  "ogDescription": "A quick, transparent fit check for website question volume, domains, and assistant capabilities.",
+  "ogImage": "https://giorgi.codes/affiliate/assets/chapter-ai.png",
+  "jsonLd": [
+    {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "AI website assistant fit calculator",
+      "url": "https://giorgi.codes/affiliate/assistant-fit-calculator.html",
+      "applicationCategory": "BusinessApplication",
+      "operatingSystem": "Any",
+      "description": "A rough fit check based on published website domain and monthly credit boundaries."
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Giorgi Codes",
+          "item": "https://giorgi.codes/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "The Field Guide",
+          "item": "https://giorgi.codes/affiliate/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "AI assistant fit calculator",
+          "item": "https://giorgi.codes/affiliate/assistant-fit-calculator.html"
+        }
+      ]
+    }
+  ],
+  "topic": "t-ai",
+  "category": "AI assistants",
+  "chip": "📐 Free tool / website operations",
+  "h1": "What kind of AI assistant fit does your site need?",
+  "lede": "Use your approximate monthly question volume and number of domains to get a starting point before you compare plans.",
+  "updated": "September 2026",
+  "readTime": "3 min read",
+  "heroIcon": "📐",
+  "heroTitle": "AI assistant fit calculator",
+  "heroRows": [
+    {
+      "label": "Format",
+      "value": "Interactive calculator"
+    },
+    {
+      "label": "Best for",
+      "value": "AI assistants"
+    },
+    {
+      "label": "Reading time",
+      "value": "3 minutes"
+    }
+  ],
+  "body": "<p class=\"note\">This is a directional calculator, not a quote or a recommendation. It uses published SiteMind plan boundaries; a real conversation can consume several answered questions.</p>\n    <section class=\"calculator\" aria-labelledby=\"calculator-title\">\n      <form class=\"form-card\" id=\"fit-form\"><h2 id=\"calculator-title\">Your starting point</h2><div class=\"field\"><label for=\"questions\">Answered questions per month</label><input id=\"questions\" name=\"questions\" type=\"number\" min=\"0\" max=\"100000\" step=\"50\" value=\"500\" required><small>Count answers, not visitors. Use support history if you have it.</small></div><div class=\"field\"><label for=\"domains\">Websites or domains</label><input id=\"domains\" name=\"domains\" type=\"number\" min=\"1\" max=\"100\" step=\"1\" value=\"1\" required><small>Include separate sites or subdomains you want one workspace to cover.</small></div><div class=\"field\"><label for=\"capabilities\">Do you need analytics, webhooks, or AI actions?</label><select id=\"capabilities\" name=\"capabilities\"><option value=\"no\">No — answers and source citations are the priority</option><option value=\"yes\">Yes — I need operational actions or reporting</option></select></div><button class=\"button\" type=\"submit\">Calculate my fit <span aria-hidden=\"true\">↗</span></button></form>\n      <div class=\"result-card\" id=\"result\" aria-live=\"polite\"><span class=\"result-badge\">Your rough fit</span><h2 id=\"result-title\">Starter boundary</h2><p id=\"result-copy\">Enter your details to see the closest published capacity boundary.</p><a class=\"button\" id=\"result-cta\" href=\"https://sitemind.tech/r/GM3DEKT6?src=fit_calculator\" target=\"_blank\" rel=\"sponsored noopener noreferrer\" data-affiliate-program=\"sitemind\">Test SiteMind free <span aria-hidden=\"true\">↗</span></a><p class=\"disclosure\">This referral link may earn me a commission if you subscribe, at no extra cost to you. Verify current pricing and fit on the <a href=\"https://sitemind.tech/pricing\" target=\"_blank\" rel=\"noopener noreferrer\">official pricing page</a>.</p></div>\n    </section>\n    <section class=\"details\" aria-label=\"How to interpret the result\"><article><h2>Starter</h2><p>One domain and up to 1,000 published monthly credits. A sensible pilot when your question volume is modest.</p></article><article><h2>Growth</h2><p>Up to five domains and 5,000 published monthly credits, plus analytics, webhooks, and actions.</p></article><article><h2>Pro</h2><p>Up to ten domains and 20,000 published monthly credits for higher-volume support.</p></article></section>\n    <p class=\"sources\">Boundaries checked against <a href=\"https://sitemind.tech/pricing\" target=\"_blank\" rel=\"noopener noreferrer\">SiteMind pricing</a> and <a href=\"https://sitemind.tech/features\" target=\"_blank\" rel=\"noopener noreferrer\">SiteMind features</a>. Provider terms can change.</p>",
+  "related": [
+    {
+      "href": "sitemind-cost-calculator.html",
+      "icon": "🧮",
+      "title": "SiteMind cost calculator",
+      "category": "AI assistants"
+    },
+    {
+      "href": "sitemind-review.html",
+      "icon": "⭐",
+      "title": "An honest SiteMind review",
+      "category": "AI assistants"
+    },
+    {
+      "href": "sitemind-pricing-plans-checklist.html",
+      "icon": "💳",
+      "title": "Compare SiteMind plans",
+      "category": "AI assistants"
+    }
+  ],
+  "offer": {
+    "tag": "Partner pick",
+    "name": "SiteMind",
+    "text": "An AI assistant that answers visitors from your own pages, with citations and lead capture.",
+    "link": {
+      "href": "https://sitemind.tech/r/GM3DEKT6?src=side_assistant-fit-calculator",
+      "label": "Try free for 3 days ↗",
+      "attrs": {
+        "target": "_blank",
+        "rel": "sponsored noopener",
+        "data-affiliate-program": "sitemind",
+        "data-affiliate-placement": "sidebar"
+      }
+    },
+    "small": "Affiliate link · from $25/mo"
+  },
+  "sticky": {
+    "text": "SiteMind · 3-day free trial",
+    "link": {
+      "href": "https://sitemind.tech/r/GM3DEKT6?src=side_assistant-fit-calculator",
+      "label": "Try free for 3 days ↗",
+      "attrs": {
+        "target": "_blank",
+        "rel": "sponsored noopener",
+        "data-affiliate-program": "sitemind",
+        "data-affiliate-placement": "sticky"
+      }
+    }
+  },
+  "navCta": {
+    "href": "https://sitemind.tech/r/GM3DEKT6?src=side_assistant-fit-calculator",
+    "label": "Try SiteMind",
+    "attrs": {
+      "target": "_blank",
+      "rel": "sponsored noopener",
+      "data-affiliate-program": "sitemind",
+      "data-affiliate-placement": "nav"
+    }
+  },
+  "scripts": [
+    "\n    (() => {\n      const form = document.querySelector('#fit-form');\n      const title = document.querySelector('#result-title');\n      const copy = document.querySelector('#result-copy');\n      form.addEventListener('submit', (event) => {\n        event.preventDefault();\n        const questions = Number(document.querySelector('#questions').value) || 0;\n        const domains = Number(document.querySelector('#domains').value) || 1;\n        const capabilities = document.querySelector('#capabilities').value === 'yes';\n        const resultParams = { questions_per_month: questions, domains, needs_actions: capabilities };\n        if (questions > 20000 || domains > 10) {\n          title.textContent = 'Custom or enterprise boundary';\n          copy.textContent = 'Your inputs are above the published Pro boundary. Compare enterprise options or ask the provider to confirm a custom capacity and workflow.';\n          window.trackAffiliateEvent?.('affiliate_fit_calculator_complete', { ...resultParams, fit_boundary: 'custom_or_enterprise' });\n          return;\n        }\n        if (questions > 5000 || domains > 5 || capabilities) {\n          title.textContent = 'Growth or Pro boundary';\n          copy.textContent = 'The published Growth boundary is a better starting point when you need multiple domains, operational actions, analytics, or more than 5,000 monthly credits. Move to Pro if your volume or domain count is higher.';\n          window.trackAffiliateEvent?.('affiliate_fit_calculator_complete', { ...resultParams, fit_boundary: 'growth_or_pro' });\n          return;\n        }\n        if (questions > 1000 || domains > 1) {\n          title.textContent = 'Growth boundary';\n          copy.textContent = 'The published Growth boundary is the closer fit for more than one domain or more than 1,000 monthly credits. Use the trial to test your real questions before paying.';\n          window.trackAffiliateEvent?.('affiliate_fit_calculator_complete', { ...resultParams, fit_boundary: 'growth' });\n          return;\n        }\n        title.textContent = 'Starter boundary';\n        copy.textContent = 'The published Starter boundary is the closest fit for one domain and up to 1,000 monthly credits. Treat it as a pilot and test known and unknown questions before committing.';\n        window.trackAffiliateEvent?.('affiliate_fit_calculator_complete', { ...resultParams, fit_boundary: 'starter' });\n      });\n    })();\n  "
+  ],
+  "hub": {
+    "order": 6,
+    "cats": [
+      "ai"
+    ],
+    "color": "ai",
+    "icon": "📐",
+    "cardTitle": "Estimate your AI website assistant fit",
+    "cardText": "Match your question volume and domains to a plan boundary.",
+    "label": "AI · Calculator",
+    "isNew": false
+  }
+}

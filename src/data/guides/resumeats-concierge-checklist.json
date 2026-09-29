@@ -1,0 +1,127 @@
+{
+  "slug": "resumeats-concierge-checklist",
+  "title": "ResumeATS concierge checklist | Giorgi Codes",
+  "description": "A practical checklist for deciding between a self-service ATS resume builder, a targeted $99 resume concierge, and broader professional resume support.",
+  "robots": "index, follow, max-image-preview:large",
+  "canonical": "https://giorgi.codes/affiliate/resumeats-concierge-checklist.html",
+  "path": "/affiliate/resumeats-concierge-checklist.html",
+  "ogType": "article",
+  "ogTitle": "ResumeATS concierge checklist | Giorgi Codes",
+  "ogDescription": "Choose the right level of resume help for one target job without paying for more service than you need.",
+  "ogImage": "https://giorgi.codes/affiliate/assets/field-guide-still-life-cover.png",
+  "jsonLd": [
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": "ResumeATS concierge checklist",
+      "url": "https://giorgi.codes/affiliate/resumeats-concierge-checklist.html",
+      "author": {
+        "@type": "Person",
+        "name": "Giorgi Kemoklidze"
+      },
+      "description": "A practical checklist for choosing between self-service resume editing, a targeted concierge review, and broader professional resume support."
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Giorgi Codes",
+          "item": "https://giorgi.codes/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "The Field Guide",
+          "item": "https://giorgi.codes/affiliate/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Choose the right resume help",
+          "item": "https://giorgi.codes/affiliate/resumeats-concierge-checklist.html"
+        }
+      ]
+    }
+  ],
+  "topic": "t-career",
+  "category": "Job seekers",
+  "chip": "📄 Career services buying guide",
+  "h1": "Choose the amount of resume help you actually need.",
+  "lede": "A job search can need a clean tool, a focused second pair of eyes, or a full career-story rewrite. Start with the target, the gap, and the deliverable—not the loudest promise.",
+  "updated": "September 2026",
+  "readTime": "3 min read",
+  "heroIcon": "📄",
+  "heroTitle": "Choose the right resume help",
+  "heroRows": [
+    {
+      "label": "Format",
+      "value": "Checklist · 5 steps"
+    },
+    {
+      "label": "Best for",
+      "value": "Job seekers"
+    },
+    {
+      "label": "Reading time",
+      "value": "3 minutes"
+    }
+  ],
+  "body": "<p class=\"note\"><strong>Disclosure:</strong> this guide links to ResumeATS, a service I operate. The $99 concierge option is a direct service offer, not an affiliate link. No resume service can guarantee interviews, offers, or a particular employer’s decision; review the scope, facts, revisions, turnaround, refund terms, and privacy details before paying.</p>\n    <aside class=\"cta\"><strong>Need one focused application?</strong> <a href=\"https://www.resumeats.cv/contact?offer=concierge\" target=\"_blank\" rel=\"noopener noreferrer\">Request the $99 concierge slot</a> or continue with the self-service builder if you want to make the edits yourself.</aside>\n    <section class=\"paths\" aria-label=\"Resume help paths\">\n      <article class=\"path\"><h2>Self-service builder</h2><p>Best when your facts and target are clear and you want to control the edits, exports, and job-specific tailoring yourself.</p></article>\n      <article class=\"path\"><h2>$99 concierge</h2><p>Best when one target job needs a focused cleanup, tailoring pass, and ATS-readable PDF and Word copies without buying a broader package.</p></article>\n      <article class=\"path\"><h2>Broader support</h2><p>Best when your story, role direction, LinkedIn profile, cover letter, or career transition needs deeper strategy and multiple deliverables.</p></article>\n    </section>\n    <section class=\"checks\" aria-label=\"Resume service checklist\">\n      <article class=\"check\"><h2>Name the target job</h2><p>Use one real job description when possible. A resume that tries to speak to every role usually becomes vague, repetitive, and harder to evaluate.</p></article>\n      <article class=\"check\"><h2>Separate facts from positioning</h2><p>Confirm dates, titles, metrics, tools, and responsibilities first. Then improve ordering, wording, and emphasis without inventing achievements or credentials.</p></article>\n      <article class=\"check\"><h2>Check the actual deliverables</h2><p>Ask whether you receive an editable Word file, a PDF, a targeted version, revision access, and a clear handoff. Do not confuse a visual preview with a usable application file.</p></article>\n      <article class=\"check\"><h2>Review ATS readability</h2><p>Use conventional headings, selectable text, consistent dates, and a layout that survives parsing. ATS compatibility is a practical formatting goal, not a guarantee of ranking or employment.</p></article>\n      <article class=\"check\"><h2>Protect personal information</h2><p>Share only what the service needs, understand who can access the documents, and check retention, deletion, payment, and refund terms before uploading sensitive career history.</p></article>\n    </section>\n    <aside class=\"cta\"><strong>Need one focused application?</strong> ResumeATS currently presents a $99 concierge option for cleaning up one resume, tailoring it to one job description, and delivering ATS-readable PDF and Word copies within two business days. <a href=\"https://www.resumeats.cv/contact?offer=concierge\" target=\"_blank\" rel=\"noopener noreferrer\">Request a $99 concierge slot</a> or <a href=\"https://www.resumeats.cv/\" target=\"_blank\" rel=\"noopener noreferrer\">start with the self-service builder</a>.</aside>",
+  "related": [
+    {
+      "href": "resumeble-vs-resumeats-checklist.html",
+      "icon": "🎯",
+      "title": "Focused vs broad resume help",
+      "category": "Job seekers"
+    },
+    {
+      "href": "verpex-hosting-review.html",
+      "icon": "🖥️",
+      "title": "Verpex hosting review",
+      "category": "Websites & hosting"
+    },
+    {
+      "href": "onehomeschool-review.html",
+      "icon": "📚",
+      "title": "OneHomeschool guide",
+      "category": "Families"
+    }
+  ],
+  "offer": {
+    "tag": "Work with me",
+    "name": "Need a hand with your site?",
+    "text": "I'm a full-stack developer: builds, fixes, migrations, AI assistants and SEO.",
+    "link": {
+      "href": "mailto:contact@giorgi.codes",
+      "label": "Email Giorgi ↗",
+      "attrs": {
+        "data-affiliate-placement": "sidebar"
+      }
+    },
+    "small": "contact@giorgi.codes"
+  },
+  "sticky": null,
+  "navCta": {
+    "href": "mailto:contact@giorgi.codes",
+    "label": "Hire Giorgi",
+    "attrs": {
+      "data-affiliate-placement": "nav"
+    }
+  },
+  "scripts": [],
+  "hub": {
+    "order": 25,
+    "cats": [
+      "career"
+    ],
+    "color": "career",
+    "icon": "📄",
+    "cardTitle": "Choose the right level of resume help",
+    "cardText": "Self-service ATS builder, targeted concierge or full rewrite.",
+    "label": "Career",
+    "isNew": false
+  }
+}

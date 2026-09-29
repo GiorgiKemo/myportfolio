@@ -1,0 +1,197 @@
+{
+  "slug": "sitemind-cost-calculator",
+  "title": "SiteMind Cost Calculator: Which Plan Fits Your Website Traffic? | Giorgi Codes",
+  "description": "Estimate how many AI chat conversations your website will have, which SiteMind plan fits (Starter, Growth, Pro), what it costs monthly or yearly, and how many leads you need to break even.",
+  "robots": "index, follow, max-image-preview:large",
+  "canonical": "https://giorgi.codes/affiliate/sitemind-cost-calculator.html",
+  "path": "/affiliate/sitemind-cost-calculator.html",
+  "ogType": "article",
+  "ogTitle": "SiteMind cost calculator: which plan fits your traffic?",
+  "ogDescription": "Turn monthly visitors into conversations, plan fit, cost and break-even leads.",
+  "ogImage": "https://giorgi.codes/affiliate/assets/chapter-ai.png",
+  "jsonLd": [
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "WebApplication",
+          "name": "SiteMind cost calculator",
+          "url": "https://giorgi.codes/affiliate/sitemind-cost-calculator.html",
+          "applicationCategory": "BusinessApplication",
+          "operatingSystem": "Any",
+          "isAccessibleForFree": true,
+          "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD"
+          },
+          "author": {
+            "@type": "Person",
+            "name": "Giorgi Kemoklidze",
+            "url": "https://giorgi.codes/"
+          },
+          "description": "Estimate AI chat conversations from website traffic and match them to a SiteMind plan and break-even lead count."
+        },
+        {
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "Giorgi Codes",
+              "item": "https://giorgi.codes/"
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "name": "The Field Guide",
+              "item": "https://giorgi.codes/affiliate/"
+            },
+            {
+              "@type": "ListItem",
+              "position": 3,
+              "name": "SiteMind cost calculator",
+              "item": "https://giorgi.codes/affiliate/sitemind-cost-calculator.html"
+            }
+          ]
+        },
+        {
+          "@type": "FAQPage",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "How much does SiteMind cost?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Starter is $25/month or $240/year, Growth is $69/month or $662/year, and Pro is $149/month or $1,430/year. Enterprise pricing is custom."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "How many conversations does each SiteMind plan include?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "SiteMind describes Starter as about 250 conversations a month, Growth about 1,250 and Pro about 5,000. Plans are measured in credits: 1,000, 5,000 and 20,000 respectively."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Does SiteMind have a free trial?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes. Any plan can be tried free for 3 days with no card needed."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "How many domains can I use?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Starter covers 1 domain, Growth 5 domains and Pro 10 domains. Enterprise offers unlimited domains."
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "topic": "t-ai",
+  "category": "AI assistants",
+  "chip": "🧮 Interactive calculator",
+  "h1": "Which SiteMind plan fits <em>your traffic?</em>",
+  "lede": "An AI website assistant is only worth paying for if enough visitors use it and some of them become leads. Plug in your numbers to estimate monthly conversations, the plan that fits, the cost, and how many leads it takes to pay for itself.",
+  "updated": "September 2026",
+  "readTime": "3 min read",
+  "heroIcon": "🧮",
+  "heroTitle": "SiteMind cost calculator",
+  "heroRows": [
+    {
+      "label": "Format",
+      "value": "Interactive calculator"
+    },
+    {
+      "label": "Best for",
+      "value": "AI assistants"
+    },
+    {
+      "label": "Reading time",
+      "value": "3 minutes"
+    }
+  ],
+  "body": "<p class=\"disclosure\"><strong>Disclosure:</strong> links to SiteMind on this page are affiliate links. If you subscribe through one I may earn a commission, at no extra cost to you. The results are estimates from your assumptions, not a promise of results.</p>\n<section id=\"calc\" class=\"tool reveal\" aria-labelledby=\"calc-title\">\n      <h2 id=\"calc-title\">Cost &amp; break-even calculator</h2>\n      <p>Default values are cautious starting points. Replace them with your own analytics when you can.</p>\n      <div class=\"tool-grid\">\n        <div>\n          <div class=\"field\"><label for=\"visits\">Monthly website visitors <output id=\"visits-out\">5,000</output></label><input id=\"visits\" type=\"range\" min=\"0\" max=\"100\" value=\"45\"></div>\n          <div class=\"field\"><label for=\"rate\">Visitors who start a chat <output id=\"rate-out\">2%</output></label><input id=\"rate\" type=\"range\" min=\"0.5\" max=\"10\" step=\"0.5\" value=\"2\"></div>\n          <div class=\"field\"><label for=\"lead\">Chats that become a lead <output id=\"lead-out\">10%</output></label><input id=\"lead\" type=\"range\" min=\"1\" max=\"40\" value=\"10\"></div>\n          <div class=\"field\"><label for=\"value\">Value of one lead to you ($)</label><input id=\"value\" type=\"number\" min=\"1\" value=\"50\" inputmode=\"decimal\"></div>\n          <div class=\"field\"><label for=\"domains\">Websites (domains) <output id=\"domains-out\">1</output></label><input id=\"domains\" type=\"range\" min=\"1\" max=\"12\" value=\"1\"></div>\n          <div class=\"field\"><span class=\"lbl\" id=\"bill-lbl\">Billing</span>\n            <div class=\"seg\" role=\"group\" aria-labelledby=\"bill-lbl\" data-value=\"year\" id=\"billing\"><button type=\"button\" data-value=\"year\" aria-pressed=\"true\">Yearly (−20%)</button><button type=\"button\" data-value=\"month\" aria-pressed=\"false\">Monthly</button></div></div>\n        </div>\n        <div class=\"readout\" aria-live=\"polite\">\n          <small>Recommended plan</small>\n          <div class=\"plan\" id=\"plan-name\">Starter</div>\n          <small id=\"plan-why\">~250 conversations · 1 domain</small>\n          <table><tbody>\n            <tr><td>Est. conversations / mo</td><td id=\"r-conv\">100</td></tr>\n            <tr><td>Plan cost / mo</td><td id=\"r-cost\">$20</td></tr>\n            <tr><td>Est. leads / mo</td><td id=\"r-leads\">10</td></tr>\n            <tr><td>Est. lead value / mo</td><td id=\"r-val\">$500</td></tr>\n            <tr><td><strong>Leads to break even</strong></td><td class=\"big\" id=\"r-be\">1</td></tr>\n          </tbody></table>\n          <small id=\"r-verdict\">Your estimate covers the cost.</small>\n          <a class=\"btn\" href=\"https://sitemind.tech/r/GM3DEKT6?src=calc_result\" target=\"_blank\" rel=\"sponsored noopener\" data-affiliate-program=\"sitemind\" data-affiliate-placement=\"calc_result\" id=\"plan-cta\">Try Starter free for 3 days ↗</a>\n        </div>\n      </div>\n    </section>\n\n    \n      <h2 id=\"plans\">SiteMind plans at a glance</h2>\n      <div class=\"plans\" id=\"plan-cards\">\n        <div class=\"plan-card\" data-plan=\"Starter\"><h3>Starter</h3><div class=\"p\">$25<small>/mo</small></div><small>or $240/year</small><ul><li>~250 conversations/mo</li><li>1 domain · ~600 pages</li><li>Cited answers, lead capture, Content Gaps</li></ul></div>\n        <div class=\"plan-card\" data-plan=\"Growth\"><span class=\"badge\">Most popular</span><h3>Growth</h3><div class=\"p\">$69<small>/mo</small></div><small>or $662/year</small><ul><li>~1,250 conversations/mo</li><li>5 domains · ~4,500 pages</li><li>Notion, Drive, GitHub connectors; Shopify app; analytics</li></ul></div>\n        <div class=\"plan-card\" data-plan=\"Pro\"><h3>Pro</h3><div class=\"p\">$149<small>/mo</small></div><small>or $1,430/year</small><ul><li>~5,000 conversations/mo</li><li>10 domains · ~18,000 pages</li><li>White-label, priority crawling</li></ul></div>\n      </div>\n      <p>Above ~5,000 conversations a month, several brands, or a security review before buying, SiteMind offers custom Enterprise pricing. Every plan can be tried free for 3 days with no card.</p>\n\n      <h2>How to read your result</h2>\n      <ul>\n        <li><strong>Conversations</strong> = visitors × chat rate. If you don't know your chat rate, start at 1–2% and adjust after the trial.</li>\n        <li><strong>Break-even leads</strong> = monthly plan cost ÷ what one lead is worth to you. If it's 1–2 leads a month, the bar is low.</li>\n        <li><strong>The trial is the real test.</strong> Three days of real traffic and the Content Gaps report tell you more than any calculator.</li>\n      </ul>\n\n      <h2>Good fit, or not yet?</h2>\n      <div class=\"fit\">\n        <div class=\"yes\"><h3>Good fit</h3><ul><li>You answer the same questions by email every week</li><li>Your site has clear content (services, pricing, policies) to learn from</li><li>A single lead is worth tens or hundreds of dollars</li></ul></div>\n        <div class=\"no\"><h3>Not yet</h3><ul><li>Under ~1,000 visitors a month: fix traffic first</li><li>Your site content is thin or out of date</li><li>You need phone answering rather than on-site chat</li></ul></div>\n      </div>\n\n      <h2 id=\"faq\">SiteMind pricing FAQ</h2>\n      <div class=\"faq\">\n        <details><summary>How much does SiteMind cost?</summary><div>Starter $25/mo ($240/year), Growth $69/mo ($662/year), Pro $149/mo ($1,430/year). Enterprise is custom.</div></details>\n        <details><summary>How many conversations does each plan include?</summary><div>About 250 (Starter), 1,250 (Growth) and 5,000 (Pro) a month, measured in credits: 1,000, 5,000 and 20,000.</div></details>\n        <details><summary>Is there a free trial?</summary><div>Yes: 3 days on any plan, no card needed.</div></details>\n        <details><summary>How many websites can I connect?</summary><div>1 domain on Starter, 5 on Growth, 10 on Pro, unlimited on Enterprise.</div></details>\n      </div>",
+  "related": [
+    {
+      "href": "sitemind-review.html",
+      "icon": "⭐",
+      "title": "An honest SiteMind review",
+      "category": "AI assistants"
+    },
+    {
+      "href": "sitemind-pricing-plans-checklist.html",
+      "icon": "💳",
+      "title": "Compare SiteMind plans",
+      "category": "AI assistants"
+    },
+    {
+      "href": "assistant-fit-calculator.html",
+      "icon": "📐",
+      "title": "AI assistant fit calculator",
+      "category": "AI assistants"
+    }
+  ],
+  "offer": {
+    "tag": "Partner pick",
+    "name": "SiteMind",
+    "text": "An AI assistant that answers visitors from your own pages, with citations and lead capture.",
+    "link": {
+      "href": "https://sitemind.tech/r/GM3DEKT6?src=side_sitemind-cost-calculator",
+      "label": "Try free for 3 days ↗",
+      "attrs": {
+        "target": "_blank",
+        "rel": "sponsored noopener",
+        "data-affiliate-program": "sitemind",
+        "data-affiliate-placement": "sidebar"
+      }
+    },
+    "small": "Affiliate link · from $25/mo"
+  },
+  "sticky": {
+    "text": "SiteMind · 3-day free trial",
+    "link": {
+      "href": "https://sitemind.tech/r/GM3DEKT6?src=calc_sticky",
+      "label": "Try free ↗",
+      "attrs": {
+        "target": "_blank",
+        "rel": "sponsored noopener",
+        "data-affiliate-program": "sitemind",
+        "data-affiliate-placement": "calc_sticky"
+      }
+    }
+  },
+  "navCta": {
+    "href": "https://sitemind.tech/r/GM3DEKT6?src=side_sitemind-cost-calculator",
+    "label": "Try SiteMind",
+    "attrs": {
+      "target": "_blank",
+      "rel": "sponsored noopener",
+      "data-affiliate-program": "sitemind",
+      "data-affiliate-placement": "nav"
+    }
+  },
+  "scripts": [
+    "\n  (() => {\n    const plans = [\n      { name: 'Starter', conv: 250, domains: 1, month: 25, year: 240 / 12, why: '~250 conversations · 1 domain' },\n      { name: 'Growth', conv: 1250, domains: 5, month: 69, year: 662 / 12, why: '~1,250 conversations · 5 domains' },\n      { name: 'Pro', conv: 5000, domains: 10, month: 149, year: 1430 / 12, why: '~5,000 conversations · 10 domains' },\n    ];\n    const $ = (id) => document.getElementById(id);\n    const fmt = (n) => Math.round(n).toLocaleString('en-US');\n    const money = (n) => '$' + fmt(n);\n    // Slider 0–100 maps to 100–200,000 visitors on a log scale\n    const visitsFrom = (v) => { const x = Math.round(100 * Math.pow(2000, v / 100)); return x < 1000 ? Math.round(x / 50) * 50 : x < 20000 ? Math.round(x / 500) * 500 : Math.round(x / 5000) * 5000; };\n    const billing = $('billing');\n    let last = '';\n    const calc = () => {\n      const visits = visitsFrom(+$('visits').value);\n      const rate = +$('rate').value / 100, leadRate = +$('lead').value / 100;\n      const value = Math.max(1, +$('value').value || 1);\n      const domains = +$('domains').value;\n      const per = billing.dataset.value || 'year';\n      $('visits-out').textContent = fmt(visits);\n      $('rate-out').textContent = $('rate').value + '%';\n      $('lead-out').textContent = $('lead').value + '%';\n      $('domains-out').textContent = domains >= 12 ? '12+' : domains;\n      const conv = visits * rate;\n      const plan = plans.find((p) => conv <= p.conv && domains <= p.domains);\n      const leads = conv * leadRate;\n      if (!plan) {\n        $('plan-name').textContent = 'Enterprise';\n        $('plan-why').textContent = 'Over 5,000 conversations or 10 domains';\n        $('r-cost').textContent = 'Custom';\n        $('r-be').textContent = '—';\n        $('r-verdict').textContent = 'Talk to SiteMind sales for a custom quote.';\n        $('plan-cta').textContent = 'Explore SiteMind ↗';\n      } else {\n        const cost = plan[per];\n        const be = Math.ceil(cost / value);\n        $('plan-name').textContent = plan.name;\n        $('plan-why').textContent = plan.why;\n        $('r-cost').textContent = money(cost);\n        $('r-be').textContent = fmt(be) + (be === 1 ? ' lead' : ' leads');\n        $('r-verdict').textContent = leads >= be\n          ? `Your estimate (${fmt(leads)} leads) covers the cost. Confirm it with the free trial.`\n          : `Your estimate (${fmt(leads)} leads) is below break-even. Grow traffic first, or test with the trial.`;\n        $('plan-cta').textContent = `Try ${plan.name} free for 3 days ↗`;\n      }\n      $('r-conv').textContent = fmt(conv);\n      $('r-leads').textContent = fmt(leads);\n      $('r-val').textContent = money(leads * value);\n      const name = plan ? plan.name : 'Enterprise';\n      document.querySelectorAll('#plan-cards .plan-card').forEach((c) => c.classList.toggle('is-pick', c.dataset.plan === name));\n      if (name !== last) { window.fgBump?.($('plan-name')); last = name; }\n    };\n    ['visits', 'rate', 'lead', 'value', 'domains'].forEach((id) => $(id).addEventListener('input', calc));\n    billing.addEventListener('change', calc);\n    calc();\n  })();\n  "
+  ],
+  "hub": {
+    "order": 2,
+    "cats": [
+      "ai",
+      "biz"
+    ],
+    "color": "ai",
+    "icon": "🧮",
+    "cardTitle": "SiteMind cost calculator: which plan fits your traffic?",
+    "cardText": "Turn monthly visitors into expected conversations, plan fit, and the leads needed to break even.",
+    "label": "AI · Calculator",
+    "isNew": true
+  }
+}

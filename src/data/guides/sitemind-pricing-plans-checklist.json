@@ -1,0 +1,145 @@
+{
+  "slug": "sitemind-pricing-plans-checklist",
+  "title": "SiteMind pricing and plans | Giorgi Codes",
+  "description": "A practical SiteMind pricing comparison covering plans, trial terms, usage limits, setup, and the questions to check before subscribing.",
+  "robots": "index, follow, max-image-preview:large",
+  "canonical": "https://giorgi.codes/affiliate/sitemind-pricing-plans-checklist.html",
+  "path": "/affiliate/sitemind-pricing-plans-checklist.html",
+  "ogType": "article",
+  "ogTitle": "SiteMind pricing and plans | Giorgi Codes",
+  "ogDescription": "Compare SiteMind plans, trial terms, usage limits, and ownership questions before you subscribe.",
+  "ogImage": "https://giorgi.codes/affiliate/assets/chapter-ai.png",
+  "jsonLd": [
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": "SiteMind pricing and plans",
+      "url": "https://giorgi.codes/affiliate/sitemind-pricing-plans-checklist.html",
+      "author": {
+        "@type": "Person",
+        "name": "Giorgi Kemoklidze"
+      },
+      "description": "A practical comparison of SiteMind plans, trial terms, usage limits, and subscription checks."
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Giorgi Codes",
+          "item": "https://giorgi.codes/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "The Field Guide",
+          "item": "https://giorgi.codes/affiliate/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Compare SiteMind plans",
+          "item": "https://giorgi.codes/affiliate/sitemind-pricing-plans-checklist.html"
+        }
+      ]
+    }
+  ],
+  "topic": "t-ai",
+  "category": "AI assistants",
+  "chip": "💳 AI website assistant buying guide",
+  "h1": "SiteMind pricing, without the sales fog.",
+  "lede": "The headline monthly price is only one part of an assistant decision. Compare domains, knowledge limits, credits, setup, and the cost of keeping answers accurate before you subscribe.",
+  "updated": "September 2026",
+  "readTime": "3 min read",
+  "heroIcon": "💳",
+  "heroTitle": "Compare SiteMind plans",
+  "heroRows": [
+    {
+      "label": "Format",
+      "value": "Checklist · 5 steps"
+    },
+    {
+      "label": "Best for",
+      "value": "AI assistants"
+    },
+    {
+      "label": "Reading time",
+      "value": "3 minutes"
+    }
+  ],
+  "body": "<p class=\"note\"><strong>Disclosure:</strong> this independent guide includes a SiteMind referral link. If you start a paid subscription through it, I may earn a recurring commission at no extra cost to you. This is not a promise of savings or results; verify the provider’s current pricing, privacy, plan, and partner terms before subscribing.</p>\n    <p class=\"updated\">Pricing and plan details checked against <a href=\"https://sitemind.tech/pricing\" target=\"_blank\" rel=\"noopener noreferrer\">SiteMind’s official pricing page</a> on September 9, 2026. Provider terms can change. <a href=\"/affiliate/assistant-fit-calculator.html\">Use the fit calculator</a> if you want a quick starting point for domains and question volume.</p>\n    <aside class=\"cta\"><strong>Ready to test the limits?</strong> <a href=\"https://sitemind.tech/r/GM3DEKT6?src=pricing_guide\" target=\"_blank\" rel=\"sponsored noopener noreferrer\" data-affiliate-program=\"sitemind\">Start a SiteMind trial with my referral link</a> at no extra cost, then compare real question volume against the published plan limits.</aside>\n    <table class=\"pricing\">\n      <caption>Published plan snapshot</caption>\n      <thead><tr><th>Plan</th><th>Published price</th><th>Best fit</th><th>Key limits and inclusions</th></tr></thead>\n      <tbody>\n        <tr><td>Starter</td><td>$25/mo<br>$240/year</td><td>One-site pilot</td><td>1 domain, 200 knowledge units, 1,000 credits/month, website and file ingestion, citations, widget, and a 3-day trial with no card.</td></tr>\n        <tr><td>Growth</td><td>$69/mo<br>$662/year</td><td>Small team or multi-site</td><td>5 domains, 1,500 knowledge units, 5,000 credits/month, analytics, webhooks, and AI actions.</td></tr>\n        <tr><td>Pro</td><td>$149/mo<br>$1,430/year</td><td>Higher-volume support</td><td>10 domains, 6,000 knowledge units, 20,000 credits/month, higher action limits, and broader capacity.</td></tr>\n      </tbody>\n    </table>\n    <section class=\"checks\" aria-label=\"SiteMind subscription checklist\">\n      <article class=\"check\"><h2>Match the plan to real question volume</h2><p>Use recent support or sales questions to estimate demand. A credit allowance is not the same thing as a guaranteed number of full conversations, because one conversation can use several answers.</p></article>\n      <article class=\"check\"><h2>Count every domain and source</h2><p>List the websites, subdomains, PDFs, documents, and connected knowledge sources you actually need. Confirm the plan covers the source boundary rather than paying for capacity you will not use.</p></article>\n      <article class=\"check\"><h2>Test the refusal behavior</h2><p>Ask one question that is clearly documented and one that is not. A useful assistant should ground answers in approved material and make uncertainty visible instead of improvising policy or pricing.</p></article>\n      <article class=\"check\"><h2>Budget maintenance, not just setup</h2><p>Set a recurring review for prices, policies, availability, and stale pages. The cheapest plan is not cheap if nobody owns source updates or checks the answers visitors receive.</p></article>\n      <article class=\"check\"><h2>Confirm the exit path</h2><p>Before paying, identify the account owner, cancellation controls, data access, source export, renewal date, and what happens to the widget if the subscription ends.</p></article>\n    </section>\n    <aside class=\"cta\"><strong>Try it before committing:</strong> SiteMind’s public pricing page says the trial starts without a card. If the source, privacy, handoff, and ownership checks above fit your site, <a href=\"https://sitemind.tech/r/GM3DEKT6?src=pricing_guide\" target=\"_blank\" rel=\"sponsored noopener noreferrer\" data-affiliate-program=\"sitemind\">start a SiteMind trial with my referral link</a> at no extra cost. Review the <a href=\"https://sitemind.tech/partners\" target=\"_blank\" rel=\"noopener noreferrer\">official partner information</a> separately from the product decision.</aside>",
+  "related": [
+    {
+      "href": "sitemind-cost-calculator.html",
+      "icon": "🧮",
+      "title": "SiteMind cost calculator",
+      "category": "AI assistants"
+    },
+    {
+      "href": "sitemind-review.html",
+      "icon": "⭐",
+      "title": "An honest SiteMind review",
+      "category": "AI assistants"
+    },
+    {
+      "href": "assistant-fit-calculator.html",
+      "icon": "📐",
+      "title": "AI assistant fit calculator",
+      "category": "AI assistants"
+    }
+  ],
+  "offer": {
+    "tag": "Partner pick",
+    "name": "SiteMind",
+    "text": "An AI assistant that answers visitors from your own pages, with citations and lead capture.",
+    "link": {
+      "href": "https://sitemind.tech/r/GM3DEKT6?src=side_sitemind-pricing-plans-checklist",
+      "label": "Try free for 3 days ↗",
+      "attrs": {
+        "target": "_blank",
+        "rel": "sponsored noopener",
+        "data-affiliate-program": "sitemind",
+        "data-affiliate-placement": "sidebar"
+      }
+    },
+    "small": "Affiliate link · from $25/mo"
+  },
+  "sticky": {
+    "text": "SiteMind · 3-day free trial",
+    "link": {
+      "href": "https://sitemind.tech/r/GM3DEKT6?src=side_sitemind-pricing-plans-checklist",
+      "label": "Try free for 3 days ↗",
+      "attrs": {
+        "target": "_blank",
+        "rel": "sponsored noopener",
+        "data-affiliate-program": "sitemind",
+        "data-affiliate-placement": "sticky"
+      }
+    }
+  },
+  "navCta": {
+    "href": "https://sitemind.tech/r/GM3DEKT6?src=side_sitemind-pricing-plans-checklist",
+    "label": "Try SiteMind",
+    "attrs": {
+      "target": "_blank",
+      "rel": "sponsored noopener",
+      "data-affiliate-program": "sitemind",
+      "data-affiliate-placement": "nav"
+    }
+  },
+  "scripts": [],
+  "hub": {
+    "order": 5,
+    "cats": [
+      "ai"
+    ],
+    "color": "ai",
+    "icon": "💳",
+    "cardTitle": "Compare SiteMind plans before you subscribe",
+    "cardText": "Plans, trial terms and usage limits side by side.",
+    "label": "AI",
+    "isNew": false
+  }
+}

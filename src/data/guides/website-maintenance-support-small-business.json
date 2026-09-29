@@ -1,0 +1,128 @@
+{
+  "slug": "website-maintenance-support-small-business",
+  "title": "Website maintenance and support for small business | Giorgi Codes",
+  "description": "Practical website maintenance and support for small businesses: fixes, migrations, performance, SEO, analytics, content updates, and clear ownership.",
+  "robots": "index, follow, max-image-preview:large",
+  "canonical": "https://giorgi.codes/affiliate/website-maintenance-support-small-business.html",
+  "path": "/affiliate/website-maintenance-support-small-business.html",
+  "ogType": "article",
+  "ogTitle": "Website maintenance and support for small business | Giorgi Codes",
+  "ogDescription": "A practical guide to keeping a small-business website healthy after launch, with a clear path to technical support.",
+  "ogImage": "https://giorgi.codes/affiliate/assets/chapter-ai.png",
+  "jsonLd": [
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": "Website maintenance and support for small business",
+      "url": "https://giorgi.codes/affiliate/website-maintenance-support-small-business.html",
+      "author": {
+        "@type": "Person",
+        "name": "Giorgi Kemoklidze"
+      },
+      "description": "A practical guide to keeping a small-business website healthy after launch."
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Giorgi Codes",
+          "item": "https://giorgi.codes/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "The Field Guide",
+          "item": "https://giorgi.codes/affiliate/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Keep a small-business site healthy",
+          "item": "https://giorgi.codes/affiliate/website-maintenance-support-small-business.html"
+        }
+      ]
+    }
+  ],
+  "topic": "t-biz",
+  "category": "Small business",
+  "chip": "🛠️ After-launch support guide",
+  "h1": "A website is not finished when it goes live.",
+  "lede": "Small businesses usually need a dependable way to fix issues, update content, protect ownership, and understand what visitors are doing. Maintenance should be specific work with a clear boundary—not an open-ended promise.",
+  "updated": "September 2026",
+  "readTime": "3 min read",
+  "heroIcon": "🛠️",
+  "heroTitle": "Keep a small-business site healthy",
+  "heroRows": [
+    {
+      "label": "Format",
+      "value": "Checklist · 6 steps"
+    },
+    {
+      "label": "Best for",
+      "value": "Small business"
+    },
+    {
+      "label": "Reading time",
+      "value": "3 minutes"
+    }
+  ],
+  "body": "<p class=\"note\"><strong>Service disclosure:</strong> this page describes direct website support that Giorgi may be able to provide. It is not an affiliate recommendation, and it does not promise a particular response time, ranking, conversion rate, or business result. Confirm scope, availability, and pricing before work begins.</p>\n    <aside class=\"cta\"><strong>Need a second opinion on your site?</strong> <a href=\"mailto:contact@giorgi.codes?subject=Small%20business%20website%20support\">Describe the issue and request a website review</a>. Include the site URL, the problem, urgency, and what outcome you need.</aside>\n    <section class=\"checks\" aria-label=\"Website maintenance and support checklist\">\n      <article class=\"check\"><h2>Fixes and reliability</h2><p>Investigate broken forms, layout regressions, console errors, failed integrations, slow pages, and deployment problems with a reproducible checklist.</p></article>\n      <article class=\"check\"><h2>Migration and ownership</h2><p>Document the domain, hosting, repository, analytics, forms, DNS, billing, and account owners before moving a site or changing a provider.</p></article>\n      <article class=\"check\"><h2>Performance and accessibility</h2><p>Review mobile layout, loading cost, image handling, headings, labels, keyboard focus, contrast, and the experience on the actual devices customers use.</p></article>\n      <article class=\"check\"><h2>SEO and analytics hygiene</h2><p>Check indexability, canonicals, sitemap, redirects, visible content, structured data, consent, and meaningful events. A dashboard number is not automatically a business result.</p></article>\n      <article class=\"check\"><h2>Content and conversion updates</h2><p>Keep services, prices, contact paths, policies, proof, and calls to action current. Test the handoff after every meaningful change.</p></article>\n      <article class=\"check\"><h2>Clear handover</h2><p>Leave the business with the files, accounts, instructions, change record, and known limitations it needs to operate without unnecessary lock-in.</p></article>\n    </section>\n    <aside class=\"cta\"><strong>Good maintenance starts with a bounded problem.</strong> A focused audit, migration, performance pass, or content update is easier to estimate than “make the site better.” <a href=\"mailto:contact@giorgi.codes?subject=Website%20maintenance%20scope\">Request a scoped conversation</a> if you already know the first task.</aside>",
+  "related": [
+    {
+      "href": "ai-website-assistant-for-small-business.html",
+      "icon": "🏪",
+      "title": "AI assistant for a small business",
+      "category": "Small business"
+    },
+    {
+      "href": "sitemind-for-web-agencies.html",
+      "icon": "🏢",
+      "title": "AI assistants for web agencies",
+      "category": "Small business"
+    },
+    {
+      "href": "sitemind-agency-reseller-pilot.html",
+      "icon": "🧪",
+      "title": "One-site AI reseller pilot",
+      "category": "Small business"
+    }
+  ],
+  "offer": {
+    "tag": "Work with me",
+    "name": "Need a hand with your site?",
+    "text": "I'm a full-stack developer: builds, fixes, migrations, AI assistants and SEO.",
+    "link": {
+      "href": "mailto:contact@giorgi.codes",
+      "label": "Email Giorgi ↗",
+      "attrs": {
+        "data-affiliate-placement": "sidebar"
+      }
+    },
+    "small": "contact@giorgi.codes"
+  },
+  "sticky": null,
+  "navCta": {
+    "href": "mailto:contact@giorgi.codes",
+    "label": "Hire Giorgi",
+    "attrs": {
+      "data-affiliate-placement": "nav"
+    }
+  },
+  "scripts": [],
+  "hub": {
+    "order": 19,
+    "cats": [
+      "web",
+      "biz"
+    ],
+    "color": "biz",
+    "icon": "🛠️",
+    "cardTitle": "Keep a small-business site healthy after launch",
+    "cardText": "Fixes, migrations, speed, SEO and content updates.",
+    "label": "Services",
+    "isNew": false
+  }
+}

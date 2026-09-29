@@ -1,0 +1,214 @@
+---
+import type { GetStaticPaths } from 'astro';
+import Base from '../../layouts/Base.astro';
+import '../../styles/guide.css';
+import { guides } from '../../data/guides';
+
+interface LinkData { href: string; label: string; attrs: Record<string, string> }
+export interface GuideData {
+  slug: string;
+  title: string;
+  description: string;
+  robots: string;
+  canonical: string;
+  path: string;
+  ogType: 'article' | 'website';
+  ogTitle: string;
+  ogDescription: string;
+  ogImage: string;
+  jsonLd: unknown[];
+  topic: string;
+  category: string;
+  chip: string;
+  h1: string;
+  lede: string;
+  updated: string | null;
+  readTime: string | null;
+  heroIcon: string;
+  heroTitle: string;
+  heroRows: { label: string; value: string }[];
+  body: string;
+  related: { href: string; icon: string; title: string; category: string }[];
+  offer: { tag: string; name: string; text: string; link: LinkData; small: string } | null;
+  sticky: { text: string; link: LinkData } | null;
+  navCta: LinkData | null;
+  scripts: string[];
+}
+
+export const getStaticPaths = (() => {
+  const files = import.meta.glob<{ default: GuideData }>('../../data/guides/*.json', { eager: true });
+  return Object.values(files).map((m) => ({ params: { slug: m.default.slug }, props: { guide: m.default } }));
+}) satisfies GetStaticPaths;
+
+const { guide } = Astro.props as { guide: GuideData };
+const index = guides.findIndex((g) => g.slug === guide.slug);
+const no = String(index + 1).padStart(2, '0');
+const total = guides.length;
+const topic = guide.topic.replace(/^t-/, '');
+
+// Tables get a scroll container so wide comparisons never push the page sideways on phones.
+const body = guide.body
+  .replace(/<table(\s|>)/g, '<div class="tbl"><table$1')
+  .replace(/<\/table>/g, '</table></div>');
+
+const chipText = guide.chip.replace(/^\p{Extended_Pictographic}️?\s*/u, '');
+const specRows = guide.heroRows.filter((r) => r.label !== 'Reading time');
+const readMins = guide.readTime?.match(/\d+/)?.[0];
+
+const cta = guide.navCta
+  ? { href: guide.navCta.href, label: guide.navCta.label, attrs: guide.navCta.attrs }
+  : undefined;
+---
+
+<Base
+  title={guide.title}
+  description={guide.description}
+  path={guide.path}
+  ogType={guide.ogType}
+  ogTitle={guide.ogTitle}
+  ogDescription={guide.ogDescription}
+  ogImage={guide.ogImage}
+  ogImageAlt={guide.heroTitle}
+  jsonLd={guide.jsonLd}
+  headerCta={cta}
+  bodyClass={`guide t-${topic}`}
+>
+  <script is:inline slot="head" src="/affiliate/affiliate-tracking.js?v=c1" defer></script>
+
+  <div class="g-topbar" aria-hidden="true"><span data-read-bar></span></div>
+
+  <main id="main" class="g">
+    <header class="g-hero" data-hero>
+      <div class="g-hero-bg" aria-hidden="true">
+        <span class="g-hero-no">{no}</span>
+      </div>
+      <div class="wrap">
+        <div class="g-hero-top">
+          <nav class="g-crumbs mono" aria-label="Breadcrumb">
+            <a href="/">Giorgi Codes</a><span aria-hidden="true">/</span>
+            <a href="/affiliate/">Field Guide</a><span aria-hidden="true">/</span>
+            <span aria-current="page">{guide.category}</span>
+          </nav>
+          <span class="g-issue mono">Field Guide <b>№ {no}</b> / {total}</span>
+        </div>
+
+        <span class="g-chip mono"><i aria-hidden="true"></i>{chipText}</span>
+        <h1 class="g-title" set:html={guide.h1} />
+        <p class="g-lede" set:html={guide.lede} />
+
+        <div class="g-byline">
+          <span class="g-avatar mono" aria-hidden="true">GK</span>
+          <span class="g-by">By Giorgi Kemoklidze</span>
+          {guide.updated && <><span class="g-sep" aria-hidden="true"></span><span>Updated {guide.updated}</span></>}
+          {guide.readTime && <><span class="g-sep" aria-hidden="true"></span><span>{guide.readTime}</span></>}
+        </div>
+
+        <aside class="g-spec" aria-label="Guide summary">
+          <div class="g-spec-cell g-spec-id">
+            <span class="g-spec-icon" aria-hidden="true">{guide.heroIcon}</span>
+            <span class="g-spec-name">{guide.heroTitle}</span>
+          </div>
+          {specRows.map((r) => (
+            <div class="g-spec-cell"><span class="mono">{r.label}</span><b>{r.value}</b></div>
+          ))}
+          {readMins && (
+            <div class="g-spec-cell g-spec-time"><span class="mono">Reading time</span><b>{readMins}<small> min</small></b></div>
+          )}
+          <a class="g-spec-cell g-spec-go" href="#content">
+            <span class="mono">Start reading</span><b aria-hidden="true">↓</b>
+          </a>
+        </aside>
+      </div>
+    </header>
+
+    <div class="wrap g-layout">
+      <article class="g-sheet sheet" id="content">
+        <details class="g-mtoc" data-mtoc>
+          <summary>
+            <span class="mono">On this page</span>
+            <span class="g-mtoc-meta mono" data-meter-mini></span>
+          </summary>
+          <ol data-toc></ol>
+        </details>
+        <div class="g-body" set:html={body} />
+      </article>
+
+      <aside class="g-rail" aria-label="Guide tools">
+        <div class="g-rail-inner">
+          <div class="g-card g-meter">
+            <div class="g-meter-row">
+              <span class="mono">Reading</span>
+              <b class="mono" data-read-pct>0%</b>
+            </div>
+            <div class="g-bar"><span data-read-fill></span></div>
+            <div class="g-check" data-meter hidden>
+              <div class="g-meter-row">
+                <span class="mono">Your progress</span>
+                <b class="mono meter-text" data-meter-text>0 checked</b>
+              </div>
+              <div class="g-segs" data-meter-segs></div>
+              <p>Tick items as you go. Saved in this browser.</p>
+            </div>
+          </div>
+
+          <nav class="g-card g-toc" aria-label="On this page" data-toc-card>
+            <h2 class="mono">On this page</h2>
+            <ol data-toc></ol>
+          </nav>
+
+          {guide.offer && (
+            <div class="g-offer">
+              <span class="g-offer-tag mono">{guide.offer.tag}</span>
+              <h3>{guide.offer.name}</h3>
+              <p>{guide.offer.text}</p>
+              <a class="btn btn-signal g-offer-btn" href={guide.offer.link.href} {...guide.offer.link.attrs}>{guide.offer.link.label}</a>
+              <small>{guide.offer.small}</small>
+            </div>
+          )}
+        </div>
+      </aside>
+    </div>
+
+    <section class="g-more wrap" aria-labelledby="more-title">
+      <div class="g-more-head">
+        <span class="kicker">Keep reading</span>
+        <h2 id="more-title">Next useful <span class="serif">decision.</span></h2>
+      </div>
+      <ul class="g-more-grid">
+        {guide.related.map((r, i) => (
+          <li>
+            <a class="g-rel" href={r.href}>
+              <span class="g-rel-top">
+                <span class="g-rel-ico" aria-hidden="true">{r.icon}</span>
+                <span class="mono">{String(i + 1).padStart(2, '0')}</span>
+              </span>
+              <span class="g-rel-title">{r.title}</span>
+              <small class="mono">{r.category}</small>
+              <span class="g-rel-arrow" aria-hidden="true">↗</span>
+            </a>
+          </li>
+        ))}
+        <li>
+          <a class="g-rel g-rel-all" href="/affiliate/#library">
+            <span class="g-rel-top"><span class="mono">Library</span></span>
+            <span class="g-rel-title">Browse all {total} guides</span>
+            <small class="mono">Search &amp; filter by topic</small>
+            <span class="g-rel-arrow" aria-hidden="true">→</span>
+          </a>
+        </li>
+      </ul>
+    </section>
+  </main>
+
+  {guide.sticky && (
+    <div class="g-sticky" role="complementary" aria-label="Quick link" data-sticky>
+      <span>{guide.sticky.text}</span>
+      <a class="btn btn-signal btn-sm" href={guide.sticky.link.href} {...guide.sticky.link.attrs}>{guide.sticky.link.label}</a>
+    </div>
+  )}
+
+  <script>
+    import '../../scripts/guide';
+  </script>
+  {guide.scripts.map((s) => <script is:inline set:html={s} />)}
+</Base>

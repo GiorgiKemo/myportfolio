@@ -1,0 +1,89 @@
+---
+import Base from '../../layouts/Base.astro';
+
+const deliverables = [
+  { title: 'Annotated findings', text: 'What a visitor sees, where the path loses momentum, and why the friction matters.' },
+  { title: 'Prioritized fix list', text: 'A short order of operations so the next change is clear and testable.' },
+  { title: 'Next-step recommendation', text: 'A practical recommendation for the next improvement, including when more work is not justified yet.' },
+];
+const mail = 'mailto:contact@giorgi.codes?subject=Conversion%20Snapshot%20inquiry';
+---
+
+<Base
+  title="Conversion Snapshot — Giorgi Codes"
+  description="A focused $149 review of one public page or funnel, with annotated findings, a prioritized fix list, and a clear next step."
+  path="/offers/conversion-snapshot.html"
+  ogTitle="Conversion Snapshot — Giorgi Codes"
+  ogDescription="A focused $149 review of one public page or funnel."
+  ogType="website"
+  headerCta={{ href: mail, label: 'Ask about a snapshot' }}
+>
+  <main id="main" class="cs">
+    <section class="cs-hero wrap">
+      <span class="kicker">Conversion Snapshot</span>
+      <h1>Find the friction <span class="serif">before</span> you spend more on traffic.</h1>
+      <div class="cs-row">
+        <p class="cs-lede">A focused review of one public page or funnel. You get a short, practical answer about what is slowing action and which fixes deserve attention first.</p>
+        <div class="cs-price" aria-label="Price">
+          <b>$149</b>
+          <span class="mono">fixed scope · one public page or funnel</span>
+        </div>
+      </div>
+      <div class="cs-actions">
+        <a class="btn btn-signal" href={mail} data-magnetic>Ask about a snapshot <span class="arrow" aria-hidden="true">↗</span></a>
+        <a class="btn btn-ghost" href="/">Back to the portfolio</a>
+      </div>
+    </section>
+
+    <section class="wrap cs-grid" aria-label="What you get">
+      {deliverables.map((d, i) => (
+        <article class="cs-card reveal" style={`transition-delay:${i * 80}ms`}>
+          <span class="mono">{String(i + 1).padStart(2, '0')}</span>
+          <h2>{d.title}</h2>
+          <p>{d.text}</p>
+        </article>
+      ))}
+    </section>
+
+    <p class="wrap cs-note">The snapshot is a focused review, not a promise of conversion results or a substitute for product, legal, accessibility or security certification. The exact scope is confirmed against the page and problem before work begins.</p>
+  </main>
+
+  <script is:inline>
+    document.addEventListener('click', (event) => {
+      const link = event.target.closest('a[href^="mailto:contact@giorgi.codes"]');
+      if (!link) return;
+      window.gtag?.('event', 'service_inquiry_click', {
+        service_offer: 'conversion_snapshot',
+        page_location: window.location.href,
+      });
+    }, { capture: true });
+  </script>
+</Base>
+
+<style>
+  .cs { padding-bottom: clamp(80px, 10vw, 140px); overflow-x: clip; }
+  .cs-hero { position: relative; padding-top: clamp(130px, 16vw, 200px); }
+  .cs-hero::before {
+    content: ''; position: absolute; right: -10%; top: 0; width: 70%; height: 100%; z-index: -1; pointer-events: none;
+    background: radial-gradient(50% 50% at 60% 40%, color-mix(in oklab, var(--signal) 12%, transparent), transparent 70%);
+  }
+  h1 { margin-top: 28px; max-width: 13ch; font-size: clamp(46px, 8.6vw, 140px); letter-spacing: -0.06em; line-height: 0.92; }
+  h1 .serif { color: var(--signal-ink); }
+  .cs-row { display: flex; justify-content: space-between; align-items: end; gap: 32px 64px; flex-wrap: wrap; margin-top: clamp(32px, 4vw, 56px); padding-top: 28px; border-top: 1px solid var(--line); }
+  .cs-lede { max-width: 52ch; font-size: clamp(17px, 1.5vw, 20px); color: var(--text-2); }
+  .cs-price { display: flex; flex-direction: column; align-items: flex-end; gap: 6px; }
+  .cs-price b { font-size: clamp(64px, 9vw, 128px); font-weight: 600; letter-spacing: -0.07em; line-height: 0.85; }
+  .cs-price span { font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); }
+  .cs-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 40px; }
+  .cs-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; margin-top: clamp(64px, 9vw, 120px); }
+  .cs-card { display: flex; flex-direction: column; gap: 12px; min-height: 260px; padding: 28px; border: 1px solid var(--line); border-radius: var(--radius); background: var(--surface); }
+  .cs-card .mono { font-size: 12px; color: var(--signal-ink); }
+  .cs-card h2 { margin-top: auto; font-size: clamp(24px, 2.4vw, 32px); }
+  .cs-card p { color: var(--text-2); font-size: 15.5px; }
+  .cs-note { margin-top: 44px; padding-top: 22px; border-top: 1px solid var(--line); color: var(--muted); font-size: 15px; max-width: 760px; margin-left: max(var(--gutter), calc((100% - var(--max)) / 2)); }
+  @media (max-width: 820px) {
+    .cs-grid { grid-template-columns: minmax(0, 1fr); }
+    .cs-card { min-height: 0; }
+    .cs-price { align-items: flex-start; }
+  }
+</style>
