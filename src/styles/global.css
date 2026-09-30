@@ -87,6 +87,7 @@ h1, h2, h3, h4 { margin: 0; font-weight: 600; letter-spacing: -0.035em; line-hei
 p { margin: 0; text-wrap: pretty; }
 ::selection { background: var(--signal); color: var(--on-signal); }
 :focus-visible { outline: 2px solid var(--signal); outline-offset: 3px; border-radius: 6px; }
+[tabindex="-1"]:focus { outline: none; }
 
 /* Page-level cross-document view transitions (progressive, no JS). */
 @view-transition { navigation: auto; }
