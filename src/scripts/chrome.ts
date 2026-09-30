@@ -61,7 +61,10 @@ document.addEventListener('click', (e) => {
   history.pushState(null, '', url.hash);
   // Keep what native fragment navigation does for keyboard users (e.g. the skip link).
   const target = document.getElementById(id)!;
-  if (!target.matches('a[href], button, input, select, textarea, [tabindex]')) target.setAttribute('tabindex', '-1');
+  if (!target.matches('a[href], button, input, select, textarea, [tabindex]')) {
+    target.setAttribute('tabindex', '-1');
+    target.setAttribute('data-anchor-focus', ''); // no outline around a whole section
+  }
   target.focus({ preventScroll: true });
 });
 // Back/forward between anchors, or a hash typed into the address bar.
