@@ -34,6 +34,9 @@ const landingFor = (target: HTMLElement) =>
   target.querySelector<HTMLElement>('[data-anchor-land]') ??
   (target.tagName === 'SECTION' ? target.querySelector<HTMLElement>('.kicker') : null) ??
   target;
+const hashId = (hash: string) => {
+  try { return decodeURIComponent(hash.slice(1)); } catch { return hash.slice(1); }
+};
 const scrollToAnchor = (id: string, immediate = false) => {
   const target = id && document.getElementById(id);
   if (!target) return false;
@@ -52,17 +55,25 @@ document.addEventListener('click', (e) => {
   if (!a || a.target === '_blank') return;
   const url = new URL(a.href, location.href);
   if (url.origin !== location.origin || url.pathname !== location.pathname || !url.hash) return;
-  if (!scrollToAnchor(decodeURIComponent(url.hash.slice(1)))) return;
+  const id = hashId(url.hash);
+  if (!scrollToAnchor(id)) return;
   e.preventDefault();
   history.pushState(null, '', url.hash);
+  // Keep what native fragment navigation does for keyboard users (e.g. the skip link).
+  const target = document.getElementById(id)!;
+  if (!target.matches('a[href], button, input, select, textarea, [tabindex]')) {
+    target.setAttribute('tabindex', '-1');
+    target.setAttribute('data-anchor-focus', ''); // no outline around a whole section
+  }
+  target.focus({ preventScroll: true });
 });
 // Back/forward between anchors, or a hash typed into the address bar.
-addEventListener('hashchange', () => scrollToAnchor(decodeURIComponent(location.hash.slice(1))));
+addEventListener('hashchange', () => scrollToAnchor(hashId(location.hash)));
 // Arriving from another page (e.g. /#contact): correct the browser's jump once layout settles.
 // Pinned sections and lazy content keep changing the page height for a moment, so re-aim
 // whenever it changes until the visitor scrolls themselves.
-if (location.hash && document.getElementById(decodeURIComponent(location.hash.slice(1)))) {
-  const id = decodeURIComponent(location.hash.slice(1));
+if (location.hash && document.getElementById(hashId(location.hash))) {
+  const id = hashId(location.hash);
   const fix = () => scrollToAnchor(id, true);
   const ro = new ResizeObserver(fix);
   const stop = () => {
