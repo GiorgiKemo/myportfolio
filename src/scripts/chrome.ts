@@ -14,8 +14,65 @@ const finePointer = matchMedia('(hover: hover) and (pointer: fine)').matches;
 
 // ---------- smooth scroll ----------
 if (!reduced) {
-  const lenis = new Lenis({ lerp: 0.1, anchors: { offset: -88 }, autoRaf: true });
+  const lenis = new Lenis({ lerp: 0.1, autoRaf: true });
   window.__lenis = lenis;
+}
+
+// ---------- in-page anchors: land the section's label just below the floating header ----------
+// Sections carry generous top padding, so scrolling to the section box itself leaves a big gap.
+// Aim at the section's label (or an explicit [data-anchor-land]) instead.
+const docTop = (el: HTMLElement) => {
+  let y = 0;
+  for (let n: HTMLElement | null = el; n; n = n.offsetParent as HTMLElement | null) y += n.offsetTop;
+  return y; // offsetTop ignores transforms, so reveal animations don't skew the result
+};
+const headerGap = () => {
+  const pill = document.querySelector<HTMLElement>('[data-header] .sh-inner');
+  return (pill ? pill.offsetHeight + 14 : 72) + 28;
+};
+const landingFor = (target: HTMLElement) =>
+  target.querySelector<HTMLElement>('[data-anchor-land]') ??
+  (target.tagName === 'SECTION' ? target.querySelector<HTMLElement>('.kicker') : null) ??
+  target;
+const scrollToAnchor = (id: string, immediate = false) => {
+  const target = id && document.getElementById(id);
+  if (!target) return false;
+  const y = Math.max(0, docTop(landingFor(target)) - headerGap());
+  const lenis = window.__lenis;
+  if (lenis && !immediate) lenis.scrollTo(y, { force: true });
+  else {
+    window.scrollTo({ top: y, behavior: immediate || reduced ? 'auto' : 'smooth' });
+    if (lenis) { lenis.resize(); lenis.scrollTo(y, { immediate: true, force: true }); }
+  }
+  return true;
+};
+document.addEventListener('click', (e) => {
+  if (e.defaultPrevented || e.button !== 0 || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
+  const a = (e.target as HTMLElement).closest<HTMLAnchorElement>('a[href*="#"]');
+  if (!a || a.target === '_blank') return;
+  const url = new URL(a.href, location.href);
+  if (url.origin !== location.origin || url.pathname !== location.pathname || !url.hash) return;
+  if (!scrollToAnchor(decodeURIComponent(url.hash.slice(1)))) return;
+  e.preventDefault();
+  history.pushState(null, '', url.hash);
+});
+// Back/forward between anchors, or a hash typed into the address bar.
+addEventListener('hashchange', () => scrollToAnchor(decodeURIComponent(location.hash.slice(1))));
+// Arriving from another page (e.g. /#contact): correct the browser's jump once layout settles.
+// Pinned sections and lazy content keep changing the page height for a moment, so re-aim
+// whenever it changes until the visitor scrolls themselves.
+if (location.hash && document.getElementById(decodeURIComponent(location.hash.slice(1)))) {
+  const id = decodeURIComponent(location.hash.slice(1));
+  const fix = () => scrollToAnchor(id, true);
+  const ro = new ResizeObserver(fix);
+  const stop = () => {
+    ro.disconnect();
+    ['wheel', 'touchstart', 'keydown', 'pointerdown'].forEach((t) => removeEventListener(t, stop));
+  };
+  ['wheel', 'touchstart', 'keydown', 'pointerdown'].forEach((t) => addEventListener(t, stop, { passive: true }));
+  ro.observe(document.body);
+  requestAnimationFrame(fix);
+  addEventListener('load', () => { setTimeout(fix, 60); setTimeout(stop, 2500); }, { once: true });
 }
 
 // ---------- header: solid after scrolling, hides on the way down ----------
