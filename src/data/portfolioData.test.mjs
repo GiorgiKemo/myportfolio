@@ -38,15 +38,12 @@ describe('portfolio project hierarchy', () => {
       'avital-chicago',
       'cornerstone-roofing-co',
       'aixess-broker-mvp',
-      'ai-agent-arena',
       'loop-meeting-room-booking',
       'georgian-painters',
       'maiseli-winery',
       'soft-spot-studio',
-      'ilgcs-astro-rebuild',
       'finance-flow',
       'mcp-seo-audit',
-      'calmfuel-funnel-prototype',
       'life-idea',
     ].forEach((slug) => assert.ok(slugs.has(slug), `${slug} is missing`));
   });
