@@ -1,5 +1,6 @@
 ---
 const forms = [
+  { v: 'building', l: 'Building' },
   { v: 'knot', l: 'Knot' },
   { v: 'torus', l: 'Torus' },
   { v: 'gem', l: 'Gem' },
@@ -20,20 +21,30 @@ const mats = [
       <p class="kicker">The lab · live WebGL</p>
       <h2 id="lab-title">Real-time 3D,<br /><span class="serif">right in the page.</span></h2>
       <p class="lab-text">
-        Physically based materials, image-based lighting and custom shaders, rendered live by your own graphics card. Drag the object, then change its form and material.
+        Explore Meridian, the residence from our CleanWeb agency site, then switch to a material study. Drag to orbit and find a new perspective.
       </p>
 
       <div class="lab-controls">
         <div class="lab-ctl">
-          <span class="lab-lbl mono" id="lab-form">Form</span>
+          <span class="lab-lbl mono" id="lab-form">Scene</span>
           <div class="seg" role="group" aria-labelledby="lab-form" data-lab-group="form">
             {forms.map((f, i) => <button type="button" data-value={f.v} aria-pressed={i === 0 ? 'true' : 'false'}>{f.l}</button>)}
           </div>
         </div>
-        <div class="lab-ctl">
+        <div class="lab-ctl" data-lab-material hidden>
           <span class="lab-lbl mono" id="lab-mat">Material</span>
           <div class="seg" role="group" aria-labelledby="lab-mat" data-lab-group="mat">
             {mats.map((m, i) => <button type="button" data-value={m.v} aria-pressed={i === 0 ? 'true' : 'false'}>{m.l}</button>)}
+          </div>
+        </div>
+        <div class="lab-ctl" data-lab-camera>
+          <span class="lab-lbl mono" id="lab-camera">Perspective</span>
+          <div class="seg" role="group" aria-labelledby="lab-camera">
+            <button type="button" data-camera="left" aria-label="Rotate building left">↶</button>
+            <button type="button" data-camera="right" aria-label="Rotate building right">↷</button>
+            <button type="button" data-camera="out" aria-label="Zoom building out">−</button>
+            <button type="button" data-camera="in" aria-label="Zoom building in">+</button>
+            <button type="button" data-camera="reset">Reset view</button>
           </div>
         </div>
       </div>
@@ -41,9 +52,9 @@ const mats = [
     </div>
 
     <div class="lab-stage">
-      <canvas aria-label="Interactive 3D object. Drag to rotate." role="img" data-cursor="Drag"></canvas>
+      <canvas aria-label="Interactive Meridian building. Drag to orbit." role="img" tabindex="0" data-cursor="Drag" aria-describedby="lab-help"></canvas>
       <div class="lab-rings" aria-hidden="true"><i></i><i></i><i></i></div>
-      <p class="lab-hint mono" aria-hidden="true">↻ drag to rotate</p>
+      <p class="lab-hint mono" id="lab-help">Drag to orbit · Arrow keys rotate · + / − zoom</p>
       <p class="lab-fallback">This live 3D demo needs hardware-accelerated graphics, so here is a still frame instead.</p>
     </div>
   </div>
@@ -64,6 +75,7 @@ const mats = [
   .lab-text { color: var(--text-2); max-width: 44ch; }
   .lab-controls { display: grid; gap: 18px; margin-top: 34px; }
   .lab-ctl { display: grid; gap: 8px; }
+  .lab-ctl[hidden] { display: none; }
   .lab-lbl { font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted); }
   .seg { display: inline-flex; flex-wrap: wrap; gap: 4px; padding: 4px; border-radius: 999px; background: var(--surface-2); border: 1px solid var(--line); width: fit-content; }
   .seg button { border: 0; background: transparent; padding: 8px 14px; border-radius: 999px; font-size: 14px; color: var(--text-2); transition: background-color 0.3s, color 0.3s; }
@@ -73,20 +85,22 @@ const mats = [
 
   .lab-stage { position: relative; aspect-ratio: 1 / 1; max-height: 640px; width: 100%; }
   .lab-stage canvas { position: relative; z-index: 1; width: 100%; height: 100%; cursor: grab; touch-action: pan-y; }
+  .lab-stage canvas:focus-visible { outline: 2px solid var(--signal-ink); outline-offset: -4px; border-radius: var(--radius); }
   :global(.is-dragging) .lab-stage canvas { cursor: grabbing; }
   .lab-rings { position: absolute; inset: 8%; display: grid; place-items: center; }
+  :global(.is-building) .lab-rings { opacity: 0.3; }
   .lab-rings i { position: absolute; border: 1px solid var(--line); border-radius: 50%; }
   .lab-rings i:nth-child(1) { inset: 0; }
   .lab-rings i:nth-child(2) { inset: 14%; border-style: dashed; animation: spin-r 40s linear infinite; }
   .lab-rings i:nth-child(3) { inset: 28%; }
   @keyframes spin-r { to { transform: rotate(360deg); } }
-  .lab-hint { position: absolute; bottom: 4%; left: 50%; transform: translateX(-50%); font-size: 11px; color: var(--muted); letter-spacing: 0.1em; text-transform: uppercase; }
-  .lab-fallback { display: none; position: absolute; left: 10%; right: 10%; bottom: 10%; text-align: center; color: var(--muted); font-size: 14px; }
+  .lab-hint { position: absolute; bottom: 0; left: 0; right: 0; text-align: center; font-size: 10px; color: var(--muted); letter-spacing: 0.04em; text-transform: uppercase; }
+  .lab-fallback { display: none; margin-top: 16px; text-align: center; color: var(--muted); font-size: 14px; }
   :global(.no-webgl) .lab-fallback { display: block; }
-  :global(.no-webgl) .lab-stage { background: url('/stills/lab-knot.webp') center / 82% no-repeat; background-blend-mode: normal; }
-  :global([data-theme='dark']) :global(.no-webgl) .lab-stage { mix-blend-mode: lighten; }
-  :global([data-theme='light']) :global(.no-webgl) .lab-stage { background-image: none; }
-  :global(.no-webgl) .lab-controls, :global(.no-webgl) .lab-hint { display: none; }
+  :global(.no-webgl) .lab-stage { aspect-ratio: auto; max-height: none; }
+  :global(.no-webgl) .lab-stage::before { content: ''; display: block; aspect-ratio: 1; background: url('/stills/lab-building.webp') center / contain no-repeat; }
+  :global(.no-webgl) .lab-controls, :global(.no-webgl) .lab-hint,
+  :global(.no-webgl) .lab-stage canvas, :global(.no-webgl) .lab-rings { display: none; }
 
   @media (max-width: 900px) { .lab-grid { grid-template-columns: 1fr; } .lab-stage { max-height: 520px; } }
 </style>

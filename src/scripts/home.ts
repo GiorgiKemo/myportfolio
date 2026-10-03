@@ -19,7 +19,7 @@ root.classList.add('is-loaded');
 // ---------- WebGL: hero orb after first paint, lab when it comes near ----------
 const idle = (cb: () => void) => {
   const run = () => {
-    if (window.__lenis?.isScrolling) { setTimeout(() => idle(cb), 150); return; }
+    if (window.__lenis?.isScrolling && Math.abs(window.__lenis.velocity) > 0.1) { setTimeout(() => idle(cb), 150); return; }
     cb();
   };
   if ('requestIdleCallback' in window) requestIdleCallback(run, { timeout: 1200 });
@@ -45,7 +45,9 @@ if (lab) {
     io.disconnect();
     idle(() => {
       if (!canRender()) { lab.classList.add('no-webgl'); return; }
-      import('./lab-gl').then((m) => idle(() => m.mountLab(lab)));
+      import('./lab-gl').then((m) => idle(() => {
+        m.mountLab(lab).catch(() => lab.classList.add('no-webgl'));
+      }));
     });
   }, { rootMargin: '600px 0px' });
   io.observe(lab);
