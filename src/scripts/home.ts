@@ -47,7 +47,7 @@ if (lab) {
       if (!canRender()) { lab.classList.add('no-webgl'); return; }
       import('./lab-gl').then((m) => idle(() => {
         m.mountLab(lab).catch(() => lab.classList.add('no-webgl'));
-      }));
+      })).catch(() => lab.classList.add('no-webgl'));
     });
   }, { rootMargin: '600px 0px' });
   io.observe(lab);

@@ -15,6 +15,8 @@ type MatKey = 'iridescent' | 'glass' | 'chrome' | 'clay' | 'wire';
 export async function mountLab(root: HTMLElement) {
   const canvas = root.querySelector<HTMLCanvasElement>('canvas');
   if (!canvas) return;
+  const poster = root.querySelector<HTMLImageElement>('.lab-poster');
+  const buttons = root.querySelectorAll<HTMLButtonElement>('.lab-controls button');
   const reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
 
   let renderer: WebGLRenderer;
@@ -250,17 +252,31 @@ export async function mountLab(root: HTMLElement) {
     }
     raf = requestAnimationFrame(loop);
   };
-  const start = () => { if (!running && prepared && !reduced && visible && !document.hidden) { running = true; last = performance.now(); raf = requestAnimationFrame(loop); } };
+  const start = () => { if (!running && prepared && !reduced && visible && !document.hidden && !root.classList.contains('no-webgl')) { running = true; last = performance.now(); raf = requestAnimationFrame(loop); } };
   const stop = () => { running = false; cancelAnimationFrame(raf); };
   let visible = false;
   const io = new IntersectionObserver(([e]) => { visible = e.isIntersecting; if (visible) start(); else stop(); });
   io.observe(canvas);
   document.addEventListener('visibilitychange', () => (document.hidden ? stop() : start()));
+  canvas.addEventListener('webglcontextlost', () => {
+    stop();
+    root.classList.remove('is-ready');
+    root.classList.add('no-webgl');
+    poster?.removeAttribute('aria-hidden');
+    canvas.setAttribute('aria-hidden', 'true');
+    canvas.tabIndex = -1;
+    buttons.forEach((button) => { button.disabled = true; });
+  });
   resize();
   await renderer.compileAsync(scene, camera);
+  if (root.classList.contains('no-webgl')) return;
   prepared = true;
   render();
   start();
+  poster?.setAttribute('aria-hidden', 'true');
+  canvas.removeAttribute('aria-hidden');
+  canvas.tabIndex = 0;
+  buttons.forEach((button) => { button.disabled = false; });
   root.classList.add('is-ready');
 
   document.addEventListener('astro:before-swap', () => {

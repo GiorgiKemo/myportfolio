@@ -15,7 +15,7 @@ const mats = [
 ];
 ---
 
-<section id="lab" class="lab" aria-labelledby="lab-title" data-lab>
+<section id="lab" class="lab is-building" aria-labelledby="lab-title" data-lab>
   <div class="wrap lab-grid">
     <div class="lab-copy">
       <p class="kicker">The lab · live WebGL</p>
@@ -28,34 +28,35 @@ const mats = [
         <div class="lab-ctl">
           <span class="lab-lbl mono" id="lab-form">Scene</span>
           <div class="seg" role="group" aria-labelledby="lab-form" data-lab-group="form">
-            {forms.map((f, i) => <button type="button" data-value={f.v} aria-pressed={i === 0 ? 'true' : 'false'}>{f.l}</button>)}
+            {forms.map((f, i) => <button type="button" data-value={f.v} disabled aria-pressed={i === 0 ? 'true' : 'false'}>{f.l}</button>)}
           </div>
         </div>
         <div class="lab-ctl" data-lab-material hidden>
           <span class="lab-lbl mono" id="lab-mat">Material</span>
           <div class="seg" role="group" aria-labelledby="lab-mat" data-lab-group="mat">
-            {mats.map((m, i) => <button type="button" data-value={m.v} aria-pressed={i === 0 ? 'true' : 'false'}>{m.l}</button>)}
+            {mats.map((m, i) => <button type="button" data-value={m.v} disabled aria-pressed={i === 0 ? 'true' : 'false'}>{m.l}</button>)}
           </div>
         </div>
         <div class="lab-ctl" data-lab-camera>
           <span class="lab-lbl mono" id="lab-camera">Perspective</span>
           <div class="seg" role="group" aria-labelledby="lab-camera">
-            <button type="button" data-camera="left" aria-label="Rotate building left">↶</button>
-            <button type="button" data-camera="right" aria-label="Rotate building right">↷</button>
-            <button type="button" data-camera="out" aria-label="Zoom building out">−</button>
-            <button type="button" data-camera="in" aria-label="Zoom building in">+</button>
-            <button type="button" data-camera="reset">Reset view</button>
+            <button type="button" data-camera="left" disabled aria-label="Rotate building left">↶</button>
+            <button type="button" data-camera="right" disabled aria-label="Rotate building right">↷</button>
+            <button type="button" data-camera="out" disabled aria-label="Zoom building out">−</button>
+            <button type="button" data-camera="in" disabled aria-label="Zoom building in">+</button>
+            <button type="button" data-camera="reset" disabled>Reset view</button>
           </div>
         </div>
       </div>
-      <p class="lab-stats mono" data-lab-stats aria-live="polite"></p>
+      <p class="lab-stats mono" data-lab-stats aria-live="polite">Meridian residence · Original CleanWeb concept</p>
     </div>
 
     <div class="lab-stage">
-      <canvas aria-label="Interactive Meridian building. Drag to orbit." role="img" tabindex="0" data-cursor="Drag" aria-describedby="lab-help"></canvas>
+      <img class="lab-poster" src="/stills/lab-building.webp" alt="Meridian residence preview" width="557" height="557" loading="lazy" decoding="async" />
+      <canvas aria-label="Interactive Meridian building. Drag to orbit." role="img" aria-hidden="true" tabindex="-1" data-cursor="Drag" aria-describedby="lab-help"></canvas>
       <div class="lab-rings" aria-hidden="true"><i></i><i></i><i></i></div>
       <p class="lab-hint mono" id="lab-help">Drag to orbit · Arrow keys rotate · + / − zoom</p>
-      <p class="lab-fallback">This live 3D demo needs hardware-accelerated graphics, so here is a still frame instead.</p>
+      <p class="lab-fallback mono">Building preview</p>
     </div>
   </div>
 </section>
@@ -80,11 +81,15 @@ const mats = [
   .seg { display: inline-flex; flex-wrap: wrap; gap: 4px; padding: 4px; border-radius: 999px; background: var(--surface-2); border: 1px solid var(--line); width: fit-content; }
   .seg button { border: 0; background: transparent; padding: 8px 14px; border-radius: 999px; font-size: 14px; color: var(--text-2); transition: background-color 0.3s, color 0.3s; }
   .seg button:hover { color: var(--text); }
+  .seg button:disabled { cursor: default; opacity: 0.55; }
   .seg button[aria-pressed='true'] { background: var(--text); color: var(--bg); }
   .lab-stats { margin-top: 22px; font-size: 12px; color: var(--muted); min-height: 1.4em; }
 
   .lab-stage { position: relative; aspect-ratio: 1 / 1; max-height: 640px; width: 100%; }
-  .lab-stage canvas { position: relative; z-index: 1; width: 100%; height: 100%; cursor: grab; touch-action: pan-y; }
+  .lab-poster { position: absolute; inset: 0; z-index: 1; width: 100%; height: 100%; object-fit: contain; pointer-events: none; transition: opacity 0.25s; }
+  .lab-stage canvas { position: relative; z-index: 2; width: 100%; height: 100%; opacity: 0; pointer-events: none; transition: opacity 0.25s; cursor: grab; touch-action: pan-y; }
+  :global(.is-ready:not(.no-webgl)) .lab-poster { opacity: 0; }
+  :global(.is-ready:not(.no-webgl)) .lab-stage canvas { opacity: 1; pointer-events: auto; }
   .lab-stage canvas:focus-visible { outline: 2px solid var(--signal-ink); outline-offset: -4px; border-radius: var(--radius); }
   :global(.is-dragging) .lab-stage canvas { cursor: grabbing; }
   .lab-rings { position: absolute; inset: 8%; display: grid; place-items: center; }
@@ -94,13 +99,11 @@ const mats = [
   .lab-rings i:nth-child(2) { inset: 14%; border-style: dashed; animation: spin-r 40s linear infinite; }
   .lab-rings i:nth-child(3) { inset: 28%; }
   @keyframes spin-r { to { transform: rotate(360deg); } }
-  .lab-hint { position: absolute; bottom: 0; left: 0; right: 0; text-align: center; font-size: 10px; color: var(--muted); letter-spacing: 0.04em; text-transform: uppercase; }
-  .lab-fallback { display: none; margin-top: 16px; text-align: center; color: var(--muted); font-size: 14px; }
-  :global(.no-webgl) .lab-fallback { display: block; }
-  :global(.no-webgl) .lab-stage { aspect-ratio: auto; max-height: none; }
-  :global(.no-webgl) .lab-stage::before { content: ''; display: block; aspect-ratio: 1; background: url('/stills/lab-building.webp') center / contain no-repeat; }
-  :global(.no-webgl) .lab-controls, :global(.no-webgl) .lab-hint,
-  :global(.no-webgl) .lab-stage canvas, :global(.no-webgl) .lab-rings { display: none; }
+  .lab-hint, .lab-fallback { position: absolute; bottom: 0; left: 0; right: 0; margin: 0; text-align: center; font-size: 10px; color: var(--muted); letter-spacing: 0.04em; text-transform: uppercase; }
+  .lab-hint { display: none; }
+  :global(.is-ready:not(.no-webgl)) .lab-hint { display: block; }
+  :global(.is-ready:not(.no-webgl)) .lab-fallback { display: none; }
+  :global(.no-webgl) .lab-poster { transition: none; }
 
   @media (max-width: 900px) { .lab-grid { grid-template-columns: 1fr; } .lab-stage { max-height: 520px; } }
 </style>
