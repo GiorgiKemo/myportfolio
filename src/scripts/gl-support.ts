@@ -20,7 +20,7 @@ export function hardwareWebGL(): boolean {
 // Drawing-buffer resolution for a canvas of w×h CSS pixels. Retina and 4K/5K desktop displays
 // otherwise ask the GPU to shade 6M+ pixels a frame, which made the scenes stutter on Mac minis.
 // The pixel budget keeps big canvases near 1080p-equivalent while small ones stay sharp.
-export function cappedPixelRatio(w: number, h: number, maxDpr: number, budget = 2_400_000): number {
+export function cappedPixelRatio(w: number, h: number, maxDpr: number, budget = 2_000_000): number {
   const byBudget = Math.sqrt(budget / Math.max(1, w * h));
   return Math.min(devicePixelRatio, Math.max(1, Math.min(maxDpr, byBudget)));
 }

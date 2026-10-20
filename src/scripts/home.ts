@@ -10,8 +10,16 @@ const root = document.documentElement;
 const reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
 const finePointer = matchMedia('(hover: hover) and (pointer: fine)').matches;
 
-// Keep ScrollTrigger in sync with Lenis smooth scrolling.
-window.__lenis?.on('scroll', ScrollTrigger.update);
+// Keep ScrollTrigger in sync with Lenis smooth scrolling. Lenis also moves onto GSAP's ticker so
+// scroll position and every scrubbed animation update in the same frame (two separate rAF loops
+// left them a frame apart, which read as judder on 60Hz desktop displays).
+const lenis = window.__lenis;
+if (lenis) {
+  lenis.on('scroll', ScrollTrigger.update);
+  lenis.options.autoRaf = false; // its own loop stops after the frame already queued
+  gsap.ticker.add((time) => lenis.raf(time * 1000));
+  gsap.ticker.lagSmoothing(0);
+}
 
 // ---------- intro (normally already started by the inline script in Hero) ----------
 root.classList.add('is-loaded');
@@ -120,10 +128,13 @@ mm.add('(min-width: 901px) and (prefers-reduced-motion: no-preference)', () => {
   const track = document.querySelector<HTMLElement>('[data-rail-track]');
   if (!rail || !track) return;
   const distance = () => Math.max(0, track.scrollWidth - rail.clientWidth);
+  // Never pin the cards under the floating header: centre them in the space below it.
+  const pill = document.querySelector<HTMLElement>('[data-header] .sh-inner');
   const measure = () => {
     const height = track.offsetHeight;
+    const clear = pill ? pill.offsetTop + pill.offsetHeight + 20 : 96;
     rail.style.setProperty('--rail-height', `${height + distance()}px`);
-    rail.style.setProperty('--rail-top', `${Math.max(0, (innerHeight - height) / 2)}px`);
+    rail.style.setProperty('--rail-top', `${Math.max(clear, (innerHeight - height + clear) / 2)}px`);
   };
   rail.classList.add('is-horizontal');
   measure();

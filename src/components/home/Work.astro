@@ -101,6 +101,9 @@ const pad = (n: number) => String(n).padStart(2, '0');
     will-change: transform;
   }
   .card { width: min(58vw, 880px); flex-shrink: 0; }
+  /* Pinned rail: size cards by the window's height too, so a card (16:9 preview + ~170px caption)
+     always fits between the floating header and the bottom edge on shorter desktop windows. */
+  .rail.is-horizontal .card { width: min(58vw, 880px, max(420px, (100svh - 370px) * 1.78)); }
   .card-link { display: block; }
   .card-media {
     position: relative; overflow: hidden; border-radius: var(--radius);
