@@ -13,7 +13,7 @@ describe('portfolio project hierarchy', () => {
     assert.equal(projects[0].slug, 'cdl-jobs-center');
     assert.deepEqual(
       projects.slice(0, 4).map((project) => project.slug),
-      ['cdl-jobs-center', 'aixco-global-website', 'ats-friendly-resume-builder', 'solence-energy'],
+      ['cdl-jobs-center', 'aixess-broker-mvp', 'aixco-global-website', 'ats-friendly-resume-builder'],
     );
 
     for (let index = 1; index < projects.length; index += 1) {
