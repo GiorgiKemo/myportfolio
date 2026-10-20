@@ -13,6 +13,20 @@ export const projects = [
     visibility: 'private',
   },
   {
+    id: 13,
+    slug: 'aixess-broker-mvp',
+    title: 'AiXESS Broker MVP',
+    description:
+      'Broker-access experience for Project Reverance in Batumi, with an interactive 3D property explorer and current unit availability.',
+    tags: ['3D Property Explorer', 'Real Estate', 'Vercel'],
+    liveLink: 'https://aixess-broker-mvp.vercel.app',
+    liveLinkLabel: 'Open Project',
+    previewImage: '/project-previews/aixess-broker-mvp.png',
+    previewImageDimensions: { width: 1366, height: 768 },
+    complexityScore: 98,
+    visibility: 'private',
+  },
+  {
     id: 4,
     slug: 'aixco-global-website',
     title: 'AIXCO Global Website',
@@ -66,20 +80,6 @@ export const projects = [
     previewImage: '/project-previews/georgia-driver-alert.png',
     previewImageDimensions: { width: 1366, height: 768 },
     complexityScore: 89,
-    visibility: 'private',
-  },
-  {
-    id: 13,
-    slug: 'aixess-broker-mvp',
-    title: 'AiXESS Broker MVP',
-    description:
-      'Broker-access experience for Project Reverance in Batumi, with an interactive 3D property explorer and current unit availability.',
-    tags: ['3D Property Explorer', 'Real Estate', 'Vercel'],
-    liveLink: 'https://aixess-broker-mvp.vercel.app',
-    liveLinkLabel: 'Open Project',
-    previewImage: '/project-previews/aixess-broker-mvp.png',
-    previewImageDimensions: { width: 1366, height: 768 },
-    complexityScore: 86,
     visibility: 'private',
   },
   {
