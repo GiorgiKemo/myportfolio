@@ -15,10 +15,10 @@ export const projects = [
   {
     id: 13,
     slug: 'aixess-broker-mvp',
-    title: 'AiXESS Broker MVP',
+    title: 'AiXESS',
     description:
-      'Broker-access experience for Project Reverance in Batumi, with an interactive 3D property explorer and current unit availability.',
-    tags: ['3D Property Explorer', 'Real Estate', 'Vercel'],
+      'Broker network platform for AIXCO built from a Figma design system: a full-bleed AIXESS / TO MARKET hero, a PlayCanvas 3D Residence Explorer for Project Reverance with live unit availability, day / afternoon / night themes that follow the visitor\'s clock, and five languages.',
+    tags: ['React', 'PlayCanvas 3D', 'Vite', 'i18n', 'Real Estate'],
     liveLink: 'https://aixess-broker-mvp.vercel.app',
     liveLinkLabel: 'Open Project',
     previewImage: '/project-previews/aixess-broker-mvp.png',
@@ -29,16 +29,15 @@ export const projects = [
   {
     id: 4,
     slug: 'aixco-global-website',
-    title: 'AIXCO Global Website',
+    title: 'AIXCO Global v4',
     description:
-      'AIXCO Global company website built as a polished Next.js experience with Supabase-backed data, modern component systems, analytics-ready pages, and deployment on Vercel.',
-    tags: ['Next.js', 'TypeScript', 'Supabase', 'PostgreSQL', 'Tailwind CSS', 'Vercel'],
-    githubLink: 'https://github.com/GiorgiKemo/aixco-global-website',
-    liveLink: 'https://aixco-global-website.vercel.app',
-    previewImage: '/project-previews/aixco-global-website.png',
+      'Redesign of www.aixco.global on a new brandbook design system: poster-scale condensed type, a campaign-style editorial hero, motion, a time-of-day theme switcher and full translations, rebuilt on Next.js over the existing Supabase lead and admin backend.',
+    tags: ['Next.js', 'TypeScript', 'Supabase', 'Tailwind CSS', 'Motion', 'Vercel'],
+    liveLink: 'https://aixco-global-v4.vercel.app',
+    previewImage: '/project-previews/aixco-global-v4.png',
     previewImageDimensions: { width: 1366, height: 768 },
     complexityScore: 96,
-    visibility: 'public',
+    visibility: 'private',
   },
   {
     id: 2,
