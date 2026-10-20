@@ -81,6 +81,7 @@ document.querySelectorAll<HTMLElement>('[data-scrub-text]').forEach((el) => {
   const words = text.split(/\s+/);
   el.innerHTML = `<span class="sr-only">${text}</span>` + words.map((w) => `<span class="w" aria-hidden="true">${w}</span>`).join(' ');
   const spans = [...el.querySelectorAll<HTMLElement>('.w')];
+  const shown = spans.map(() => '');
   if (reduced) { spans.forEach((s) => (s.style.opacity = '1')); return; }
   ScrollTrigger.create({
     trigger: el,
@@ -89,7 +90,11 @@ document.querySelectorAll<HTMLElement>('[data-scrub-text]').forEach((el) => {
     scrub: true,
     onUpdate: (self) => {
       const lit = self.progress * spans.length;
-      spans.forEach((s, i) => { s.style.opacity = String(Math.max(0.4, Math.min(1, lit - i + 1))); });
+      // Only touch words whose value changed; rewriting every span each frame forced full restyles.
+      spans.forEach((s, i) => {
+        const v = Math.max(0.4, Math.min(1, lit - i + 1)).toFixed(2);
+        if (v !== shown[i]) { shown[i] = v; s.style.opacity = v; }
+      });
     },
   });
 });
