@@ -7,13 +7,13 @@ export const site = {
   timezone: 'Asia/Tbilisi',
   gaId: 'G-5EEHYS9R9T',
   email: 'contact@giorgi.codes',
-  phone: '+995 596 33 33 16',
+  phone: '+1 (866) 419-2451',
   links: {
     github: 'https://github.com/GiorgiKemo',
     linkedin: 'https://www.linkedin.com/in/giorgi-kemoklidze-53383b263/',
     x: 'https://x.com/GiorgiKem',
     telegram: 'https://t.me/GiorgiKemo',
-    whatsapp: 'https://wa.me/995596333316',
+    whatsapp: 'https://wa.me/18664192451',
   },
   // Kept identical to the previous site so analytics campaigns keep working.
   resourcesHref: '/affiliate/?utm_source=portfolio&utm_medium=owned&utm_campaign=affiliate_hub',
