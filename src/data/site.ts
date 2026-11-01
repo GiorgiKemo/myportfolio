@@ -12,7 +12,7 @@ export const site = {
     github: 'https://github.com/GiorgiKemo',
     linkedin: 'https://www.linkedin.com/in/giorgi-kemoklidze-53383b263/',
     x: 'https://x.com/GiorgiKem',
-    telegram: 'https://t.me/GiorgiKemo',
+    telegram: 'https://t.me/CleanWebDevelopment',
     whatsapp: 'https://wa.me/18664192451',
   },
   // Kept identical to the previous site so analytics campaigns keep working.
