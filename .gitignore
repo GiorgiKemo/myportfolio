@@ -32,3 +32,6 @@ dist-ssr
 
 # Astro
 .astro
+
+# Raw device screenshots (sources for scripts/optimize-previews.mjs); only the WebP outputs are committed
+public/project-previews/devices/*.png
