@@ -1,0 +1,214 @@
+---
+/**
+ * MacBook + iPhone mock-ups for a project.
+ * Each screen area has the exact aspect ratio of its screenshot (desktop 16:9, phone 390:764),
+ * so the screenshots are shown whole: nothing is cropped, stretched or letterboxed.
+ */
+import { deviceSources, type Project } from '../data/projects';
+
+interface Props { project: Project; host: string }
+const { project: p, host } = Astro.props;
+const d = deviceSources(p);
+---
+
+<figure class:list={['devices', { solo: !d.mobile }]} aria-label={d.mobile ? `${p.title} on a laptop and a phone` : `${p.title} on a laptop`}>
+  <div class="mac" data-tilt>
+    <div class="mac-lid">
+      <span class="mac-cam" aria-hidden="true"></span>
+      <div class="mac-screen">
+        <div class="mac-bar" aria-hidden="true">
+          <span class="mac-dots"><i></i><i></i><i></i></span>
+          <span class="mac-url">{host}</span>
+        </div>
+        <picture>
+          <source type="image/webp" srcset={d.desktop.srcset} sizes="(max-width: 700px) 92vw, (max-width: 1320px) 76vw, 1040px" />
+          <img src={d.desktop.src} width={d.desktop.width} height={d.desktop.height} alt={`${p.title} on a laptop`} fetchpriority="high" decoding="async" />
+        </picture>
+      </div>
+    </div>
+    <div class="mac-base" aria-hidden="true"><span></span></div>
+  </div>
+
+  {d.mobile && (
+  <div class="phone">
+    <div class="phone-body">
+      <span class="phone-btn phone-btn-a" aria-hidden="true"></span>
+      <span class="phone-btn phone-btn-b" aria-hidden="true"></span>
+      <span class="phone-btn phone-btn-c" aria-hidden="true"></span>
+      <div class="phone-screen" style={`--status-bg: ${d.mobile.statusBg}; --status-ink: ${d.mobile.statusInk};`}>
+        <div class="phone-status" aria-hidden="true">
+          <span class="phone-time">9:41</span>
+          <span class="phone-island"></span>
+          <span class="phone-icons">
+            <svg viewBox="0 0 18 12"><rect x="0" y="8" width="3" height="4" rx="1" /><rect x="5" y="5.5" width="3" height="6.5" rx="1" /><rect x="10" y="3" width="3" height="9" rx="1" /><rect x="15" y="0" width="3" height="12" rx="1" /></svg>
+            <svg viewBox="0 0 16 12"><path d="M8 2.6c2.3 0 4.4.9 6 2.4l1.3-1.4A10.6 10.6 0 0 0 8 .7 10.6 10.6 0 0 0 .7 3.6L2 5c1.6-1.5 3.7-2.4 6-2.4Zm0 3.8c1.3 0 2.5.5 3.4 1.3l1.3-1.4A6.9 6.9 0 0 0 8 4.5c-1.8 0-3.4.7-4.7 1.8l1.3 1.4C5.5 6.9 6.7 6.4 8 6.4Zm0 3.7L9.9 8a2.9 2.9 0 0 0-3.8 0L8 10.1Z" /></svg>
+            <svg viewBox="0 0 27 12"><rect x="0.5" y="0.5" width="23" height="11" rx="3.5" fill="none" stroke="currentColor" opacity="0.4" /><rect x="2" y="2" width="20" height="8" rx="2" /><path d="M25 4v4a2 2 0 0 0 0-4Z" opacity="0.4" /></svg>
+          </span>
+        </div>
+        <picture>
+          <source type="image/webp" srcset={d.mobile.srcset} sizes="(max-width: 700px) 64vw, 260px" />
+          <img src={d.mobile.src} width={d.mobile.width} height={d.mobile.height} alt={`${p.title} on a phone`} loading="lazy" decoding="async" />
+        </picture>
+        <div class="phone-home" aria-hidden="true"><span></span></div>
+      </div>
+    </div>
+  </div>
+  )}
+</figure>
+
+<style>
+  .devices {
+    --mac-w: 77%;
+    --phone-w: 20.5%;
+    position: relative;
+    margin: 0;
+    padding-bottom: 2%;
+  }
+
+  .devices.solo { --mac-w: 92%; }
+  .devices.solo .mac { margin: 0 auto; }
+
+  /* ---------- MacBook ---------- */
+  .mac {
+    width: var(--mac-w);
+    transition: transform 0.8s var(--ease);
+    animation: dev-rise 1.2s var(--ease) 0.15s both;
+    filter: drop-shadow(0 50px 60px rgb(0 0 0 / 0.45));
+  }
+  .mac-lid {
+    position: relative;
+    width: 88%;
+    margin: 0 auto;
+    padding: 2.3% 1.6% 1.6%;
+    border-radius: 3.2% / 4.8%;
+    background: #0b0b0d;
+    box-shadow: inset 0 0 0 1.5px #3a3a40, inset 0 0 0 4px #121215;
+  }
+  .mac-cam {
+    position: absolute;
+    top: 0.9%;
+    left: 50%;
+    width: 0.6%;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    transform: translateX(-50%);
+    background: radial-gradient(circle at 35% 35%, #3b4a6b, #0a0a0c 70%);
+  }
+  .mac-screen {
+    container-type: inline-size;
+    overflow: hidden;
+    border-radius: 0.5%;
+    background: #fff;
+  }
+  .mac-bar {
+    display: flex;
+    align-items: center;
+    height: 3.4cqw;
+    padding: 0 1.4cqw;
+    background: #ececee;
+    border-bottom: 1px solid #d6d6da;
+  }
+  .mac-dots { display: flex; gap: 0.6cqw; }
+  .mac-dots i { width: 0.95cqw; aspect-ratio: 1; border-radius: 50%; background: #ff5f57; }
+  .mac-dots i:nth-child(2) { background: #febc2e; }
+  .mac-dots i:nth-child(3) { background: #28c840; }
+  .mac-url {
+    margin: 0 auto;
+    padding: 0.3cqw 3cqw;
+    border-radius: 0.6cqw;
+    background: #fff;
+    color: #55555c;
+    font: 500 1.15cqw/1.3 var(--font-sans);
+    letter-spacing: 0;
+    transform: translateX(-2cqw);
+  }
+  .mac-screen img { display: block; width: 100%; height: auto; aspect-ratio: 16 / 9; }
+  .mac-base {
+    position: relative;
+    height: 0;
+    padding-bottom: 2.6%;
+    border-radius: 0 0 46% 46% / 0 0 100% 100%;
+    background: linear-gradient(#e4e5e9, #b9bbc1 55%, #8e9097);
+    box-shadow: inset 0 1px 0 #fff;
+  }
+  .mac-base span {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 15%;
+    height: 42%;
+    transform: translateX(-50%);
+    border-radius: 0 0 10px 10px / 0 0 8px 8px;
+    background: linear-gradient(#a9abb2, #c9cbd0);
+  }
+
+  /* ---------- iPhone ---------- */
+  .phone {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: var(--phone-w);
+    animation: dev-rise 1.2s var(--ease) 0.35s both;
+    filter: drop-shadow(0 40px 40px rgb(0 0 0 / 0.5));
+  }
+  .phone-body {
+    position: relative;
+    padding: 4.4%;
+    border-radius: 17% / 8%;
+    background: #111114;
+    box-shadow: inset 0 0 0 1.5px #4a4a52, inset 0 0 0 3.5px #1c1c20;
+  }
+  .phone-btn { position: absolute; width: 1.4%; border-radius: 2px; background: #2c2c32; }
+  .phone-btn-a { left: -1.2%; top: 16%; height: 4%; }
+  .phone-btn-b { left: -1.2%; top: 23%; height: 7.5%; }
+  .phone-btn-c { right: -1.2%; top: 25%; height: 11%; }
+  .phone-screen {
+    container-type: inline-size;
+    overflow: hidden;
+    border-radius: 13.5% / 6.2%;
+    background: var(--status-bg, #fff);
+    display: flex;
+    flex-direction: column;
+  }
+  .phone-status {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    aspect-ratio: 390 / 54;
+    padding: 2.5cqw 7cqw 0 9cqw;
+    color: var(--status-ink, #000);
+  }
+  .phone-time { font: 600 4.1cqw/1 var(--font-sans); letter-spacing: -0.01em; }
+  .phone-island {
+    position: absolute;
+    top: 2.9cqw;
+    left: 50%;
+    width: 31cqw;
+    height: 9.4cqw;
+    transform: translateX(-50%);
+    border-radius: 99px;
+    background: #000;
+  }
+  .phone-icons { display: flex; align-items: center; gap: 1.4cqw; }
+  .phone-icons svg { height: 3cqw; width: auto; fill: currentColor; }
+  .phone-icons svg:last-child { height: 3.1cqw; }
+  .phone-screen img { display: block; width: 100%; height: auto; aspect-ratio: 390 / 764; }
+  .phone-home {
+    display: grid;
+    place-items: center;
+    aspect-ratio: 390 / 34;
+    background: var(--status-bg, #fff);
+  }
+  .phone-home span { width: 35%; height: 1.3cqw; border-radius: 99px; background: var(--status-ink, #000); opacity: 0.85; }
+
+  @keyframes dev-rise { from { opacity: 0; transform: translateY(40px); } }
+
+  @media (max-width: 700px) {
+    .devices { --mac-w: 100%; --phone-w: min(62vw, 250px); padding-bottom: 0; }
+    .phone { position: relative; margin: 40px auto 0; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .mac, .phone { animation: none; }
+  }
+</style>

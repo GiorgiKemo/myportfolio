@@ -1,0 +1,62 @@
+{
+  "aixco-energy": {
+    "statusBg": "#faf8f3",
+    "statusInk": "#000000"
+  },
+  "aixco-global-website": {
+    "statusBg": "#f8f8f5",
+    "statusInk": "#000000"
+  },
+  "aixess-broker-mvp": {
+    "statusBg": "#011c45",
+    "statusInk": "#ffffff"
+  },
+  "ats-friendly-resume-builder": {
+    "statusBg": "#eef5ff",
+    "statusInk": "#000000"
+  },
+  "avital-chicago": {
+    "statusBg": "#110610",
+    "statusInk": "#ffffff"
+  },
+  "cdl-jobs-center": {
+    "statusBg": "#ffffff",
+    "statusInk": "#000000"
+  },
+  "cornerstone-roofing-co": {
+    "statusBg": "#766351",
+    "statusInk": "#ffffff"
+  },
+  "finance-flow": {
+    "statusBg": "#fcfdfd",
+    "statusInk": "#000000"
+  },
+  "georgia-driver-alert": {
+    "statusBg": "#fffefe",
+    "statusInk": "#000000"
+  },
+  "life-idea": {
+    "statusBg": "#fcfaf6",
+    "statusInk": "#000000"
+  },
+  "loop-meeting-room-booking": {
+    "statusBg": "#ffffff",
+    "statusInk": "#000000"
+  },
+  "maiseli-winery": {
+    "statusBg": "#6a7987",
+    "statusInk": "#ffffff"
+  },
+  "mlc-crm": {
+    "statusBg": "#f5f7f7",
+    "statusInk": "#000000"
+  },
+  "soft-spot-studio": {
+    "statusBg": "#26312a",
+    "statusInk": "#ffffff"
+  },
+  "solence-energy": {
+    "statusBg": "#48525a",
+    "statusInk": "#ffffff"
+  }
+}

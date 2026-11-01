@@ -1,5 +1,6 @@
 ---
 import Base from '../../../layouts/Base.astro';
+import DeviceShowcase from '../../../components/DeviceShowcase.astro';
 import { projects, previewSources, kindOf, type Project } from '../../../data/projects';
 import { site } from '../../../data/site';
 
@@ -12,7 +13,6 @@ export function getStaticPaths() {
 
 interface Props { project: Project; index: number; next: Project }
 const { project: p, index, next } = Astro.props;
-const img = previewSources(p);
 const nextImg = previewSources(next);
 const host = (url: string) => new URL(url).hostname.replace(/^www\./, '');
 const pad = (n: number) => String(n).padStart(2, '0');
@@ -75,15 +75,9 @@ const jsonLd = [
       </div>
     </header>
 
-    <figure class="wrap cs-shot">
-      <div class="cs-frame" data-tilt>
-        <div class="cs-bar" aria-hidden="true"><i></i><i></i><i></i><span class="mono">{p.liveLink ? host(p.liveLink) : p.slug}</span></div>
-        <picture>
-          <source type="image/webp" srcset={img.srcset} sizes="(max-width: 1320px) 94vw, 1240px" />
-          <img src={img.fallback} width={img.width} height={img.height} alt={`${p.title} homepage screenshot`} fetchpriority="high" />
-        </picture>
-      </div>
-    </figure>
+    <div class="wrap cs-shot">
+      <DeviceShowcase project={p} host={p.liveLink ? host(p.liveLink) : p.slug} />
+    </div>
 
     <section class="wrap cs-stack" aria-labelledby="stack-h">
       <h2 id="stack-h" class="kicker">Built with</h2>
@@ -127,15 +121,6 @@ const jsonLd = [
   .cs-actions { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 40px; }
 
   .cs-shot { margin: clamp(56px, 8vw, 96px) auto 0; }
-  .cs-frame {
-    border-radius: 18px; overflow: hidden; background: var(--bg-3); box-shadow: var(--glow), 0 60px 120px -60px color-mix(in oklab, var(--violet) 50%, transparent);
-    transition: transform 0.8s var(--ease); animation: rise 1.2s var(--ease) 0.15s both;
-  }
-  .cs-bar { display: flex; align-items: center; gap: 7px; padding: 12px 16px; border-bottom: 1px solid var(--line); background: var(--bg-2); }
-  .cs-bar i { width: 10px; height: 10px; border-radius: 50%; background: var(--line-2); }
-  .cs-bar span { margin: 0 auto; font-size: 12px; color: var(--muted); padding: 4px 14px; border-radius: 8px; background: var(--surface-2); }
-  .cs-frame img { width: 100%; }
-
   .cs-stack { padding: clamp(72px, 9vw, 120px) 0; display: grid; gap: 24px; }
   .cs-stack ul { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 10px; }
   .cs-stack li { padding: 12px 20px; border-radius: 999px; border: 1px solid var(--line-2); font-size: clamp(17px, 1.6vw, 22px); letter-spacing: -0.02em; }
