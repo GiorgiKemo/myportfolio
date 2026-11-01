@@ -1,3 +1,4 @@
+import { tr, inquiry } from '../i18n/client';
 // Home page motion + interactions.
 import './chrome';
 import { gsap } from 'gsap';
@@ -231,8 +232,9 @@ if (form) {
 
   document.querySelectorAll<HTMLElement>('[data-offer]').forEach((a) => a.addEventListener('click', () => {
     const offer = a.dataset.offer!;
-    subject.value = `Inquiry: ${offer}`;
-    message.value = `I'm interested in the ${offer}. Please let me know the next steps.`;
+    // The visible (possibly translated) offer name goes into the message; analytics keep the English id.
+    const shown = a.closest('.offer')?.querySelector('h3')?.textContent?.trim() || offer;
+    ({ subject: subject.value, message: message.value } = inquiry(shown));
     window.gtag?.('event', 'service_offer_click', { offer, placement: 'services_section' });
   }));
 
@@ -246,11 +248,11 @@ if (form) {
     });
     if (!valid) {
       status.className = 'form-status err';
-      status.textContent = 'Please fill in every field with a valid email.';
+      status.textContent = tr('Please fill in every field with a valid email.');
       return;
     }
     button.disabled = true;
-    label.textContent = 'Sending…';
+    label.textContent = tr('Sending…');
     status.className = 'form-status';
     status.textContent = '';
     const data = Object.fromEntries(new FormData(form)) as Record<string, string>;
@@ -264,14 +266,14 @@ if (form) {
       );
       form.reset();
       status.className = 'form-status ok';
-      status.textContent = 'Thank you! Your message is on its way. I will get back to you soon.';
+      status.textContent = tr('Thank you! Your message is on its way. I will get back to you soon.');
       window.gtag?.('event', 'contact_form_submit', { placement: 'home_contact' });
     } catch {
       status.className = 'form-status err';
-      status.textContent = 'Something went wrong. Please email contact@giorgi.codes directly.';
+      status.textContent = tr('Something went wrong. Please email contact@giorgi.codes directly.');
     } finally {
       button.disabled = false;
-      label.textContent = 'Send message';
+      label.textContent = tr('Send message');
     }
   });
 }

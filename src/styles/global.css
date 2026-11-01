@@ -7,6 +7,10 @@
 @import '@fontsource-variable/geist-mono';
 @import '@fontsource/instrument-serif/400.css';
 @import '@fontsource/instrument-serif/400-italic.css';
+/* Georgian and Cyrillic fallbacks: unicode-range means they only download on pages that use those scripts. */
+@import '@fontsource-variable/noto-sans-georgian';
+@import '@fontsource-variable/noto-serif-georgian';
+@import '@fontsource/cormorant-garamond/cyrillic-500-italic.css';
 
 :root {
   color-scheme: dark;
@@ -30,9 +34,9 @@
   --spectrum: linear-gradient(100deg, var(--violet), var(--cyan) 45%, var(--signal) 80%);
   --glow: 0 0 0 1px var(--line), 0 30px 80px -30px rgba(0, 0, 0, 0.8);
 
-  --font-sans: 'Geist Variable', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', sans-serif;
-  --font-mono: 'Geist Mono Variable', ui-monospace, 'SFMono-Regular', Menlo, monospace;
-  --font-serif: 'Instrument Serif', 'Times New Roman', serif;
+  --font-sans: 'Geist Variable', 'Noto Sans Georgian Variable', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --font-mono: 'Geist Mono Variable', 'Noto Sans Georgian Variable', ui-monospace, 'SFMono-Regular', Menlo, monospace;
+  --font-serif: 'Instrument Serif', 'Cormorant Garamond', 'Noto Serif Georgian Variable', 'Times New Roman', serif;
 
   --gutter: clamp(16px, 4vw, 48px);
   --max: 1320px;

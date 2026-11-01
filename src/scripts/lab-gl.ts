@@ -1,3 +1,4 @@
+import { tr } from '../i18n/client';
 // "The Lab": CleanWeb's original residence and the material playground.
 import {
   ACESFilmicToneMapping, Box3, BufferGeometry, Color, DirectionalLight, Group, HemisphereLight, IcosahedronGeometry, Material, Mesh,
@@ -121,12 +122,12 @@ export async function mountLab(root: HTMLElement) {
   const stats = root.querySelector<HTMLElement>('[data-lab-stats]');
   const paintStats = () => {
     if (form === 'building') {
-      if (stats) stats.textContent = 'Meridian residence · Original CleanWeb concept';
+      if (stats) stats.textContent = tr('Meridian residence · Original CleanWeb concept');
       return;
     }
     const g = mesh.geometry;
     const tris = g.index ? g.index.count / 3 : g.attributes.position.count / 3;
-    if (stats) stats.textContent = `${Math.round(tris).toLocaleString('en-US')} tris · ${mat} · ${form}`;
+    if (stats) stats.textContent = `${Math.round(tris).toLocaleString('en-US')} ${tr('tris')} · ${mat} · ${form}`;
   };
   paintStats();
 
@@ -142,9 +143,9 @@ export async function mountLab(root: HTMLElement) {
     root.classList.toggle('is-building', isBuilding);
     if (materialControls) materialControls.hidden = isBuilding;
     if (cameraControls) cameraControls.hidden = !isBuilding;
-    canvas.setAttribute('aria-label', isBuilding ? 'Interactive Meridian building. Drag to orbit.' : 'Interactive 3D object. Drag to rotate.');
+    canvas.setAttribute('aria-label', tr(isBuilding ? 'Interactive Meridian building. Drag to orbit.' : 'Interactive 3D object. Drag to rotate.'));
     const hint = root.querySelector<HTMLElement>('.lab-hint');
-    if (hint) hint.textContent = isBuilding ? 'Drag to orbit · Arrow keys rotate · + / − zoom' : 'Drag to rotate · Switch the shape and material';
+    if (hint) hint.textContent = tr(isBuilding ? 'Drag to orbit · Arrow keys rotate · + / − zoom' : 'Drag to rotate · Switch the shape and material');
     if (isBuilding) {
       fitBuilding(true);
       renderer.shadowMap.needsUpdate = true;

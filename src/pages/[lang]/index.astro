@@ -1,0 +1,7 @@
+---
+// Georgian / Russian home. Renders the English template; src/middleware.ts translates it.
+import Page from '../index.astro';
+import { prefixedLangs } from '../../i18n/config';
+export const getStaticPaths = () => prefixedLangs.map((lang) => ({ params: { lang } }));
+---
+<Page />
