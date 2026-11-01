@@ -1,0 +1,6 @@
+---
+import Page from '../../offers/conversion-snapshot.astro';
+import { prefixedLangs } from '../../../i18n/config';
+export const getStaticPaths = () => prefixedLangs.map((lang) => ({ params: { lang } }));
+---
+<Page />
