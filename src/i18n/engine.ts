@@ -207,7 +207,7 @@ function translateScript(src: string, visit: Visit): string {
   return src.replace(LIT, (m, s1, s2, s3) => {
     const body = s1 ?? s2 ?? s3 ?? '';
     const q = m[0];
-    if (!hasWords(body) || !/[\s.,!?:]/.test(body.trim()) && !/^[A-Z]/.test(body)) return m;
+    if (!hasWords(body) || !/[\s.,!?:]/.test(body.trim()) && !/^[A-Z]/.test(body) && !/^\/[a-z]+$/.test(body)) return m;
     const tr = visit({ key: keyOf(body), text: body, kind: 'script' });
     if (!tr) return m;
     const safe = q === '`' ? tr.replace(/(?<!\\)`/g, '\\`') : tr.replace(new RegExp(`(?<!\\\\)${q}`, 'g'), `\\${q}`);
