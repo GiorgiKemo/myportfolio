@@ -108,7 +108,7 @@ const nav = [
   .sh-nav { display: flex; gap: 4px; margin-inline: auto; }
   .sh-nav a {
     position: relative; display: inline-flex; align-items: baseline; gap: 6px;
-    padding: 8px 14px; border-radius: 999px; font-size: 14.5px; color: var(--text-2);
+    padding: 8px 14px; border-radius: 999px; font-size: 14.5px; color: var(--text-2); white-space: nowrap;
     transition: color 0.3s, background-color 0.3s;
   }
   .sh-nav a:hover { color: var(--text); background: var(--surface-2); }
@@ -186,11 +186,19 @@ const nav = [
   @media (max-width: 1100px) {
     :global(html:not([lang='en'])) .sh-nav { display: none; }
     :global(html:not([lang='en'])) .sh-burger { display: block; }
+    :global(html:not([lang='en'])) .sh-nav + .sh-actions { margin-left: auto; }
+  }
+  /* Georgian nav labels are the longest; collapse to the menu earlier. */
+  @media (max-width: 1320px) {
+    :global(html[lang='ka']) .sh-nav { display: none; }
+    :global(html[lang='ka']) .sh-burger { display: block; }
+    :global(html[lang='ka']) .sh-nav + .sh-actions { margin-left: auto; }
   }
   @media (max-width: 900px) {
     .sh-nav { display: none; }
     .sh-lang { display: none; }
     .sh-burger { display: block; }
+    .sh-nav + .sh-actions { margin-left: auto; }
     .sh-inner { padding-left: 14px; }
   }
   @media (max-width: 480px) {

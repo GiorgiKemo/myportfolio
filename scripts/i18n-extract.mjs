@@ -61,6 +61,6 @@ pages.forEach((page, i) => {
   const name = `${String(i).padStart(3, '0')}-${page.replace(/\/index\.html$|\.html$/, '').replace(/\//g, '_') || 'home'}.tsv`;
   writeFileSync(join(out, name), rows.join('\n') + '\n');
 });
-for (const [k, { f }] of all) if (!used.has(k)) problems.push(`${f} ${k} is not used on any page (stale?)`);
+for (const [k, { f }] of all) if (/^(s:)?[0-9a-f]{10}$/.test(k) && !used.has(k)) problems.push(`${f} ${k} is not used on any page (stale?)`);
 problems.forEach((p) => console.warn(p));
 console.log(`${total} untranslated segments in ${pages.length} pages → ${out}/`);
