@@ -128,11 +128,32 @@ mm.add('(min-width: 901px) and (prefers-reduced-motion: no-preference)', () => {
   const track = document.querySelector<HTMLElement>('[data-rail-track]');
   if (!rail || !track) return;
   const distance = () => Math.max(0, track.scrollWidth - rail.clientWidth);
-  // Never pin the cards under the floating header: centre them in the space below it.
+  // Never pin the cards under the floating header. Cards are sized from their real preview ratio
+  // and caption height (which varies with fonts, language and window width) so the whole card fits
+  // between the header and the bottom edge, then centred in the space below the header.
   const pill = document.querySelector<HTMLElement>('[data-header] .sh-inner');
+  const cards = [...track.querySelectorAll<HTMLElement>('.card')].filter((c) => c.querySelector('.card-media'));
+  const fitCards = (clear: number) => {
+    const natural = Math.min(innerWidth * 0.58, 880);
+    rail.style.removeProperty('--rail-card-w');
+    // Two passes: a narrower card can wrap its caption onto more lines.
+    for (let pass = 0; pass < 2 && cards.length; pass += 1) {
+      let ratio = 0, caption = 0;
+      for (const card of cards) {
+        const media = card.querySelector<HTMLElement>('.card-media')!;
+        ratio = Math.max(ratio, media.offsetHeight / Math.max(1, card.offsetWidth));
+        caption = Math.max(caption, card.offsetHeight - media.offsetHeight);
+      }
+      if (!ratio) return;
+      const room = innerHeight - clear - 24 - caption;
+      const width = Math.round(Math.max(360, Math.min(natural, room / ratio)));
+      rail.style.setProperty('--rail-card-w', `${width}px`);
+    }
+  };
   const measure = () => {
-    const height = track.offsetHeight;
     const clear = pill ? pill.offsetTop + pill.offsetHeight + 20 : 96;
+    fitCards(clear);
+    const height = track.offsetHeight;
     rail.style.setProperty('--rail-height', `${height + distance()}px`);
     rail.style.setProperty('--rail-top', `${Math.max(clear, (innerHeight - height + clear) / 2)}px`);
   };
@@ -156,6 +177,7 @@ mm.add('(min-width: 901px) and (prefers-reduced-motion: no-preference)', () => {
     rail.classList.remove('is-horizontal');
     rail.style.removeProperty('--rail-height');
     rail.style.removeProperty('--rail-top');
+    rail.style.removeProperty('--rail-card-w');
   };
 });
 
