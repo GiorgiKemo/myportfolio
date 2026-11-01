@@ -171,14 +171,18 @@ if (finePointer && !reduced) {
   const label = ring?.querySelector('span');
   if (cursor && ring && dot && label) {
     root.classList.add('has-cursor');
-    let mx = innerWidth / 2, my = innerHeight / 2, rx = mx, ry = my;
-    addEventListener('pointermove', (e) => { mx = e.clientX; my = e.clientY; }, { passive: true });
+    let mx = innerWidth / 2, my = innerHeight / 2, rx = mx, ry = my, raf = 0;
+    // Only animate while the ring is catching up with the pointer; idle otherwise.
     const loop = () => {
       rx += (mx - rx) * 0.18; ry += (my - ry) * 0.18;
       dot.style.transform = `translate3d(${mx}px, ${my}px, 0)`;
       ring.style.transform = `translate3d(${rx}px, ${ry}px, 0)`;
-      requestAnimationFrame(loop);
+      raf = Math.abs(mx - rx) + Math.abs(my - ry) > 0.2 ? requestAnimationFrame(loop) : 0;
     };
+    addEventListener('pointermove', (e) => {
+      mx = e.clientX; my = e.clientY;
+      if (!raf) raf = requestAnimationFrame(loop);
+    }, { passive: true });
     loop();
     document.addEventListener('pointerover', (e) => {
       const t = e.target as HTMLElement;

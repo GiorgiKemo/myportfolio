@@ -4,6 +4,8 @@ import {
   AdditiveBlending, BufferAttribute, BufferGeometry, IcosahedronGeometry, Mesh,
   PerspectiveCamera, Points, Scene, ShaderMaterial, Vector2, WebGLRenderer,
 } from 'three';
+import { mergeVertices } from 'three/addons/utils/BufferGeometryUtils.js';
+import { cappedPixelRatio, frameGovernor } from './gl-support';
 
 const NOISE = /* glsl */ `
 vec3 mod289(vec3 x){return x-floor(x*(1./289.))*289.;}
@@ -118,8 +120,8 @@ export async function mountHero(canvas: HTMLCanvasElement) {
   } catch {
     return; // no WebGL: the CSS gradient fallback stays
   }
-  const dpr = Math.min(devicePixelRatio, small ? 1.5 : 1.75);
-  renderer.setPixelRatio(dpr);
+  const maxDpr = small ? 1.5 : 1.75;
+  let dpr = 1;
 
   const scene = new Scene();
   const camera = new PerspectiveCamera(35, 1, 0.1, 100);
@@ -137,7 +139,13 @@ export async function mountHero(canvas: HTMLCanvasElement) {
       uLight: { value: isLight() ? 1 : 0 },
     },
   });
-  const orb = new Mesh(new IcosahedronGeometry(1.3, small ? 16 : 24), orbMat);
+  // The icosphere comes unindexed (every vertex repeated by ~6 triangles), and each vertex runs
+  // six noise lookups. Sharing vertices runs the shader ~6x less for an identical surface.
+  const orbGeo = new IcosahedronGeometry(1.3, small ? 16 : 24);
+  orbGeo.deleteAttribute('normal');
+  orbGeo.deleteAttribute('uv');
+  const orb = new Mesh(mergeVertices(orbGeo), orbMat);
+  orbGeo.dispose();
   scene.add(orb);
 
   // Particle field
@@ -180,10 +188,15 @@ export async function mountHero(canvas: HTMLCanvasElement) {
   };
   addEventListener('gk:theme', () => { setTheme(); if (reduced) renderer.render(scene, camera); });
 
+  const governor = frameGovernor(() => resize());
+
   // Layout: orb sits right of centre on wide screens, centred behind text on mobile
   const resize = () => {
     const { clientWidth: w, clientHeight: h } = canvas;
     if (!w || !h) return;
+    dpr = cappedPixelRatio(w, h, maxDpr) * governor.scale;
+    renderer.setPixelRatio(dpr);
+    pMat.uniforms.uPixel.value = dpr;
     renderer.setSize(w, h, false);
     camera.aspect = w / h;
     camera.updateProjectionMatrix();
@@ -247,9 +260,17 @@ export async function mountHero(canvas: HTMLCanvasElement) {
     camera.position.y = -scrollP * 0.6;
 
     renderer.render(scene, camera);
+    governor.sample(dt);
     raf = requestAnimationFrame(frame);
   };
-  const start = () => { if (!running) { running = true; lastT = performance.now(); raf = requestAnimationFrame(frame); } };
+  let inView = false;
+  const start = () => {
+    if (running || !inView || document.hidden) return;
+    running = true;
+    lastT = performance.now();
+    governor.reset();
+    raf = requestAnimationFrame(frame);
+  };
   const stop = () => { running = false; cancelAnimationFrame(raf); };
 
   await renderer.compileAsync(scene, camera);
@@ -257,7 +278,7 @@ export async function mountHero(canvas: HTMLCanvasElement) {
   if (reduced) {
     renderer.render(scene, camera);
   } else {
-    new IntersectionObserver(([e]) => (e.isIntersecting ? start() : stop())).observe(canvas);
+    new IntersectionObserver(([e]) => { inView = e.isIntersecting; if (inView) start(); else stop(); }).observe(canvas);
     document.addEventListener('visibilitychange', () => (document.hidden ? stop() : start()));
   }
   canvas.classList.add('is-ready');

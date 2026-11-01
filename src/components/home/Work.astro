@@ -101,6 +101,9 @@ const pad = (n: number) => String(n).padStart(2, '0');
     will-change: transform;
   }
   .card { width: min(58vw, 880px); flex-shrink: 0; }
+  /* Pinned rail: home.ts measures the real card and sets --rail-card-w so the whole card fits
+     between the floating header and the bottom edge. The fallback estimates it before that runs. */
+  .rail.is-horizontal .card { width: var(--rail-card-w, min(58vw, 880px, max(360px, (100svh - 370px) * 1.78))); }
   .card-link { display: block; }
   .card-media {
     position: relative; overflow: hidden; border-radius: var(--radius);

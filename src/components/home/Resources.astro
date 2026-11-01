@@ -49,6 +49,7 @@ const picks = [
     content: ''; position: absolute; width: 520px; height: 520px; right: -160px; top: -220px; border-radius: 50%;
     background: conic-gradient(from 90deg, var(--violet), var(--cyan), var(--signal), var(--violet)); filter: blur(90px); opacity: 0.22;
     animation: drift 18s linear infinite;
+    will-change: transform; /* blur once, then rotate the cached layer */
   }
   @keyframes drift { to { transform: rotate(360deg); } }
   .res-copy { position: relative; display: grid; gap: 20px; justify-items: start; }

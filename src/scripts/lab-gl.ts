@@ -8,6 +8,7 @@ import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
 import { RoomEnvironment } from 'three/addons/environments/RoomEnvironment.js';
 import { createExterior, createResidenceMaterials, disposeResidenceGeometry, disposeResidenceMaterials } from './residence/model';
 import { fitResidence } from './residence/camera-fit';
+import { cappedPixelRatio, frameGovernor } from './gl-support';
 
 type FormKey = 'building' | 'knot' | 'torus' | 'gem' | 'sphere';
 type MatKey = 'iridescent' | 'glass' | 'chrome' | 'clay' | 'wire';
@@ -26,7 +27,6 @@ export async function mountLab(root: HTMLElement) {
     root.classList.add('no-webgl');
     return;
   }
-  renderer.setPixelRatio(Math.min(devicePixelRatio, 1.75));
   renderer.outputColorSpace = SRGBColorSpace;
   renderer.toneMapping = ACESFilmicToneMapping;
   renderer.toneMappingExposure = 1.05;
@@ -217,7 +217,7 @@ export async function mountLab(root: HTMLElement) {
   const resize = () => {
     const w = canvas.clientWidth, h = canvas.clientHeight;
     if (!w || !h) return;
-    renderer.setPixelRatio(Math.min(devicePixelRatio, w < 480 ? 1.5 : 1.75));
+    renderer.setPixelRatio(cappedPixelRatio(w, h, w < 480 ? 1.5 : 1.75, 1_800_000) * governor.scale);
     renderer.setSize(w, h, false);
     camera.aspect = w / h;
     if (form === 'building') fitBuilding();
@@ -225,6 +225,7 @@ export async function mountLab(root: HTMLElement) {
     camera.updateProjectionMatrix();
     render();
   };
+  const governor = frameGovernor(() => resize());
   const ro = new ResizeObserver(resize);
   ro.observe(canvas);
 
@@ -249,10 +250,11 @@ export async function mountLab(root: HTMLElement) {
     mesh.scale.setScalar(1 - pop * 0.25);
     mesh.rotation.z += dt * 0.08;
     render();
+    governor.sample(dt);
     }
     raf = requestAnimationFrame(loop);
   };
-  const start = () => { if (!running && prepared && !reduced && visible && !document.hidden && !root.classList.contains('no-webgl')) { running = true; last = performance.now(); raf = requestAnimationFrame(loop); } };
+  const start = () => { if (!running && prepared && !reduced && visible && !document.hidden && !root.classList.contains('no-webgl')) { running = true; last = performance.now(); governor.reset(); raf = requestAnimationFrame(loop); } };
   const stop = () => { running = false; cancelAnimationFrame(raf); };
   let visible = false;
   const io = new IntersectionObserver(([e]) => { visible = e.isIntersecting; if (visible) start(); else stop(); });
