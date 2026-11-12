@@ -55,6 +55,28 @@ export const projects = [
     visibility: 'public',
   },
   {
+    id: 24,
+    slug: 'shemikete-auto-repair',
+    title: 'Shemikete',
+    description:
+      'Pilot website for a Tbilisi auto-repair marketplace: drivers mark vehicle damage on an interactive 3D model, compare AI-assisted estimates and shop quotes, and follow a protected payment flow. Sample requests and quotes are demo data.',
+    tags: ['Next.js', '3D Vehicle Model', 'AI Estimation', 'Marketplace', 'Bilingual'],
+    liveLink: 'https://shemikete.ge',
+    previewImage: '/project-previews/shemikete.png',
+    previewImageDimensions: { width: 1600, height: 900 },
+    galleryImages: [
+      {
+        src: '/project-previews/shemikete-damage.png',
+        width: 1600,
+        height: 900,
+        alt: 'Interactive 3D vehicle damage selector on the Shemikete website',
+        caption: 'Interactive vehicle damage selection',
+      },
+    ],
+    complexityScore: 93,
+    visibility: 'private',
+  },
+  {
     id: 12,
     slug: 'solence-energy',
     title: 'Solence Energy',

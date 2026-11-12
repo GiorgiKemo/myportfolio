@@ -4,6 +4,7 @@ export type Project = (typeof raw)[number] & {
   githubLink?: string;
   liveLinkLabel?: string;
   previewImageScrollbarWidth?: number;
+  galleryImages?: { src: string; width: number; height: number; alt: string; caption?: string }[];
 };
 
 export const projects = raw as Project[];

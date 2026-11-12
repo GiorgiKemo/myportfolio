@@ -85,6 +85,23 @@ const jsonLd = [
       </div>
     </figure>
 
+    {p.galleryImages?.length && (
+      <section class="wrap cs-gallery" aria-label={`${p.title} website screenshots`}>
+        {p.galleryImages.map((shot) => {
+          const base = shot.src.replace(/\.png$/, '');
+          return (
+            <figure>
+              <picture>
+                <source type="image/webp" srcset={`${base}-720.webp 720w, ${base}-1440.webp 1440w`} sizes="(max-width: 1320px) 94vw, 1240px" />
+                <img src={shot.src} width={shot.width} height={shot.height} alt={shot.alt} loading="lazy" decoding="async" />
+              </picture>
+              {shot.caption && <figcaption>{shot.caption}</figcaption>}
+            </figure>
+          );
+        })}
+      </section>
+    )}
+
     <section class="wrap cs-stack" aria-labelledby="stack-h">
       <h2 id="stack-h" class="kicker">Built with</h2>
       <ul>{p.tags.map((t) => <li>{t}</li>)}</ul>
@@ -135,6 +152,11 @@ const jsonLd = [
   .cs-bar i { width: 10px; height: 10px; border-radius: 50%; background: var(--line-2); }
   .cs-bar span { margin: 0 auto; font-size: 12px; color: var(--muted); padding: 4px 14px; border-radius: 8px; background: var(--surface-2); }
   .cs-frame img { width: 100%; }
+
+  .cs-gallery { margin: 24px auto 0; }
+  .cs-gallery figure { margin: 0; }
+  .cs-gallery img { display: block; width: 100%; border: 1px solid var(--line-2); border-radius: 18px; box-shadow: var(--glow); }
+  .cs-gallery figcaption { padding-top: 12px; color: var(--muted); font-size: 14px; }
 
   .cs-stack { padding: clamp(72px, 9vw, 120px) 0; display: grid; gap: 24px; }
   .cs-stack ul { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 10px; }
