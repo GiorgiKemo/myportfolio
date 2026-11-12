@@ -37,12 +37,43 @@ const jsonLd = [
     address: { '@type': 'PostalAddress', addressLocality: 'Tbilisi', addressCountry: 'GE' },
     sameAs: [site.links.github, site.links.linkedin, site.links.x],
     knowsAbout: skills.map((s) => s.name),
+    hasCredential: [
+      {
+        '@type': 'EducationalOccupationalCredential',
+        credentialCategory: 'Certificate',
+        name: 'Front-End Web Development',
+        recognizedBy: {
+          '@type': 'EducationalOrganization',
+          name: 'IT Academy Step Georgia',
+        },
+      },
+    ],
+    creator: [
+      {
+        '@type': 'SoftwareApplication',
+        name: 'ResumeATS',
+        url: 'https://www.resumeats.cv',
+        applicationCategory: 'BusinessApplication',
+      },
+      {
+        '@type': 'SoftwareApplication',
+        name: 'CDL Jobs Center',
+        url: 'https://cdljobscenter.com',
+        applicationCategory: 'BusinessApplication',
+      },
+    ],
   },
   {
     '@context': 'https://schema.org',
     '@type': 'ItemList',
     name: 'Selected projects',
-    itemListElement: projects.map((p, i) => ({ '@type': 'ListItem', position: i + 1, url: `${site.url}/work/${p.slug}/`, name: p.title })),
+    itemListElement: projects.map((p, i) => ({
+      '@type': 'ListItem',
+      position: i + 1,
+      url: `${site.url}/work/${p.slug}/`,
+      name: p.title,
+      ...(p.liveLink ? { sameAs: p.liveLink } : {}),
+    })),
   },
 ];
 ---
