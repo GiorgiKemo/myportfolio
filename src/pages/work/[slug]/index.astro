@@ -86,13 +86,13 @@ const jsonLd = [
     </figure>
 
     {p.galleryImages?.length && (
-      <section class="wrap cs-gallery" aria-label={`${p.title} website screenshots`}>
+      <section class:list={['wrap', 'cs-gallery', { 'cs-gallery--grid': p.galleryImages.length > 1 }]} aria-label={`${p.title} website screenshots`}>
         {p.galleryImages.map((shot) => {
-          const base = shot.src.replace(/\.png$/, '');
+          const base = shot.src.replace(/\.(png|jpe?g)$/i, '');
           return (
             <figure>
               <picture>
-                <source type="image/webp" srcset={`${base}-720.webp 720w, ${base}-1440.webp 1440w`} sizes="(max-width: 1320px) 94vw, 1240px" />
+                <source type="image/webp" srcset={`${base}-720.webp 720w, ${base}-1440.webp 1440w`} sizes={p.galleryImages.length > 1 ? '(max-width: 680px) 94vw, (max-width: 1320px) 46vw, 646px' : '(max-width: 1320px) 94vw, 1240px'} />
                 <img src={shot.src} width={shot.width} height={shot.height} alt={shot.alt} loading="lazy" decoding="async" />
               </picture>
               {shot.caption && <figcaption>{shot.caption}</figcaption>}
@@ -154,9 +154,11 @@ const jsonLd = [
   .cs-frame img { width: 100%; }
 
   .cs-gallery { margin: 24px auto 0; }
+  .cs-gallery--grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: clamp(16px, 2vw, 28px); }
+  .cs-gallery picture { display: block; }
   .cs-gallery figure { margin: 0; }
   .cs-gallery img { display: block; width: 100%; border: 1px solid var(--line-2); border-radius: 18px; box-shadow: var(--glow); }
-  .cs-gallery figcaption { padding-top: 12px; color: var(--muted); font-size: 14px; }
+  .cs-gallery figcaption { padding-top: 12px; color: var(--muted); font-size: 14px; line-height: 1.4; }
 
   .cs-stack { padding: clamp(72px, 9vw, 120px) 0; display: grid; gap: 24px; }
   .cs-stack ul { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 10px; }
@@ -177,5 +179,8 @@ const jsonLd = [
     .cs { padding-top: 120px; }
     .cs-meta { grid-template-columns: 1fr; }
     .cs-next img { display: none; }
+  }
+  @media (max-width: 680px) {
+    .cs-gallery--grid { grid-template-columns: 1fr; }
   }
 </style>
