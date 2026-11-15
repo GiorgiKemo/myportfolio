@@ -1,10 +1,16 @@
 ---
 import { site } from '../data/site';
+import { languages, langs, isLang, defaultLang, localizePath, basePath } from '../i18n/config';
 
 interface Props {
   cta?: { href: string; label: string; attrs?: Record<string, string> };
 }
 const { cta } = Astro.props;
+
+const seg = Astro.url.pathname.split('/')[1];
+const lang = isLang(seg) ? seg : defaultLang;
+const here = basePath(Astro.url.pathname);
+const switcher = langs.map((l) => ({ code: l, ...languages[l], href: localizePath(here, l), current: l === lang }));
 
 const nav = [
   { href: '/#work', label: 'Work', n: '01' },
@@ -32,6 +38,14 @@ const nav = [
 
     <div class="sh-actions">
       <span class="sh-clock mono" aria-label="Local time in Tbilisi"><i aria-hidden="true"></i><span data-clock>--:--</span> TBS</span>
+      <details class="sh-lang" data-lang-menu>
+        <summary aria-label="Language"><span class="mono">{languages[lang].short}</span><svg viewBox="0 0 12 12" aria-hidden="true"><path d="M3 4.5 6 7.5 9 4.5" /></svg></summary>
+        <ul>
+          {switcher.map((l) => (
+            <li><a href={l.href} hreflang={l.hreflang} lang={l.htmlLang} aria-current={l.current ? 'true' : undefined} data-lang-link><span class="mono">{l.short}</span>{l.label}</a></li>
+          ))}
+        </ul>
+      </details>
       <button class="sh-theme" type="button" data-theme-toggle aria-label="Switch colour theme">
         <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="5.2" /><path d="M12 1.8v2.4M12 19.8v2.4M4.2 4.2l1.7 1.7M18.1 18.1l1.7 1.7M1.8 12h2.4M19.8 12h2.4M4.2 19.8l1.7-1.7M18.1 5.9l1.7-1.7" /></svg>
       </button>
@@ -52,6 +66,11 @@ const nav = [
         <a href={l.href} data-hub-placement={l.placement}><span class="mono">{l.n}</span>{l.label}</a>
       ))}
     </nav>
+    <div class="sh-menu-lang mono">
+      {switcher.map((l) => (
+        <a href={l.href} hreflang={l.hreflang} lang={l.htmlLang} aria-current={l.current ? 'true' : undefined} data-lang-link>{l.label}</a>
+      ))}
+    </div>
     <div class="sh-menu-foot mono">
       <a href={`mailto:${site.email}`}>{site.email}</a>
       <span>{site.location}</span>
@@ -89,7 +108,7 @@ const nav = [
   .sh-nav { display: flex; gap: 4px; margin-inline: auto; }
   .sh-nav a {
     position: relative; display: inline-flex; align-items: baseline; gap: 6px;
-    padding: 8px 14px; border-radius: 999px; font-size: 14.5px; color: var(--text-2);
+    padding: 8px 14px; border-radius: 999px; font-size: 14.5px; color: var(--text-2); white-space: nowrap;
     transition: color 0.3s, background-color 0.3s;
   }
   .sh-nav a:hover { color: var(--text); background: var(--surface-2); }
@@ -107,6 +126,28 @@ const nav = [
   .sh-theme svg { width: 17px; fill: none; stroke: currentColor; stroke-width: 1.6; stroke-linecap: round; }
   .sh-theme circle { fill: currentColor; fill-opacity: 0; transition: fill-opacity 0.3s; }
   :global([data-theme='light']) .sh-theme circle { fill-opacity: 1; }
+
+  .sh-lang { position: relative; }
+  .sh-lang summary {
+    list-style: none; cursor: pointer; height: 38px; padding: 0 10px 0 12px; border-radius: 999px; border: 1px solid var(--line-2);
+    display: inline-flex; align-items: center; gap: 6px; font-size: 12px; transition: border-color 0.3s;
+  }
+  .sh-lang summary::-webkit-details-marker { display: none; }
+  .sh-lang summary:hover, .sh-lang[open] summary { border-color: var(--text); }
+  .sh-lang summary svg { width: 10px; fill: none; stroke: currentColor; stroke-width: 1.6; transition: transform 0.3s var(--ease); }
+  .sh-lang[open] summary svg { transform: rotate(180deg); }
+  .sh-lang ul {
+    position: absolute; right: 0; top: calc(100% + 8px); margin: 0; padding: 6px; list-style: none; min-width: 170px;
+    background: var(--bg); border: 1px solid var(--line-2); border-radius: 16px; box-shadow: 0 20px 50px -20px rgba(0, 0, 0, 0.6);
+  }
+  .sh-lang a { display: flex; align-items: center; gap: 12px; padding: 9px 12px; border-radius: 10px; font-size: 14px; color: var(--text-2); }
+  .sh-lang a .mono { font-size: 11px; color: var(--muted); width: 18px; }
+  .sh-lang a:hover { background: var(--surface-2); color: var(--text); }
+  .sh-lang a[aria-current] { color: var(--text); }
+  .sh-lang a[aria-current] .mono { color: var(--signal-ink); }
+  .sh-menu-lang { display: flex; gap: 8px; flex-wrap: wrap; margin: 24px 0; }
+  .sh-menu-lang a { padding: 8px 14px; border: 1px solid var(--line-2); border-radius: 999px; font-size: 13px; color: var(--text-2); }
+  .sh-menu-lang a[aria-current] { border-color: var(--signal); color: var(--text); }
 
   .sh-burger { display: none; width: 42px; height: 42px; border-radius: 50%; border: 1px solid var(--line-2); background: transparent; position: relative; }
   .sh-burger i { position: absolute; left: 12px; right: 12px; height: 1.5px; background: currentColor; transition: transform 0.5s var(--ease), top 0.5s var(--ease); }
@@ -140,12 +181,37 @@ const nav = [
   .sh-menu-foot { display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; font-size: 13px; color: var(--muted); }
 
   @media (max-width: 1080px) { .sh-clock { display: none; } }
+  /* Georgian and Russian labels run longer, so the inline nav hands over to the menu sooner. */
+  @media (max-width: 1240px) { :global(html:not([lang='en'])) .sh-clock { display: none; } }
+  @media (max-width: 1100px) {
+    :global(html:not([lang='en'])) .sh-nav { display: none; }
+    :global(html:not([lang='en'])) .sh-burger { display: block; }
+    :global(html:not([lang='en'])) .sh-nav + .sh-actions { margin-left: auto; }
+  }
+  /* Georgian nav labels are the longest; collapse to the menu earlier. */
+  @media (max-width: 1320px) {
+    :global(html[lang='ka']) .sh-nav { display: none; }
+    :global(html[lang='ka']) .sh-burger { display: block; }
+    :global(html[lang='ka']) .sh-nav + .sh-actions { margin-left: auto; }
+  }
   @media (max-width: 900px) {
     .sh-nav { display: none; }
+    .sh-lang { display: none; }
     .sh-burger { display: block; }
+    .sh-nav + .sh-actions { margin-left: auto; }
     .sh-inner { padding-left: 14px; }
   }
   @media (max-width: 480px) {
     .sh-cta { display: none; }
   }
 </style>
+
+<script is:inline>
+  // Close the language menu on outside click or Escape.
+  (() => {
+    const m = document.querySelector('[data-lang-menu]');
+    if (!m) return;
+    document.addEventListener('click', (e) => { if (m.open && !m.contains(e.target)) m.open = false; });
+    document.addEventListener('keydown', (e) => { if (e.key === 'Escape') m.open = false; });
+  })();
+</script>

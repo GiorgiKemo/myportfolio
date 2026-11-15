@@ -1,10 +1,15 @@
 ---
 import { site } from '../../data/site';
-const lines = [
-  ['I', 'design', '&', 'build'],
-  ['digital', 'products'],
-  ['that', '<em>feel</em>', 'alive.'],
-];
+import { langOf } from '../../i18n/config';
+// The headline is split into animated words, so each language supplies its own lines.
+// The 2nd word of line 3 gets the spectrum gradient.
+const headlines = {
+  en: [['I', 'design', '&', 'build'], ['digital', 'products'], ['that', '<em>feel</em>', 'alive.']],
+  ka: [['ვქმნი', 'ციფრულ'], ['პროდუქტებს,'], ['რომლებიც', '<em>ცოცხლობს.</em>']],
+  ru: [['Создаю', 'цифровые'], ['продукты,'], ['которые', '<em>живут.</em>']],
+};
+const lang = langOf(Astro.url);
+const lines = headlines[lang];
 ---
 
 <script is:inline>
@@ -12,7 +17,7 @@ const lines = [
   requestAnimationFrame(() => requestAnimationFrame(() => document.documentElement.classList.add('is-loaded')));
 </script>
 
-<section class="hero" aria-labelledby="hero-title">
+<section class={`hero hero-${lang}`} aria-labelledby="hero-title">
   <div class="hero-bg" aria-hidden="true">
     <div class="hero-fallback"></div>
     <canvas class="hero-canvas" data-hero-canvas></canvas>
@@ -113,11 +118,15 @@ const lines = [
   .hero-meta span { display: inline-flex; align-items: center; gap: 8px; }
   .dot { width: 6px; height: 6px; border-radius: 50%; background: #3dff8a; box-shadow: 0 0 10px #3dff8a; }
 
+  /* Georgian and Russian words are longer and wider: smaller, less tightly tracked headline. */
+  .hero-ka .hero-title, .hero-ru .hero-title { font-size: clamp(44px, 8.4vw, 150px); letter-spacing: -0.045em; line-height: 0.98; }
+  .hero-ka .hero-title { font-size: clamp(38px, 7.4vw, 132px); letter-spacing: -0.02em; line-height: 1.08; }
   @media (max-width: 980px) {
     .hero-bottom { grid-template-columns: 1fr; gap: 24px; }
     .hero-meta { align-items: start; flex-direction: row; gap: 20px; }
   }
   @media (max-width: 640px) {
+    .hero-ka .hero-title, .hero-ru .hero-title { font-size: clamp(32px, 10vw, 60px); }
     .hero-title { font-size: clamp(44px, 13.4vw, 80px); margin: 32px 0 28px; }
     .hl { white-space: normal; }
     .hl-2, .hl-3 { padding-left: 0; }

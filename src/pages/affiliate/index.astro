@@ -4,7 +4,14 @@ import '../../styles/hub.css';
 import hubMeta from '../../data/hub.json';
 import { guides, topics } from '../../data/guides';
 
+import { langOf } from '../../i18n/config';
 const total = guides.length;
+// Animated per-word headline; the last word of line 2 gets struck through.
+const h1 = {
+  en: [['Pick', 'the', 'right', 'tools.'], ['Skip', 'the', 'regret.']],
+  ka: [['აირჩიე', 'სწორი', 'ხელსაწყოები.'], ['აიცილე', 'სინანული.']],
+  ru: [['Выбирайте', 'нужные', 'инструменты.'], ['Без', 'сожалений.']],
+}[langOf(Astro.url)];
 const interactiveCount = 5; // as published on the previous hub
 const counts = Object.fromEntries(topics.map((t) => [t.id, guides.filter((g) => g.cats.includes(t.id)).length]));
 const nodes = guides.map((g) => ({ t: g.title, h: g.href, c: g.topic, p: g.priority }));
@@ -101,8 +108,8 @@ const marquee = ['Web hosting', 'AI website assistants', 'Homeschool planning', 
         </div>
 
         <h1 id="fg-title" class="fg-h1">
-          <span class="fg-line"><span class="fg-w" style="--i:0">Pick</span> <span class="fg-w" style="--i:1">the</span> <span class="fg-w" style="--i:2">right</span> <span class="fg-w" style="--i:3">tools.</span></span>
-          <em class="fg-line fg-line-2"><span class="fg-w" style="--i:4">Skip</span> <span class="fg-w" style="--i:5">the</span> <span class="fg-w fg-strike" style="--i:6">regret.</span></em>
+          <span class="fg-line">{h1[0].map((w, i) => <><span class="fg-w" style={`--i:${i}`}>{w}</span>{' '}</>)}</span>
+          <em class="fg-line fg-line-2">{h1[1].map((w, i, all) => <><span class:list={['fg-w', { 'fg-strike': i === all.length - 1 }]} style={`--i:${h1[0].length + i}`}>{w}</span>{i < all.length - 1 && ' '}</>)}</em>
         </h1>
 
         <div class="fg-hero-grid">

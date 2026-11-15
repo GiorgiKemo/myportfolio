@@ -1,0 +1,6 @@
+---
+import Page, { getStaticPaths as base } from '../../../work/[slug]/index.astro';
+import { prefixedLangs } from '../../../../i18n/config';
+export const getStaticPaths = () => prefixedLangs.flatMap((lang) => base().map((p) => ({ ...p, params: { ...p.params, lang } })));
+---
+<Page {...Astro.props} />
