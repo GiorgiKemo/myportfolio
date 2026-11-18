@@ -248,6 +248,35 @@ export const projects = [
     visibility: 'public',
   },
   {
+    id: 25,
+    slug: 'lashes-by-monika',
+    title: 'Lashes by Monika',
+    description:
+      'Bilingual Georgian and English website for a Tbilisi lash-extension studio: an animated eye preloader, watercolor flowers that sway in WebGL, macro video, services and a live-synced price list, a lightbox gallery, light and dark themes, a studio map, and local SEO.',
+    tags: ['JavaScript', 'WebGL', 'HTML & CSS', 'Bilingual', 'Local SEO'],
+    liveLink: 'https://lashesbymonika.ge',
+    previewImage: '/project-previews/lashes-by-monika.jpg',
+    previewImageDimensions: { width: 1366, height: 768 },
+    galleryImages: [
+      {
+        src: '/project-previews/lashes-by-monika-services.jpg',
+        width: 1600,
+        height: 900,
+        alt: 'Lashes by Monika services section with a macro lash video in an arched frame',
+        caption: 'Services beside a looping macro video',
+      },
+      {
+        src: '/project-previews/lashes-by-monika-prices-dark.jpg',
+        width: 1600,
+        height: 900,
+        alt: 'Lashes by Monika price list in dark theme',
+        caption: 'Price list in the dark theme',
+      },
+    ],
+    complexityScore: 67,
+    visibility: 'private',
+  },
+  {
     id: 8,
     slug: 'cornerstone-roofing-co',
     title: 'Cornerstone Roofing Co.',
