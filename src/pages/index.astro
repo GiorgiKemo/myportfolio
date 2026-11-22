@@ -4,6 +4,7 @@ import Hero from '../components/home/Hero.astro';
 import Marquee from '../components/home/Marquee.astro';
 import About from '../components/home/About.astro';
 import Work from '../components/home/Work.astro';
+import Experience from '../components/home/Experience.astro';
 import Capabilities from '../components/home/Capabilities.astro';
 import Lab from '../components/home/Lab.astro';
 import Stack from '../components/home/Stack.astro';
@@ -13,9 +14,10 @@ import Contact from '../components/home/Contact.astro';
 import { site } from '../data/site';
 import { projects } from '../data/projects';
 import { skills } from '../data/portfolioData.js';
+import { credentials } from '../data/career';
 
 const description =
-  "Giorgi Kemoklidze is an independent full-stack developer in Tbilisi building production websites, AI tools, 3D web experiences and Supabase-backed apps with React, Next.js, Astro and TypeScript.";
+  "Giorgi Kemoklidze is a full-stack web and mobile developer in Tbilisi with 3 years of experience building websites, SaaS, AI tools and apps with React, Next.js, Flutter and React Native.";
 
 const jsonLd = [
   {
@@ -37,17 +39,13 @@ const jsonLd = [
     address: { '@type': 'PostalAddress', addressLocality: 'Tbilisi', addressCountry: 'GE' },
     sameAs: [site.links.github, site.links.linkedin, site.links.x],
     knowsAbout: skills.map((s) => s.name),
-    hasCredential: [
-      {
-        '@type': 'EducationalOccupationalCredential',
-        credentialCategory: 'Certificate',
-        name: 'Front-End Web Development',
-        recognizedBy: {
-          '@type': 'EducationalOrganization',
-          name: 'IT Academy Step Georgia',
-        },
-      },
-    ],
+    hasCredential: credentials.map((c) => ({
+      '@type': 'EducationalOccupationalCredential',
+      credentialCategory: 'Certificate',
+      name: c.name,
+      recognizedBy: { '@type': 'Organization', name: c.issuer },
+      ...(c.id ? { identifier: c.id } : {}),
+    })),
     founder: {
       '@type': 'SoftwareApplication',
       name: 'ResumeATS',
@@ -81,13 +79,14 @@ const jsonLd = [
 <Base title="Giorgi Kemoklidze · Full-Stack Developer & Designer" description={description} path="/" ogType="profile" jsonLd={jsonLd} footerCta={false}>
   <main id="main">
     <Hero />
-    <Marquee items={['React', 'Next.js', 'Three.js', 'TypeScript', 'Supabase', 'Astro', 'UX design', 'Stripe', 'WebGL', 'SEO', 'AI tools', 'PostgreSQL']} />
+    <Marquee items={['React', 'Next.js', 'React Native', 'Flutter', 'Three.js', 'TypeScript', 'Supabase', 'Astro', 'UX design', 'Stripe', 'WebGL', 'SEO', 'AI tools', 'PostgreSQL']} />
     <About />
     <Work />
+    <Experience />
     <Capabilities />
     <Lab />
     <Stack />
-    <Marquee reverse items={['Websites', 'Dashboards', 'AI assistants', '3D explorers', 'Marketplaces', 'Automation', 'Landing pages', 'MCP servers']} />
+    <Marquee reverse items={['Websites', 'Mobile apps', 'Dashboards', 'AI assistants', '3D explorers', 'Marketplaces', 'Automation', 'Landing pages', 'MCP servers']} />
     <Services />
     <Resources />
     <Contact />

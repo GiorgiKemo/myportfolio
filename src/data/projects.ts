@@ -2,6 +2,8 @@ import { projects as raw } from './portfolioData.js';
 
 export type Project = (typeof raw)[number] & {
   githubLink?: string;
+  liveLink?: string;
+  platform?: 'mobile';
   liveLinkLabel?: string;
   previewImageScrollbarWidth?: number;
   galleryImages?: { src: string; width: number; height: number; alt: string; caption?: string }[];
@@ -30,6 +32,7 @@ export const primaryTag = (p: Project) => p.tags[0];
 /** A short category label for the index list. */
 export const kindOf = (p: Project) => {
   const t = p.tags.join(' ').toLowerCase();
+  if (p.platform === 'mobile') return 'Mobile app';
   if (/3d/.test(t)) return '3D experience';
   if (/stripe|matching|crm|dashboard|supabase/.test(t) && /react|next/.test(t)) return 'Web app';
   if (/mcp|python/.test(t)) return 'Open source';

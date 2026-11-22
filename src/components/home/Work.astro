@@ -1,7 +1,7 @@
 ---
 import { projects, previewSources, kindOf } from '../../data/projects';
 
-const featured = projects.slice(0, 6);
+const featured = projects.slice(0, 9);
 const rest = projects;
 const pad = (n: number) => String(n).padStart(2, '0');
 ---
@@ -12,7 +12,7 @@ const pad = (n: number) => String(n).padStart(2, '0');
     <h2 id="work-title" class="work-title">
       Things I've <span class="serif">shipped</span>
     </h2>
-    <p class="work-intro">Production platforms, company sites and experiments, ordered by how much engineering went into them.</p>
+    <p class="work-intro">SaaS products, client websites, 3D experiences and mobile apps, designed and built from first idea to launch.</p>
   </div>
 
   <div class="rail" data-rail>
@@ -30,7 +30,7 @@ const pad = (n: number) => String(n).padStart(2, '0');
                   width={img.width}
                   height={img.height}
                   style={img.style}
-                  alt={`${p.title} website preview`}
+                  alt={`${p.title} preview`}
                   loading={i < 2 ? 'eager' : 'lazy'}
                   decoding="async"
                 />

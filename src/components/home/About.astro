@@ -1,10 +1,10 @@
 ---
-import { projects, skills } from '../../data/portfolioData.js';
+import { projects } from '../../data/projects';
 
 const statement =
-  "I'm Giorgi, a full-stack developer who builds complete web products that solve real business problems. I obsess over the details people feel but rarely notice: motion that guides, interfaces that stay out of the way, pages that load before you blink, and back-ends that simply keep working.";
+  "I'm Giorgi, a full-stack developer with 3 years of experience building web and mobile products that solve real business problems. I obsess over the details people feel but rarely notice: motion that guides, interfaces that stay out of the way, pages that load before you blink, and back-ends that simply keep working.";
 
-const livePublic = projects.length;
+const mobileApps = projects.filter((p) => p.platform === 'mobile').length;
 ---
 
 <section id="about" class="about" aria-labelledby="about-title">
@@ -19,11 +19,12 @@ const livePublic = projects.length;
     <div class="about-grid">
       <div class="about-copy reveal">
         <p>
-          Recent work includes <strong>CDL Jobs Center</strong>, a production hiring marketplace; <strong>ResumeATS.cv</strong>, an AI resume builder;{' '}
-          <strong>RoadReady</strong> driving-slot alerts; AIXCO company sites; CRM dashboards and a string of local-business websites.
+          I founded <strong>ResumeATS</strong>, an AI resume builder for web and mobile. My recent work includes <strong>AiXESS</strong> and{' '}
+          <strong>AIXCO Global</strong> in real estate, the <strong>Shemikete</strong> car-repair marketplace, brand sites for{' '}
+          <strong>Lashes by Monika</strong> and <strong>Maiseli Winery</strong>, and the <strong>CDL Jobs Center</strong> hiring platform.
         </p>
         <p>
-          My main stack is React, Next.js, Astro, TypeScript, Supabase, PostgreSQL, Stripe, Vercel and Tailwind CSS, plus AI services, Telegram automation, SEO,
+          My main stack is React, Next.js, React Native, Flutter, Astro, TypeScript, Supabase, PostgreSQL, Stripe, Vercel and Tailwind CSS, plus AI services, Telegram automation, SEO,
           analytics, testing and deployment workflows.
         </p>
         <p>
@@ -34,16 +35,16 @@ const livePublic = projects.length;
 
       <dl class="stats">
         <div class="stat reveal">
-          <dt class="mono">Live projects</dt>
-          <dd><span data-count={livePublic}>{livePublic}</span></dd>
+          <dt class="mono">Years of experience</dt>
+          <dd><span data-count={3}>3</span></dd>
         </div>
         <div class="stat reveal">
-          <dt class="mono">Technologies in daily use</dt>
-          <dd><span data-count={skills.length}>{skills.length}</span></dd>
+          <dt class="mono">Projects</dt>
+          <dd><span data-count={projects.length}>{projects.length}</span></dd>
         </div>
         <div class="stat reveal">
-          <dt class="mono">From idea to launch</dt>
-          <dd>1<span class="serif">person</span></dd>
+          <dt class="mono">Mobile apps</dt>
+          <dd><span data-count={mobileApps}>{mobileApps}</span></dd>
         </div>
       </dl>
     </div>
