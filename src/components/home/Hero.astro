@@ -39,10 +39,17 @@ const lines = [
     </h1>
 
     <div class="hero-bottom">
-      <p class="hero-lede hero-fade">
-        Websites, SaaS platforms, iOS and Android apps and AI tools, taken from first idea to launch, with the craft of a
-        design studio and the rigour of an engineer.
-      </p>
+      <div class="hero-lede-wrap hero-fade">
+        <p class="hero-lede">
+          Websites, SaaS platforms, iOS and Android apps and AI tools, taken from first idea to launch, with the craft of a
+          design studio and the rigour of an engineer.
+        </p>
+        <ul class="hero-proof mono" aria-label="At a glance">
+          <li><strong>80+</strong> shipped projects</li>
+          <li><strong>3</strong> iPhone apps in beta</li>
+          <li>Web <span aria-hidden="true">+</span><span class="sr-only">and</span> mobile</li>
+        </ul>
+      </div>
       <div class="hero-cta hero-fade">
         <a class="btn btn-signal" href="#work" data-magnetic>See the work <span class="arrow" aria-hidden="true">↓</span></a>
         <a class="btn btn-ghost" href="#contact" data-magnetic>Start a project</a>
@@ -108,6 +115,16 @@ const lines = [
 
   .hero-bottom { display: grid; grid-template-columns: minmax(0, 1.1fr) auto minmax(0, 0.7fr); gap: 32px; align-items: end; }
   .hero-lede { max-width: 440px; color: var(--text-2); font-size: 17px; }
+  .hero-proof {
+    list-style: none; margin: 18px 0 0; padding: 0; display: flex; flex-wrap: wrap; gap: 8px;
+    font-size: 11.5px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted);
+  }
+  .hero-proof li {
+    display: inline-flex; align-items: center; gap: 6px; padding: 6px 11px;
+    border: 1px solid var(--line-2); border-radius: 999px;
+    background: color-mix(in oklab, var(--bg) 55%, transparent); backdrop-filter: blur(8px);
+  }
+  .hero-proof strong { color: var(--signal-ink); font-weight: 500; }
   .hero-cta { display: flex; gap: 12px; flex-wrap: wrap; }
   .hero-meta { display: flex; flex-direction: column; align-items: end; gap: 6px; font-size: 12px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.1em; }
   .hero-meta span { display: inline-flex; align-items: center; gap: 8px; }
