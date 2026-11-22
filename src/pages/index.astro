@@ -2,6 +2,7 @@
 import Base from '../layouts/Base.astro';
 import Hero from '../components/home/Hero.astro';
 import Marquee from '../components/home/Marquee.astro';
+import Hook from '../components/home/Hook.astro';
 import About from '../components/home/About.astro';
 import Work from '../components/home/Work.astro';
 import Experience from '../components/home/Experience.astro';
@@ -80,6 +81,7 @@ const jsonLd = [
   <main id="main">
     <Hero />
     <Marquee items={['React', 'Next.js', 'React Native', 'Flutter', 'Three.js', 'TypeScript', 'Supabase', 'Astro', 'UX design', 'Stripe', 'WebGL', 'SEO', 'AI tools', 'PostgreSQL']} />
+    <Hook />
     <About />
     <Work />
     <Experience />

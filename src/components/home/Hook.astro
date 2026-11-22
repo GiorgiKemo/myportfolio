@@ -1,0 +1,25 @@
+---
+// One-line positioning hook, shown between the hero and the rest of the page.
+---
+
+<section class="hook" aria-label="What I do">
+  <div class="wrap hook-inner reveal">
+    <p class="kicker">Idea to launch</p>
+    <p class="hook-line">
+      Most projects stall between the idea and the launch. <span class="hook-em">I take them all the way:</span>{' '}
+      design, code, testing and release, on the web and on mobile.
+    </p>
+  </div>
+</section>
+
+<style>
+  .hook { padding: clamp(72px, 9vw, 128px) 0 0; }
+  .hook-inner { display: grid; grid-template-columns: minmax(160px, 0.3fr) 1fr; gap: 20px clamp(24px, 5vw, 72px); align-items: start; }
+  .hook-inner .kicker { padding-top: 0.7em; }
+  .hook-line {
+    font-size: clamp(24px, 2.9vw, 44px); font-weight: 520; letter-spacing: -0.035em; line-height: 1.14;
+    color: var(--muted); max-width: 30ch; max-width: 1040px; text-wrap: balance;
+  }
+  .hook-em { color: var(--text); }
+  @media (max-width: 760px) { .hook-inner { grid-template-columns: 1fr; } .hook-inner .kicker { padding-top: 0; } }
+</style>
