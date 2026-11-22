@@ -46,13 +46,12 @@ export const projects = [
     description:
       'AI-powered resume builder with ATS-safe templates, secure authentication, premium billing, PDF and DOCX export, and automation for job-search workflows.',
     tags: ['React', 'Vite', 'Supabase', 'Stripe', 'Python', 'PDF Export', 'AI'],
-    githubLink: 'https://github.com/GiorgiKemo/ats-friendly-resume-builder',
     liveLink: 'https://www.resumeats.cv',
     previewImage: '/project-previews/ats-friendly-resume-builder.png',
     previewImageDimensions: { width: 1600, height: 900 },
     previewImageScrollbarWidth: 15,
     complexityScore: 94,
-    visibility: 'public',
+    visibility: 'private',
   },
   {
     id: 24,
@@ -139,12 +138,11 @@ export const projects = [
     description:
       'Client CRM interface built with Next.js and Supabase for structured customer management, responsive dashboards, and business workflow tracking.',
     tags: ['Next.js', 'TypeScript', 'Supabase', 'CRM', 'Tailwind CSS'],
-    githubLink: 'https://github.com/GiorgiKemo/mlc-crm',
     liveLink: 'https://mlc-crm-eta.vercel.app',
     previewImage: '/project-previews/mlc-crm.png',
     previewImageDimensions: { width: 1366, height: 768 },
     complexityScore: 73,
-    visibility: 'public',
+    visibility: 'private',
   },
   {
     id: 7,
@@ -153,12 +151,11 @@ export const projects = [
     description:
       'Luxury service website with a Next.js frontend, Supabase integration, refined animation, custom forms, responsive content sections, and polished visual presentation.',
     tags: ['Next.js', 'TypeScript', 'Supabase', 'Framer Motion', 'Tailwind CSS'],
-    githubLink: 'https://github.com/GiorgiKemo/avital-chicago',
     liveLink: 'https://avital-chicago.vercel.app',
     previewImage: '/project-previews/avital-chicago.png',
     previewImageDimensions: { width: 1366, height: 768 },
     complexityScore: 70,
-    visibility: 'public',
+    visibility: 'private',
   },
   {
     id: 16,
@@ -167,13 +164,12 @@ export const projects = [
     description:
       'Art catalogue featuring Georgian painters, biography pages, selected works, and a browsable collection of paintings.',
     tags: ['Next.js', 'React', 'TypeScript', 'Vercel'],
-    githubLink: 'https://github.com/GiorgiKemo/georgian-painters',
     liveLink: 'https://georgian-painters.vercel.app',
     previewImage: '/project-previews/georgian-painters.png',
     previewImageDimensions: { width: 1366, height: 768 },
     previewImageScrollbarWidth: 15,
     complexityScore: 69,
-    visibility: 'public',
+    visibility: 'private',
   },
   {
     id: 17,
@@ -283,12 +279,11 @@ export const projects = [
     description:
       'Contractor website with a Next.js frontend, lead-generation forms, service pages, responsive layouts, and a clean local-business user journey.',
     tags: ['Next.js', 'TypeScript', 'React Hook Form', 'Tailwind CSS', 'Vercel'],
-    githubLink: 'https://github.com/GiorgiKemo/cornerstone-roofing-co',
     liveLink: 'https://cornerstone-roofing-co.vercel.app',
     previewImage: '/project-previews/cornerstone-roofing-co.png',
     previewImageDimensions: { width: 1366, height: 768 },
     complexityScore: 66,
-    visibility: 'public',
+    visibility: 'private',
   },
   {
     id: 18,
