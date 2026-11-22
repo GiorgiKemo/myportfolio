@@ -1,0 +1,288 @@
+{
+  "airdrops-geo": {
+    "desktop": {
+      "full": true,
+      "ratio": 1.3472
+    },
+    "tint": "#f6f8fb",
+    "mobile": {
+      "full": true,
+      "ratio": 5.959
+    },
+    "statusBg": "#fefeff",
+    "statusInk": "#000"
+  },
+  "aixco-energy": {
+    "desktop": {
+      "full": true,
+      "ratio": 3.75
+    },
+    "tint": "#cac5be",
+    "mobile": {
+      "full": true,
+      "ratio": 15.3846
+    },
+    "statusBg": "#f9f7f4",
+    "statusInk": "#000"
+  },
+  "aixco-global-website": {
+    "desktop": {
+      "full": true,
+      "ratio": 3.75
+    },
+    "tint": "#575b60",
+    "mobile": {
+      "full": true,
+      "ratio": 15.3846
+    },
+    "statusBg": "#374556",
+    "statusInk": "#fff"
+  },
+  "aixess-broker-mvp": {
+    "desktop": {
+      "full": true,
+      "ratio": 3.75
+    },
+    "tint": "#495469",
+    "mobile": {
+      "full": true,
+      "ratio": 15.3846
+    },
+    "statusBg": "#022252",
+    "statusInk": "#fff"
+  },
+  "ats-friendly-resume-builder": {
+    "desktop": {
+      "full": true,
+      "ratio": 3.75
+    },
+    "tint": "#dde2e8",
+    "mobile": {
+      "full": true,
+      "ratio": 15.3846
+    },
+    "statusBg": "#f8fafc",
+    "statusInk": "#000"
+  },
+  "avital-chicago": {
+    "desktop": {
+      "full": true,
+      "ratio": 3.75
+    },
+    "tint": "#27243b",
+    "mobile": {
+      "full": true,
+      "ratio": 15.3846
+    },
+    "statusBg": "#141623",
+    "statusInk": "#fff"
+  },
+  "cdl-jobs-center": {
+    "desktop": {
+      "full": true,
+      "ratio": 1.0611
+    },
+    "tint": "#d8d9e1",
+    "mobile": {
+      "full": true,
+      "ratio": 6.6231
+    },
+    "statusBg": "#ffffff",
+    "statusInk": "#000"
+  },
+  "cornerstone-roofing-co": {
+    "desktop": {
+      "full": true,
+      "ratio": 3.2468
+    },
+    "tint": "#2b2e28",
+    "mobile": {
+      "full": true,
+      "ratio": 15.3846
+    },
+    "statusBg": "#75644f",
+    "statusInk": "#fff"
+  },
+  "finance-flow": {
+    "desktop": {
+      "full": true,
+      "ratio": 2.1931
+    },
+    "tint": "#f7f9f9",
+    "mobile": {
+      "full": true,
+      "ratio": 15.3846
+    },
+    "statusBg": "#fcfdfd",
+    "statusInk": "#000"
+  },
+  "georgia-driver-alert": {
+    "desktop": {
+      "full": true,
+      "ratio": 0.7306
+    },
+    "tint": "#f8f5f3",
+    "mobile": {
+      "full": true,
+      "ratio": 3.4026
+    },
+    "statusBg": "#fefefe",
+    "statusInk": "#000"
+  },
+  "georgian-painters": {
+    "desktop": {
+      "full": true,
+      "ratio": 2.7444
+    },
+    "tint": "#d2d2d1",
+    "mobile": {
+      "full": true,
+      "ratio": 15.3846
+    },
+    "statusBg": "#ffffff",
+    "statusInk": "#000"
+  },
+  "lashes-by-monika": {
+    "desktop": {
+      "full": true,
+      "ratio": 3.75
+    },
+    "tint": "#f3d0d6",
+    "mobile": {
+      "full": true,
+      "ratio": 15.3846
+    },
+    "statusBg": "#fbdae1",
+    "statusInk": "#000"
+  },
+  "life-idea": {
+    "desktop": {
+      "full": true,
+      "ratio": 3.75
+    },
+    "tint": "#ece5da",
+    "mobile": {
+      "full": true,
+      "ratio": 15.3846
+    },
+    "statusBg": "#fcfaf5",
+    "statusInk": "#000"
+  },
+  "loop-meeting-room-booking": {
+    "desktop": {
+      "full": false,
+      "ratio": 0.625
+    },
+    "tint": "#fdfdfc",
+    "mobile": {
+      "full": true,
+      "ratio": 4.2718
+    },
+    "statusBg": "#ffffff",
+    "statusInk": "#000"
+  },
+  "maiseli-winery": {
+    "desktop": {
+      "full": true,
+      "ratio": 3.75
+    },
+    "tint": "#7b6c62",
+    "mobile": {
+      "full": true,
+      "ratio": 15.3846
+    },
+    "statusBg": "#54545e",
+    "statusInk": "#fff"
+  },
+  "mcp-seo-audit": {
+    "desktop": {
+      "full": true,
+      "ratio": 3.75
+    },
+    "tint": "#151b1b",
+    "mobile": {
+      "full": true,
+      "ratio": 15.3846
+    },
+    "statusBg": "#060f11",
+    "statusInk": "#fff"
+  },
+  "mlc-crm": {
+    "desktop": {
+      "full": true,
+      "ratio": 2.1931
+    },
+    "tint": "#f0f1f0",
+    "mobile": {
+      "full": true,
+      "ratio": 11.1462
+    },
+    "statusBg": "#f5f7f8",
+    "statusInk": "#000"
+  },
+  "resumeats-app": {
+    "desktop": {
+      "full": true,
+      "ratio": 3.75
+    },
+    "tint": "#dde2e8",
+    "mobile": {
+      "full": false,
+      "ratio": 2.2679
+    },
+    "statusBg": "#f6fcfc",
+    "statusInk": "#000"
+  },
+  "shemikete-app": {
+    "desktop": {
+      "full": true,
+      "ratio": 3.75
+    },
+    "tint": "#fafafa",
+    "mobile": {
+      "full": false,
+      "ratio": 2.241
+    },
+    "statusBg": "#1f2025",
+    "statusInk": "#fff"
+  },
+  "shemikete-auto-repair": {
+    "desktop": {
+      "full": true,
+      "ratio": 3.75
+    },
+    "tint": "#fafafa",
+    "mobile": {
+      "full": true,
+      "ratio": 15.3846
+    },
+    "statusBg": "#fcfcfc",
+    "statusInk": "#000"
+  },
+  "soft-spot-studio": {
+    "desktop": {
+      "full": true,
+      "ratio": 2.2486
+    },
+    "tint": "#d8cdc2",
+    "mobile": {
+      "full": true,
+      "ratio": 11.3923
+    },
+    "statusBg": "#26312a",
+    "statusInk": "#fff"
+  },
+  "solence-energy": {
+    "desktop": {
+      "full": true,
+      "ratio": 3.75
+    },
+    "tint": "#435256",
+    "mobile": {
+      "full": true,
+      "ratio": 15.3846
+    },
+    "statusBg": "#4a525a",
+    "statusInk": "#fff"
+  }
+}
