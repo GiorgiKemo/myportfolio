@@ -11,7 +11,7 @@ const projectRoot = join(dirname(fileURLToPath(import.meta.url)), '..', '..');
 describe('portfolio project hierarchy', () => {
   it('shows the featured projects in the chosen order', () => {
     assert.deepEqual(
-      projects.slice(0, 6).map((project) => project.slug),
+      projects.slice(0, 9).map((project) => project.slug),
       [
         'ats-friendly-resume-builder',
         'lashes-by-monika',
@@ -19,6 +19,9 @@ describe('portfolio project hierarchy', () => {
         'shemikete-auto-repair',
         'maiseli-winery',
         'aixco-global-website',
+        'resumeats-app',
+        'shemikete-app',
+        'reachline-app',
       ],
     );
   });
@@ -47,9 +50,9 @@ describe('portfolio project hierarchy', () => {
     ].forEach((slug) => assert.ok(slugs.has(slug), `${slug} is missing`));
   });
 
-  it('only includes projects that have live previews', () => {
+  it('only includes websites with live links, and projects with previews', () => {
     projects.forEach((project) => {
-      assert.ok(project.liveLink, `${project.slug} is missing a live link`);
+      if (project.platform !== 'mobile') assert.ok(project.liveLink, `${project.slug} is missing a live link`);
       assert.ok(project.previewImage, `${project.slug} is missing a preview image`);
       assert.ok(
         project.previewImageDimensions?.width > 0 && project.previewImageDimensions?.height > 0,

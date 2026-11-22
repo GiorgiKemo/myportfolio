@@ -46,7 +46,7 @@ const jsonLd = [
   description={p.description}
   path={`/work/${p.slug}/`}
   ogImage={p.previewImage}
-  ogImageAlt={`${p.title} website preview`}
+  ogImageAlt={`${p.title} preview`}
   ogType="article"
   jsonLd={jsonLd}
 >
@@ -80,13 +80,13 @@ const jsonLd = [
         <div class="cs-bar" aria-hidden="true"><i></i><i></i><i></i><span class="mono">{p.liveLink ? host(p.liveLink) : p.slug}</span></div>
         <picture>
           <source type="image/webp" srcset={img.srcset} sizes="(max-width: 1320px) 94vw, 1240px" />
-          <img src={img.fallback} width={img.width} height={img.height} alt={`${p.title} homepage screenshot`} fetchpriority="high" />
+          <img src={img.fallback} width={img.width} height={img.height} alt={`${p.title} ${p.platform === 'mobile' ? 'app screens' : 'homepage screenshot'}`} fetchpriority="high" />
         </picture>
       </div>
     </figure>
 
     {p.galleryImages?.length && (
-      <section class:list={['wrap', 'cs-gallery', { 'cs-gallery--grid': p.galleryImages.length > 1 }]} aria-label={`${p.title} website screenshots`}>
+      <section class:list={['wrap', 'cs-gallery', { 'cs-gallery--grid': p.galleryImages.length > 1 }]} aria-label={`${p.title} screenshots`}>
         {p.galleryImages.map((shot) => {
           const base = shot.src.replace(/\.(png|jpe?g)$/i, '');
           return (
