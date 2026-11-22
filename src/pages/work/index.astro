@@ -1,7 +1,8 @@
 ---
 import Base from '../../layouts/Base.astro';
-import { projects, previewSources, kindOf } from '../../data/projects';
+import { projects, kindOf } from '../../data/projects';
 import { site } from '../../data/site';
+import DeviceStage from '../../components/DeviceStage.astro';
 
 const kinds = ['All', ...new Set(projects.map(kindOf))];
 const pad = (n: number) => String(n).padStart(2, '0');
@@ -34,12 +35,11 @@ const jsonLd = [
 
     <ul class="wrap wk-grid" data-grid>
       {projects.map((p, i) => {
-        const img = previewSources(p);
         return (
           <li class="wk-item reveal" data-kind={kindOf(p)} style={`transition-delay:${(i % 2) * 0.08}s`}>
             <a href={`/work/${p.slug}/`} data-cursor="View">
               <div class="wk-media">
-                <img src={img.src} srcset={img.srcset} sizes="(max-width: 760px) 94vw, 46vw" width={img.width} height={img.height} style={img.style} alt={`${p.title} preview`} loading={i < 4 ? 'eager' : 'lazy'} decoding="async" />
+                <DeviceStage project={p} sizes="(max-width: 760px) 76vw, 38vw" eager={i < 4} />
               </div>
               <div class="wk-info">
                 <span class="mono">{pad(i + 1)}</span>
