@@ -38,7 +38,7 @@ const jsonLd = [
     jobTitle: site.role,
     email: `mailto:${site.email}`,
     address: { '@type': 'PostalAddress', addressLocality: 'Tbilisi', addressCountry: 'GE' },
-    sameAs: [site.links.github, site.links.linkedin, site.links.x],
+    sameAs: [site.links.github, site.links.linkedin, site.links.upwork, site.links.x],
     knowsAbout: skills.map((s) => s.name),
     hasCredential: credentials.map((c) => ({
       '@type': 'EducationalOccupationalCredential',

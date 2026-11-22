@@ -11,6 +11,7 @@ export const site = {
   links: {
     github: 'https://github.com/GiorgiKemo',
     linkedin: 'https://www.linkedin.com/in/giorgi-kemoklidze-53383b263/',
+    upwork: 'https://www.upwork.com/freelancers/giorgikemo',
     x: 'https://x.com/GiorgiKem',
     telegram: 'https://t.me/CleanWebDevelopment',
     whatsapp: 'https://wa.me/18664192451',
