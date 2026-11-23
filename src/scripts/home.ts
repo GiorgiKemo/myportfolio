@@ -62,6 +62,25 @@ if (lab) {
   io.observe(lab);
 }
 
+// ---------- SVG (SMIL) animations: only run while on screen ----------
+// SMIL runs on the main thread and re-lays out the SVG every frame, which also made the browser
+// re-hit-test the page under the pointer every frame. Chrome keeps ticking it even when it is far
+// off screen, so the whole page did a layout + paint 60 times a second while idle. Pausing it while
+// it's out of view changes nothing anyone can see; it resumes from the same point when it returns.
+const smil = new Set<SVGSVGElement>();
+document.querySelectorAll('animate, animateMotion, animateTransform').forEach((a) => {
+  const svg = (a as SVGElement).ownerSVGElement;
+  if (svg) smil.add(svg);
+});
+if (smil.size && 'IntersectionObserver' in window) {
+  const io = new IntersectionObserver((entries) => entries.forEach((e) => {
+    const svg = e.target as SVGSVGElement;
+    if (e.isIntersecting) svg.unpauseAnimations();
+    else svg.pauseAnimations();
+  }));
+  smil.forEach((svg) => io.observe(svg));
+}
+
 // ---------- marquees: constant drift, sped up by scroll velocity ----------
 document.querySelectorAll<HTMLElement>('[data-marquee]').forEach((mq) => {
   const track = mq.querySelector<HTMLElement>('.mq-track');
