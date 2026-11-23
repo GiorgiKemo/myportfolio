@@ -244,8 +244,8 @@ export const projects = [
     slug: 'reachline-app',
     title: 'Reachline Mobile App',
     description:
-      'Business calling and SMS app built with React Native and Expo, in iPhone beta on TestFlight: keypad, WebRTC calls, conversations, recents, contacts, secure sign-in and Twilio and Telnyx support.',
-    tags: ['React Native', 'Expo', 'WebRTC', 'Twilio', 'Telnyx'],
+      'Business calls and texts in one iPhone app, now in beta on TestFlight. Calls run over WebRTC through Twilio or Telnyx, texts live in two-way SMS threads, and the keypad, recents, contacts, secure sign-in and in-app purchases are built in. Designed and built end to end in React Native and Expo.',
+    tags: ['React Native', 'Expo', 'WebRTC', 'Twilio', 'Telnyx', 'In-app purchases'],
     previewImage: '/project-previews/reachline-app-2026-11.jpg',
     previewImageDimensions: { width: 1600, height: 1000 },
     platform: 'mobile',

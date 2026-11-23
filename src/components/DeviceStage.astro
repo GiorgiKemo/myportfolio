@@ -5,6 +5,7 @@
 // Assets come from scripts/build-device-cards.mjs. Projects without them fall back to the
 // regular preview image.
 import cards from '../data/deviceCards.json';
+import AppStage from './AppStage.astro';
 import { previewSources, type Project } from '../data/projects';
 
 interface Props {
@@ -14,7 +15,8 @@ interface Props {
 }
 const { project: p, sizes, eager = false } = Astro.props;
 type Screen = { full: boolean; ratio: number };
-type Entry = { desktop?: Screen; mobile?: Screen; tint?: string; statusBg?: string; statusInk?: string };
+type App = { screens: { alt: string }[]; side: [number, number] };
+type Entry = { desktop?: Screen; mobile?: Screen; app?: App; tint?: string; statusBg?: string; statusInk?: string };
 const c = (cards as Record<string, Entry>)[p.slug];
 const dir = '/project-previews/cards';
 const img = previewSources(p);
@@ -34,7 +36,9 @@ const style = c
   : undefined;
 ---
 
-{c?.desktop ? (
+{c?.app ? (
+  <AppStage project={p} screens={c.app.screens} side={c.app.side} tint={c.tint} eager={eager} />
+) : c?.desktop ? (
   <div class:list={['ds', { 'ds-solo': !c.mobile }]} style={style} data-device-stage>
     <div class="ds-browser">
       <div class="ds-bar" aria-hidden="true">

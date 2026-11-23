@@ -1,0 +1,144 @@
+---
+// A phone-only app shown as three iPhones: a centre phone that steps through the app's screens
+// on hover/focus (or when the card is in view on touch screens), flanked by two phones that each
+// hold one screen. Used for apps that have no website (see "app" entries in deviceCards.json,
+// built by scripts/build-app-cards.mjs).
+import type { Project } from '../data/projects';
+
+interface Props {
+  project: Project;
+  screens: { alt: string }[];
+  side: [number, number];
+  tint?: string;
+  eager?: boolean;
+}
+const { project: p, screens, side, tint = '#1f3a30', eager = false } = Astro.props;
+const dir = '/project-previews/cards';
+const src = (i: number) => `${dir}/${p.slug}-a${i + 1}.webp`;
+const loading = eager ? 'eager' : 'lazy';
+---
+
+<div class="as" style={`--tint:${tint}`} data-app-stage>
+  {[side[0], side[1]].map((i, n) => (
+    <div class:list={['as-phone', 'as-side', n ? 'as-right' : 'as-left']} aria-hidden="true">
+      <div class="as-screen">
+        <img src={src(i)} width="420" height="909" alt="" loading={loading} decoding="async" />
+      </div>
+      <span class="as-island"></span>
+    </div>
+  ))}
+  <div class="as-phone as-main">
+    <div class="as-screen">
+      <div class="as-strip" data-app-strip>
+        {screens.map((s, i) => (
+          <img
+            src={i === 0 ? src(0) : undefined}
+            data-src={i === 0 ? undefined : src(i)}
+            width="420"
+            height="909"
+            alt={`${p.title}: ${s.alt}`}
+            loading={i === 0 ? loading : undefined}
+            decoding="async"
+          />
+        ))}
+      </div>
+    </div>
+    <span class="as-island" aria-hidden="true"></span>
+  </div>
+</div>
+
+<script>
+  // Steps the centre phone through the app's screens, one every 1.5s, while someone shows interest.
+  const reduced = matchMedia('(prefers-reduced-motion: reduce)');
+  const coarse = matchMedia('(hover: none), (pointer: coarse)');
+
+  document.querySelectorAll<HTMLElement>('[data-app-stage]').forEach((stage) => {
+    const strip = stage.querySelector<HTMLElement>('[data-app-strip]')!;
+    const imgs = [...strip.querySelectorAll<HTMLImageElement>('img')];
+    let timer = 0;
+    let index = 0;
+
+    const show = (i: number) => {
+      index = i;
+      strip.style.transform = `translate3d(0, ${-100 * i}%, 0)`;
+    };
+    const load = () => imgs.forEach((img) => {
+      if (img.dataset.src) { img.src = img.dataset.src; delete img.dataset.src; }
+    });
+    const start = () => {
+      if (reduced.matches || timer) return;
+      load();
+      stage.classList.add('is-playing');
+      timer = window.setInterval(() => show((index + 1) % imgs.length), 1500);
+      window.setTimeout(() => { if (timer && index === 0) show(1 % imgs.length); }, 350);
+    };
+    const stop = () => {
+      clearInterval(timer);
+      timer = 0;
+      stage.classList.remove('is-playing');
+      show(0);
+    };
+
+    const host = stage.closest('a') ?? stage;
+    host.addEventListener('pointerenter', (e) => { if (e.pointerType !== 'touch') start(); });
+    host.addEventListener('pointerleave', (e) => { if (e.pointerType !== 'touch') stop(); });
+    host.addEventListener('focusin', start);
+    host.addEventListener('focusout', stop);
+
+    if ('IntersectionObserver' in window) {
+      new IntersectionObserver((entries) => {
+        if (!coarse.matches) return;
+        entries.forEach((e) => {
+          if (e.intersectionRatio >= 0.75) start();
+          else if (e.intersectionRatio < 0.3) stop();
+        });
+      }, { threshold: [0, 0.3, 0.75] }).observe(stage);
+    }
+  });
+</script>
+
+<style>
+  .as {
+    --frame: #1b1b21;
+    position: relative; aspect-ratio: 16 / 10; width: 100%; overflow: hidden;
+    container-type: inline-size;
+    background:
+      radial-gradient(70% 90% at 50% 0%, color-mix(in oklab, var(--tint) 70%, transparent), transparent 72%),
+      radial-gradient(60% 70% at 100% 100%, color-mix(in oklab, var(--tint) 35%, transparent), transparent 70%),
+      linear-gradient(160deg, color-mix(in oklab, var(--tint) 30%, var(--bg-2)), var(--bg-2));
+  }
+  :global([data-theme='light']) .as { --frame: #24242b; }
+
+  /* iPhone: screen at 390x844, a thin bezel, Dynamic Island on top. */
+  .as-phone {
+    position: absolute; left: 50%; padding: 0.75cqw;
+    border-radius: 4cqw; background: var(--frame);
+    box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.12), inset 0 0 0 0.25cqw #2c2c33, 0 2.6cqw 6cqw -1.4cqw rgba(0, 0, 0, 0.6);
+    transition: transform 0.9s var(--ease), opacity 0.9s var(--ease);
+  }
+  .as-main { width: 25cqw; top: 5cqw; translate: -50% 0; z-index: 2; }
+  .as-side { width: 21cqw; top: 11cqw; opacity: 0.92; }
+  .as-left { translate: -128% 0; rotate: -6deg; }
+  .as-right { translate: 28% 0; rotate: 6deg; }
+
+  .as-screen {
+    position: relative; aspect-ratio: 390 / 844; overflow: hidden; border-radius: 3.3cqw; background: #f6f6f2;
+  }
+  .as-side .as-screen { border-radius: 2.8cqw; }
+  .as-screen img { display: block; width: 100%; height: 100%; max-width: none; object-fit: cover; object-position: top; }
+  .as-strip { height: 100%; transform: translate3d(0, 0, 0); transition: transform 0.75s cubic-bezier(0.65, 0, 0.25, 1); }
+  .as-strip img { height: 100%; }
+  .as-island {
+    position: absolute; top: 1.65cqw; left: 50%; width: 7cqw; height: 2cqw; translate: -50% 0;
+    border-radius: 1.2cqw; background: #000;
+  }
+  .as-side .as-island { top: 1.45cqw; width: 5.8cqw; height: 1.7cqw; }
+
+  :global(a:hover) .as-main, .as.is-playing .as-main { transform: translate3d(0, -1.2cqw, 0); }
+  :global(a:hover) .as-left, .as.is-playing .as-left { transform: translate3d(-1.2cqw, 0.6cqw, 0) rotate(-2deg); }
+  :global(a:hover) .as-right, .as.is-playing .as-right { transform: translate3d(1.2cqw, 0.6cqw, 0) rotate(2deg); }
+
+  @media (prefers-reduced-motion: reduce) {
+    .as-phone, .as-strip { transition: none !important; transform: none !important; }
+  }
+</style>
