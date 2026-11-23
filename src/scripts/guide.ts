@@ -1,3 +1,4 @@
+import { tr, checkedOf, markDone } from '../i18n/client';
 // Field Guide article behaviour: TOC + scroll-spy, reading progress, tickable
 // checklists (progress kept in localStorage), segmented controls, range fills,
 // the mobile sticky partner CTA and the `fgBump` helper used by calculators.
@@ -120,8 +121,8 @@ if (items.length) {
     const flags = items.map((el) => el.classList.contains('is-done'));
     const n = flags.filter(Boolean).length;
     segs.forEach((s, i) => s.classList.toggle('on', flags[i]));
-    if (meterText) meterText.textContent = `${n} of ${items.length} checked`;
-    if (meterMini) meterMini.textContent = `${n}/${items.length} checked`;
+    if (meterText) meterText.textContent = checkedOf(n, items.length);
+    if (meterMini) meterMini.textContent = `${n}/${items.length} ${tr('checked')}`;
     meter?.classList.toggle('is-complete', n === items.length);
   };
   items.forEach((el, i) => {
@@ -130,7 +131,7 @@ if (items.length) {
     b.className = 'tick';
     b.innerHTML = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>';
     const label = (el.querySelector('h2, h3')?.textContent || `item ${i + 1}`).trim();
-    b.setAttribute('aria-label', `Mark "${label}" as done`);
+    b.setAttribute('aria-label', markDone(label));
     if (done.includes(i)) el.classList.add('is-done');
     b.setAttribute('aria-pressed', String(el.classList.contains('is-done')));
     b.addEventListener('click', () => {

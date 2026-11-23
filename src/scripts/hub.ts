@@ -1,3 +1,4 @@
+import { tr, guidesCount } from '../i18n/client';
 // The Field Guide hub: library search + filters, tool-finder quiz, code copy,
 // stat count-up, card spotlights and the lazily started constellation.
 
@@ -28,7 +29,7 @@ if (lib) {
       c.hidden = !(inCat && inText);
       if (!c.hidden) n += 1;
     });
-    if (count) count.textContent = `${n} ${n === 1 ? 'guide' : 'guides'}`;
+    if (count) count.textContent = guidesCount(n);
     if (empty) empty.hidden = n !== 0;
   };
   buttons.forEach((b) => {
@@ -81,7 +82,7 @@ if (quiz) {
     const key = answers.goal === 'site' ? (answers.need || 'host') : answers.goal;
     const hit = results.find((r) => r.dataset.result === key) || results[0];
     hit.hidden = false;
-    setBar(1, 'Result');
+    setBar(1, tr('Result'));
     if (back) back.hidden = true;
     if (restart) restart.hidden = false;
     quiz.classList.add('is-done');
@@ -120,10 +121,10 @@ document.querySelectorAll<HTMLButtonElement>('[data-copy]').forEach((btn) => {
   const state = btn.querySelector<HTMLElement>('[data-copy-state]');
   btn.addEventListener('click', async () => {
     const code = btn.dataset.copy || '';
-    try { await navigator.clipboard.writeText(code); if (state) state.textContent = 'Copied ✓'; }
-    catch { if (state) state.textContent = 'Select & copy'; }
+    try { await navigator.clipboard.writeText(code); if (state) state.textContent = tr('Copied ✓'); }
+    catch { if (state) state.textContent = tr('Select & copy'); }
     window.trackAffiliateEvent?.('affiliate_code_copy', { affiliate_program: 'onehomeschool', placement: 'hub_card' });
-    setTimeout(() => { if (state) state.textContent = 'Copy'; }, 2200);
+    setTimeout(() => { if (state) state.textContent = tr('Copy'); }, 2200);
   });
 });
 

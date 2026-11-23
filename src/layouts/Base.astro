@@ -3,6 +3,7 @@ import '../styles/global.css';
 import SiteHeader from '../components/SiteHeader.astro';
 import SiteFooter from '../components/SiteFooter.astro';
 import { site } from '../data/site';
+import { languages, langs, isLang, defaultLang, localizePath, basePath } from '../i18n/config';
 import geistFont from '@fontsource-variable/geist/files/geist-latin-wght-normal.woff2?url';
 
 interface Props {
@@ -43,12 +44,17 @@ const {
   footerCta = true,
 } = Astro.props;
 
-const canonical = new URL(path, site.url).href;
+const seg = Astro.url.pathname.split('/')[1];
+const lang = isLang(seg) ? seg : defaultLang;
+const enPath = basePath(path);
+const canonical = new URL(localizePath(enPath, lang), site.url).href;
+// 404 and other noindex pages have no language twins.
+const alternates = noindex ? [] : langs.map((l) => ({ hreflang: languages[l].hreflang, href: new URL(localizePath(enPath, l), site.url).href }));
 const ogImageUrl = new URL(ogImage, site.url).href;
 ---
 
 <!doctype html>
-<html lang="en" class="no-js" data-theme="dark">
+<html lang={languages[lang].htmlLang} class="no-js" data-theme="dark">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
@@ -57,6 +63,8 @@ const ogImageUrl = new URL(ogImage, site.url).href;
     <meta name="robots" content={noindex ? 'noindex, follow' : 'index, follow, max-image-preview:large'} />
     <meta name="author" content={site.name} />
     <link rel="canonical" href={canonical} />
+    {alternates.map((a) => <link rel="alternate" hreflang={a.hreflang} href={a.href} />)}
+    {alternates.length > 0 && <link rel="alternate" hreflang="x-default" href={new URL(enPath, site.url).href} />}
     <meta name="theme-color" content="#07070a" />
     <meta name="color-scheme" content="dark light" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
@@ -68,6 +76,8 @@ const ogImageUrl = new URL(ogImage, site.url).href;
     <meta property="og:type" content={ogType} />
     <meta property="og:site_name" content="Giorgi Codes" />
     <meta property="og:url" content={canonical} />
+    <meta property="og:locale" content={languages[lang].ogLocale} />
+    {langs.filter((l) => l !== lang && !noindex).map((l) => <meta property="og:locale:alternate" content={languages[l].ogLocale} />)}
     <meta property="og:title" content={ogTitle} />
     <meta property="og:description" content={ogDescription} />
     <meta property="og:image" content={ogImageUrl} />
