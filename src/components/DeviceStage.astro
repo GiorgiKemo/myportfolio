@@ -115,9 +115,29 @@ const style = c
   };
 
   const stages = [...document.querySelectorAll<HTMLElement>('[data-device-stage]')];
+
+  // The home rail slides cards under a resting pointer while the page scrolls, and the browser
+  // reports that as the pointer entering each card. Loading on that alone decoded every card's
+  // tall screenshots (8 of 9 cards, ~270 MB once decoded) mid-scroll without anyone pointing at them.
+  // So a card loads when the pointer really moves over it, or rests on it once scrolling stops.
+  let lastScroll = -Infinity;
+  addEventListener('scroll', () => { lastScroll = performance.now(); }, { passive: true, capture: true });
   stages.forEach((stage) => {
     const host = stage.closest('a') ?? stage;
-    host.addEventListener('pointerenter', () => loadFull(stage));
+    let timer = 0;
+    const settle = () => {
+      timer = 0;
+      if (!host.matches(':hover')) return;
+      if (performance.now() - lastScroll > 160) loadFull(stage);
+      else timer = window.setTimeout(settle, 120);
+    };
+    host.addEventListener('pointerenter', (e) => {
+      if (e.pointerType !== 'touch' && !timer) timer = window.setTimeout(settle, 120);
+    });
+    host.addEventListener('pointermove', (e) => {
+      if (e.pointerType !== 'touch' && (e.movementX || e.movementY)) loadFull(stage);
+    }, { passive: true });
+    host.addEventListener('pointerleave', () => { clearTimeout(timer); timer = 0; });
     host.addEventListener('focusin', () => loadFull(stage));
   });
 
